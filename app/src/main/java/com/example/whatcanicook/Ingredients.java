@@ -1,7 +1,7 @@
 package com.example.whatcanicook;
 
 /**
- * This class handles the ingredients functions of the application. Test addition here only for purpose of checking commit signing. Test commit to working
+ * This class handles the ingredients functions of the application.
  */
 
 public class Ingredients {
