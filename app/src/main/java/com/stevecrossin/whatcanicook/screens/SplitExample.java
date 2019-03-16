@@ -1,4 +1,4 @@
-package com.example.whatcanicook;
+package com.stevecrossin.whatcanicook.screens;
 
 import java.util.Arrays;
 

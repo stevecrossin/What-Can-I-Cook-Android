@@ -1,6 +1,4 @@
-package com.example.whatcanicook;
-
-import android.support.v7.app.AppCompatActivity;
+package com.stevecrossin.whatcanicook.screens;
 
 /**
  * This class contains all possible intolerances.

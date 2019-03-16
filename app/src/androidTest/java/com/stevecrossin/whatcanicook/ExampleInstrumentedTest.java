@@ -1,4 +1,4 @@
-package com.example.whatcanicook;
+package com.stevecrossin.whatcanicook;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

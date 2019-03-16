@@ -1,4 +1,4 @@
-package com.example.whatcanicook;
+package com.stevecrossin.whatcanicook;
 
 /**
  * This class contains all users that can login to the application. It also handles part of the login features

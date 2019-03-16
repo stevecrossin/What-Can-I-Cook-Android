@@ -1,4 +1,4 @@
-package com.example.whatcanicook;
+package com.stevecrossin.whatcanicook.screens;
 
 /*
 This class covers the Pantry screen and database. Ingredients added here will be stored in a Room Database

@@ -10,5 +10,8 @@ on how to implement in pseudocode.
 Sunday 18 March
 * Intolerances.csv has been created, completed and formatted per database table requirements - gluten filter needs to be confirmed to ensure filter not too restrictive
 * SplitExample.java has been sourced to determine and test how to split strings from csv files
+* All core java files have been created but not populated with pseudocode or actual code except as noted on Sat 17 entry
+* Colour scheme for application has been implemented, action bar has been disabled for main view
+* Room database code and data objects code has begun to be written but is not yet functional
 
 Still working on: UI design to be created, splash screen.

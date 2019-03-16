@@ -1,4 +1,4 @@
-package com.example.whatcanicook;
+package com.stevecrossin.whatcanicook.screens;
 
 /**
  * This class handles the ingredients functions of the application.

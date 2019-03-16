@@ -1,4 +1,4 @@
-package com.example.whatcanicook;
+package com.stevecrossin.whatcanicook.screens;
 
 public class Logs {
     String logdetail;

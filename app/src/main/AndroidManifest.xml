@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.whatcanicook">
+    package="com.stevecrossin.whatcanicook">
+
+    <!-- List of permissions that the app will have access to. On first initialisation, the application will ask the user to confirm permission to access these. -->
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACTION_OPEN_DOCUMENT" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.stevecrossin.whatcanicook.screens.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

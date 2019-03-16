@@ -1,4 +1,4 @@
-package com.example.whatcanicook;
+package com.stevecrossin.whatcanicook.screens;
 
 //This class handles all the recipes functions for this application, including reading the recipes and providing recipe results
 public class Recipes {
