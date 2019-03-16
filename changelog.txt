@@ -4,4 +4,4 @@ Milestone 1 (Week 3 progress - Steve Crossin)
 * Ingredients, Intolerances, Logs, Pantry, Recipes and Users java classes have been created with core methods and instructions
 on how to implement in pseudocode.
 * Ingredients.csv has been populated and formatted as per database table requirement
-* Intolerances.csv has been created, approximately 30% of intolerances and ingredients to remove has been populated
+* Intolerances.csv has been created, approximately 30% of intolerances and ingredients to remove has been populated.
