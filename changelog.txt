@@ -1,7 +1,14 @@
 Changelog:
 
-Milestone 1 (Week 3 progress - Steve Crossin)
+Milestone 1 (Week 3 progress - Steve Crossin) - almost complete,
+
+
+
+Saturday 17 March
 * Ingredients, Intolerances, Logs, Pantry, Recipes and Users java classes have been created with core methods and instructions
 on how to implement in pseudocode.
-* Ingredients.csv has been populated and formatted as per database table requirement
-* Intolerances.csv has been created, approximately 30% of intolerances and ingredients to remove has been populated.
+* Ingredients.csv has been populated, completed and formatted as per database table requirement.
+
+Sunday 18 March
+* Intolerances.csv has been created, completed and formatted per database table requirements - gluten filter needs to be confirmed to ensure filter not too restrictive
+* SplitExample.java has been sourced to determine and test how to split strings from csv files
