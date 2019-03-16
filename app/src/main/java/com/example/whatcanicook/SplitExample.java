@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /* Example code taken from https://examples.javacodegeeks.com/core-java/lang/string/java-string-split-example/, to help solve
 the problem on how to split strings e.g. in ingredients.csv or intolerances.csv, will not be the final code used, here as
-placeholder only
+placeholder only.
  */
 
 public class SplitExample {

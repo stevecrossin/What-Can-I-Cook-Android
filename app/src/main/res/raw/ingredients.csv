@@ -1,0 +1,494 @@
+﻿ingredientID,ingredientCategory,ingredientSubCat,ingredientName,ingredientAlternative,ingredientSelectable,ingredientSelected
+1,''alcoholbeverage'',''alcohol'',''liqueur'',''\N'',TRUE,FALSE
+2,''alcoholbeverage'',''alcohol'',''whiskey'',''\N'',TRUE,FALSE
+3,''alcoholbeverage'',''alcohol'',''beer'',''\N'',TRUE,FALSE
+4,''alcoholbeverage'',''alcohol'',''white wine'',''\N'',TRUE,FALSE
+5,''alcoholbeverage'',''alcohol'',''red wine'',''\N'',TRUE,FALSE
+6,''alcoholbeverage'',''alcohol'',''champagne'',''\N'',TRUE,FALSE
+7,''alcoholbeverage'',''alcohol'',''rum'',''\N'',TRUE,FALSE
+8,''alcoholbeverage'',''alcohol'',''frangelico'',''\N'',TRUE,FALSE
+9,''alcoholbeverage'',''alcohol'',''brandy'',''\N'',TRUE,FALSE
+10,''alcoholbeverage'',''alcohol'',''vodka'',''\N'',TRUE,FALSE
+11,''alcoholbeverage'',''alcohol'',''tequila'',''\N'',TRUE,FALSE
+12,''alcoholbeverage'',''alcohol'',''sherry'',''\N'',TRUE,FALSE
+13,''alcoholbeverage'',''alcohol'',''bitters'',''\N'',TRUE,FALSE
+14,''alcoholbeverage'',''alcohol'',''cooking wine'',''\N'',TRUE,FALSE
+15,''alcoholbeverage'',''alcohol'',''bourbon'',''\N'',TRUE,FALSE
+16,''alcoholbeverage'',''alcohol'',''kahlua'',''\N'',TRUE,FALSE
+17,''alcoholbeverage'',''alcohol'',''gin'',''\N'',TRUE,FALSE
+18,''alcoholbeverage'',''alcohol'',''whisky'',''\N'',TRUE,FALSE
+19,''alcoholbeverage'',''alcohol'',''irish cream'',''\N'',TRUE,FALSE
+20,''alcoholbeverage'',''alcohol'',''sake'',''\N'',TRUE,FALSE
+21,''alcoholbeverage'',''alcohol'',''amaretto'',''\N'',TRUE,FALSE
+22,''alcoholbeverage'',''alcohol'',''vermouth'',''\N'',TRUE,FALSE
+23,''alcoholbeverage'',''alcohol'',''triple sec'',''\N'',TRUE,FALSE
+24,''alcoholbeverage'',''alcohol'',''grappa'',''\N'',TRUE,FALSE
+25,''alcoholbeverage'',''alcohol'',''masala'',''\N'',TRUE,FALSE
+26,''alcoholbeverage'',''alcohol'',''grand marnier'',''\N'',TRUE,FALSE
+27,''alcoholbeverage'',''alcohol'',''cabernet sauvignon'',''\N'',TRUE,FALSE
+28,''alcoholbeverage'',''alcohol'',''dessert wine'',''\N'',TRUE,FALSE
+29,''alcoholbeverage'',''alcohol'',''schnapps'',''\N'',TRUE,FALSE
+30,''alcoholbeverage'',''alcohol'',''port wine'',''\N'',TRUE,FALSE
+31,''alcoholbeverage'',''alcohol'',''burgundy wine'',''\N'',TRUE,FALSE
+32,''alcoholbeverage'',''alcohol'',''sparkling wine'',''\N'',TRUE,FALSE
+33,''alcoholbeverage'',''alcohol'',''cognac'',''\N'',TRUE,FALSE
+34,''alcoholbeverage'',''alcohol'',''chocolate liqueur'',''\N'',TRUE,FALSE
+35,''alcoholbeverage'',''alcohol'',''curacao'',''\N'',TRUE,FALSE
+36,''alcoholbeverage'',''alcohol'',''creme de menthe'',''\N'',TRUE,FALSE
+37,''alcoholbeverage'',''alcohol'',''limoncello'',''\N'',TRUE,FALSE
+38,''alcoholbeverage'',''alcohol'',''raspberry liquor'',''\N'',TRUE,FALSE
+39,''alcoholbeverage'',''alcohol'',''shaoxing wine'',''\N'',TRUE,FALSE
+40,''alcoholbeverage'',''alcohol'',''madeira wine'',''\N'',TRUE,FALSE
+41,''alcoholbeverage'',''alcohol'',''absinthe'',''\N'',TRUE,FALSE
+42,''alcoholbeverage'',''alcohol'',''ouzo'',''\N'',TRUE,FALSE
+43,''alcoholbeverage'',''alcohol'',''anisette'',''\N'',TRUE,FALSE
+44,''meatfishprotein'',''altproteins'',''black beans'',''\N'',TRUE,FALSE
+45,''meatfishprotein'',''altproteins'',''chickpea'',''\N'',TRUE,FALSE
+46,''meatfishprotein'',''altproteins'',''lentil'',''\N'',TRUE,FALSE
+47,''meatfishprotein'',''altproteins'',''hummus'',''\N'',TRUE,FALSE
+48,''meatfishprotein'',''altproteins'',''soy beans'',''\N'',TRUE,FALSE
+49,''meatfishprotein'',''altproteins'',''pinto beans'',''\N'',TRUE,FALSE
+50,''meatfishprotein'',''altproteins'',''cannellini beans'',''\N'',TRUE,FALSE
+51,''meatfishprotein'',''altproteins'',''navy beans'',''\N'',TRUE,FALSE
+52,''meatfishprotein'',''altproteins'',''kidney beans'',''\N'',TRUE,FALSE
+53,''meatfishprotein'',''altproteins'',''lima beans'',''\N'',TRUE,FALSE
+54,''meatfishprotein'',''altproteins'',''green beans'',''\N'',TRUE,FALSE
+55,''meatfishprotein'',''altproteins'',''french beans'',''\N'',TRUE,FALSE
+56,''breadcereals'',''baking'',''molasses'',''\N'',TRUE,FALSE
+57,''breadcereals'',''baking'',''corn syrup'',''\N'',TRUE,FALSE
+58,''breadcereals'',''baking'',''baking powder'',''\N'',TRUE,FALSE
+59,''breadcereals'',''baking'',''bread flour'',''\N'',TRUE,FALSE
+60,''breadcereals'',''baking'',''baking soda'',''\N'',TRUE,FALSE
+61,''breadcereals'',''baking'',''bread crumbs'',''\N'',TRUE,FALSE
+62,''breadcereals'',''baking'',''cornstarch'',''\N'',TRUE,FALSE
+63,''breadcereals'',''baking'',''yeast'',''\N'',TRUE,FALSE
+64,''breadcereals'',''baking'',''cornmeal'',''\N'',TRUE,FALSE
+65,''breadcereals'',''baking'',''self rising flour'',''\N'',TRUE,FALSE
+66,''breadcereals'',''baking'',''macaroni cheese mix'',''\N'',TRUE,FALSE
+67,''breadcereals'',''baking'',''stuffing mix'',''\N'',TRUE,FALSE
+68,''breadcereals'',''baking'',''pie crust'',''\N'',TRUE,FALSE
+69,''breadcereals'',''baking'',''pizza dough'',''\N'',TRUE,FALSE
+70,''breadcereals'',''baking'',''puff pastry'',''\N'',TRUE,FALSE
+71,''breadcereals'',''baking'',''wheat'',''\N'',TRUE,FALSE
+72,''breadcereals'',''baking'',''bread dough'',''\N'',TRUE,FALSE
+73,''alcoholbeverage'',''beverages'',''coffee'',''\N'',TRUE,FALSE
+74,''alcoholbeverage'',''beverages'',''orange juice'',''\N'',TRUE,FALSE
+75,''alcoholbeverage'',''beverages'',''tea'',''\N'',TRUE,FALSE
+76,''alcoholbeverage'',''beverages'',''espresso'',''\N'',TRUE,FALSE
+77,''alcoholbeverage'',''beverages'',''tomato juice'',''\N'',TRUE,FALSE
+78,''alcoholbeverage'',''beverages'',''green tea'',''\N'',TRUE,FALSE
+79,''alcoholbeverage'',''beverages'',''cranberry juice'',''\N'',TRUE,FALSE
+80,''alcoholbeverage'',''beverages'',''coke'',''\N'',TRUE,FALSE
+81,''alcoholbeverage'',''beverages'',''lemonade'',''\N'',TRUE,FALSE
+82,''alcoholbeverage'',''beverages'',''ginger ale'',''\N'',TRUE,FALSE
+83,''alcoholbeverage'',''beverages'',''pineapple juice'',''\N'',TRUE,FALSE
+84,''alcoholbeverage'',''beverages'',''fruit juice'',''\N'',TRUE,FALSE
+85,''alcoholbeverage'',''beverages'',''club soda'',''\N'',TRUE,FALSE
+86,''alcoholbeverage'',''beverages'',''sprite'',''\N'',TRUE,FALSE
+87,''alcoholbeverage'',''beverages'',''grenadine'',''\N'',TRUE,FALSE
+88,''alcoholbeverage'',''beverages'',''water'',''\N'',TRUE,FALSE
+89,''alcoholbeverage'',''beverages'',''margarita mix'',''\N'',TRUE,FALSE
+90,''breadcereals'',''breadscereals'',''wheat germ'',''\N'',TRUE,FALSE
+91,''breadcereals'',''breadscereals'',''flour'',''\N'',TRUE,FALSE
+92,''breadcereals'',''breadscereals'',''rice'',''\N'',TRUE,FALSE
+93,''breadcereals'',''breadscereals'',''pasta'',''\N'',TRUE,FALSE
+94,''breadcereals'',''breadscereals'',''bread'',''\N'',TRUE,FALSE
+95,''breadcereals'',''breadscereals'',''semolina'',''\N'',TRUE,FALSE
+96,''breadcereals'',''breadscereals'',''noodle'',''\N'',TRUE,FALSE
+97,''breadcereals'',''breadscereals'',''rolled oats'',''\N'',TRUE,FALSE
+98,''breadcereals'',''breadscereals'',''cracker'',''\N'',TRUE,FALSE
+99,''breadcereals'',''breadscereals'',''quinoa'',''\N'',TRUE,FALSE
+100,''breadcereals'',''breadscereals'',''pancake mix'',''\N'',TRUE,FALSE
+101,''breadcereals'',''breadscereals'',''flour tortillas'',''\N'',TRUE,FALSE
+102,''breadcereals'',''breadscereals'',''chips'',''\N'',TRUE,FALSE
+103,''breadcereals'',''breadscereals'',''saltines'',''\N'',TRUE,FALSE
+104,''breadcereals'',''breadscereals'',''brown rice'',''rice'',TRUE,FALSE
+105,''breadcereals'',''breadscereals'',''popcorn'',''\N'',TRUE,FALSE
+106,''breadcereals'',''breadscereals'',''corn tortillas'',''\N'',TRUE,FALSE
+107,''breadcereals'',''breadscereals'',''biscuits'',''\N'',TRUE,FALSE
+108,''breadcereals'',''breadscereals'',''couscous'',''\N'',TRUE,FALSE
+109,''breadcereals'',''breadscereals'',''pita'',''\N'',TRUE,FALSE
+110,''breadcereals'',''breadscereals'',''bisquick'',''\N'',TRUE,FALSE
+111,''breadcereals'',''breadscereals'',''cereal'',''\N'',TRUE,FALSE
+112,''breadcereals'',''breadscereals'',''angel hair'',''\N'',TRUE,FALSE
+113,''breadcereals'',''breadscereals'',''croutons'',''\N'',TRUE,FALSE
+114,''breadcereals'',''breadscereals'',''lasagne'',''\N'',TRUE,FALSE
+115,''breadcereals'',''breadscereals'',''ramen'',''\N'',TRUE,FALSE
+116,''breadcereals'',''breadscereals'',''baguette'',''\N'',TRUE,FALSE
+117,''breadcereals'',''breadscereals'',''barley'',''\N'',TRUE,FALSE
+118,''breadcereals'',''breadscereals'',''bagel'',''\N'',TRUE,FALSE
+119,''breadcereals'',''breadscereals'',''pretzel'',''\N'',TRUE,FALSE
+120,''breadcereals'',''breadscereals'',''cream of wheat'',''\N'',TRUE,FALSE
+121,''breadcereals'',''breadscereals'',''multigrain bread'',''\N'',TRUE,FALSE
+122,''breadcereals'',''breadscereals'',''crescent roll dough'',''\N'',TRUE,FALSE
+123,''breadcereals'',''breadscereals'',''pierogi'',''\N'',TRUE,FALSE
+124,''breadcereals'',''breadscereals'',''hot dog bun'',''\N'',TRUE,FALSE
+125,''breadcereals'',''breadscereals'',''filo dough'',''\N'',TRUE,FALSE
+126,''breadcereals'',''breadscereals'',''ravioli'',''\N'',TRUE,FALSE
+127,''breadcereals'',''breadscereals'',''muffin mix'',''\N'',TRUE,FALSE
+128,''breadcereals'',''breadscereals'',''gnocchi'',''\N'',TRUE,FALSE
+129,''breadcereals'',''breadscereals'',''potato flakes'',''\N'',TRUE,FALSE
+130,''breadcereals'',''breadscereals'',''rye'',''\N'',TRUE,FALSE
+131,''breadcereals'',''breadscereals'',''croissants'',''\N'',TRUE,FALSE
+132,''breadcereals'',''breadscereals'',''matzo meal'',''\N'',TRUE,FALSE
+133,''breadcereals'',''breadscereals'',''shortcrust pastry'',''\N'',TRUE,FALSE
+134,''breadcereals'',''breadscereals'',''ciabatta'',''\N'',TRUE,FALSE
+135,''breadcereals'',''breadscereals'',''breadsticks'',''\N'',TRUE,FALSE
+136,''breadcereals'',''breadscereals'',''angel food'',''\N'',TRUE,FALSE
+137,''breadcereals'',''breadscereals'',''risotto'',''\N'',TRUE,FALSE
+138,''breadcereals'',''breadscereals'',''spaghetti'',''angel hair'',TRUE,FALSE
+139,''breadcereals'',''breadscereals'',''spelt'',''\N'',TRUE,FALSE
+140,''spicecondimentsauce'',''condiments'',''mayonnaise'',''\N'',TRUE,FALSE
+141,''spicecondimentsauce'',''condiments'',''mustard'',''\N'',TRUE,FALSE
+142,''spicecondimentsauce'',''condiments'',''ketchup'',''\N'',TRUE,FALSE
+143,''spicecondimentsauce'',''condiments'',''vinegar'',''\N'',TRUE,FALSE
+144,''spicecondimentsauce'',''condiments'',''balsamic vinegar'',''\N'',TRUE,FALSE
+145,''spicecondimentsauce'',''condiments'',''wine vinegar'',''\N'',TRUE,FALSE
+146,''spicecondimentsauce'',''condiments'',''cider vinegar'',''\N'',TRUE,FALSE
+147,''spicecondimentsauce'',''condiments'',''rice vinegar'',''\N'',TRUE,FALSE
+148,''spicecondimentsauce'',''condiments'',''mirin'',''\N'',TRUE,FALSE
+149,''spicecondimentsauce'',''condiments'',''apple cider vinegar'',''\N'',TRUE,FALSE
+150,''spicecondimentsauce'',''condiments'',''meat sauce'',''\N'',TRUE,FALSE
+151,''spicecondimentsauce'',''condiments'',''blue cheese dressing'',''\N'',TRUE,FALSE
+152,''dairy'',''dairy'',''butter'',''\N'',TRUE,FALSE
+153,''dairy'',''dairy'',''eggs'',''\N'',TRUE,FALSE
+154,''dairy'',''dairy'',''milk'',''\N'',TRUE,FALSE
+155,''dairy'',''dairy'',''parmesan'',''\N'',TRUE,FALSE
+156,''dairy'',''dairy'',''cheddar'',''\N'',TRUE,FALSE
+157,''dairy'',''dairy'',''cream'',''\N'',TRUE,FALSE
+158,''dairy'',''dairy'',''sour cream'',''\N'',TRUE,FALSE
+159,''dairy'',''dairy'',''cream cheese'',''\N'',TRUE,FALSE
+160,''dairy'',''dairy'',''mozzarella'',''\N'',TRUE,FALSE
+161,''dairy'',''dairy'',''american cheese'',''\N'',TRUE,FALSE
+162,''dairy'',''dairy'',''yogurt'',''\N'',TRUE,FALSE
+163,''dairy'',''dairy'',''evaporated milk'',''\N'',TRUE,FALSE
+164,''dairy'',''dairy'',''condensed milk'',''\N'',TRUE,FALSE
+165,''dairy'',''dairy'',''whipped cream'',''\N'',TRUE,FALSE
+166,''dairy'',''dairy'',''monterey jack cheese'',''\N'',TRUE,FALSE
+167,''dairy'',''dairy'',''feta'',''\N'',TRUE,FALSE
+168,''dairy'',''dairy'',''cottage cheese'',''\N'',TRUE,FALSE
+169,''dairy'',''dairy'',''ice cream'',''\N'',TRUE,FALSE
+170,''dairy'',''dairy'',''goat cheese'',''\N'',TRUE,FALSE
+171,''dairy'',''dairy'',''frosting'',''\N'',TRUE,FALSE
+172,''dairy'',''dairy'',''swiss cheese'',''\N'',TRUE,FALSE
+173,''dairy'',''dairy'',''velveeta'',''\N'',TRUE,FALSE
+174,''dairy'',''dairy'',''ricotta'',''\N'',TRUE,FALSE
+175,''dairy'',''dairy'',''powdered milk'',''\N'',TRUE,FALSE
+176,''dairy'',''dairy'',''blue cheese'',''\N'',TRUE,FALSE
+177,''dairy'',''dairy'',''provolone'',''\N'',TRUE,FALSE
+178,''dairy'',''dairy'',''colby cheese'',''\N'',TRUE,FALSE
+179,''dairy'',''dairy'',''gouda'',''\N'',TRUE,FALSE
+180,''dairy'',''dairy'',''pepper jack'',''\N'',TRUE,FALSE
+181,''dairy'',''dairy'',''italian cheese'',''\N'',TRUE,FALSE
+182,''dairy'',''dairy'',''soft cheese'',''\N'',TRUE,FALSE
+183,''dairy'',''dairy'',''romano'',''\N'',TRUE,FALSE
+184,''dairy'',''dairy'',''brie'',''\N'',TRUE,FALSE
+185,''dairy'',''dairy'',''pepperjack cheese'',''\N'',TRUE,FALSE
+186,''dairy'',''dairy'',''custard'',''\N'',TRUE,FALSE
+187,''dairy'',''dairy'',''cheese soup'',''\N'',TRUE,FALSE
+188,''dairy'',''dairy'',''pizza cheese'',''\N'',TRUE,FALSE
+189,''dairy'',''dairy'',''ghee'',''\N'',TRUE,FALSE
+190,''dairy'',''dairy'',''pecorino cheese'',''\N'',TRUE,FALSE
+191,''dairy'',''dairy'',''gruyere'',''\N'',TRUE,FALSE
+192,''dairy'',''dairy'',''creme fraiche'',''\N'',TRUE,FALSE
+193,''dairy'',''dairy'',''hard cheese'',''\N'',TRUE,FALSE
+194,''dairy'',''dairy'',''havarti cheese'',''\N'',TRUE,FALSE
+195,''dairy'',''dairy'',''mascarpone'',''\N'',TRUE,FALSE
+196,''dairy'',''dairyalt'',''soy milk'',''\N'',TRUE,FALSE
+197,''dairy'',''dairyalt'',''almond milk'',''\N'',TRUE,FALSE
+198,''dairy'',''dairyalt'',''coconut milk'',''\N'',TRUE,FALSE
+199,''dairy'',''dairyalt'',''hemp milk'',''\N'',TRUE,FALSE
+200,''fruitveg'',''fruit'',''lemon'',''\N'',TRUE,FALSE
+201,''fruitveg'',''fruit'',''banana'',''\N'',TRUE,FALSE
+202,''fruitveg'',''fruit'',''apple'',''\N'',TRUE,FALSE
+203,''fruitveg'',''fruit'',''coconut'',''\N'',TRUE,FALSE
+204,''fruitveg'',''fruit'',''mango'',''\N'',TRUE,FALSE
+205,''fruitveg'',''fruit'',''lime'',''\N'',TRUE,FALSE
+206,''fruitveg'',''fruit'',''orange'',''\N'',TRUE,FALSE
+207,''fruitveg'',''fruit'',''pineapple'',''\N'',TRUE,FALSE
+208,''fruitveg'',''fruit'',''strawberries'',''\N'',TRUE,FALSE
+209,''fruitveg'',''fruit'',''raisin'',''\N'',TRUE,FALSE
+210,''fruitveg'',''fruit'',''blueberries'',''\N'',TRUE,FALSE
+211,''fruitveg'',''fruit'',''grape'',''\N'',TRUE,FALSE
+212,''fruitveg'',''fruit'',''prunes'',''\N'',TRUE,FALSE
+213,''fruitveg'',''fruit'',''nectarine'',''\N'',TRUE,FALSE
+214,''fruitveg'',''fruit'',''fig'',''\N'',TRUE,FALSE
+215,''fruitveg'',''fruit'',''peach'',''\N'',TRUE,FALSE
+216,''fruitveg'',''fruit'',''cranberries'',''\N'',TRUE,FALSE
+217,''fruitveg'',''fruit'',''raspberries'',''\N'',TRUE,FALSE
+218,''fruitveg'',''fruit'',''pear'',''\N'',TRUE,FALSE
+219,''fruitveg'',''fruit'',''cherry'',''\N'',TRUE,FALSE
+220,''fruitveg'',''fruit'',''apricot'',''\N'',TRUE,FALSE
+221,''fruitveg'',''fruit'',''blackberries'',''\N'',TRUE,FALSE
+222,''fruitveg'',''fruit'',''berries'',''\N'',TRUE,FALSE
+223,''fruitveg'',''fruit'',''date'',''\N'',TRUE,FALSE
+224,''fruitveg'',''fruit'',''watermelon'',''\N'',TRUE,FALSE
+225,''fruitveg'',''fruit'',''kiwi'',''\N'',TRUE,FALSE
+226,''fruitveg'',''fruit'',''craisins'',''\N'',TRUE,FALSE
+227,''fruitveg'',''fruit'',''mandarin'',''\N'',TRUE,FALSE
+228,''fruitveg'',''fruit'',''cantaloupe'',''\N'',TRUE,FALSE
+229,''fruitveg'',''fruit'',''plum'',''\N'',TRUE,FALSE
+230,''fruitveg'',''fruit'',''papaya'',''\N'',TRUE,FALSE
+231,''fruitveg'',''fruit'',''pomegranate'',''\N'',TRUE,FALSE
+232,''fruitveg'',''fruit'',''apple'',''\N'',TRUE,FALSE
+233,''fruitveg'',''fruit'',''rhubarb'',''\N'',TRUE,FALSE
+234,''fruitveg'',''fruit'',''tangerine'',''\N'',TRUE,FALSE
+235,''fruitveg'',''fruit'',''sultanas'',''\N'',TRUE,FALSE
+236,''fruitveg'',''fruit'',''currant'',''\N'',TRUE,FALSE
+237,''fruitveg'',''fruit'',''plantain'',''\N'',TRUE,FALSE
+238,''fruitveg'',''fruit'',''passionfruit'',''\N'',TRUE,FALSE
+239,''fruitveg'',''fruit'',''persimmons'',''\N'',TRUE,FALSE
+240,''fruitveg'',''fruit'',''quince'',''\N'',TRUE,FALSE
+241,''fruitveg'',''fruit'',''lychee'',''\N'',TRUE,FALSE
+242,''fruitveg'',''fruit'',''tangelos'',''\N'',TRUE,FALSE
+243,''fruitveg'',''fruit'',''boysenberry'',''\N'',TRUE,FALSE
+244,''fruitveg'',''fruit'',''star F&V'',''\N'',TRUE,FALSE
+245,''fruitveg'',''fruit'',''guava'',''\N'',TRUE,FALSE
+246,''meatfishprotein'',''meatred'',''beef mince'',''\N'',TRUE,FALSE
+247,''meatfishprotein'',''meatred'',''bacon'',''\N'',TRUE,FALSE
+248,''meatfishprotein'',''meatred'',''beef sausage'',''\N'',TRUE,FALSE
+249,''meatfishprotein'',''meatred'',''pork sausage'',''\N'',TRUE,FALSE
+250,''meatfishprotein'',''meatred'',''ham'',''\N'',TRUE,FALSE
+251,''meatfishprotein'',''meatred'',''veal'',''\N'',TRUE,FALSE
+252,''meatfishprotein'',''meatred'',''beef steak'',''\N'',TRUE,FALSE
+253,''meatfishprotein'',''meatred'',''hot dog'',''\N'',TRUE,FALSE
+254,''meatfishprotein'',''meatred'',''pork chops'',''\N'',TRUE,FALSE
+255,''meatfishprotein'',''meatred'',''pork'',''\N'',TRUE,FALSE
+256,''meatfishprotein'',''meatred'',''pepperoni'',''\N'',TRUE,FALSE
+257,''meatfishprotein'',''meatred'',''pork mince'',''\N'',TRUE,FALSE
+258,''meatfishprotein'',''meatred'',''chorizo'',''\N'',TRUE,FALSE
+259,''meatfishprotein'',''meatred'',''salami'',''\N'',TRUE,FALSE
+260,''meatfishprotein'',''meatred'',''pork roast'',''\N'',TRUE,FALSE
+261,''meatfishprotein'',''meatred'',''pork ribs'',''\N'',TRUE,FALSE
+262,''meatfishprotein'',''meatred'',''venison'',''\N'',TRUE,FALSE
+263,''meatfishprotein'',''meatred'',''spam'',''\N'',TRUE,FALSE
+264,''meatfishprotein'',''meatred'',''lamb'',''\N'',TRUE,FALSE
+265,''meatfishprotein'',''meatred'',''pork shoulder'',''\N'',TRUE,FALSE
+266,''meatfishprotein'',''meatred'',''beef roast'',''\N'',TRUE,FALSE
+267,''meatfishprotein'',''meatred'',''bratwurst'',''\N'',TRUE,FALSE
+268,''meatfishprotein'',''meatred'',''prosciutto'',''\N'',TRUE,FALSE
+269,''meatfishprotein'',''meatred'',''bologna'',''\N'',TRUE,FALSE
+270,''meatfishprotein'',''meatred'',''corned beef'',''\N'',TRUE,FALSE
+271,''meatfishprotein'',''meatred'',''lamb chops'',''\N'',TRUE,FALSE
+272,''meatfishprotein'',''meatred'',''ground lamb'',''\N'',TRUE,FALSE
+273,''meatfishprotein'',''meatred'',''beef ribs'',''\N'',TRUE,FALSE
+274,''meatfishprotein'',''meatred'',''duck'',''\N'',TRUE,FALSE
+275,''meatfishprotein'',''meatred'',''pancetta'',''\N'',TRUE,FALSE
+276,''meatfishprotein'',''meatred'',''beef liver'',''\N'',TRUE,FALSE
+277,''meatfishprotein'',''meatred'',''leg of lamb'',''\N'',TRUE,FALSE
+278,''meatfishprotein'',''meatred'',''beef shank'',''\N'',TRUE,FALSE
+279,''meatfishprotein'',''meatred'',''pork belly'',''\N'',TRUE,FALSE
+280,''meatfishprotein'',''meatred'',''lamb shoulder'',''\N'',TRUE,FALSE
+281,''meatfishprotein'',''meatred'',''lamb shank'',''\N'',TRUE,FALSE
+282,''meatfishprotein'',''meatwhite'',''chicken breast'',''\N'',TRUE,FALSE
+283,''meatfishprotein'',''meatwhite'',''cooked chicken'',''\N'',TRUE,FALSE
+284,''meatfishprotein'',''meatwhite'',''chicken thighs'',''\N'',TRUE,FALSE
+285,''meatfishprotein'',''meatwhite'',''turkey mince'',''\N'',TRUE,FALSE
+286,''meatfishprotein'',''meatwhite'',''turkey'',''\N'',TRUE,FALSE
+287,''meatfishprotein'',''meatwhite'',''whole chicken'',''\N'',TRUE,FALSE
+288,''meatfishprotein'',''meatwhite'',''chicken leg'',''\N'',TRUE,FALSE
+289,''meatfishprotein'',''meatwhite'',''chicken wings'',''\N'',TRUE,FALSE
+290,''meatfishprotein'',''meatwhite'',''chicken mince'',''\N'',TRUE,FALSE
+291,''meatfishprotein'',''meatwhite'',''chicken roast'',''\N'',TRUE,FALSE
+292,''meatfishprotein'',''meatwhite'',''chicken giblets'',''\N'',TRUE,FALSE
+293,''nuts'',''nuts'',''peanut'',''\N'',TRUE,FALSE
+294,''nuts'',''nuts'',''chestnut'',''\N'',TRUE,FALSE
+295,''nuts'',''nuts'',''almond'',''\N'',TRUE,FALSE
+296,''nuts'',''nuts'',''cashew'',''\N'',TRUE,FALSE
+297,''nuts'',''nuts'',''walnut'',''\N'',TRUE,FALSE
+298,''nuts'',''nuts'',''pecan'',''\N'',TRUE,FALSE
+299,''nuts'',''nuts'',''flax'',''\N'',TRUE,FALSE
+300,''nuts'',''nuts'',''pine nut'',''\N'',TRUE,FALSE
+301,''nuts'',''nuts'',''pistachio'',''\N'',TRUE,FALSE
+302,''nuts'',''nuts'',''almond meal'',''\N'',TRUE,FALSE
+303,''nuts'',''nuts'',''praline'',''\N'',TRUE,FALSE
+304,''nuts'',''nuts'',''hazelnut'',''\N'',TRUE,FALSE
+305,''nuts'',''nuts'',''macadamia'',''\N'',TRUE,FALSE
+306,''nuts'',''nuts'',''almond paste'',''\N'',TRUE,FALSE
+307,''nuts'',''nuts'',''tree nuts'',''\N'',TRUE,FALSE
+308,''nuts'',''nuts'',''macaroon'',''\N'',TRUE,FALSE
+309,''fatsoils'',''oils'',''vegetable oil'',''\N'',TRUE,FALSE
+310,''fatsoils'',''oils'',''olive oil'',''\N'',TRUE,FALSE
+311,''fatsoils'',''oils'',''coconut oil'',''\N'',TRUE,FALSE
+312,''fatsoils'',''oils'',''sunflower oil'',''canola oil'',TRUE,FALSE
+313,''fatsoils'',''oils'',''canola oil'',''sunflower oil'',TRUE,FALSE
+314,''fatsoils'',''oils'',''peanut oil'',''\N'',TRUE,FALSE
+315,''fatsoils'',''oils'',''cooking spray'',''\N'',TRUE,FALSE
+316,''fatsoils'',''oils'',''sesame oil'',''\N'',TRUE,FALSE
+317,''fatsoils'',''oils'',''shortening'',''\N'',TRUE,FALSE
+318,''fatsoils'',''oils'',''lard'',''\N'',TRUE,FALSE
+319,''fatsoils'',''oils'',''almond oil'',''\N'',TRUE,FALSE
+320,''fatsoils'',''oils'',''grape seed oil'',''\N'',TRUE,FALSE
+321,''spicecondimentsauce'',''sauces'',''tomato sauce'',''\N'',TRUE,FALSE
+322,''spicecondimentsauce'',''sauces'',''french dressing'',''\N'',TRUE,FALSE
+323,''spicecondimentsauce'',''sauces'',''tomato paste'',''\N'',TRUE,FALSE
+324,''spicecondimentsauce'',''sauces'',''chicken gravy'',''\N'',TRUE,FALSE
+325,''spicecondimentsauce'',''sauces'',''pesto'',''\N'',TRUE,FALSE
+326,''spicecondimentsauce'',''sauces'',''beef gravy'',''\N'',TRUE,FALSE
+327,''spicecondimentsauce'',''sauces'',''alfredo sauce'',''\N'',TRUE,FALSE
+328,''spicecondimentsauce'',''sauces'',''curry paste'',''\N'',TRUE,FALSE
+329,''meatfishprotein'',''fish'',''flake'',''\N'',TRUE,FALSE
+330,''meatfishprotein'',''fish'',''barramundi'',''\N'',TRUE,FALSE
+331,''meatfishprotein'',''fish'',''trout'',''\N'',TRUE,FALSE
+332,''meatfishprotein'',''fish'',''blue grenadier'',''\N'',TRUE,FALSE
+333,''meatfishprotein'',''fish'',''john dory'',''\N'',TRUE,FALSE
+334,''meatfishprotein'',''fish'',''mackerel'',''\N'',TRUE,FALSE
+335,''meatfishprotein'',''fish'',''tilapia'',''\N'',TRUE,FALSE
+336,''meatfishprotein'',''fish'',''eel'',''\N'',TRUE,FALSE
+337,''meatfishprotein'',''fish'',''sea bass'',''\N'',TRUE,FALSE
+338,''meatfishprotein'',''fish'',''haddock'',''\N'',TRUE,FALSE
+339,''meatfishprotein'',''fish'',''smoked salmon'',''\N'',TRUE,FALSE
+340,''meatfishprotein'',''fish'',''salmon'',''\N'',TRUE,FALSE
+341,''meatfishprotein'',''fish'',''whiting'',''\N'',TRUE,FALSE
+342,''meatfishprotein'',''fish'',''anchovies'',''\N'',TRUE,FALSE
+343,''meatfishprotein'',''fish'',''snapper'',''\N'',TRUE,FALSE
+344,''meatfishprotein'',''fish'',''mullet'',''\N'',TRUE,FALSE
+345,''meatfishprotein'',''fish'',''tuna'',''\N'',TRUE,FALSE
+346,''meatfishprotein'',''fish'',''cod'',''\N'',TRUE,FALSE
+347,''meatfishprotein'',''seafood'',''shrimp'',''\N'',TRUE,FALSE
+348,''meatfishprotein'',''seafood'',''cockle'',''\N'',TRUE,FALSE
+349,''meatfishprotein'',''seafood'',''crab meat'',''\N'',TRUE,FALSE
+350,''meatfishprotein'',''seafood'',''crab'',''\N'',TRUE,FALSE
+351,''meatfishprotein'',''seafood'',''scallop'',''\N'',TRUE,FALSE
+352,''meatfishprotein'',''seafood'',''prawns'',''\N'',TRUE,FALSE
+353,''meatfishprotein'',''seafood'',''clam'',''\N'',TRUE,FALSE
+354,''meatfishprotein'',''seafood'',''lobster'',''\N'',TRUE,FALSE
+355,''meatfishprotein'',''seafood'',''octopus'',''\N'',TRUE,FALSE
+356,''meatfishprotein'',''seafood'',''calamari'',''\N'',TRUE,FALSE
+357,''meatfishprotein'',''seafood'',''squid'',''\N'',TRUE,FALSE
+358,''meatfishprotein'',''seafood'',''oyster'',''\N'',TRUE,FALSE
+359,''meatfishprotein'',''seafood'',''mussel'',''\N'',TRUE,FALSE
+360,''spicecondimentsauce'',''soupstock'',''meat stock'',''\N'',TRUE,FALSE
+361,''spicecondimentsauce'',''soupstock'',''champagne vinegar'',''\N'',TRUE,FALSE
+362,''spicecondimentsauce'',''soupstock'',''chicken stock'',''\N'',TRUE,FALSE
+363,''spicecondimentsauce'',''soupstock'',''mushroom soup'',''\N'',TRUE,FALSE
+364,''spicecondimentsauce'',''soupstock'',''beef stock'',''\N'',TRUE,FALSE
+365,''spicecondimentsauce'',''soupstock'',''tomato soup'',''\N'',TRUE,FALSE
+366,''spicecondimentsauce'',''soupstock'',''vegetable stock'',''\N'',TRUE,FALSE
+367,''spicecondimentsauce'',''soupstock'',''chicken soup'',''\N'',TRUE,FALSE
+368,''spicecondimentsauce'',''soupstock'',''celery soup'',''\N'',TRUE,FALSE
+369,''spicecondimentsauce'',''soupstock'',''onion soup'',''\N'',TRUE,FALSE
+370,''spicecondimentsauce'',''soupstock'',''vegetable soup'',''\N'',TRUE,FALSE
+371,''spicecondimentsauce'',''soupstock'',''dashi'',''\N'',TRUE,FALSE
+372,''spicecondimentsauce'',''spices'',''red pepper flake'',''\N'',TRUE,FALSE
+373,''spicecondimentsauce'',''spices'',''cinnamon'',''\N'',TRUE,FALSE
+374,''spicecondimentsauce'',''spices'',''chive'',''\N'',TRUE,FALSE
+375,''spicecondimentsauce'',''spices'',''vanilla'',''\N'',TRUE,FALSE
+376,''spicecondimentsauce'',''spices'',''garlic powder'',''\N'',TRUE,FALSE
+377,''spicecondimentsauce'',''spices'',''oregano'',''\N'',TRUE,FALSE
+378,''spicecondimentsauce'',''spices'',''paprika'',''\N'',TRUE,FALSE
+379,''spicecondimentsauce'',''spices'',''cayenne'',''\N'',TRUE,FALSE
+380,''spicecondimentsauce'',''spices'',''chili powder'',''\N'',TRUE,FALSE
+381,''spicecondimentsauce'',''spices'',''cumin'',''\N'',TRUE,FALSE
+382,''spicecondimentsauce'',''spices'',''italian seasoning'',''\N'',TRUE,FALSE
+383,''spicecondimentsauce'',''spices'',''thyme'',''\N'',TRUE,FALSE
+384,''spicecondimentsauce'',''spices'',''peppercorn'',''\N'',TRUE,FALSE
+385,''spicecondimentsauce'',''spices'',''nutmeg'',''\N'',TRUE,FALSE
+386,''spicecondimentsauce'',''spices'',''onion powder'',''\N'',TRUE,FALSE
+387,''spicecondimentsauce'',''spices'',''curry powder'',''\N'',TRUE,FALSE
+388,''spicecondimentsauce'',''spices'',''clove'',''\N'',TRUE,FALSE
+389,''spicecondimentsauce'',''spices'',''bay leaf'',''\N'',TRUE,FALSE
+390,''spicecondimentsauce'',''spices'',''taco seasoning'',''\N'',TRUE,FALSE
+391,''spicecondimentsauce'',''spices'',''sage'',''\N'',TRUE,FALSE
+392,''spicecondimentsauce'',''spices'',''ground nutmeg'',''\N'',TRUE,FALSE
+393,''spicecondimentsauce'',''spices'',''chinese five spice'',''\N'',TRUE,FALSE
+394,''spicecondimentsauce'',''spices'',''allspice'',''\N'',TRUE,FALSE
+395,''spicecondimentsauce'',''spices'',''turmeric'',''\N'',TRUE,FALSE
+396,''spicecondimentsauce'',''spices'',''ground coriander'',''\N'',TRUE,FALSE
+397,''spicecondimentsauce'',''spices'',''coriander'',''\N'',TRUE,FALSE
+398,''spicecondimentsauce'',''spices'',''cajun seasoning'',''\N'',TRUE,FALSE
+399,''spicecondimentsauce'',''spices'',''steak seasoning'',''\N'',TRUE,FALSE
+400,''spicecondimentsauce'',''spices'',''herbs'',''\N'',TRUE,FALSE
+401,''spicecondimentsauce'',''spices'',''celery salt'',''\N'',TRUE,FALSE
+402,''spicecondimentsauce'',''spices'',''vanilla essence'',''\N'',TRUE,FALSE
+403,''spicecondimentsauce'',''spices'',''poultry seasoning'',''\N'',TRUE,FALSE
+404,''spicecondimentsauce'',''spices'',''marjoram'',''\N'',TRUE,FALSE
+405,''spicecondimentsauce'',''spices'',''tarragon'',''\N'',TRUE,FALSE
+406,''spicecondimentsauce'',''spices'',''cardamom'',''\N'',TRUE,FALSE
+407,''spicecondimentsauce'',''spices'',''celery seed'',''\N'',TRUE,FALSE
+408,''spicecondimentsauce'',''spices'',''garam masala'',''\N'',TRUE,FALSE
+409,''spicecondimentsauce'',''spices'',''mustard seed'',''\N'',TRUE,FALSE
+410,''spicecondimentsauce'',''spices'',''chilli powder'',''\N'',TRUE,FALSE
+411,''spicecondimentsauce'',''spices'',''italian herbs'',''\N'',TRUE,FALSE
+412,''spicecondimentsauce'',''spices'',''saffron'',''\N'',TRUE,FALSE
+413,''spicecondimentsauce'',''spices'',''caraway'',''\N'',TRUE,FALSE
+414,''spicecondimentsauce'',''spices'',''herbes de provence'',''\N'',TRUE,FALSE
+415,''spicecondimentsauce'',''spices'',''italian spice'',''\N'',TRUE,FALSE
+416,''spicecondimentsauce'',''spices'',''star anise'',''\N'',TRUE,FALSE
+417,''spicecondimentsauce'',''spices'',''savory'',''\N'',TRUE,FALSE
+418,''spicecondimentsauce'',''spices'',''dill seed'',''\N'',TRUE,FALSE
+419,''spicecondimentsauce'',''spices'',''aniseed'',''\N'',TRUE,FALSE
+420,''spicecondimentsauce'',''spices'',''cacao'',''\N'',TRUE,FALSE
+421,''spicecondimentsauce'',''spices'',''tamarind'',''\N'',TRUE,FALSE
+422,''spicecondimentsauce'',''spices'',''cream of tartar'',''\N'',TRUE,FALSE
+423,''spicecondimentsauce'',''spices'',''bouillon'',''\N'',TRUE,FALSE
+424,''spicecondimentsauce'',''spices'',''ground ginger'',''\N'',TRUE,FALSE
+425,''spicecondimentsauce'',''spices'',''sesame seed'',''\N'',TRUE,FALSE
+426,''spicecondimentsauce'',''spices'',''apple cider'',''\N'',TRUE,FALSE
+427,''spicecondimentsauce'',''spices'',''chili sauce'',''\N'',TRUE,FALSE
+428,''spicecondimentsauce'',''spices'',''liquid smoke'',''\N'',TRUE,FALSE
+429,''spicecondimentsauce'',''spices'',''balsamic glaze'',''\N'',TRUE,FALSE
+430,''spicecondimentsauce'',''spices'',''hoisin sauce'',''\N'',TRUE,FALSE
+431,''spicecondimentsauce'',''spices'',''vegetable bouillon'',''\N'',TRUE,FALSE
+432,''spicecondimentsauce'',''spices'',''soya sauce'',''\N'',TRUE,FALSE
+433,''spicecondimentsauce'',''spices'',''rice wine'',''\N'',TRUE,FALSE
+434,''spicecondimentsauce'',''spices'',''rose water'',''\N'',TRUE,FALSE
+435,''sugarsweets'',''sweets'',''sugar'',''\N'',TRUE,FALSE
+436,''sugarsweets'',''sweets'',''honey'',''\N'',TRUE,FALSE
+437,''sugarsweets'',''sweets'',''confectioners sugar'',''\N'',TRUE,FALSE
+438,''sugarsweets'',''sweets'',''maple syrup'',''\N'',TRUE,FALSE
+439,''sugarsweets'',''sweets'',''syrup'',''\N'',TRUE,FALSE
+440,''sugarsweets'',''sweets'',''chocolate'',''\N'',TRUE,FALSE
+441,''sugarsweets'',''sweets'',''apple sauce'',''\N'',TRUE,FALSE
+442,''sugarsweets'',''sweets'',''graham cracker'',''\N'',TRUE,FALSE
+443,''sugarsweets'',''sweets'',''marshmallow'',''\N'',TRUE,FALSE
+444,''sugarsweets'',''sweets'',''potato chips'',''\N'',TRUE,FALSE
+445,''sugarsweets'',''sweets'',''pudding mix'',''\N'',TRUE,FALSE
+446,''sugarsweets'',''sweets'',''chocolate morsels'',''\N'',TRUE,FALSE
+447,''sugarsweets'',''sweets'',''bittersweet chocolate'',''\N'',TRUE,FALSE
+448,''sugarsweets'',''sweets'',''cookie dough'',''\N'',TRUE,FALSE
+449,''sugarsweets'',''sweets'',''chocolate syrup'',''\N'',TRUE,FALSE
+450,''sugarsweets'',''sweets'',''nutella'',''\N'',TRUE,FALSE
+451,''sugarsweets'',''sweets'',''apple juice'',''\N'',TRUE,FALSE
+452,''fruitveg'',''vegetables'',''peas'',''\N'',TRUE,FALSE
+453,''fruitveg'',''vegetables'',''garlic'',''\N'',TRUE,FALSE
+454,''fruitveg'',''vegetables'',''onion'',''\N'',TRUE,FALSE
+455,''fruitveg'',''vegetables'',''olive'',''\N'',TRUE,FALSE
+456,''fruitveg'',''vegetables'',''tomato'',''\N'',TRUE,FALSE
+457,''fruitveg'',''vegetables'',''potato'',''\N'',TRUE,FALSE
+458,''fruitveg'',''vegetables'',''salad greens'',''\N'',TRUE,FALSE
+459,''fruitveg'',''vegetables'',''carrot'',''\N'',TRUE,FALSE
+460,''fruitveg'',''vegetables'',''basil'',''\N'',TRUE,FALSE
+461,''fruitveg'',''vegetables'',''parsley'',''\N'',TRUE,FALSE
+462,''fruitveg'',''vegetables'',''rosemary'',''\N'',TRUE,FALSE
+463,''fruitveg'',''vegetables'',''bell pepper'',''\N'',TRUE,FALSE
+464,''fruitveg'',''vegetables'',''chili pepper'',''\N'',TRUE,FALSE
+465,''fruitveg'',''vegetables'',''corn'',''\N'',TRUE,FALSE
+466,''fruitveg'',''vegetables'',''ginger'',''\N'',TRUE,FALSE
+467,''fruitveg'',''vegetables'',''mushroom'',''\N'',TRUE,FALSE
+468,''fruitveg'',''vegetables'',''broccoli'',''\N'',TRUE,FALSE
+469,''fruitveg'',''vegetables'',''spinach'',''\N'',TRUE,FALSE
+470,''fruitveg'',''vegetables'',''green beans'',''\N'',TRUE,FALSE
+471,''fruitveg'',''vegetables'',''celery'',''\N'',TRUE,FALSE
+472,''fruitveg'',''vegetables'',''red onion'',''\N'',TRUE,FALSE
+473,''fruitveg'',''vegetables'',''cilantro'',''\N'',TRUE,FALSE
+474,''fruitveg'',''vegetables'',''cucumber'',''\N'',TRUE,FALSE
+475,''fruitveg'',''vegetables'',''pickle'',''\N'',TRUE,FALSE
+476,''fruitveg'',''vegetables'',''dill'',''\N'',TRUE,FALSE
+477,''fruitveg'',''vegetables'',''avocado'',''\N'',TRUE,FALSE
+478,''fruitveg'',''vegetables'',''sweet potato'',''\N'',TRUE,FALSE
+479,''fruitveg'',''vegetables'',''zucchini'',''\N'',TRUE,FALSE
+480,''fruitveg'',''vegetables'',''shallot'',''\N'',TRUE,FALSE
+481,''fruitveg'',''vegetables'',''mixed vegetables'',''\N'',TRUE,FALSE
+482,''fruitveg'',''vegetables'',''cabbage'',''\N'',TRUE,FALSE
+483,''fruitveg'',''vegetables'',''asparagus'',''\N'',TRUE,FALSE
+484,''fruitveg'',''vegetables'',''cauliflower'',''\N'',TRUE,FALSE
+485,''fruitveg'',''vegetables'',''mint'',''\N'',TRUE,FALSE
+486,''fruitveg'',''vegetables'',''pumpkin'',''\N'',TRUE,FALSE
+487,''fruitveg'',''vegetables'',''kale'',''\N'',TRUE,FALSE
+488,''fruitveg'',''vegetables'',''frozen vegetables'',''\N'',TRUE,FALSE
+489,''fruitveg'',''vegetables'',''scallion'',''\N'',TRUE,FALSE
+490,''fruitveg'',''vegetables'',''squash'',''\N'',TRUE,FALSE
+491,''fruitveg'',''vegetables'',''sundried tomato'',''\N'',TRUE,FALSE
+492,''fruitveg'',''vegetables'',''horseradish'',''\N'',TRUE,FALSE
+493,''fruitveg'',''vegetables'',''beetroot'',''\N'',TRUE,FALSE
