@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">What Can I Cook</string>
+    <string name="appName">What Can I Cook?</string>
+    <string name="about">About the App</string>
+    <string name="dietary_needs">Dietary Requirements</string>
+    <string name="main_menu_name">Choose a Cuisine</string>
+    <string name="appAboutInfo">Text about app goes here</string>
+    <string name="logButtonText">Log Messages</string>
+    <string name="backButtonText">Back</string>
+    <string name="breakfastContentDesc">Pick Breakfast</string>
+    <string name="lunchContentDesc">Pick Dinner</string>
+    <string name="dessertContentDesc">Pick Dessert</string>
+    <string name="savedrecipebuttonContentDesc">Saved Recipes</string>
+    <string name="pantrybuttonContentDesc">My Pantry</string>
+    <string name="lunchButtonContentDesc">Pick Lunch</string>
+    <string name="savedRecipesTitle">These are saved recipes</string>
+    <string name="pantryTitle">In my pantry currently:</string>
+    <string name="aboutAppDesc">About the App</string>
 </resources>

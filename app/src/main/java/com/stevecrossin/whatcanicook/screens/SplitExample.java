@@ -16,7 +16,7 @@ public class SplitExample {
         // split the array using ':' as a delimiter
         String[] parts = str.split(":");
 
-        System.out.println("Using : as a delimiter "+Arrays.toString(parts));
+        System.out.println("Using : as a delimiter " + Arrays.toString(parts));
 
         // split the array using 'd' as a delimiter
         parts = str.split("d");

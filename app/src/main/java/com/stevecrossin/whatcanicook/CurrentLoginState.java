@@ -1,4 +1,6 @@
 package com.stevecrossin.whatcanicook;
 
-public class CurrentLoginState {
+import android.support.v7.app.AppCompatActivity;
+
+public class CurrentLoginState extends AppCompatActivity {
 }

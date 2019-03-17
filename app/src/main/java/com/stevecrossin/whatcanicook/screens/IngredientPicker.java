@@ -1,10 +1,32 @@
 package com.stevecrossin.whatcanicook.screens;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
+import com.stevecrossin.whatcanicook.R;
+
+import org.w3c.dom.Text;
+
 /**
  * This class handles the ingredients functions of the application.
  */
 
-public class Ingredients {
+public class IngredientPicker extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ingredientspicker);
+
+        Intent intent = getIntent();
+
+        String breakfast = intent.getStringExtra("DISH_TYPE");
+        TextView textView = findViewById(R.id.dishchosentext);
+        textView.setText(breakfast);
+    }
+
 
     String ingredienttype;//Type of ingredient e.g meat, veg
     String ingredientname;//Name of ingredient
@@ -13,12 +35,12 @@ public class Ingredients {
     Boolean ingredientselected = false;//Whether or not the ingredient has been selected for recipe searching. Defaults to false.
 
     /**
-     * This will perform the initial load of the ingredients from the ingredients.csv file and its display in the Ingredients activity
+     * This will perform the initial load of the ingredients from the ingredients.csv file and its display in the IngredientPicker activity
      */
     public void loadIngredients() {
     /*
-    This method will be performed in the background once the user navigates to the Ingredients chooser activity from the main app landing page.
-    MainActivity will pass the dish option that was clicked (e.g. breakfast, dessert) and pass this to Ingredients activity, which will update the
+    This method will be performed in the background once the user navigates to the IngredientPicker chooser activity from the main app landing page.
+    MainActivity will pass the dish option that was clicked (e.g. breakfast, dessert) and pass this to IngredientPicker activity, which will update the
     label at the top of the activity to "What's for breakfast/dinner/dessert etc.
 
     It also needs to
@@ -40,13 +62,13 @@ public class Ingredients {
     }
 
 
-    //Handles the display of the selected ingredients in the My Ingredients activity
+    //Handles the display of the selected ingredients in the My IngredientPicker activity
     public void checkIngredients() {
         /*
-        When the user clicks the "Check my ingredients" the UI will navigate to the My Ingredients activity,
+        When the user clicks the "Check my ingredients" the UI will navigate to the My IngredientPicker activity,
         and the recyclerview in that activity will be updated with the list of selected ingredients, where ingredientselected = true
 
-        Ingredients can be removed from the list individually, and when an ingredient is removed from the My Ingredients Activity,
+        IngredientPicker can be removed from the list individually, and when an ingredient is removed from the My IngredientPicker Activity,
         it will perform a background task to change the ingredientselected database field to false
         */
     }
@@ -54,7 +76,7 @@ public class Ingredients {
     //Passes the selected ingredients to Recipe class
     public void searchRecipe() {
         /*
-        Once the user clicks the "Find Recipes" button in the My Ingredients activity, the following actions need to occur
+        Once the user clicks the "Find Recipes" button in the My IngredientPicker activity, the following actions need to occur
         1. Query the ingredients database for all ingredients where ingredientselectable = true, and ingredientselected = true with a getter method
         This will pull a list of all currently selected valid ingredients. As a secondary piece of information, if any selected ingredients have alternatives,
         this will be collected as well.

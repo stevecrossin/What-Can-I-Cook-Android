@@ -4,7 +4,7 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-import com.stevecrossin.whatcanicook.screens.Ingredients;
+import com.stevecrossin.whatcanicook.screens.IngredientPicker;
 import com.stevecrossin.whatcanicook.screens.Intolerances;
 import com.stevecrossin.whatcanicook.screens.Logs;
 import com.stevecrossin.whatcanicook.screens.Pantry;
@@ -17,7 +17,7 @@ import com.stevecrossin.whatcanicook.screens.Recipes;
  *
 
 
-@Database(entities = {Ingredients.class, Intolerances.class, Logs.class, Pantry.class, Recipes.class}, version = 1, exportSchema = false)
+@Database(entities = {IngredientPicker.class, Intolerances.class, Logs.class, Pantry.class, Recipes.class}, version = 1, exportSchema = false)
 public abstract class AppDb extends RoomDatabase {
     private static AppDb INSTANCE;
 

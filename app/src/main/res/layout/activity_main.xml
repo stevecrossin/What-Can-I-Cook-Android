@@ -4,15 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primaryColor"
     tools:context=".screens.MainActivity">
 
     <TextView
+        android:id="@+id/aboutTitle"
         android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/main_menu_name"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/breakfastbutton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/breakfastContentDesc"
+        android:onClick="breakfastIngredients"
+        app:layout_constraintBottom_toTopOf="@+id/dinner"
+        app:layout_constraintEnd_toStartOf="@+id/lunch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutTitle"
+        app:srcCompat="@drawable/breakfast" />
+
+    <ImageView
+        android:id="@+id/lunch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/lunchButtonContentDesc"
+        android:onClick="lunchIngredients"
+        app:layout_constraintBottom_toTopOf="@+id/dessert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/breakfastbutton"
+        app:layout_constraintTop_toBottomOf="@+id/aboutTitle"
+        app:srcCompat="@drawable/lunch" />
+
+    <ImageView
+        android:id="@+id/dinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/lunchContentDesc"
+        android:onClick="dinnerIngredients"
+        app:layout_constraintBottom_toTopOf="@+id/savedRecipes"
+        app:layout_constraintEnd_toStartOf="@+id/dessert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/breakfastbutton"
+        app:srcCompat="@drawable/dinner" />
+
+    <ImageView
+        android:id="@+id/dessert"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/dessertContentDesc"
+        android:onClick="dessertIngredients"
+        app:layout_constraintBottom_toTopOf="@+id/myPantry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dinner"
+        app:layout_constraintTop_toBottomOf="@+id/lunch"
+        app:srcCompat="@drawable/dessert" />
+
+    <ImageView
+        android:id="@+id/savedRecipes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/savedrecipebuttonContentDesc"
+        android:onClick="savedRecipes"
+        app:layout_constraintBottom_toTopOf="@+id/dietaryNeedsButton"
+        app:layout_constraintEnd_toStartOf="@+id/myPantry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dinner"
+        app:srcCompat="@drawable/savedrecipes" />
+
+    <ImageView
+        android:id="@+id/myPantry"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/pantrybuttonContentDesc"
+        android:onClick="userPantry"
+        app:layout_constraintBottom_toTopOf="@+id/dietaryNeedsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/savedRecipes"
+        app:layout_constraintTop_toBottomOf="@+id/dessert"
+        app:srcCompat="@drawable/ingredientsicon" />
+
+    <Button
+        android:id="@+id/dietaryNeedsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/secondaryColor"
+        android:onClick="dietaryPreferences"
+        android:text="@string/dietary_needs"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/savedRecipes" />
+
+    <ImageButton
+        android:id="@+id/aboutApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/aboutAppDesc"
+        android:onClick="aboutApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/aboutTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abouticon" />
 
 </android.support.constraint.ConstraintLayout>

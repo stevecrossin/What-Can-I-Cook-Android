@@ -1,9 +1,21 @@
 package com.stevecrossin.whatcanicook.screens;
 
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.stevecrossin.whatcanicook.R;
+
 /**
  * This class contains all possible intolerances.
  */
-public class Intolerances {
+public class Intolerances extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dietaryneeds);
+    }
+
     String intolerancename;
     String intoleranceexcludes;
     Boolean intolerancesactive = false; //By default, no intolerances   are active
