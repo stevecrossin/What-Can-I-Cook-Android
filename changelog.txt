@@ -14,4 +14,17 @@ Sunday 18 March
 * Colour scheme for application has been implemented, action bar has been disabled for main view
 * Room database code and data objects code has begun to be written but is not yet functional
 
-Still working on: UI design to be created, splash screen.
+End of Sunday 18 March:
+
+* Room databsse implementation still not functional
+* Core layouts that have been created: splash screen tested and functional, main activity functioning with layouts working correctly and dynamically adjusting to different screen sizes, pantry view working correctly. The start of an intolerance view,
+and saved recipes view has been created.
+
+* Passing of dish type to ingredients picker screen coded, tested and verified working
+* Manifest file updated, all core XML files have been created
+
+To do in Week 1
+* Implement recycler views in the rest of UI that calls for it
+* Implement login screen and insert between splash screen and main UI screen
+* Gather recipe data (at least 30 as proof of concept)
+* Start to build out database tables (this may take ~1 week as database structure more complex than SIT207 databases)

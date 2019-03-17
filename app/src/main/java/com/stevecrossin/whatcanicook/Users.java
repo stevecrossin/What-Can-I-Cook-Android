@@ -1,9 +1,11 @@
 package com.stevecrossin.whatcanicook;
 
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * This class contains all users that can login to the application. It also handles part of the login features
  */
-public class Users {
+public class Users extends AppCompatActivity {
 
     String username;
     String passkey;

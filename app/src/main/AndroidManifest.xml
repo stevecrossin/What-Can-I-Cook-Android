@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.stevecrossin.whatcanicook">
 
     <!-- List of permissions that the app will have access to. On first initialisation, the application will ask the user to confirm permission to access these. -->
@@ -13,14 +14,51 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.stevecrossin.whatcanicook.screens.MainActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"><!--Ignoring index warning for now, I'll fix this later-->
+
+        <!--Notes splash screen is the launcher screen-->
+        <activity android:name=".SplashScreenInit">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".screens.MainActivity"
+            android:label="@string/main_menu_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".screens.IngredientPicker"
+            android:label="Choose Ingredients"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".screens.Intolerances"
+            android:label="@string/dietary_needs"
+            android:parentActivityName=".screens.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".screens.About"
+            android:label="@string/about"
+            android:parentActivityName=".screens.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".screens.Pantry"
+            android:label="Currently in Pantry"
+            android:parentActivityName=".screens.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".screens.SavedRecipes"
+            android:label="Saved Recipes"
+            android:parentActivityName=".screens.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

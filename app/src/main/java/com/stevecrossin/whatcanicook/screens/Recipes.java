@@ -20,7 +20,7 @@ public class Recipes {
     public void findRecipes() {
        /*
         This method will perform the following actions to check for recipe results
-        1. Take the parcel passed by the Ingredients.searchRecipe class
+        1. Take the parcel passed by the IngredientPicker.searchRecipe class
         2. Query the ingredients provided against the recipes database, and check each row's ingredients column.
         Data in the ingredients column is stored in this format, separated by semicolons.
         "(chicken, 200, grams); (oil, 50, ml)"
@@ -52,9 +52,9 @@ public class Recipes {
 
        The recyclerview of the reciperesults will be updated, and output will be need to be presented in the following format:
 
-       Recipe Name, Ingredients user has e.g. "Roast chicken with potatoes, uses your chicken, potatoes and olive oil"
+       Recipe Name, IngredientPicker user has e.g. "Roast chicken with potatoes, uses your chicken, potatoes and olive oil"
        If a substituite is recommended, it will instead state
-       "Recipe Name, Ingredients they have, "You can substituite your X instead of Y"
+       "Recipe Name, IngredientPicker they have, "You can substituite your X instead of Y"
        e.g. "Roast chicken with potatoes, uses your chicken and potatoes. You can use your canola oil instead of olive oil"
        */
     }
@@ -75,7 +75,7 @@ public class Recipes {
         This method is executed when the "Start Over" button is clicked on the "Recipe Details" activity.
         As the selected ingredients need to be reset to defaults, this button will perform a database update on
         the ingredients database table to set all ingredientselected fields back to false, which will have the effect
-        of clearing the "My Ingredients" list.
+        of clearing the "My IngredientPicker" list.
          */
     }
 }
