@@ -1,7 +1,9 @@
 # What Can I Cook - Android Application
 
-This is a working directory for an Android application that will form the substance for my assignment 
+This is a working directory for an Android application that will form the substance for our assignment
 a Deakin University subject - SIT305. The application is coded in Java.
+
+Project by Steve Crossin: SID217109001 and Trong Hieu Lam: SID218738651
 
 The purpose of the application will be to provide the end user with recipes that they can cook, by selecting
 from a list of ingredients that they already have at home in their pantry. It will cater to a variety of different
@@ -27,6 +29,4 @@ The changelog.txt file has more information on daily progress on this project.
 Unless permission is otherwise provided, this code is NOT free to be reused or modified for any purpose. Please contact me
 at stevecrossin@gmail.com if you wish to use or otherwise modify this code
 
-# Henry note:
-- can I get some SIDs in this file please :)
-- you can remove this message once done
+
