@@ -26,3 +26,7 @@ The changelog.txt file has more information on daily progress on this project.
 
 Unless permission is otherwise provided, this code is NOT free to be reused or modified for any purpose. Please contact me
 at stevecrossin@gmail.com if you wish to use or otherwise modify this code
+
+# Henry note:
+- can I get some SIDs in this file please :)
+- you can remove this message once done
