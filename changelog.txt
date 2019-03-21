@@ -23,8 +23,7 @@ and saved recipes view has been created.
 * Passing of dish type to ingredients picker screen coded, tested and verified working
 * Manifest file updated, all core XML files have been created
 
-To do in Week 1
-* Implement recycler views in the rest of UI that calls for it
-* Implement login screen and insert between splash screen and main UI screen
-* Gather recipe data (at least 30 as proof of concept)
-* Start to build out database tables (this may take ~1 week as database structure more complex than SIT207 databases)
+Changes made as of 21 March - milestone 1 complete
+
+* All core UI is complete including dietary intolerances
+* Initial code to enable login screen to function working

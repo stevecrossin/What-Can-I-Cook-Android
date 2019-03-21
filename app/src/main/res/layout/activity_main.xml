@@ -7,9 +7,23 @@
     android:background="@color/primaryColor"
     tools:context=".screens.MainActivity">
 
+    <ImageButton
+        android:id="@+id/aboutApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/aboutAppDesc"
+        android:onClick="aboutApp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/aboutTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abouticon" />
+
     <TextView
         android:id="@+id/aboutTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
@@ -17,7 +31,6 @@
         android:text="@string/main_menu_name"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,22 +143,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/savedRecipes" />
-
-    <ImageButton
-        android:id="@+id/aboutApp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/aboutAppDesc"
-        android:onClick="aboutApp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/aboutTitle"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abouticon" />
 
 </android.support.constraint.ConstraintLayout>

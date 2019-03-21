@@ -16,4 +16,20 @@
     <string name="savedRecipesTitle">These are saved recipes</string>
     <string name="pantryTitle">In my pantry currently:</string>
     <string name="aboutAppDesc">About the App</string>
+    <string name="dietaryRequirementsTitle">Dietary Requirements</string>
+    <string name="switchGlutenLabel">Gluten Free</string>
+    <string name="switchNutsLabel">No nuts</string>
+    <string name="switchSeafoodLabel">No seafood</string>
+    <string name="switchAlcoholLabel">No alcohol</string>
+    <string name="switchVeganLabel">Vegan</string>
+    <string name="switchLactoVegLabel">Lacto-Veg</string>
+    <string name="switchLactoOvoLabel">Lacto-Ovo-Veg</string>
+    <string name="switchPescaterianLabel">Pescaterian</string>
+    <string name="switchDairyLabel">Dairy/Lactose Free</string>
+    <string name="switchEggLabel">Egg free</string>
+    <string name="switchSoyLabel">No soy</string>
+    <string name="switchRedMeatLabel">No red meat</string>
+    <string name="switchPorkLabel">No pork</string>
+    <string name="excludeingredientdesc">excludeIngredientDesc</string>
+    <string name="exclude_an_ingredient">Exclude an Ingredient</string>
 </resources>
