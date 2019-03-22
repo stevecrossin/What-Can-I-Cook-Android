@@ -10,8 +10,8 @@
         android:id="@+id/dietaryIntolerancesTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:text="@string/dietaryRequirementsTitle"
         android:textAlignment="center"
@@ -24,174 +24,118 @@
         android:id="@+id/switchVegan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/switchVeganLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dietaryIntolerancesTitle" />
+        tools:layout_editor_absoluteY="48dp" />
 
     <Switch
         android:id="@+id/switchLactoVeg"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchLactoVegLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchVegan" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="91dp" />
 
     <Switch
         android:id="@+id/switchLactoOvo"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchLactoOvoLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchLactoVeg" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="134dp" />
 
     <Switch
         android:id="@+id/switchPescaterian"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchPescaterianLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchLactoOvo" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="178dp" />
 
     <Switch
         android:id="@+id/switchGluten"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchGlutenLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchPescaterian" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="221dp" />
 
     <Switch
         android:id="@+id/switchLactose"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchDairyLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchGluten" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="264dp" />
 
     <Switch
         android:id="@+id/switchEgg"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchEggLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchLactose" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="307dp" />
 
     <Switch
         android:id="@+id/switchNuts"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchNutsLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchEgg" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="350dp" />
 
     <Switch
         android:id="@+id/switchSoy"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchSoyLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchNuts" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="393dp" />
 
     <Switch
         android:id="@+id/switchSeafood"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchSeafoodLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchSoy" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="436dp" />
 
     <Switch
         android:id="@+id/switchAlcohol"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchAlcoholLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchSeafood" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="479dp" />
 
     <Switch
         android:id="@+id/switchRedMeat"
-        android:layout_width="0dp"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/switchRedMeatLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchAlcohol" />
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="522dp" />
 
     <Switch
         android:id="@+id/switchPork"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="683dp"
+        android:layout_height="wrap_content"
         android:text="@string/switchPorkLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchRedMeat"/>
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="525dp" />
 
     <EditText
         android:id="@+id/excludeIngredient"
-        android:layout_width="wrap_content"
+        android:layout_width="683dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:autofillHints=""
-        android:ems="10"
         android:hint="@string/exclude_an_ingredient"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchRedMeat"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="487dp"
         tools:targetApi="o" />
 
 
