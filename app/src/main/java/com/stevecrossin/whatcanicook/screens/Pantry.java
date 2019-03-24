@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.stevecrossin.whatcanicook.R;
 
 /*
-This class covers the Pantry screen and database. IngredientPicker added here will be stored in a Room Database
+This class covers the Pantry screen and database. CategoryPicker added here will be stored in a Room Database
 called Pantry, with ingredients selected by the user displayed
  */
 public class Pantry extends AppCompatActivity {
@@ -39,12 +39,12 @@ public class Pantry extends AppCompatActivity {
 
     private void addPantryItem() {
         /*
-        This method will be called when a user clicks the "Add IngredientPicker" button from the Pantry activity. The following steps need to occur
-        1. The UI will navigate from the "Pantry" activity to a modified view of the Add IngredientPicker activity normally used for recipe searches.
-        The label at the top needs to be updated to "Add IngredientPicker"
-        The ingredientselected method as noted in IngredientPicker.java will be duplicated partially here, when a user selects an ingredient, it will be added to a list
+        This method will be called when a user clicks the "Add CategoryPicker" button from the Pantry activity. The following steps need to occur
+        1. The UI will navigate from the "Pantry" activity to a modified view of the Add CategoryPicker activity normally used for recipe searches.
+        The label at the top needs to be updated to "Add CategoryPicker"
+        The ingredientselected method as noted in CategoryPicker.java will be duplicated partially here, when a user selects an ingredient, it will be added to a list
         in the background.
-        Once the user has selected all their ingredients and clicks "Check My IngredientPicker", the user will be taken to the "My IngredientPicker".
+        Once the user has selected all their ingredients and clicks "Check My CategoryPicker", the user will be taken to the "My CategoryPicker".
         If any ingredients selected are already in the pantry, an alert or some notification needs to be presented notifying the user of this.
         activity and be presented with their ingredients. The button presented will say "save ingredients to pantry" instead of "Find Recipes".
         2. The app will then take the strings for each individual ingredient, and add them to the pantry database, one per line, in the background.

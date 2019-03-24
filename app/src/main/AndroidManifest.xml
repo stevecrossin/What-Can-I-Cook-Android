@@ -31,8 +31,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".screens.IngredientPicker"
-            android:label="Choose Ingredients"
+            android:name=".screens.CategoryPicker"
+            android:label="Choose Categories"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity

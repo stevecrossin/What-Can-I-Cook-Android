@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.stevecrossin.whatcanicook.R;
 
@@ -23,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.breakfastbutton);
         String breakfast = ("What's for Breakfast");
 
-        Intent intent = new Intent(this, IngredientPicker.class);
+        Intent intent = new Intent(this, CategoryPicker.class);
         intent.putExtra("DISH_TYPE", breakfast);
         startActivity(intent);
     }
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.lunch);
         String lunch = ("What's for Lunch?");
 
-        Intent intent = new Intent(this, IngredientPicker.class);
+        Intent intent = new Intent(this, CategoryPicker.class);
         intent.putExtra("DISH_TYPE", lunch);
         startActivity(intent);
     }
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.dinner);
         String dessert = ("What's for Dinner?");
 
-        Intent intent = new Intent(this, IngredientPicker.class);
+        Intent intent = new Intent(this, CategoryPicker.class);
         intent.putExtra("DISH_TYPE", dessert);
         startActivity(intent);
     }
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.dessert);
         String dessert = ("What's for Dessert?");
 
-        Intent intent = new Intent(this, IngredientPicker.class);
+        Intent intent = new Intent(this, CategoryPicker.class);
         intent.putExtra("DISH_TYPE", dessert);
         startActivity(intent);
     }

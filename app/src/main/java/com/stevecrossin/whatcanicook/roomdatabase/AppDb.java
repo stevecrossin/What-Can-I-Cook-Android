@@ -4,16 +4,18 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-import com.stevecrossin.whatcanicook.screens.IngredientPicker;
+
+import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.screens.Intolerances;
 import com.stevecrossin.whatcanicook.screens.Logs;
 import com.stevecrossin.whatcanicook.screens.Pantry;
 import com.stevecrossin.whatcanicook.screens.Recipes;
-/***
- * @Database(entities = {IngredientPicker.class, Intolerances.class, Logs.class, Pantry.class, Recipes.class}, version = 1, exportSchema = false)
- * public abstract class AppDb extends RoomDatabase {
+
+ @Database(entities = {Ingredient.class}, version = 1, exportSchema = false)
+ public abstract class AppDb extends RoomDatabase {
     private static AppDb INSTANCE;
 
+    public abstract IngredientDao ingredientDao();
 
     static AppDb getDatabase(final Context context) {
         if (INSTANCE == null) {
@@ -29,5 +31,3 @@ import com.stevecrossin.whatcanicook.screens.Recipes;
         return INSTANCE;
     }
 }
-
-***/
