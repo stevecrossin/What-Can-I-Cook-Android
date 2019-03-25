@@ -33,4 +33,8 @@
     <string name="excludeingredientdesc">excludeIngredientDesc</string>
     <string name="exclude_an_ingredient">Exclude an Ingredient</string>
     <string name="placeholder_ingredients">Placeholder_Ingredients</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="enter_a_password">Enter a password</string>
+    <string name="buttonL">Log In</string>
+    <string name="login_sign_up">Login/Sign Up</string>
 </resources>
