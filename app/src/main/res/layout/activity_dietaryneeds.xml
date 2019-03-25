@@ -28,6 +28,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchVeganLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchLactoVeg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dietaryIntolerancesTitle" />
@@ -40,6 +41,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchLactoVegLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchLactoOvo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchVegan" />
@@ -52,6 +54,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchLactoOvoLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchPescaterian"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchLactoVeg" />
@@ -64,6 +67,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchPescaterianLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchGluten"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchLactoOvo" />
@@ -76,8 +80,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchGlutenLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchLactose"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchPescaterian" />
 
@@ -89,8 +93,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchDairyLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchEgg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchGluten" />
 
@@ -102,8 +106,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchEggLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchNuts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchLactose" />
 
@@ -115,6 +119,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchNutsLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchSoy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchEgg" />
@@ -127,6 +132,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchSoyLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchSeafood"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchNuts" />
@@ -139,6 +145,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchSeafoodLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchAlcohol"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchSoy" />
@@ -151,6 +158,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchAlcoholLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchRedMeat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchSeafood" />
@@ -163,6 +171,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:text="@string/switchRedMeatLabel"
+        app:layout_constraintBottom_toTopOf="@+id/switchPork"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchAlcohol" />
@@ -170,19 +179,22 @@
     <Switch
         android:id="@+id/switchPork"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/switchPorkLabel"
+        app:layout_constraintBottom_toTopOf="@+id/excludeIngredient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchRedMeat"/>
+        app:layout_constraintTop_toBottomOf="@+id/switchRedMeat" />
 
     <EditText
         android:id="@+id/excludeIngredient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:autofillHints=""
         android:ems="10"
@@ -191,7 +203,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchRedMeat"
+        app:layout_constraintTop_toBottomOf="@id/switchPork"
         tools:targetApi="o" />
 
 
