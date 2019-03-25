@@ -163,7 +163,15 @@ public class CategoryPicker extends AppCompatActivity {
         categoryViewAdapter = new CategoryViewAdapter(new ArrayList<String>(), new CategoryViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(String category) {
-                System.out.println("Ingredient category");
+                Log.d(TAG, "Row is clicked");
+                if (category != null){
+                    Log.d(TAG, "Category: " + category);
+                } else
+                    Log.d(TAG, "Category is null");
+
+                Intent intent = new Intent(CategoryPicker.this, IngredientPicker.class);
+                intent.putExtra("CATEGORY", category);
+                startActivity(intent);
             }
         } );
 

@@ -58,6 +58,7 @@
             android:label="Saved Recipes"
             android:parentActivityName=".screens.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".screens.IngredientPicker" />
 
     </application>
 

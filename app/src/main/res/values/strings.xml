@@ -32,4 +32,5 @@
     <string name="switchPorkLabel">No pork</string>
     <string name="excludeingredientdesc">excludeIngredientDesc</string>
     <string name="exclude_an_ingredient">Exclude an Ingredient</string>
+    <string name="placeholder_ingredients">Placeholder_Ingredients</string>
 </resources>

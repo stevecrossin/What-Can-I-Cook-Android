@@ -20,6 +20,9 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredient;")
     List<Ingredient> getAllIngredients();
 
+    @Query("SELECT * FROM ingredient WHERE ingredient_category = :ingredientCategory;")
+    List<Ingredient> getIngredientsByCategory(String ingredientCategory);
+
     @Query("SELECT DISTINCT ingredient_category FROM ingredient;")
     List<String> getAllCategories();
 

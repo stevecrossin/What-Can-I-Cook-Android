@@ -8,7 +8,7 @@
     android:padding="2dp">
 
     <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/ingredient_img"
+        android:id="@+id/category_img"
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,21 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/ingredient_name"
+            android:id="@+id/category_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:textSize="24sp" />
-
-        <CheckBox
-            android:id="@+id/ingredient_checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false" />
 
     </android.support.v7.widget.LinearLayoutCompat>
 
