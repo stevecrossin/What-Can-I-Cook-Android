@@ -42,8 +42,12 @@ Sub task:
 + Logic check if there's data existed in the DB, if not, insert. Next time the app loads, it will first check if there's data already in DB before inserting ingredient.
 + Load unique categories into the recycleview.
 
-Monday 25 March
+Monday 25 March - Trong
 + Further display each ingredient in each category (dynamically)
 + Create recyleview, view holder and database query methods for displaying incredient
 + Create new layout and new activity
 + Passing category between intents.
+
+Mon 25 March - Steve Crossin
++ Fix issue with layout on dietary needs
++ create initial layout for login scene
