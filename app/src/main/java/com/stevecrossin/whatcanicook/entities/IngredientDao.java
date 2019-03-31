@@ -1,4 +1,4 @@
-package com.stevecrossin.whatcanicook.roomdatabase;
+package com.stevecrossin.whatcanicook.entities;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;

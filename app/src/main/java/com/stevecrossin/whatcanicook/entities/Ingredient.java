@@ -67,5 +67,4 @@ public class Ingredient {
     public void setIngredientAlternative(String ingredientAlternative) {
         this.ingredientAlternative = ingredientAlternative;
     }
-
 }
