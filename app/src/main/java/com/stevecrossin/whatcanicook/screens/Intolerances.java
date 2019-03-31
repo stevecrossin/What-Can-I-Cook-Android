@@ -1,5 +1,7 @@
 package com.stevecrossin.whatcanicook.screens;
 
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -7,13 +9,27 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.entities.Ingredient;
+import com.stevecrossin.whatcanicook.entities.Intolerance;
+import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.ArrayList;
 
 /**
  * This class contains all possible intolerances.
  */
 public class Intolerances extends AppCompatActivity {
     Switch switchNuts, switchGluten, switchSoy, switchPork, switchLactoVeg, switchAlcohol, switchVegan, switchRedMeat, switchSeafood, switchLactoOvo, switchLactose, switchPescaterian, switchEgg;
+    private AppDataRepo repository;
     private static final String TAG = "Intolerances";
+    private ArrayList<String> intoleranceList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +48,9 @@ public class Intolerances extends AppCompatActivity {
         switchLactose = findViewById(R.id.switchLactose);
         switchPescaterian = findViewById(R.id.switchPescaterian);
         switchEgg = findViewById(R.id.switchEgg);
+
+        loadIntolerancesToDb();
+
         switchNuts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -136,6 +155,8 @@ public class Intolerances extends AppCompatActivity {
 
             }
         });
+
+        repository = new AppDataRepo(this);
     }
 
     String intolerancename;
@@ -143,7 +164,7 @@ public class Intolerances extends AppCompatActivity {
     Boolean intolerancesactive = false; //By default, no intolerances   are active
 
     //Handles loading of ingredient intolerances list
-    public void loadIntolerances() {
+    public ArrayList<Intolerance> loadIntolerancesFromCsv() {
     /*
     This method will handle the loading of the intolerances list. It will perform the following steps.
     1. Load all possible intolerances from intolerances.csv file, and use that data to update the Intolerance room database with any new entries
@@ -151,6 +172,32 @@ public class Intolerances extends AppCompatActivity {
     each intolerance separating them.
     3. It will then mark the relevant intolerance as active in the intolerance database, ands also update the UI of the activity to mark the selected intolerances as active.
     */
+        try {
+            ArrayList<Intolerance> intolerances = new ArrayList<>();
+            Reader in = new InputStreamReader(getResources().openRawResource(R.raw.intolerances));
+            Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
+            for (CSVRecord record : records) {
+                String intoleranceID =  record.get(0);
+                String intoleranceName = record.get(1);
+                String intoleranceIngredients = record.get(2);
+                intoleranceIngredients = intoleranceIngredients.replace("''", "");
+                String[] ingredients = intoleranceIngredients.split(":");
+
+                for (String ingredient : ingredients){
+                    Intolerance intolerance = new Intolerance(Integer.parseInt(intoleranceID), intoleranceName, ingredient);
+                    intolerances.add(intolerance);
+                }
+
+            }
+            return intolerances;
+        } catch (FileNotFoundException ex){
+            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
+        } catch (IOException ex){
+            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
+        } catch (Exception ex){
+            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
+        }
+        return  null;
     }
 
     public void intoleranceSelected() {
@@ -161,6 +208,25 @@ public class Intolerances extends AppCompatActivity {
         The intolerances database will also be updated to mark the relevant intolerance as active/inactive.
         The Intolerance activity UI will also be refreshed so that the intolerance clicked is made active/inactive.
         */
+
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public void loadIntolerancesToDb() {
+
+        final ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
+
+        new AsyncTask<Void, Void, ArrayList<Intolerance>>() {
+            @Override
+            protected ArrayList<Intolerance> doInBackground(Void... voids) {
+                if (!repository.haveIntolerance()) {
+                    repository.insertIntolerances(intolerances);
+                }
+                ArrayList<Intolerance> intoleranceArrayList = new ArrayList<>();
+                intoleranceArrayList.addAll(repository.getAllIntolerances());
+                return intoleranceArrayList;
+            }
+        }.execute();
 
     }
 }
