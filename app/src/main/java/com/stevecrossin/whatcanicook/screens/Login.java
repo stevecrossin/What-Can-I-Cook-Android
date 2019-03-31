@@ -23,15 +23,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.example.stevencrossin.contactstest.CredAndPass;
-import com.example.stevencrossin.contactstest.R;
-import com.example.stevencrossin.contactstest.LoginState;
-import com.example.stevencrossin.contactstest.roomdb.AppDataRepository;
-import com.example.stevencrossin.contactstest.roomdb.UserRecord;
 import com.stevecrossin.whatcanicook.CurrentLoginState;
 import com.stevecrossin.whatcanicook.PasswordHash;
-import com.stevecrossin.whatcanicook.screens.MainActivity;
 
 /**
  * A login screen that offers login via email/password. This code is based off the default Login Activity provided in Android Studio, and was modified based on that.
