@@ -51,3 +51,9 @@ Monday 25 March - Trong
 Mon 25 March - Steve Crossin
 + Fix issue with layout on dietary needs
 + create initial layout for login scene
+
+Week 4 End - Henry notes
++ Good progress so far, but the last week has been strangely quiet.
++ This file needs more dates, so I can match dates with attendance.php entries and ensure fair grades at end of trimester.
+
+
