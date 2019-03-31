@@ -37,4 +37,6 @@
     <string name="enter_a_password">Enter a password</string>
     <string name="buttonL">Log In</string>
     <string name="login_sign_up">Login/Sign Up</string>
+    <string name="logTitle">Logs</string>
+    <string name="btnClearLogs">Clear Logs</string>
 </resources>
