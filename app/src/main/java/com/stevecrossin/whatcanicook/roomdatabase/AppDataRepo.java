@@ -50,8 +50,8 @@ public class AppDataRepo {
         return ingredientDao.getIngredientsByCategory(category);
     }
 
-    public List<String> getIngredientsByIntolerance(String intolerance) {
-        return intoleranceDao.getIngredientsByIntolerance(intolerance);
+    public List<Intolerance> getIntoleranceByName(String intolerance) {
+        return intoleranceDao.getIntoleranceByName(intolerance);
     }
 
     public List<String> getAllCategories() {
@@ -81,9 +81,27 @@ public class AppDataRepo {
     }
 
 
-    public void insertIntolerances(ArrayList<Intolerance> intolerances) {
-        intoleranceDao.addIntolerances(intolerances);
+    public void insertIntolerance(Intolerance intolerance) {
+        intoleranceDao.addIntolerance(intolerance);
     }
+
+    public void deleteAllIngredient() {
+        ingredientDao.deleteAll();
+    }
+
+    public void deleteAllIntolerance() {
+        intoleranceDao.deleteAll();
+    }
+
+    public void excludeIngredient(String ingredientName){
+        ingredientDao.excludeIngredient(ingredientName);
+    }
+
+    public void includeIngredient(String ingredientName){
+        ingredientDao.includeIngredient(ingredientName);
+    }
+
+
     /**
      * Perform dao operation to get users from Users db.
      */

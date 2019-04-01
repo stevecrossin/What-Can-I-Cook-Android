@@ -52,8 +52,20 @@ Mon 25 March - Steve Crossin
 + Fix issue with layout on dietary needs
 + create initial layout for login scene
 
+
+Sunday 31 March
++  load intolerance from csv
++  insert Intolerance to DB - not fully function 
++  get Intolerance from DB - not fully implemented 
++  DAO, Entity for Intolerance are created...
+
 Week 4 End - Henry notes
 + Good progress so far, but the last week has been strangely quiet.
 + This file needs more dates, so I can match dates with attendance.php entries and ensure fair grades at end of trimester.
 
+Monday 01/04
++ successfully load intolerance into DB
++ successfully get intolerance from DB
++ exclude ingredient when toggle button - still experience unknown bugs
++ modify raw csv files to make it easier to work with
 

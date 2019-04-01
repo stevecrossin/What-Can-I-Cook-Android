@@ -80,6 +80,8 @@ public class CategoryPicker extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<String>>() {
             @Override
             protected ArrayList<String> doInBackground(Void... voids) {
+                if (repository.haveIngredient())
+                    repository.deleteAllIngredient();
                 if (!repository.haveIngredient()) {
                     repository.insertIngredients(ingredients);
                 }

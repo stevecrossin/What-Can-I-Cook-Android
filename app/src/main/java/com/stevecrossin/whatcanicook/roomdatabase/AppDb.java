@@ -16,7 +16,7 @@ import com.stevecrossin.whatcanicook.screens.Pantry;
 import com.stevecrossin.whatcanicook.screens.Recipes;
 
 
-@Database(entities = {Ingredient.class, Intolerance.class, User.class}, version = 1, exportSchema = false)
+@Database(entities = {Ingredient.class, Intolerance.class, User.class}, version = 2, exportSchema = false)
  public abstract class AppDb extends RoomDatabase {
 
     public abstract IngredientDao ingredientDao();
@@ -37,6 +37,7 @@ import com.stevecrossin.whatcanicook.screens.Recipes;
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             AppDb.class, "app_database")
+                            .fallbackToDestructiveMigration()
                             .build();
 
                 }

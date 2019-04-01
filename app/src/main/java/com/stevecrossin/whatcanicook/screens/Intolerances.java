@@ -9,7 +9,6 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.stevecrossin.whatcanicook.R;
-import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
@@ -49,114 +48,100 @@ public class Intolerances extends AppCompatActivity {
         switchPescaterian = findViewById(R.id.switchPescaterian);
         switchEgg = findViewById(R.id.switchEgg);
 
+        repository = new AppDataRepo(this);
         loadIntolerancesToDb();
 
         switchNuts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
-
+                intoleranceSelected(isChecked, "No nuts");
+                Log.d(TAG, "Nut checked: " + isChecked);
             }
         });
         switchGluten.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Gluten");
 
             }
         });
         switchSoy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Soy");
 
             }
         });
         switchPork.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Pork-free");
 
             }
         });
         switchLactoVeg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Lacto-veg");
 
             }
         });
         switchAlcohol.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Alcohol");
 
             }
         });
         switchVegan.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Vegan");
 
             }
         });
         switchRedMeat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Red meat-free");
 
             }
         });
         switchSeafood.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Seafood");
 
             }
         });
         switchLactoOvo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Lacto-ovo-veg");
 
             }
         });
         switchLactose.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Dairy");
 
             }
         });
         switchPescaterian.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                intoleranceSelected(isChecked, "Pescatarian");
 
             }
         });
         switchEgg.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
-
+                intoleranceSelected(isChecked, "Eggs");
             }
         });
 
-        repository = new AppDataRepo(this);
     }
 
     String intolerancename;
@@ -177,17 +162,14 @@ public class Intolerances extends AppCompatActivity {
             Reader in = new InputStreamReader(getResources().openRawResource(R.raw.intolerances));
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
             for (CSVRecord record : records) {
-                String intoleranceID =  record.get(0);
                 String intoleranceName = record.get(1);
                 String intoleranceIngredients = record.get(2);
-                intoleranceIngredients = intoleranceIngredients.replace("''", "");
                 String[] ingredients = intoleranceIngredients.split(":");
 
                 for (String ingredient : ingredients){
-                    Intolerance intolerance = new Intolerance(Integer.parseInt(intoleranceID), intoleranceName, ingredient);
+                    Intolerance intolerance = new Intolerance(intoleranceName, ingredient);
                     intolerances.add(intolerance);
                 }
-
             }
             return intolerances;
         } catch (FileNotFoundException ex){
@@ -200,7 +182,8 @@ public class Intolerances extends AppCompatActivity {
         return  null;
     }
 
-    public void intoleranceSelected() {
+    @SuppressLint("StaticFieldLeak")
+    public void intoleranceSelected(final boolean isSelected, final String intoleranceName) {
         /*
         This method is responsible for taking action when an intolerance is updated in the Intolerance activity
         When a user clicks on the on/off slider to mark it as active/inactive, in a background task, this information will be passed to the Users.updateUser method
@@ -209,22 +192,43 @@ public class Intolerances extends AppCompatActivity {
         The Intolerance activity UI will also be refreshed so that the intolerance clicked is made active/inactive.
         */
 
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                ArrayList<Intolerance> list = new ArrayList<>();
+                list.addAll(repository.getIntoleranceByName(intoleranceName));
+                if (isSelected){
+                    for (Intolerance intolerance : list){
+                        repository.excludeIngredient(intolerance.getIngredientName());
+                        Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
+                    }
+                } else {
+                    for (Intolerance intolerance : list){
+                        repository.includeIngredient(intolerance.getIngredientName());
+                        Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
+                    }
+                }
+                return null;
+            }
+        }.execute();
+
     }
+
+
 
     @SuppressLint("StaticFieldLeak")
     public void loadIntolerancesToDb() {
-
-        final ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
-
-        new AsyncTask<Void, Void, ArrayList<Intolerance>>() {
+        new AsyncTask<Void, Void, Void>() {
             @Override
-            protected ArrayList<Intolerance> doInBackground(Void... voids) {
+            protected Void doInBackground(Void... voids) {
+                ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
+                if (repository.haveIntolerance())
+                    repository.deleteAllIntolerance();
                 if (!repository.haveIntolerance()) {
-                    repository.insertIntolerances(intolerances);
+                    for (Intolerance intolerance : intolerances)
+                        repository.insertIntolerance(intolerance);
                 }
-                ArrayList<Intolerance> intoleranceArrayList = new ArrayList<>();
-                intoleranceArrayList.addAll(repository.getAllIntolerances());
-                return intoleranceArrayList;
+                return null;
             }
         }.execute();
 

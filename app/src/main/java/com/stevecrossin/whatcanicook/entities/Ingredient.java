@@ -17,6 +17,8 @@ public class Ingredient {
     private String ingredientName;
     @ColumnInfo(name = "ingredient_alternative")
     private String ingredientAlternative;
+    @ColumnInfo(name = "ingredient_excluded")
+    private boolean ingredientExcluded = false;
 
 
     public Ingredient(int ingredientID, String ingredientCategory, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
@@ -66,5 +68,13 @@ public class Ingredient {
 
     public void setIngredientAlternative(String ingredientAlternative) {
         this.ingredientAlternative = ingredientAlternative;
+    }
+
+    public boolean isIngredientExcluded() {
+        return ingredientExcluded;
+    }
+
+    public void setIngredientExcluded(boolean ingredientExcluded) {
+        this.ingredientExcluded = ingredientExcluded;
     }
 }

@@ -1,6 +1,7 @@
 package com.stevecrossin.whatcanicook.roomdatabase;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
@@ -12,12 +13,15 @@ import java.util.List;
 
 @Dao
 public interface IntoleranceDao {
-    @Query("SELECT ingredient_name FROM intolerance WHERE intolerance_name = :intoleranceName;")
-    List<String> getIngredientsByIntolerance(String intoleranceName);
+    @Query("SELECT * FROM intolerance WHERE intolerance_name = :intoleranceName;")
+    List<Intolerance> getIntoleranceByName(String intoleranceName);
 
     @Insert
-    void addIntolerances(ArrayList<Intolerance> intolerances);
+    void addIntolerance(Intolerance intolerance);
+
     @Query("SELECT * FROM intolerance;")
     List<Intolerance> getAllIntolerances();
 
+    @Query("DELETE FROM intolerance;")
+    void deleteAll();
 }

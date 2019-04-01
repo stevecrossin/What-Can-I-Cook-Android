@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Intolerance {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate=true)
     @ColumnInfo(name = "intolerance_id")
     private int intoleranceID;
 
@@ -17,8 +17,7 @@ public class Intolerance {
     @ColumnInfo(name = "ingredient_name")
     private String ingredientName;
 
-    public Intolerance(int intoleranceID, String intoleranceName, String ingredientName) {
-        this.intoleranceID = intoleranceID;
+    public Intolerance(String intoleranceName, String ingredientName) {
         this.intoleranceName = intoleranceName;
         this.ingredientName = ingredientName;
     }

@@ -20,8 +20,14 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredient;")
     List<Ingredient> getAllIngredients();
 
-    @Query("SELECT * FROM ingredient WHERE ingredient_category = :ingredientCategory;")
+    @Query("SELECT * FROM ingredient WHERE ingredient_category = :ingredientCategory AND ingredient_excluded = 0;")
     List<Ingredient> getIngredientsByCategory(String ingredientCategory);
+
+    @Query("UPDATE ingredient SET ingredient_excluded = 1 WHERE ingredient_name = :ingredientName;")
+    void excludeIngredient(String ingredientName);
+
+    @Query("UPDATE ingredient SET ingredient_excluded = 0 WHERE ingredient_name = :ingredientName;")
+    void includeIngredient(String ingredientName);
 
     @Query("SELECT DISTINCT ingredient_category FROM ingredient;")
     List<String> getAllCategories();
@@ -31,4 +37,7 @@ public interface IngredientDao {
 
     @Insert
     void addIngredient(Ingredient ingredient);
+
+    @Query("DELETE FROM ingredient;")
+    void deleteAll();
 }
