@@ -64,6 +64,10 @@ public class IngredientPicker extends AppCompatActivity {
             protected ArrayList<Ingredient> doInBackground(Void... voids) {
                 ArrayList<Ingredient> ingredients = new ArrayList<>();
                 ingredients.addAll(repository.getIngredientsByCategory(category));
+                for (Ingredient ingredient : ingredients){
+                    Log.d(TAG, "ingredient name: " + ingredient.getIngredientName());
+                    Log.d(TAG, "excluded : " + ingredient.isIngredientExcluded());
+                }
                 return ingredients;
             }
 

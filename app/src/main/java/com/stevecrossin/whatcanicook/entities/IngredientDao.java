@@ -23,6 +23,9 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredient WHERE ingredient_category = :ingredientCategory AND ingredient_excluded = 0;")
     List<Ingredient> getIngredientsByCategory(String ingredientCategory);
 
+    @Query("SELECT * FROM ingredient WHERE ingredient_name = :name;")
+    List<Ingredient> getIngredientsByName(String name);
+
     @Query("UPDATE ingredient SET ingredient_excluded = 1 WHERE ingredient_name = :ingredientName;")
     void excludeIngredient(String ingredientName);
 

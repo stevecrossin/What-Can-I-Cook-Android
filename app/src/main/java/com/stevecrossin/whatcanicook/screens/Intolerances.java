@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
@@ -201,6 +202,9 @@ public class Intolerances extends AppCompatActivity {
                     for (Intolerance intolerance : list){
                         repository.excludeIngredient(intolerance.getIngredientName());
                         Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
+                        ArrayList<Ingredient> ingredients = new ArrayList<>();
+                        ingredients.addAll(repository.getIngredientsByName(intolerance.getIngredientName()));
+                        Log.d(TAG, "Is excluded checked: " + ingredients.get(0).isIngredientExcluded());
                     }
                 } else {
                     for (Intolerance intolerance : list){
@@ -222,8 +226,6 @@ public class Intolerances extends AppCompatActivity {
             @Override
             protected Void doInBackground(Void... voids) {
                 ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
-                if (repository.haveIntolerance())
-                    repository.deleteAllIntolerance();
                 if (!repository.haveIntolerance()) {
                     for (Intolerance intolerance : intolerances)
                         repository.insertIntolerance(intolerance);

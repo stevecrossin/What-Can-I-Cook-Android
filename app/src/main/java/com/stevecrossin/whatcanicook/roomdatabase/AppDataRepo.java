@@ -49,6 +49,9 @@ public class AppDataRepo {
     public List<Ingredient> getIngredientsByCategory(String category) {
         return ingredientDao.getIngredientsByCategory(category);
     }
+    public List<Ingredient> getIngredientsByName(String name) {
+        return ingredientDao.getIngredientsByName(name);
+    }
 
     public List<Intolerance> getIntoleranceByName(String intolerance) {
         return intoleranceDao.getIntoleranceByName(intolerance);

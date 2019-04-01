@@ -69,3 +69,7 @@ Monday 01/04
 + exclude ingredient when toggle button - still experience unknown bugs
 + modify raw csv files to make it easier to work with
 
+Tuesday 02/04
++ Successfully exclude/include ingredient if user toggle the intolerance switch
++ Saving state of switch is not implemented
++ Next step: import recipe :D
