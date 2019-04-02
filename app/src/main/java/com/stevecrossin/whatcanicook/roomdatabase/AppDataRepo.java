@@ -6,6 +6,10 @@ import android.os.AsyncTask;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
+import com.stevecrossin.whatcanicook.entities.Recipe;
+import com.stevecrossin.whatcanicook.entities.RecipeDao;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredientsDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 
@@ -22,6 +26,8 @@ public class AppDataRepo {
     private IngredientDao ingredientDao;
     private IntoleranceDao intoleranceDao;
     private UserDao userDao;
+    private RecipeDao recipeDao;
+    private RecipeIngredientsDao recipeIngredientsDao;
 
     /**
      * private intoleranceDao intoleranceDao;
@@ -102,6 +108,26 @@ public class AppDataRepo {
 
     public void includeIngredient(String ingredientName){
         ingredientDao.includeIngredient(ingredientName);
+    }
+
+    public List<Recipe> getAllRecipes(){
+        return recipeDao.getAllRecipes();
+    }
+
+    public List<Recipe> getRecipesByName(String recipeName){
+        return recipeDao.getRecipesByName(recipeName);
+    }
+
+    public void insertRecipe(ArrayList<Recipe> recipes){
+        recipeDao.addRecipes(recipes);
+    }
+
+    public void insertRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients){
+        recipeIngredientsDao.addRecipeIngredients(recipeIngredients);
+    }
+
+    public List<RecipeIngredients> getAllRecipesAndIngredients(){
+        return recipeIngredientsDao.getAllRecipesAndIngredients();
     }
 
 

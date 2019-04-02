@@ -8,6 +8,8 @@ import android.content.Context;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
+import com.stevecrossin.whatcanicook.entities.Recipe;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 import com.stevecrossin.whatcanicook.screens.Intolerances;
@@ -16,7 +18,7 @@ import com.stevecrossin.whatcanicook.screens.Pantry;
 import com.stevecrossin.whatcanicook.screens.Recipes;
 
 
-@Database(entities = {Ingredient.class, Intolerance.class, User.class}, version = 2, exportSchema = false)
+@Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class}, version = 3, exportSchema = false)
  public abstract class AppDb extends RoomDatabase {
 
     public abstract IngredientDao ingredientDao();

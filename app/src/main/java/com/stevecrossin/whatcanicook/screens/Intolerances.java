@@ -31,7 +31,7 @@ public class Intolerances extends AppCompatActivity {
     private static final String TAG = "Intolerances";
     private ArrayList<String> intoleranceList = new ArrayList<>();
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dietaryneeds);
 
@@ -235,6 +235,7 @@ public class Intolerances extends AppCompatActivity {
         }.execute();
 
     }
+
 }
 
 

@@ -19,6 +19,8 @@ public class Ingredient {
     private String ingredientAlternative;
     @ColumnInfo(name = "ingredient_excluded")
     private boolean ingredientExcluded = false;
+    @ColumnInfo(name = "ingredient_selected")
+    private boolean ingredientSelected = false;
 
 
     public Ingredient(int ingredientID, String ingredientCategory, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
@@ -76,5 +78,13 @@ public class Ingredient {
 
     public void setIngredientExcluded(boolean ingredientExcluded) {
         this.ingredientExcluded = ingredientExcluded;
+    }
+
+    public boolean isIngredientSelected() {
+        return ingredientSelected;
+    }
+
+    public void setIngredientSelected(boolean ingredientSelected) {
+        this.ingredientSelected = ingredientSelected;
     }
 }

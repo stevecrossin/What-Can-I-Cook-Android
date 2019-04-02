@@ -73,3 +73,9 @@ Tuesday 02/04
 + Successfully exclude/include ingredient if user toggle the intolerance switch
 + Saving state of switch is not implemented
 + Next step: import recipe :D
+
+Wednesday 03/04
++ Create Dao for recipe & Setup all app repo function
++ Modify Ingredient Entity such that it has property "isSelected"
++ Modify category picker layout, add 1 button to move to the "Recipes Available scene"
++ Next step: import recipe :D
