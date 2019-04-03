@@ -79,3 +79,7 @@ Wednesday 03/04
 + Modify Ingredient Entity such that it has property "isSelected"
 + Modify category picker layout, add 1 button to move to the "Recipes Available scene"
 + Next step: import recipe :D
+
+Week 5, Wednesday 3/April
+- Excellent commenting, including comments/pseudocode of functions before they're written.
+- Do include, in the function comment before the function name, any arguments / return type / how to call the function.
