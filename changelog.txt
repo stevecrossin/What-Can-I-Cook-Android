@@ -2,19 +2,19 @@ Changelog:
 
 Milestone 1 (Week 3 progress - Steve Crossin) - almost complete, however UI still being worked on
 
-Saturday 17 March
+Saturday 17 March - Steve
 * Ingredients, Intolerances, Logs, Pantry, Recipes and Users java classes have been created with core methods and instructions
 on how to implement in pseudocode.
 * Ingredients.csv has been populated, completed and formatted as per database table requirement.
 
-Sunday 18 March
+Sunday 18 March - Steve
 * Intolerances.csv has been created, completed and formatted per database table requirements - gluten filter needs to be confirmed to ensure filter not too restrictive
 * SplitExample.java has been sourced to determine and test how to split strings from csv files
 * All core java files have been created but not populated with pseudocode or actual code except as noted on Sat 17 entry
 * Colour scheme for application has been implemented, action bar has been disabled for main view
 * Room database code and data objects code has begun to be written but is not yet functional
 
-End of Sunday 18 March:
+End of Sunday 18 March - Steve
 
 * Room databsse implementation still not functional
 * Core layouts that have been created: splash screen tested and functional, main activity functioning with layouts working correctly and dynamically adjusting to different screen sizes, pantry view working correctly. The start of an intolerance view,
@@ -23,12 +23,17 @@ and saved recipes view has been created.
 * Passing of dish type to ingredients picker screen coded, tested and verified working
 * Manifest file updated, all core XML files have been created
 
-Changes made as of 21 March - milestone 1 complete
+Changes made as of 21 March - milestone 1 complete - Steve
 
 * All core UI is complete including dietary intolerances
 * Initial code to enable login screen to function working
 
-Sunday 24 March - Monday 25 March
+22 March - Steve
++ Corrected issues with intolerances layout
++ Continued work on parsing recipes CSV
++ Continued to build database tables
+
+Sunday 24 March - Monday 25 March - Hieu
 * Reading from ingredients.csv and extract unique categories and display to the recycle view. 
 This is done dynamically so whenever there're new ingredient we don't have to manually add to the list.
 Sub task:
@@ -42,6 +47,7 @@ Sub task:
 + Logic check if there's data existed in the DB, if not, insert. Next time the app loads, it will first check if there's data already in DB before inserting ingredient.
 + Load unique categories into the recycleview.
 
+
 Monday 25 March - Trong
 + Further display each ingredient in each category (dynamically)
 + Create recyleview, view holder and database query methods for displaying incredient
@@ -52,33 +58,47 @@ Mon 25 March - Steve Crossin
 + Fix issue with layout on dietary needs
 + create initial layout for login scene
 
+Tuesday 26 March - Steve
++ Login UI created and back end code started to be written
 
-Sunday 31 March
+Thursday 28 March - Steve
++ continued work on login class code, resolved more UI layout issues
+
+Sunday 31 March - Trong
 +  load intolerance from csv
 +  insert Intolerance to DB - not fully function 
 +  get Intolerance from DB - not fully implemented 
 +  DAO, Entity for Intolerance are created...
 
+Sunday 31 March - Steve
++ Completed more of the login code
++ Discussed path forward with project partner in sit-down meeting
++ Recipes CSV clean completed - (70 recipes selected for proof of concept)
+
 Week 4 End - Henry notes
 + Good progress so far, but the last week has been strangely quiet.
 + This file needs more dates, so I can match dates with attendance.php entries and ensure fair grades at end of trimester.
 
-Monday 01/04
+Monday 01/04 - Trong
 + successfully load intolerance into DB
 + successfully get intolerance from DB
 + exclude ingredient when toggle button - still experience unknown bugs
 + modify raw csv files to make it easier to work with
 
-Tuesday 02/04
+Tuesday 02/04 - Trong
 + Successfully exclude/include ingredient if user toggle the intolerance switch
 + Saving state of switch is not implemented
 + Next step: import recipe :D
 
-Wednesday 03/04
+Wednesday 03/04 - Trong
 + Create Dao for recipe & Setup all app repo function
 + Modify Ingredient Entity such that it has property "isSelected"
 + Modify category picker layout, add 1 button to move to the "Recipes Available scene"
 + Next step: import recipe :D
+
+Wednesday 3 April - Steve
++ changelog updated with progress thus far
++ login code to be completed by end of week, start to write recipe functions
 
 Week 5, Wednesday 3/April
 - Excellent commenting, including comments/pseudocode of functions before they're written.
