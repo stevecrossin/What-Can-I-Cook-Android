@@ -50,7 +50,7 @@ Sub task:
 
 Monday 25 March - Trong
 + Further display each ingredient in each category (dynamically)
-+ Create recyleview, view holder and database query methods for displaying incredient
++ Create recyleview, view holder and database query methods for displaying in
 + Create new layout and new activity
 + Passing category between intents.
 
@@ -99,7 +99,10 @@ Wednesday 03/04 - Trong
 Wednesday 3 April - Steve
 + changelog updated with progress thus far
 + login code to be completed by end of week, start to write recipe functions
++ create reciperesults layout, recipe row xml, and flesh out ingredientspicker and ingredientsdetails.xml files
 
 Week 5, Wednesday 3/April
 - Excellent commenting, including comments/pseudocode of functions before they're written.
 - Do include, in the function comment before the function name, any arguments / return type / how to call the function.
+
+
