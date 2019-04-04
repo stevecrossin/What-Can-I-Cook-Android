@@ -52,6 +52,10 @@ public class AppDataRepo {
         return ingredientDao.getAllIngredients();
     }
 
+    public List<Ingredient> getAllCheckedIngredients(){
+        return ingredientDao.getAllCheckedIngredients();
+    }
+
     public List<Ingredient> getIngredientsByCategory(String category) {
         return ingredientDao.getIngredientsByCategory(category);
     }

@@ -110,3 +110,9 @@ Subtask:
  - Add more function in Dao regarding to SQL Update
  - Add event listener for ViewHolder checkbox
  - Testing
+
+ Thursday 04/04
+ + Successfully displaying checked ingredient in "My ingredient pages"
+ Sub task:
+  - Create Recycle view and View adapter, view holder
+  - Add more function into Dao of ingredient to select only checked ingredient

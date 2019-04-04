@@ -36,6 +36,10 @@ public class IngredientViewHolder extends RecyclerView.ViewHolder {
     
     void bindRow(Ingredient ingredient) {
         ingredientName.setText(ingredient.getIngredientName());
+        if (ingredient.isIngredientSelected())
+            ingredientCheckBox.setChecked(true);
+        else
+            ingredientCheckBox.setChecked(false);
         ingredientCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
