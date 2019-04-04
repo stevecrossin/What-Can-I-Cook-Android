@@ -60,6 +60,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".screens.IngredientPicker" />
         <activity android:name=".screens.MyIngredients" />
+        <activity android:name=".screens.Recipes" />
 
     </application>
 

@@ -1,12 +1,71 @@
 package com.stevecrossin.whatcanicook.screens;
 
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
+import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.adapter.MyIngredientViewAdapter;
+import com.stevecrossin.whatcanicook.adapter.RecipeViewAdapter;
+import com.stevecrossin.whatcanicook.entities.Ingredient;
+import com.stevecrossin.whatcanicook.entities.Intolerance;
+import com.stevecrossin.whatcanicook.entities.Recipe;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
+import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.ArrayList;
+
 //This class handles all the recipes functions for this application, including reading the recipes and providing recipe results
-public class Recipes {
+public class Recipes extends AppCompatActivity {
     String recipename;
     String recipeingredients;//ingredients
     String recipesteps;
+    private AppDataRepo repository;
+    RecipeViewAdapter recipeViewAdapter;
+    private static final String TAG = "Recipes";
+    ArrayList<Recipe> recipesFromCsv = new ArrayList<>();
+    ArrayList<RecipeIngredients> recipeIngredientsFromCsv = new ArrayList<>();
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_recipe_results);
+
+        repository = new AppDataRepo(this);
+        loadRecipesFromCsv();
+        loadRecipesToDb();
+        loadRecipeIngredientsToDb();
+        initRecyclerItems();
+    }
+
+    private void initRecyclerItems() {
+        RecyclerView recipesList = findViewById(R.id.recipes_list);
+        recipesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        //ingredientsList.setHasFixedSize(false);
+        recipeViewAdapter = new RecipeViewAdapter(new ArrayList<Recipe>(), new RecipeViewAdapter.rowClickedListener() {
+            @Override
+            public void onRowClicked(Recipe recipe) {
+                Log.d(TAG, "onRowClicked: " + recipe.getRecipeName() + " " + recipe.getRecipeIngredients());
+            }
+
+        } );
+        recipesList.setAdapter(recipeViewAdapter);
+        loadRecipes();
+    }
+
+    @SuppressLint("StaticFieldLeak")
     //Load recipes into memory from csv file, apply filters.
     public void loadRecipes() {
         /*
@@ -14,10 +73,83 @@ public class Recipes {
         1. Load all recipes from recipes.csv stored in permanent storage
         2. Update the contents of the recipes room database with any new entries in the csv
        */
+        new AsyncTask<Void, Void, ArrayList<Recipe>>() {
+            @Override
+            protected ArrayList<Recipe> doInBackground(Void... voids) {
+                ArrayList<Recipe> recipes = new ArrayList<>();
+                recipes.addAll(repository.getAllRecipes());
+                for (Recipe recipe : recipes){
+                    Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
+                    Log.d(TAG, "Recipe ingredients : " + recipe.getRecipeIngredients());
+                }
+                return recipes;
+            }
+
+            @Override
+            protected void onPostExecute(ArrayList<Recipe> recipes) {
+                super.onPostExecute(recipes);
+                recipeViewAdapter.updateRecipes(recipes);
+            }
+        }.execute();
+    }
+
+    private void loadRecipesFromCsv() {
+        try {
+            Reader in = new InputStreamReader(getResources().openRawResource(R.raw.recipes));
+            Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
+            for (CSVRecord record : records) {
+                String recipeName =  record.get(0);
+                String ingredientLists = record.get(1);
+                String ingredientString = record.get(2);
+                String recipeSteps = record.get(3);
+                String[] ingredients = ingredientLists.split(":");
+
+                for (String ingredient : ingredients){
+                    RecipeIngredients recipeIngredients = new RecipeIngredients(recipeName, ingredient);
+                    recipeIngredientsFromCsv.add(recipeIngredients);
+                }
+                Recipe recipe = new Recipe(recipeName, ingredientString, recipeSteps);
+                recipesFromCsv.add(recipe);
+            }
+        } catch (FileNotFoundException ex){
+            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
+        } catch (IOException ex){
+            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
+        } catch (Exception ex){
+            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public void loadRecipesToDb() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                if (!repository.haveRecipe()) {
+                    repository.insertRecipes(recipesFromCsv);
+                }
+                return null;
+            }
+        }.execute();
+
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    public void loadRecipeIngredientsToDb() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                if (!repository.haveRecipeIngredients()) {
+                    repository.insertRecipeIngredients(recipeIngredientsFromCsv);
+                }
+                return null;
+            }
+        }.execute();
+
     }
 
     //Perform queries with ingredients data to find recipe results
-    public void findRecipes() {
+    //public void findRecipes() {
        /*
         This method will perform the following actions to check for recipe results
         1. Take the parcel passed by the CategoryPicker.searchRecipe class
@@ -39,7 +171,7 @@ public class Recipes {
 
         This method will continue until all rows in the table have been queried
        */
-    }
+    //}
 
     //Display recipe results
     public void displayRecipes() {

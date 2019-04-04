@@ -1,6 +1,7 @@
 package com.stevecrossin.whatcanicook.screens;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.IngredientViewAdapter;
@@ -66,4 +68,10 @@ public class MyIngredients extends AppCompatActivity {
             }
         }.execute();
     }
+
+    public void findRecipes(View view){
+        Intent intent = new Intent(MyIngredients.this, Recipes.class);
+        startActivity(intent);
+    }
+
 }

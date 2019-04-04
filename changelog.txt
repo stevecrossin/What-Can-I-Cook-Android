@@ -116,3 +116,12 @@ Subtask:
  Sub task:
   - Create Recycle view and View adapter, view holder
   - Add more function into Dao of ingredient to select only checked ingredient
+
+  Thursday 04/04 [Big step]
+ + Successfully read recipes from csvs file and import to the Room DB
+ + Sucessfully read recipes from Room DB and display it to recyle view
+ Sub task:
+  - Create Modify Dao, Create View Adapter, View holder
+  - Create layout and create activity
+  - Create button and add intent changing
+ + What's next? Displaying recipe based on what the user's having. 

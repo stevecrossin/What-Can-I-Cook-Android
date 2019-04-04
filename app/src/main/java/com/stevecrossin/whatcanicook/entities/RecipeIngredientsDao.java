@@ -14,7 +14,7 @@ public interface RecipeIngredientsDao {
 
     //This is not fully tested. Have no time. I'll check it later don't touch it plssss
     @Query("SELECT recipe_name FROM recipeingredients WHERE recipe_ingredients IN (:ingredients) GROUP BY recipe_name ORDER BY count(recipe_name) DESC;")
-    List<String> getAllRecipesByIngredient(ArrayList<String> ingredients);
+    List<String> getAllRecipesByIngredient(List<String> ingredients);
 
     @Insert
     void addRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients);
