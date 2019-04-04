@@ -9,7 +9,9 @@ import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.Recipe;
+import com.stevecrossin.whatcanicook.entities.RecipeDao;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredientsDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 import com.stevecrossin.whatcanicook.screens.Intolerances;
@@ -26,6 +28,10 @@ import com.stevecrossin.whatcanicook.screens.Recipes;
     public abstract IntoleranceDao intoleranceDao();
 
     public abstract UserDao userDao();
+
+    public abstract RecipeDao recipeDao();
+
+    public abstract RecipeIngredientsDao recipeIngredientsDao();
 
     private static AppDb INSTANCE;
 

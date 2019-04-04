@@ -40,6 +40,8 @@ public class AppDataRepo {
         ingredientDao = AppDb.getDatabase(context).ingredientDao();
         intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
         userDao = AppDb.getDatabase(context).userDao();
+        recipeDao = AppDb.getDatabase(context).recipeDao();
+        recipeIngredientsDao = AppDb.getDatabase(context).recipeIngredientsDao();
 
         //intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
         //logsDao = AppDb.getDatabase(context).logsDao();
@@ -50,6 +52,10 @@ public class AppDataRepo {
 
     public List<Ingredient> getAllIngredients() {
         return ingredientDao.getAllIngredients();
+    }
+
+    public List<Ingredient> getAllCheckedIngredients(){
+        return ingredientDao.getAllCheckedIngredients();
     }
 
     public List<Ingredient> getIngredientsByCategory(String category) {
@@ -85,6 +91,20 @@ public class AppDataRepo {
         return false;
     }
 
+    public boolean haveRecipe(){
+        List<Recipe> recipes = recipeDao.getAllRecipes();
+        if (recipes.size() > 0)
+            return true;
+        return false;
+    }
+
+    public boolean haveRecipeIngredients(){
+        List<RecipeIngredients> recipeIngredients = recipeIngredientsDao.getAllRecipesAndIngredients();
+        if (recipeIngredients.size() > 0)
+            return true;
+        return false;
+    }
+
     public void insertIngredients(ArrayList<Ingredient> ingredients){
         ingredientDao.addIngredients(ingredients);
     }
@@ -110,6 +130,14 @@ public class AppDataRepo {
         ingredientDao.includeIngredient(ingredientName);
     }
 
+    public void selectIngredient(String ingredientName){
+        ingredientDao.selectIngredient(ingredientName);
+    }
+
+    public void deselectIngredient(String ingredientName){
+        ingredientDao.deselectIngredient(ingredientName);
+    }
+
     public List<Recipe> getAllRecipes(){
         return recipeDao.getAllRecipes();
     }
@@ -118,7 +146,7 @@ public class AppDataRepo {
         return recipeDao.getRecipesByName(recipeName);
     }
 
-    public void insertRecipe(ArrayList<Recipe> recipes){
+    public void insertRecipes(ArrayList<Recipe> recipes){
         recipeDao.addRecipes(recipes);
     }
 
