@@ -202,9 +202,6 @@ public class Intolerances extends AppCompatActivity {
                     for (Intolerance intolerance : list){
                         repository.excludeIngredient(intolerance.getIngredientName());
                         Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
-                        ArrayList<Ingredient> ingredients = new ArrayList<>();
-                        ingredients.addAll(repository.getIngredientsByName(intolerance.getIngredientName()));
-                        Log.d(TAG, "Is excluded checked: " + ingredients.get(0).isIngredientExcluded());
                     }
                 } else {
                     for (Intolerance intolerance : list){

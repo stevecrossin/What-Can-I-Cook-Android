@@ -110,6 +110,14 @@ public class AppDataRepo {
         ingredientDao.includeIngredient(ingredientName);
     }
 
+    public void selectIngredient(String ingredientName){
+        ingredientDao.selectIngredient(ingredientName);
+    }
+
+    public void deselectIngredient(String ingredientName){
+        ingredientDao.deselectIngredient(ingredientName);
+    }
+
     public List<Recipe> getAllRecipes(){
         return recipeDao.getAllRecipes();
     }
