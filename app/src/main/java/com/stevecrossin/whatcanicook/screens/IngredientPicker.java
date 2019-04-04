@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.stevecrossin.whatcanicook.R;
@@ -79,5 +80,10 @@ public class IngredientPicker extends AppCompatActivity {
         }.execute();
 
 
+    }
+
+    public void myIngredients(View view) {
+        Intent intent = new Intent(IngredientPicker.this, MyIngredients.class);
+        startActivity(intent);
     }
 }
