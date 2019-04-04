@@ -50,7 +50,7 @@ Sub task:
 
 Monday 25 March - Trong
 + Further display each ingredient in each category (dynamically)
-+ Create recyleview, view holder and database query methods for displaying incredient
++ Create recyleview, view holder and database query methods for displaying in
 + Create new layout and new activity
 + Passing category between intents.
 
@@ -99,6 +99,7 @@ Wednesday 03/04 - Trong
 Wednesday 3 April - Steve
 + changelog updated with progress thus far
 + login code to be completed by end of week, start to write recipe functions
++ create reciperesults layout, recipe row xml, and flesh out ingredientspicker and ingredientsdetails.xml files
 
 Week 5, Wednesday 3/April
 - Excellent commenting, including comments/pseudocode of functions before they're written.
@@ -106,7 +107,7 @@ Week 5, Wednesday 3/April
 
 Thursday 04/04
 + Implementation of select/deselect ingredient when a check box is checked/unchecked
-Subtask: 
+Subtask:
  - Add more function in Dao regarding to SQL Update
  - Add event listener for ViewHolder checkbox
  - Testing
@@ -124,4 +125,5 @@ Subtask:
   - Create Modify Dao, Create View Adapter, View holder
   - Create layout and create activity
   - Create button and add intent changing
- + What's next? Displaying recipe based on what the user's having. 
+ + What's next? Displaying recipe based on what the user's having.
+

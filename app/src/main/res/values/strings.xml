@@ -39,4 +39,7 @@
     <string name="login_sign_up">Login/Sign Up</string>
     <string name="logTitle">Logs</string>
     <string name="btnClearLogs">Clear Logs</string>
+    <string name="ingredientsSelectedTitle">Ingredients you have selected</string>
+    <string name="check_my_ingredients">Check my ingredients</string>
+    <string name="search_for_a_recipe">Search for a recipe</string>
 </resources>
