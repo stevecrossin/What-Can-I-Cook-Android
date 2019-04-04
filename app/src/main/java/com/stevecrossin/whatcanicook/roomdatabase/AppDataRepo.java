@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
+import com.stevecrossin.whatcanicook.entities.IntoleranceDao;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.entities.RecipeDao;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredients;

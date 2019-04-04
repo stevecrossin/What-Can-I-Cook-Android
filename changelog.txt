@@ -125,5 +125,5 @@ Subtask:
   - Create Modify Dao, Create View Adapter, View holder
   - Create layout and create activity
   - Create button and add intent changing
- + What's next? Displaying recipe based on what the user's having. 
+ + What's next? Displaying recipe based on what the user's having.
 
