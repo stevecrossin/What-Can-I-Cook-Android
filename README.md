@@ -12,19 +12,13 @@ cuisines and dietary requirements.
 At the present time, the following features are currently functional in the application
 
 * The application loads, a splash screen is presented and exits to the main menu which presents dish types to cook.
-* Selecting a dish will navigate to an empty ingredients page, which has awareness of what dish was clicked e.g "What's for Dinner"
-* Core user interface has been built and views tested for different devices. Log activity, saved recipes activity exists but no functionality only some layouuts.
+* Selecting a dish will navigate to an ingredients page, which loads both categories and ingredients that are loaded from CSV files. Awareness of cuisine type is also present based on user input.
+* Core user interface has been built and views tested for different devices. Log activity, intolerance activity has been created. CSV files for recipes, ingredients and intolerances
+is loaded into the database. Recipe results back end coding is partially complete.
+* All database tables have been coded and most core functionality is written. saved recipes activity exists but no functionality exists
 
-At present, apart from passing basic data from the main menu to the ingredients activity, there is no code functionality.
-
-The creation of database tables is underway, which will load from 3 CSV files:
-
-Recipes.csv - will contain recipes that the applicaiton will present to the user, if they have available ingredients to cook it.
-Ingredients.csv - complete - contains nearly 500 ingredients to select from
-Intolerances.csv - complete - contains a variety of dietary preferences and intolerances. If the end user selects one of these intolerances, the application will remove the ability to select these
-ingredients in the ingredients picker.
-
-Milestone 1 is now complete for this project ahead of schedule. Milestone 2 work to create database tables and handle basic functionality is underway.
+Milestone 2 is complete, with Milestone 3 almost complete. Code is being written to save intolerances to a users settings, and algorithms are being written to match ingredients selected with recipes to provide appropriate matches.
+Login screen is being coded, which will also enable intolerances to be saved.
 
 The changelog.txt file has more information on daily progress on this project.
 
