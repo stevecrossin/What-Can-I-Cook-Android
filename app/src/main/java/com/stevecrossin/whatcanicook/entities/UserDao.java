@@ -11,6 +11,7 @@ public interface UserDao {
      * Defines all the operations that are carried out in the database. References UserRecord.java
      *
      * @Insert - inserts user record into the database. Conflict strategy is set to fail the insert if the userRecord already exists.
+     * @Query - selects users from db where username entered matches one in db
      */
 
     @Insert(onConflict = OnConflictStrategy.FAIL)
@@ -18,4 +19,5 @@ public interface UserDao {
 
     @Query("SELECT * from user WHERE user_name=:userName")
     User getUser(String userName);
+
     }

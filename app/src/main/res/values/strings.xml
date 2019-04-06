@@ -42,4 +42,5 @@
     <string name="ingredientsSelectedTitle">Ingredients you have selected</string>
     <string name="check_my_ingredients">Check my ingredients</string>
     <string name="search_for_a_recipe">Search for a recipe</string>
+    <string name="signin">Log In</string>
 </resources>

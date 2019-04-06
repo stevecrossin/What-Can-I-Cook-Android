@@ -34,7 +34,7 @@ Changes made as of 21 March - milestone 1 complete - Steve
 + Continued to build database tables
 
 Sunday 24 March - Monday 25 March - Hieu
-* Reading from ingredients.csv and extract unique categories and display to the recycle view. 
+* Reading from ingredients.csv and extract unique categories and display to the recycle view.
 This is done dynamically so whenever there're new ingredient we don't have to manually add to the list.
 Sub task:
 + Sucessfully read the ingredient csv file with Apache commons library.
@@ -66,8 +66,8 @@ Thursday 28 March - Steve
 
 Sunday 31 March - Trong
 +  load intolerance from csv
-+  insert Intolerance to DB - not fully function 
-+  get Intolerance from DB - not fully implemented 
++  insert Intolerance to DB - not fully function
++  get Intolerance from DB - not fully implemented
 +  DAO, Entity for Intolerance are created...
 
 Sunday 31 March - Steve

@@ -12,7 +12,7 @@ public interface RecipeIngredientsDao {
     @Query("SELECT * FROM recipeingredients;")
     List<RecipeIngredients> getAllRecipesAndIngredients();
 
-    //This is not fully tested. Have no time. I'll check it later don't touch it plssss
+    //Some initial code for recipe search
     @Query("SELECT recipe_name FROM recipeingredients WHERE recipe_ingredients IN (:ingredients) GROUP BY recipe_name ORDER BY count(recipe_name) DESC;")
     List<String> getAllRecipesByIngredient(List<String> ingredients);
 
