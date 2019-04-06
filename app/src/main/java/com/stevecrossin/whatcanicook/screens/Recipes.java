@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Button;
 
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.MyIngredientViewAdapter;
@@ -60,7 +61,7 @@ public class Recipes extends AppCompatActivity {
                 Log.d(TAG, "onRowClicked: " + recipe.getRecipeName() + " " + recipe.getRecipeIngredients());
             }
 
-        } );
+        });
         recipesList.setAdapter(recipeViewAdapter);
         loadRecipes();
     }
@@ -78,7 +79,7 @@ public class Recipes extends AppCompatActivity {
             protected ArrayList<Recipe> doInBackground(Void... voids) {
                 ArrayList<Recipe> recipes = new ArrayList<>();
                 recipes.addAll(repository.getAllRecipes());
-                for (Recipe recipe : recipes){
+                for (Recipe recipe : recipes) {
                     Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
                     Log.d(TAG, "Recipe ingredients : " + recipe.getRecipeIngredients());
                 }
@@ -98,24 +99,24 @@ public class Recipes extends AppCompatActivity {
             Reader in = new InputStreamReader(getResources().openRawResource(R.raw.recipes));
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
             for (CSVRecord record : records) {
-                String recipeName =  record.get(0);
+                String recipeName = record.get(0);
                 String ingredientLists = record.get(1);
                 String ingredientString = record.get(2);
                 String recipeSteps = record.get(3);
                 String[] ingredients = ingredientLists.split(":");
 
-                for (String ingredient : ingredients){
+                for (String ingredient : ingredients) {
                     RecipeIngredients recipeIngredients = new RecipeIngredients(recipeName, ingredient);
                     recipeIngredientsFromCsv.add(recipeIngredients);
                 }
                 Recipe recipe = new Recipe(recipeName, ingredientString, recipeSteps);
                 recipesFromCsv.add(recipe);
             }
-        } catch (FileNotFoundException ex){
+        } catch (FileNotFoundException ex) {
             Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
-        } catch (IOException ex){
+        } catch (IOException ex) {
             Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
-        } catch (Exception ex){
+        } catch (Exception ex) {
             Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
     }
@@ -201,13 +202,16 @@ public class Recipes extends AppCompatActivity {
     }
 
 
-    //Reset ingredients to defaults
-    public void resetIngredients() {
-        /*
+    /*
         This method is executed when the "Start Over" button is clicked on the "Recipe Details" activity.
         As the selected ingredients need to be reset to defaults, this button will perform a database update on
         the ingredients database table to set all ingredientselected fields back to false, which will have the effect
         of clearing the "My CategoryPicker" list.
-         */
+    */
+    public void resetIngredients(Button button) {
+        if(button.getId() == R.id.clearIngredients) {
+            new AppDataRepo(this).clearIngredients();
+    }
     }
 }
+
