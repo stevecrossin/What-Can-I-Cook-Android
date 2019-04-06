@@ -112,13 +112,13 @@ Subtask:
  - Add event listener for ViewHolder checkbox
  - Testing
 
- Thursday 04/04
+Thursday 04/04
  + Successfully displaying checked ingredient in "My ingredient pages"
  Sub task:
   - Create Recycle view and View adapter, view holder
   - Add more function into Dao of ingredient to select only checked ingredient
 
-  Thursday 04/04 [Big step]
+Thursday 04/04 [Big step]
  + Successfully read recipes from csvs file and import to the Room DB
  + Sucessfully read recipes from Room DB and display it to recyle view
  Sub task:
@@ -127,3 +127,12 @@ Subtask:
   - Create button and add intent changing
  + What's next? Displaying recipe based on what the user's having.
 
+-Friday 5 Apr - Steve
++ Update readme.md
++ Update changelog with changes made to date
++ Correction to layout issues
+
+Saturday 6 Apr - Steve
++ Login code 30% complete, textwatchers added to fields
++ Offline, wrote some functions to experiment with recipe search results
++ Implemented part of clearing ingredients method

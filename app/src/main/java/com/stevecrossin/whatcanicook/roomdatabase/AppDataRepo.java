@@ -184,4 +184,21 @@ public class AppDataRepo {
                 .execute();
 
     }
+
+
+    /**
+     * Handles the clearing of all selected ingredients
+     **/
+    @SuppressLint("StaticFieldLeak")
+    public void clearIngredients() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                ingredientDao.clearIngredients();
+                return null;
+            }
+        }
+                .execute();
+    }
+
 }
