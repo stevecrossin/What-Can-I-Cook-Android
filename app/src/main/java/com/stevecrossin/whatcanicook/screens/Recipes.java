@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import com.stevecrossin.whatcanicook.R;
@@ -208,10 +209,7 @@ public class Recipes extends AppCompatActivity {
         the ingredients database table to set all ingredientselected fields back to false, which will have the effect
         of clearing the "My CategoryPicker" list.
     */
-    public void resetIngredients(Button button) {
-        if(button.getId() == R.id.clearIngredients) {
-            new AppDataRepo(this).clearIngredients();
+    public void resetIngredients(View view) {
+        findViewById(R.id.clearIngredients), {
+                new AppDataRepo(this).clearIngredients();
     }
-    }
-}
-
