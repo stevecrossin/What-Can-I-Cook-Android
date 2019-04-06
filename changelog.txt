@@ -135,4 +135,4 @@ Thursday 04/04 [Big step]
 Saturday 6 Apr - Steve
 + Login code 30% complete, textwatchers added to fields
 + Offline, wrote some functions to experiment with recipe search results
-+ Implemented part of clearing ingredients method
++ Almost all of clearing ingredients method is implemented, some bugs.
