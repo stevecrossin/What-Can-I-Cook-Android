@@ -23,5 +23,5 @@ public interface IntoleranceDao {
     List<Intolerance> getAllIntolerances();
 
     @Query("DELETE FROM intolerance;")
-    void deleteAll();
+    void clearIntolerances();
 }

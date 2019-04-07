@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
@@ -215,8 +216,6 @@ public class Intolerances extends AppCompatActivity {
 
     }
 
-
-
     @SuppressLint("StaticFieldLeak")
     public void loadIntolerancesToDb() {
         new AsyncTask<Void, Void, Void>() {
@@ -233,6 +232,11 @@ public class Intolerances extends AppCompatActivity {
 
     }
 
+    //Clear Dietary
+    public void clearDietary(View view) {
+        new AppDataRepo(this).clearDietaryNeeds();
+
+}
 }
 
 

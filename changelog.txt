@@ -142,3 +142,4 @@ Sunday 6 Apr - Steve
 
 Monday 7 April - Steve
 + Login activity fully coded, roomDB for users is tested and all functionality working correctly
++ Tested and confirmed dietary preferences being removed, but not user specific, working on implementation at present

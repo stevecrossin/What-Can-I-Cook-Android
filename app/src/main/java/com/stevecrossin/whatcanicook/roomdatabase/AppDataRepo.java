@@ -118,12 +118,13 @@ public class AppDataRepo {
         intoleranceDao.addIntolerance(intolerance);
     }
 
+
     public void deleteAllIngredient() {
         ingredientDao.deleteAll();
     }
 
     public void deleteAllIntolerance() {
-        intoleranceDao.deleteAll();
+        intoleranceDao.clearIntolerances();
     }
 
     public void excludeIngredient(String ingredientName){
@@ -204,6 +205,20 @@ public class AppDataRepo {
                 .execute();
     }
 
+    /**
+     * Handles the clearing of all selecteed intolerances
+     **/
+    @SuppressLint("StaticFieldLeak")
+    public void clearDietaryNeeds() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                intoleranceDao.clearIntolerances();
+                return null;
+            }
+        }
+                .execute();
+    }
 
 
 }

@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="358dp"
         android:layout_height="403dp"
         android:layout_marginStart="8dp"
@@ -176,6 +177,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/switchLactose" />
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/clearDietaryNeeds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="clearDietary"
+        android:text="Clear Preferences"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
 
 </android.support.constraint.ConstraintLayout>
