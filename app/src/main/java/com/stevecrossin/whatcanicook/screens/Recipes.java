@@ -1,6 +1,7 @@
 package com.stevecrossin.whatcanicook.screens;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -207,9 +208,12 @@ public class Recipes extends AppCompatActivity {
         This method is executed when the "Start Over" button is clicked on the "Recipe Details" activity.
         As the selected ingredients need to be reset to defaults, this button will perform a database update on
         the ingredients database table to set all ingredientselected fields back to false, which will have the effect
-        of clearing the "My CategoryPicker" list.
+        of clearing the "My CategoryPicker" list. It will then navigate back to the MainActivity.
     */
     public void resetIngredients(View view) {
-        findViewById(R.id.clearIngredients), {
-                new AppDataRepo(this).clearIngredients();
+        new AppDataRepo(this).clearIngredients();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
+}
+

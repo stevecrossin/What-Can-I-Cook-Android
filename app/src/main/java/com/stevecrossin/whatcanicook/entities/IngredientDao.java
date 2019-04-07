@@ -29,7 +29,7 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredient WHERE ingredient_selected = 1;")
     List<Ingredient> getAllCheckedIngredients();
 
-    @Query("UPDATE ingredient SET ingredient_excluded = 0 WHERE ingredient_selected = 1;")
+    @Query("UPDATE ingredient SET ingredient_selected = 0 WHERE ingredient_selected = 1;")
     void clearIngredients();
 
     @Query("UPDATE ingredient SET ingredient_excluded = 1 WHERE ingredient_name = :ingredientName;")
