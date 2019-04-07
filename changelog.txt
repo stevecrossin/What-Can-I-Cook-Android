@@ -139,3 +139,6 @@ Saturday 6 Apr - Steve
 
 Sunday 6 Apr - Steve
 + Clearing ingredients method fully implemented and working
+
+Monday 7 April - Steve
++ Login activity fully coded, roomDB for users is tested and all functionality working correctly

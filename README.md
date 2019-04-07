@@ -17,6 +17,7 @@ At the present time, the following features are currently functional in the appl
 is loaded into the database. Recipe results back end coding is partially complete.
 * All database tables have been coded and most core functionality is written. saved recipes activity exists but no functionality exists
 * Clearing of ingredients selected implementing and working
+* Login activity is working, all database functions for login are functioning too
 
 Milestone 2 is complete, with Milestone 3 almost complete. Code is being written to save intolerances to a users settings, and algorithms are being written to match ingredients selected with recipes to provide appropriate matches.
 Login screen is being coded, which will also enable intolerances to be saved.

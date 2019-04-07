@@ -10,7 +10,7 @@ public class Logs {
     //Loads logs that currently exist in app.
     public void loadLogs() {
         /*
-        This method is called when the user selects the View Logs button in the Info activity. When clicked, the UI will then:
+        This method is called when the user selects the View LogRecords button in the Info activity. When clicked, the UI will then:
         1. Navigate to logs scene
         2. Perform query of logs database, and fetch all records
         3. Pass that data to log scene and display in text box.

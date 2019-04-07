@@ -7,6 +7,7 @@ import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
 import com.stevecrossin.whatcanicook.entities.IntoleranceDao;
+import com.stevecrossin.whatcanicook.entities.LogDao;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.entities.RecipeDao;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
@@ -29,6 +30,7 @@ public class AppDataRepo {
     private UserDao userDao;
     private RecipeDao recipeDao;
     private RecipeIngredientsDao recipeIngredientsDao;
+    private LogDao logDao;
 
     /**
      * private intoleranceDao intoleranceDao;
@@ -43,9 +45,10 @@ public class AppDataRepo {
         userDao = AppDb.getDatabase(context).userDao();
         recipeDao = AppDb.getDatabase(context).recipeDao();
         recipeIngredientsDao = AppDb.getDatabase(context).recipeIngredientsDao();
+        logDao = AppDb.getDatabase(context).logDao();
 
         //intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
-        //logsDao = AppDb.getDatabase(context).logsDao();
+
         //pantryDao = AppDb.getDatabase(context).pantryDao();
         //recipeDao = AppDb.getDatabase(context).recipeDao();
 
@@ -200,5 +203,7 @@ public class AppDataRepo {
         }
                 .execute();
     }
+
+
 
 }

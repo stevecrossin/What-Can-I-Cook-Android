@@ -17,8 +17,8 @@ public class User {
     @ColumnInfo(name = "pass_key")
     private String passKey;
 
-    @ColumnInfo(name = "saved_intolerances")
-    private String savedIntolerances;
+    //@ColumnInfo(name = "saved_intolerances")
+    //private String dietary;
 
     public int getUserID() {
         return userID;
@@ -44,18 +44,18 @@ public class User {
         this.passKey = passKey;
     }
 
-    public String getSavedIntolerances() {
-        return savedIntolerances;
-    }
+    //public String getSavedIntolerances() {
+     //   return dietary;
+    //}
 
-    public void setSavedIntolerances(String savedIntolerances) {
-        this.savedIntolerances = savedIntolerances;
-    }
+   // public void setSavedIntolerances(String savedIntolerances) {
+       // this.dietary = savedIntolerances;
+    //}
 
-    public User(String userName, String passKey, String savedIntolerances) {
+    public User(String userName, String passKey) {
         this.userName = userName;
         this.passKey = passKey;
-        this.savedIntolerances = savedIntolerances;
+        //this.dietary = savedIntolerances;
     }
 
 

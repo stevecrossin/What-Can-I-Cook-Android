@@ -1,5 +1,6 @@
 package com.stevecrossin.whatcanicook;
 
+import java.nio.ByteBuffer;
 import java.security.MessageDigest;
 
 /***

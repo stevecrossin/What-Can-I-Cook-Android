@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.stevecrossin.whatcanicook.screens.Login;
 import com.stevecrossin.whatcanicook.screens.MainActivity;
 
 //Splash screen code. This has essentially been coded the same way as my contacts application in SIT207 - worked well, no need to reinvent the wheel here
@@ -42,7 +43,7 @@ public class SplashScreenInit extends AppCompatActivity {
              The splash screen instance will then be destroyed.
              */
 
-            Intent intent = new Intent(com.stevecrossin.whatcanicook.SplashScreenInit.this, MainActivity.class);
+            Intent intent = new Intent(com.stevecrossin.whatcanicook.SplashScreenInit.this, Login.class);
             startActivity(intent);
             com.stevecrossin.whatcanicook.SplashScreenInit.this.finish();
         }

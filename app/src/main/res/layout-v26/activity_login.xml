@@ -35,6 +35,7 @@
                 android:id="@+id/userNameEntry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:ems="10"
                 android:hint="@string/enter_email_address"
                 android:inputType="textEmailAddress"
@@ -47,14 +48,15 @@
                 android:id="@+id/passwordEntry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/enter_a_password"
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/userNameEntry"
-                android:autofillHints="" />
+                app:layout_constraintTop_toBottomOf="@+id/userNameEntry" />
 
             <Button
                 android:id="@+id/loginButton"
