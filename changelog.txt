@@ -143,3 +143,9 @@ Sunday 6 Apr - Steve
 Monday 7 April - Steve
 + Login activity fully coded, roomDB for users is tested and all functionality working correctly
 + Tested and confirmed dietary preferences being added, but not removed, but is not user specific, working on implementation at present
+
+Monday 8 April - Henry
++ Your dates above are slightly wrong (I'm pretty sure Monday is the 8/April), unless the Gregorian calendar system isn't working for you :-P
++ Good to see progress. However: function comments. I made a big fuss about this in one of last week's news posts :)
+
+
