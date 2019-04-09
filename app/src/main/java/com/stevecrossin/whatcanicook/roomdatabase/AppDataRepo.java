@@ -1,4 +1,5 @@
 package com.stevecrossin.whatcanicook.roomdatabase;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -20,9 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-
-Initial source code for app data repo - barebones, non functional and still in progress
-**/
+ * Initial source code for app data repo - barebones, non functional and still in progress
+ **/
 
 public class AppDataRepo {
     private IngredientDao ingredientDao;
@@ -58,13 +58,14 @@ public class AppDataRepo {
         return ingredientDao.getAllIngredients();
     }
 
-    public List<Ingredient> getAllCheckedIngredients(){
+    public List<Ingredient> getAllCheckedIngredients() {
         return ingredientDao.getAllCheckedIngredients();
     }
 
     public List<Ingredient> getIngredientsByCategory(String category) {
         return ingredientDao.getIngredientsByCategory(category);
     }
+
     public List<Ingredient> getIngredientsByName(String name) {
         return ingredientDao.getIngredientsByName(name);
     }
@@ -81,35 +82,35 @@ public class AppDataRepo {
         return intoleranceDao.getAllIntolerances();
     }
 
-    public boolean haveIngredient(){
+    public boolean haveIngredient() {
         List<Ingredient> ingredients = ingredientDao.getAllIngredients();
         if (ingredients.size() > 0)
             return true;
         return false;
     }
 
-    public boolean haveIntolerance(){
+    public boolean haveIntolerance() {
         List<Intolerance> intolerances = intoleranceDao.getAllIntolerances();
         if (intolerances.size() > 0)
             return true;
         return false;
     }
 
-    public boolean haveRecipe(){
+    public boolean haveRecipe() {
         List<Recipe> recipes = recipeDao.getAllRecipes();
         if (recipes.size() > 0)
             return true;
         return false;
     }
 
-    public boolean haveRecipeIngredients(){
+    public boolean haveRecipeIngredients() {
         List<RecipeIngredients> recipeIngredients = recipeIngredientsDao.getAllRecipesAndIngredients();
         if (recipeIngredients.size() > 0)
             return true;
         return false;
     }
 
-    public void insertIngredients(ArrayList<Ingredient> ingredients){
+    public void insertIngredients(ArrayList<Ingredient> ingredients) {
         ingredientDao.addIngredients(ingredients);
     }
 
@@ -126,42 +127,49 @@ public class AppDataRepo {
         intoleranceDao.deleteAll();
     }
 
-    public void excludeIngredient(String ingredientName){
+    public void includeIntolerance(String intoleranceName) {
+        intoleranceDao.includeIntolerance(intoleranceName);
+    }
+
+    public void excludeIntolerance(String intoleranceName) {
+        intoleranceDao.excludeIntolerance(intoleranceName);
+    }
+
+    public void excludeIngredient(String ingredientName) {
         ingredientDao.excludeIngredient(ingredientName);
     }
 
-    public void includeIngredient(String ingredientName){
+    public void includeIngredient(String ingredientName) {
         ingredientDao.includeIngredient(ingredientName);
     }
 
-    public void selectIngredient(String ingredientName){
+    public void selectIngredient(String ingredientName) {
         ingredientDao.selectIngredient(ingredientName);
     }
 
-    public void deselectIngredient(String ingredientName){
+    public void deselectIngredient(String ingredientName) {
         ingredientDao.deselectIngredient(ingredientName);
     }
 
-    public List<Recipe> getAllRecipes(){
+    public List<Recipe> getAllRecipes() {
         return recipeDao.getAllRecipes();
     }
 
-    public List<Recipe> getRecipesByName(String recipeName){
+    public List<Recipe> getRecipesByName(String recipeName) {
         return recipeDao.getRecipesByName(recipeName);
     }
 
-    public void insertRecipes(ArrayList<Recipe> recipes){
+    public void insertRecipes(ArrayList<Recipe> recipes) {
         recipeDao.addRecipes(recipes);
     }
 
-    public void insertRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients){
+    public void insertRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients) {
         recipeIngredientsDao.addRecipeIngredients(recipeIngredients);
     }
 
-    public List<RecipeIngredients> getAllRecipesAndIngredients(){
+    public List<RecipeIngredients> getAllRecipesAndIngredients() {
         return recipeIngredientsDao.getAllRecipesAndIngredients();
     }
-
 
     /**
      * Perform dao operation to get users from Users db.
@@ -203,7 +211,6 @@ public class AppDataRepo {
         }
                 .execute();
     }
-
 
 
 }
