@@ -140,12 +140,18 @@ Saturday 6 Apr - Steve
 Sunday 6 Apr - Steve
 + Clearing ingredients method fully implemented and working
 
-Monday 7 April - Steve
+Monday 8 April - Steve
 + Login activity fully coded, roomDB for users is tested and all functionality working correctly
 + Tested and confirmed dietary preferences being added, but not removed, but is not user specific, working on implementation at present
 
 Monday 8 April - Henry
-+ Your dates above are slightly wrong (I'm pretty sure Monday is the 8/April), unless the Gregorian calendar system isn't working for you :-P
-+ Good to see progress. However: function comments. I made a big fuss about this in one of last week's news posts :)
++ Your dates above are slightly wrong (I'm pretty sure Monday is the 8/April), unless the Gregorian calendar system isn't working for you :-P (Fixed! --Steve)
++ Good to see progress. However: function comments. I made a big fuss about this in one of last week's news posts :) (Noted, and will be resolved this week --Steve)
 
+Tuesday 9 April - Steve
++ Implemented changes to intolerances code - preferences now save correctly in DB and are visible in the UI, deletion of preferences now functions correctly but is not user specific
+Next: Make intolerances user specific by storing state in user DB, work on recipe search functions
+
+Thursday 11 April - Henry
++ Good. I am just reviewing some older entries in this changelog, and they didn't have a person assigned. Fix that up when you can, so I know who to attribute to that work. Cheers.
 

@@ -1,13 +1,12 @@
 package com.stevecrossin.whatcanicook.entities;
 
 import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Intolerance {
-    @PrimaryKey(autoGenerate=true)
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "intolerance_id")
     private int intoleranceID;
 
@@ -17,9 +16,13 @@ public class Intolerance {
     @ColumnInfo(name = "ingredient_name")
     private String ingredientName;
 
+    @ColumnInfo(name = "intolerance_selected")
+    private boolean intoleranceSelected;
+
     public Intolerance(String intoleranceName, String ingredientName) {
         this.intoleranceName = intoleranceName;
         this.ingredientName = ingredientName;
+        this.intoleranceSelected = false;
     }
 
     public int getIntoleranceID() {
@@ -44,5 +47,13 @@ public class Intolerance {
 
     public void setIngredientName(String ingrdientName) {
         this.ingredientName = ingrdientName;
+    }
+
+    public void setIntoleranceSelected(boolean intoleranceSelected) {
+        this.intoleranceSelected = intoleranceSelected;
+    }
+
+    public boolean isIntoleranceSelected() {
+        return intoleranceSelected;
     }
 }
