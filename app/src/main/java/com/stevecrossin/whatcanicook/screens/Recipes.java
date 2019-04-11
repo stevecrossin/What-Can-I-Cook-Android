@@ -40,7 +40,10 @@ public class Recipes extends AppCompatActivity {
     ArrayList<Recipe> recipesFromCsv = new ArrayList<>();
     ArrayList<RecipeIngredients> recipeIngredientsFromCsv = new ArrayList<>();
 
-
+    /**
+     * Scene initalization. This also loads the neccessary ingredient from the CSV to the database
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,14 @@ public class Recipes extends AppCompatActivity {
         initRecyclerItems();
     }
 
+    /**
+     * This will do the setup step for our recycle view:
+     * 1. find the recycle view in the layout with id recipes_list
+     * 2. set the layout manager
+     * 3. set up event listener for recycleview on row clicked
+     * 4. set adapter for the recycle view
+     * 5. finall, call loadRecipes() method to populate data
+     */
     private void initRecyclerItems() {
         RecyclerView recipesList = findViewById(R.id.recipes_list);
         recipesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -68,14 +79,13 @@ public class Recipes extends AppCompatActivity {
         loadRecipes();
     }
 
+    /**
+     * Testing method. Trying to load all recipes into the recycleview to simulate recipe search
+     * This in the future will be replaced with findRecipes and displayRecipes below
+     */
     @SuppressLint("StaticFieldLeak")
     //Load recipes into memory from csv file, apply filters.
     public void loadRecipes() {
-        /*
-        This method will need to
-        1. Load all recipes from recipes.csv stored in permanent storage
-        2. Update the contents of the recipes room database with any new entries in the csv
-       */
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
@@ -96,6 +106,10 @@ public class Recipes extends AppCompatActivity {
         }.execute();
     }
 
+    /**
+     * This method will parse data in the CSV files into 2 ArrayList: recipesFromCSV and recipeIngredientsFromCsv
+     * Note*: The recipes raw data structure is more special than others
+     */
     private void loadRecipesFromCsv() {
         try {
             Reader in = new InputStreamReader(getResources().openRawResource(R.raw.recipes));
@@ -123,6 +137,9 @@ public class Recipes extends AppCompatActivity {
         }
     }
 
+    /**
+     * Loads recipes to the DB if there is no data
+     */
     @SuppressLint("StaticFieldLeak")
     public void loadRecipesToDb() {
         new AsyncTask<Void, Void, Void>() {
@@ -137,6 +154,9 @@ public class Recipes extends AppCompatActivity {
 
     }
 
+    /**
+     * Loads recipes + ingredients to the DB if there is no data
+     */
     @SuppressLint("StaticFieldLeak")
     public void loadRecipeIngredientsToDb() {
         new AsyncTask<Void, Void, Void>() {
