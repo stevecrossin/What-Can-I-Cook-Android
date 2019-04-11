@@ -23,6 +23,11 @@ public class MyIngredients extends AppCompatActivity {
     private AppDataRepo repository;
     MyIngredientViewAdapter myIngredientViewAdapter;
     private static final String TAG = "MyIngredients";
+
+    /**
+     * Scence initialization.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,14 @@ public class MyIngredients extends AppCompatActivity {
         initRecyclerItems();
     }
 
+    /**
+     * This will do the setup step for our recycle view:
+     * 1. find the recycle view in the layout with id my_ingredients_list
+     * 2. set the layout manager
+     * 3. set up event listener for recycleview on row clicked [DEBUGGING PURPOSE]
+     * 4. set adapter for the recycle view
+     * 5. finall, call loadingredients method to populate data
+     */
     private void initRecyclerItems() {
         RecyclerView myIngredientsList = findViewById(R.id.my_ingredients_list);
         myIngredientsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -47,6 +60,11 @@ public class MyIngredients extends AppCompatActivity {
         loadIngredients();
     }
 
+    /**
+     * Core function to load ingredients and update recycleview adapter.
+     * This function performs an async task in the background to get a list of ingredient from the database (getAllCheckedIngredients)
+     * It will then store those ingredients in an ArrayList and return the list.
+     */
     @SuppressLint("StaticFieldLeak")
     public void loadIngredients() {
         new AsyncTask<Void, Void, ArrayList<Ingredient>>() {

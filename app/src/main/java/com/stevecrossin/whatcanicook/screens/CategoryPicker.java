@@ -132,6 +132,12 @@ public class CategoryPicker extends AppCompatActivity {
 
     }
 
+    /**
+     * This will perform the initial load of the ingredients from the ingredients.csv file
+     * For each of the record in the file, split the line by ',' delimiter
+     * Then construct a new Ingredient object with id, category, sub-category, name and alternative
+     * Finally return a list of ingredient
+     */
     private ArrayList<Ingredient> loadIngredientsFromCsv() {
         try {
             ArrayList<Ingredient> ingredients = new ArrayList<>();
@@ -157,6 +163,14 @@ public class CategoryPicker extends AppCompatActivity {
         return  null;
     }
 
+    /**
+     * This will do the setup step for our recycle view:
+     * 1. find the recycle view in the layout
+     * 2. set the layout manager
+     * 3. set up event listener for recycleview on row clicked
+     * 4. set adapter for the recycle view
+     * 5. finall, call loadingredients method to populate data
+     */
     private void initRecyclerItems() {
         RecyclerView ingredientsCategoryList = findViewById(R.id.ingredients_list);
         ingredientsCategoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));

@@ -31,6 +31,15 @@ public class Intolerances extends AppCompatActivity {
     private AppDataRepo repository;
     private static final String TAG = "Intolerances";
     private ArrayList<String> intoleranceList = new ArrayList<>();
+    String intolerancename;
+    String intoleranceexcludes;
+    Boolean intolerancesactive = false; //By default, no intolerances   are active
+
+    /**
+     * Scene initalization. This also performs the loading of intolerances into the database.
+     * Get every switches by their id in the layout and set a listener on check/uncheck event (see intoleranceSelected())
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,16 +155,12 @@ public class Intolerances extends AppCompatActivity {
 
     }
 
-    String intolerancename;
-    String intoleranceexcludes;
-    Boolean intolerancesactive = false; //By default, no intolerances   are active
-
     //Handles loading of ingredient intolerances list
     public ArrayList<Intolerance> loadIntolerancesFromCsv() {
     /*
     This method will handle the loading of the intolerances list. It will perform the following steps.
-    1. Load all possible intolerances from intolerances.csv file, and use that data to update the Intolerance room database with any new entries
-    2. Query the savedintolerances column in the Users database for the current user. It will parse out multiple intolerances that are inside quotes and brackets, with the comma between
+    1. Load all possible intolerances from nintolerances.csv file, and use that data to update the Intolerance room database with any new entries
+    2. Query the savedintolerances column i the Users database for the current user. It will parse out multiple intolerances that are inside quotes and brackets, with the comma between
     each intolerance separating them.
     3. It will then mark the relevant intolerance as active in the intolerance database, ands also update the UI of the activity to mark the selected intolerances as active.
     */
@@ -216,6 +221,11 @@ public class Intolerances extends AppCompatActivity {
 
     }
 
+    /**
+     * Perform an async task in the background to load intolerances into the DB
+     * It will first construct an array list of Intolerance from the csv files
+     * Then insert those into the database if there is no data.
+     */
     @SuppressLint("StaticFieldLeak")
     public void loadIntolerancesToDb() {
         new AsyncTask<Void, Void, Void>() {
