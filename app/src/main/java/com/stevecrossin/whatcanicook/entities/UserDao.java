@@ -20,4 +20,12 @@ public interface UserDao {
     @Query("SELECT * from user WHERE user_name=:userName")
     User getUser(String userName);
 
-    }
+    @Query("UPDATE user SET login_status = :isLogin  WHERE userID = :userId;")
+    void updateLoginStatus(int userId, boolean isLogin);
+
+    @Query("SELECT * from user WHERE login_status= 1")
+    User getSignInUser();
+
+    @Query("UPDATE user SET saved_intolerances = :value  WHERE login_status = 1")
+    void updateIntoleranceValue(String value);
+}

@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -20,11 +21,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.stevecrossin.whatcanicook.CurrentLoginState;
 import com.stevecrossin.whatcanicook.PasswordHash;
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.entities.Ingredient;
+import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVRecord;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.stevecrossin.whatcanicook.CurrentLoginState.*;
 
@@ -34,6 +50,7 @@ import static com.stevecrossin.whatcanicook.CurrentLoginState.*;
  */
 public class Login extends AppCompatActivity {
 
+    private static final String TAG = Login.class.getName();
     /**
      * Initialisation and declaration of objects and values. Variables and initialises. Keeps track of the Login Task state to ensure we can cancel if requested.
      */
@@ -54,11 +71,13 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        loginUIView = findViewById(R.id.login_form);
+        progressView = findViewById(R.id.login_progress);
         usernameView = findViewById(R.id.userNameEntry);
         passwordView = findViewById(R.id.passwordEntry);
         passwordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
-            //This is a listener which is called when any changes are made to the UI 
+            //This is a listener which is called when any changes are made to the UI
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
@@ -76,7 +95,7 @@ public class Login extends AppCompatActivity {
             }
 
             /** This code block checks the text entered into the username field, in a background thread. It will first verify that the email address is valid, and then
-             * query the user database with getuser to determine if the username exists or not. 
+             * query the user database with getuser to determine if the username exists or not.
              */
 
             @SuppressLint("StaticFieldLeak")
@@ -120,17 +139,14 @@ public class Login extends AppCompatActivity {
          * This adds an onClick listener to the login button. Once the button is clicked - it will call the tryLogin method
          */
         loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tryLogin();
-            }
-        });
-
-        loginUIView = findViewById(R.id.login_form);
-        progressView = findViewById(R.id.login_progress);
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        isUserSignedIn();
+    }
 
     /**
      * This handles the attempt to login, after the button is clicked. It will only call the async task if it's not running, and store values entered in the UI as strings.
@@ -251,18 +267,22 @@ public class Login extends AppCompatActivity {
                 try {
                     String hashPass = PasswordHash.encryptPassword(passKey);
                     User user = new AppDataRepo(Login.this).getUserName(userName);
-                    if (user.getPassKey().equals(hashPass))
+                    if (user.getPassKey().equals(hashPass)) {
+                        onLoginSuccess(user.getUserID());
                         return EXISTING_USER;
+                    }
                 } catch (Exception e) {
                     //Log Msg needed here
                 }
             } else if (currentLoginState == NEW_USER)
                 try {
                     String hashPass = PasswordHash.encryptPassword(passKey);
-                    new AppDataRepo(Login.this).createUser(new User(userName, hashPass));
+                    AppDataRepo repo = new AppDataRepo(Login.this);
+                    repo.createUser(new User(userName, hashPass));
+                    onLoginSuccess(repo.getUserName(userName).getUserID());
                     return EXISTING_USER;
                 } catch (Exception e) {
-                    //Log msg needed here
+                    e.printStackTrace();
                 }
             return INVALID_PASSWORD;
         }
@@ -277,8 +297,7 @@ public class Login extends AppCompatActivity {
             showProgressUI(false);
 
             if (success == EXISTING_USER) {
-                finish();
-                startActivity(new Intent(Login.this, MainActivity.class));
+                goToNextScreen();
             } else {
                 passwordView.setError("Password Incorrect");
                 passwordView.requestFocus();
@@ -296,6 +315,154 @@ public class Login extends AppCompatActivity {
         }
     }
 
+    private void goToNextScreen() {
+        finish();
+        startActivity(new Intent(Login.this, MainActivity.class));
+    }
 
+    private void onLoginSuccess(Integer userId) {
+        AppDataRepo repo = new AppDataRepo(Login.this);
+        repo.updateLoginStatus(userId, true);
+        loadIntolerancesToDb();
+        loadIngredientsTODb();
+        updateToleranceToDb();
+    }
+
+    private void loadIntolerancesToDb() {
+        AppDataRepo repository = new AppDataRepo(Login.this);
+        if (!repository.haveIntolerance()) {
+            ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
+            for (Intolerance intolerance : intolerances)
+                repository.insertIntolerance(intolerance);
+        }
+    }
+
+    private ArrayList<Intolerance> loadIntolerancesFromCsv() {
+    /*
+    This method will handle the loading of the intolerances list. It will perform the following steps.
+    1. Load all possible intolerances from intolerances.csv file, and use that data to update the Intolerance room database with any new entries
+    2. Query the savedintolerances column in the Users database for the current user. It will parse out multiple intolerances that are inside quotes and brackets, with the comma between
+    each intolerance separating them.
+    3. It will then mark the relevant intolerance as active in the intolerance database, ands also update the UI of the activity to mark the selected intolerances as active.
+    */
+        try {
+            ArrayList<Intolerance> intolerances = new ArrayList<>();
+            Reader in = new InputStreamReader(getResources().openRawResource(R.raw.intolerances));
+            Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
+            for (CSVRecord record : records) {
+                String intoleranceName = record.get(1);
+                String intoleranceIngredients = record.get(2);
+                String[] ingredients = intoleranceIngredients.split(":");
+
+                for (String ingredient : ingredients) {
+                    Intolerance intolerance = new Intolerance(intoleranceName, ingredient);
+                    intolerances.add(intolerance);
+                }
+            }
+            return intolerances;
+        } catch (FileNotFoundException ex) {
+            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
+        } catch (IOException ex) {
+            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
+        } catch (Exception ex) {
+            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
+        }
+        return null;
+    }
+
+    private void loadIngredientsTODb() {
+    /*
+    This method will be performed in the background once the user navigates to the CategoryPicker chooser activity from the main app landing page.
+    MainActivity will pass the dish option that was clicked (e.g. breakfast, dessert) and pass this to CategoryPicker activity, which will update the
+    label at the top of the activity to "What's for breakfast/dinner/dessert etc.
+    It also needs to
+    1. Read all information from ingredients.csv, a read only document stored in permanent storage
+    2. Append the ingredients room database with any new ingredients/delete any ingredients that are no longer present in the csv
+    3. Perform query on intolerances database to determine which intolerances are currently active
+    4. Update ingredientselectable column in ingredients database to false when ingredient matches exclusion criteria
+    5. Query database for ingredients that are not excluded, and update recyclerview in ingredient chooser activity with this list.
+    */
+
+        AppDataRepo repository = new AppDataRepo(Login.this);
+        if (!repository.haveIngredient()) {
+            ArrayList<Ingredient> ingredients = loadIngredientsFromCsv();
+            repository.insertIngredients(ingredients);
+        }
+    }
+
+    private ArrayList<Ingredient> loadIngredientsFromCsv() {
+        try {
+            ArrayList<Ingredient> ingredients = new ArrayList<>();
+            Reader in = new InputStreamReader(getResources().openRawResource(R.raw.ingredients));
+            Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
+            for (CSVRecord record : records) {
+                String ingredientID = record.get(0);
+                String ingredientCategory = record.get(1);
+                String ingredientSubCat = record.get(2);
+                String ingredientName = record.get(3);
+                String ingredientAlternative = record.get(4);
+                Ingredient ingredient = new Ingredient(Integer.parseInt(ingredientID), ingredientCategory, ingredientSubCat, ingredientName, ingredientAlternative);
+                ingredients.add(ingredient);
+            }
+            return ingredients;
+        } catch (FileNotFoundException ex) {
+            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
+        } catch (IOException ex) {
+            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
+        } catch (Exception ex) {
+            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
+        }
+        return null;
+    }
+
+    private void updateToleranceToDb() {
+        AppDataRepo repository = new AppDataRepo(Login.this);
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>() {
+        }.getType();
+        List<String> toleranceList = gson.fromJson(repository.getSignedUser().getIntolerances(), type);
+
+        for (String intoleranceName : toleranceList) {
+            repository.excludeIntolerance(intoleranceName);
+            List<Intolerance> list = repository.getIntoleranceByName(intoleranceName);
+            for (Intolerance intolerance : list) {
+                repository.excludeIngredient(intolerance.getIngredientName());
+                Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
+            }
+        }
+
+    }
+
+    private void isUserSignedIn() {
+        new AsyncTask<Void, Void, User>() {
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                progressView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            protected User doInBackground(Void... voids) {
+                AppDataRepo repo = new AppDataRepo(Login.this);
+                return repo.getSignedUser();
+            }
+
+            @Override
+            protected void onPostExecute(User user) {
+                super.onPostExecute(user);
+                progressView.setVisibility(View.GONE);
+                if (user != null) {
+                    goToNextScreen();
+                } else {
+                    loginButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            tryLogin();
+                        }
+                    });
+                }
+            }
+        }.execute();
+    }
 }
-

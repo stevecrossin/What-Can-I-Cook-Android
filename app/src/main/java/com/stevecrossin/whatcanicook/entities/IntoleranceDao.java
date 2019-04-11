@@ -28,7 +28,6 @@ public interface IntoleranceDao {
     @Query("UPDATE intolerance SET intolerance_selected = 1 WHERE intolerance_name = :intoleranceName;")
     void excludeIntolerance(String intoleranceName);
 
-
     @Query("UPDATE intolerance SET intolerance_selected = 0 WHERE intolerance_name = :intoleranceName;")
     void includeIntolerance(String intoleranceName);
 }

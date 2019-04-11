@@ -9,7 +9,6 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.stevecrossin.whatcanicook.R;
-import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
@@ -198,12 +197,14 @@ public class Intolerances extends AppCompatActivity {
                 list.addAll(repository.getIntoleranceByName(intoleranceName));
                 if (isSelected) {
                     repository.excludeIntolerance(intoleranceName);
+                    repository.addTolerance(intoleranceName);
                     for (Intolerance intolerance : list) {
                         repository.excludeIngredient(intolerance.getIngredientName());
                         Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
                     }
                 } else {
                     repository.includeIntolerance(intoleranceName);
+                    repository.removeTolerance(intoleranceName);
                     for (Intolerance intolerance : list) {
                         repository.includeIngredient(intolerance.getIngredientName());
                         Log.d(TAG, "Include ingredient: " + intolerance.getIngredientName());
@@ -221,8 +222,8 @@ public class Intolerances extends AppCompatActivity {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
                 if (!repository.haveIntolerance()) {
+                    ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
                     for (Intolerance intolerance : intolerances)
                         repository.insertIntolerance(intolerance);
                 }
@@ -232,8 +233,9 @@ public class Intolerances extends AppCompatActivity {
 
     }
 
-    @SuppressLint("StaticFieldLeak")
+
     public void updateUserTolerancePreference() {
+
         new AsyncTask<Void, List<Intolerance>, List<Intolerance>>() {
             @Override
             protected List<Intolerance> doInBackground(Void... voids) {
@@ -243,8 +245,7 @@ public class Intolerances extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Intolerance> intolerances) {
                 super.onPostExecute(intolerances);
-                List<Intolerance> excludeCategory;
-                excludeCategory = intolerances;
+                List<Intolerance> excludeCategory = intolerances;
                 if (!excludeCategory.isEmpty()) {
                     for (Intolerance categoryName : excludeCategory) {
                         if (categoryName.getIntoleranceName().equals("No nuts") && categoryName.isIntoleranceSelected()) {

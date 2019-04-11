@@ -20,7 +20,8 @@ is loaded into the database. Recipe results back end coding is partially complet
 * Login activity is working, all database functions for login are functioning too
 
 Milestone 2 is complete, with Milestone 3 almost complete. Code is being written to save intolerances to a users settings, and algorithms are being written to match ingredients selected with recipes to provide appropriate matches.
-Login screen is being coded, which will also enable intolerances to be saved.
+
+Login screen working, saving and loading of dietary preferences for individual users working correctly. Speed a little slow and needs optimising.
 
 The changelog.txt file has more information on daily progress on this project.
 

@@ -2,9 +2,10 @@ package com.stevecrossin.whatcanicook.entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-@Entity(tableName = "user")
+@Entity(tableName = "user", indices = {@Index(value = {"user_name"}, unique = true)})
 
 public class User {
 
@@ -17,8 +18,12 @@ public class User {
     @ColumnInfo(name = "pass_key")
     private String passKey;
 
-    //@ColumnInfo(name = "saved_intolerances")
-    //private String dietary;
+    @ColumnInfo(name = "saved_intolerances")
+    private String intolerances;
+
+    @ColumnInfo(name = "login_status")
+    private boolean isLoggedIn;
+
 
     public int getUserID() {
         return userID;
@@ -44,19 +49,26 @@ public class User {
         this.passKey = passKey;
     }
 
-    //public String getSavedIntolerances() {
-     //   return dietary;
-    //}
-
-   // public void setSavedIntolerances(String savedIntolerances) {
-       // this.dietary = savedIntolerances;
-    //}
-
     public User(String userName, String passKey) {
         this.userName = userName;
         this.passKey = passKey;
-        //this.dietary = savedIntolerances;
+        this.isLoggedIn = false;
+        this.intolerances = "[]";
     }
 
+    public String getIntolerances() {
+        return intolerances;
+    }
 
+    public void setIntolerances(String intolerances) {
+        this.intolerances = intolerances;
+    }
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+    }
 }

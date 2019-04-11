@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
@@ -17,6 +19,7 @@ import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -171,6 +174,9 @@ public class AppDataRepo {
         return recipeIngredientsDao.getAllRecipesAndIngredients();
     }
 
+    /**************** User Repo ***********************/
+
+
     /**
      * Perform dao operation to get users from Users db.
      */
@@ -178,24 +184,49 @@ public class AppDataRepo {
         return userDao.getUser(userName);
     }
 
-
     /***
      * Perform dao operation to create a new user into users db.
      */
-
     @SuppressLint("StaticFieldLeak")
     public void createUser(final User user) {
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                userDao.insertUser(user);
-                return null;
-            }
-        }
-                .execute();
-
+        userDao.insertUser(user);
     }
 
+    public void updateLoginStatus(int userId, boolean isLogin) {
+        userDao.updateLoginStatus(userId, isLogin);
+        if (!isLogin) {
+            deleteAllIngredient();
+            deleteAllIntolerance();
+        }
+    }
+
+    public User getSignedUser() {
+        return userDao.getSignInUser();
+    }
+
+    public void addTolerance(String intoleranceName) {
+        User user = userDao.getSignInUser();
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>() {
+        }.getType();
+        List<String> tolerance = gson.fromJson(user.getIntolerances(), type);
+        tolerance.add(intoleranceName);
+        userDao.updateIntoleranceValue(gson.toJson(tolerance));
+    }
+
+    public void removeTolerance(String intoleranceName) {
+        User user = userDao.getSignInUser();
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>() {
+        }.getType();
+        List<String> tolerance = gson.fromJson(user.getIntolerances(), type);
+        tolerance.remove(intoleranceName);
+        userDao.updateIntoleranceValue(gson.toJson(tolerance));
+    }
+
+
+    /**************** User Repo ***********************/
 
     /**
      * Handles the clearing of all selected ingredients

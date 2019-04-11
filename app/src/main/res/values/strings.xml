@@ -43,4 +43,5 @@
     <string name="check_my_ingredients">Check my ingredients</string>
     <string name="search_for_a_recipe">Search for a recipe</string>
     <string name="signin">Log In</string>
+    <string name="logout">Log out</string>
 </resources>

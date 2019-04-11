@@ -1,11 +1,14 @@
 package com.stevecrossin.whatcanicook.screens;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.entities.User;
+import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,13 +78,30 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void logout(View view) {
+        new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                AppDataRepo repo = new AppDataRepo(MainActivity.this);
+                User user = repo.getSignedUser();
+                repo.updateLoginStatus(user.getUserID(), false);
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                finish();
+                startActivity(new Intent(MainActivity.this, Login.class));
+            }
+        }.execute();
+    }
+
+
     //Navigate to About View
     public void aboutApp(View view) {
         Intent intent = new Intent(this, About.class);
         startActivity(intent);
     }
 }
-
-
-
-

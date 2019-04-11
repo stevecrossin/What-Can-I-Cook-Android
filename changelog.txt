@@ -152,4 +152,8 @@ Tuesday 9 April - Steve
 + Implemented changes to intolerances code - preferences now save correctly in DB and are visible in the UI, deletion of preferences now functions correctly but is not user specific
 Next: Make intolerances user specific by storing state in user DB, work on recipe search functions
 
+Thursday 11 April - Henry
++ Good. I am just reviewing some older entries in this changelog, and they didn't have a person assigned. Fix that up when you can, so I know who to attribute to that work. Cheers.
 
+Thursday 11 April - Steve
++ Implement changes to login code, userDB, intolerances java files, main activity to fully support intolerances being saved and loaded across different users
