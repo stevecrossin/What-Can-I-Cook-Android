@@ -26,7 +26,7 @@ public interface IngredientDao {
     @Query("SELECT * FROM ingredient WHERE ingredient_name = :name;")
     List<Ingredient> getIngredientsByName(String name);
 
-    @Query("SELECT * FROM ingredient WHERE ingredient_selected = 1;")
+    @Query("SELECT * FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0;")
     List<Ingredient> getAllCheckedIngredients();
 
     @Query("UPDATE ingredient SET ingredient_selected = 0 WHERE ingredient_selected = 1;")

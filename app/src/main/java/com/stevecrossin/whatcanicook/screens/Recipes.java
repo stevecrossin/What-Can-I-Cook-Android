@@ -69,9 +69,19 @@ public class Recipes extends AppCompatActivity {
         recipesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         //ingredientsList.setHasFixedSize(false);
         recipeViewAdapter = new RecipeViewAdapter(new ArrayList<Recipe>(), new RecipeViewAdapter.rowClickedListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
-            public void onRowClicked(Recipe recipe) {
-                Log.d(TAG, "onRowClicked: " + recipe.getRecipeName() + " " + recipe.getRecipeIngredients());
+            public void onRowClicked(final Recipe recipe) {
+                new AsyncTask<Void, Void, Void>() {
+                    @Override
+                    protected Void doInBackground(Void... voids) {
+                        ArrayList<String> missingIngredients = new ArrayList<>();
+                        missingIngredients.addAll(repository.getMissingIngredientsByName(recipe.getRecipeName()));
+                        for (String string : missingIngredients)
+                            Log.d(TAG, "Missing ingredients: " + string + "\n");
+                        return null;
+                    }
+                }.execute();
             }
 
         });
@@ -90,10 +100,10 @@ public class Recipes extends AppCompatActivity {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
                 ArrayList<Recipe> recipes = new ArrayList<>();
-                recipes.addAll(repository.getAllRecipes());
+                recipes.addAll(repository.getAllRecipesByCheckedIngredients());
                 for (Recipe recipe : recipes) {
                     Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
-                    Log.d(TAG, "Recipe ingredients : " + recipe.getRecipeIngredients());
+                    Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
                 }
                 return recipes;
             }

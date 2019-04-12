@@ -162,16 +162,36 @@ public class AppDataRepo {
         return recipeDao.getRecipesByName(recipeName);
     }
 
+    public List<Recipe> getRecipesByNames(ArrayList<String> recipeNames) {
+        return recipeDao.getRecipesByNames(recipeNames);
+    }
+
+    public List<RecipeIngredients> getAllRecipesAndIngredients() {
+        return recipeIngredientsDao.getAllRecipesAndIngredients();
+    }
+
+    public List<String> getAllRecipesByIngredient(ArrayList<String> ingredients) {
+        return recipeIngredientsDao.getAllRecipesByIngredient(ingredients);
+    }
+
+    public List<Recipe> getAllRecipesByCheckedIngredients(){
+        return recipeDao.getAllRecipesByCheckedIngredients();
+    }
+
+    public List<Integer> getNumberOfMissingIngredientsByName(String name){
+        return recipeDao.getNumberOfMissingIngredientsByName(name);
+    }
+
+    public List<String> getMissingIngredientsByName(String name){
+        return recipeDao.getMissingIngredientsByName(name);
+    }
+
     public void insertRecipes(ArrayList<Recipe> recipes) {
         recipeDao.addRecipes(recipes);
     }
 
     public void insertRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients) {
         recipeIngredientsDao.addRecipeIngredients(recipeIngredients);
-    }
-
-    public List<RecipeIngredients> getAllRecipesAndIngredients() {
-        return recipeIngredientsDao.getAllRecipesAndIngredients();
     }
 
     /**************** User Repo ***********************/

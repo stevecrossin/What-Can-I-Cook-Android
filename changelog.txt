@@ -157,3 +157,15 @@ Thursday 11 April - Henry
 
 Thursday 11 April - Steve
 + Implement changes to login code, userDB, intolerances java files, main activity to fully support intolerances being saved and loaded across different users
+
+Friday 12 April - Saturday 13 April
++ Core function for recipes search is implemented. The backbone of the app is now created.
++ However, exact match for recipes is not implemented. Everytime user clicked on a rowed, missing recipes will be shown.
++ Subtasks/changes included:
+ - Add more methods in RecipeDao
+ - Modify recipe result layout
+ - Testing SQL queries using DB Browser
+
+What's next?
++ Enable exact match recipe search
++ Implement recipe detail scene
