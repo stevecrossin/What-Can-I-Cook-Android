@@ -169,3 +169,11 @@ Friday 12 April - Saturday 13 April
 What's next?
 + Enable exact match recipe search
 + Implement recipe detail scene
+
+Sunday 14 April
++ Recipe has been displayed in a separate scene (name, ingredients, steps, image - just a container)
+   - This is done by passing the recipe user clicked to another scene
++ Showing users how many ingredients they are missing
+
+What's next?
++ Enable exact match recipe search

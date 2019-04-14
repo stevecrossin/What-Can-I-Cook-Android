@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.MyIngredientViewAdapter;
@@ -39,6 +41,7 @@ public class Recipes extends AppCompatActivity {
     private static final String TAG = "Recipes";
     ArrayList<Recipe> recipesFromCsv = new ArrayList<>();
     ArrayList<RecipeIngredients> recipeIngredientsFromCsv = new ArrayList<>();
+    Switch exactMatch;
 
     /**
      * Scene initalization. This also loads the neccessary ingredient from the CSV to the database
@@ -48,7 +51,18 @@ public class Recipes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_results);
-
+        exactMatch = findViewById(R.id.exactMatch_switch);
+        exactMatch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked)
+                    //update exact match
+                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                else
+                    //normal search
+                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+            }
+        });
         repository = new AppDataRepo(this);
         loadRecipesFromCsv();
         loadRecipesToDb();
@@ -77,8 +91,12 @@ public class Recipes extends AppCompatActivity {
                     protected Void doInBackground(Void... voids) {
                         ArrayList<String> missingIngredients = new ArrayList<>();
                         missingIngredients.addAll(repository.getMissingIngredientsByName(recipe.getRecipeName()));
-                        for (String string : missingIngredients)
-                            Log.d(TAG, "Missing ingredients: " + string + "\n");
+                        //for (String string : missingIngredients)
+                        // Log.d(TAG, "Missing ingredients: " + string + "\n");
+                        Intent intent = new Intent(Recipes.this, RecipesDetails.class);
+                        intent.putExtra("RECIPE", recipe);
+                        intent.putExtra("MISSING", missingIngredients);
+                        startActivity(intent);
                         return null;
                     }
                 }.execute();

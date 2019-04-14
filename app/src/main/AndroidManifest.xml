@@ -62,6 +62,7 @@
         <activity android:name=".screens.MyIngredients" />
         <activity android:name=".screens.Recipes" />
         <activity android:name=".screens.Login" />
+        <activity android:name=".screens.RecipesDetails" />
 
     </application>
 
