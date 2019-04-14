@@ -180,5 +180,5 @@ What's next?
 
 Sunday 14 April - Steve
 + Fix some string values, and some code that could cause exceptions. Adjusted recipe results layout to stretch content, added textview to enable searching for ingredients
-rather than manual selection, updated CSV files to clean display, adjust other layouts.
+rather than manual selection, updated CSV files to clean display, adjust other layouts. Intolerances UI issues fixed.
 Next: Enable images to display in category_viewholder, comment code
