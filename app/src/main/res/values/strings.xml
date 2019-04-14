@@ -44,4 +44,16 @@
     <string name="search_for_a_recipe">Search for a recipe</string>
     <string name="signin">Log In</string>
     <string name="logout">Log out</string>
+    <string name="recipe_results">Recipe Results</string>
+    <string name="recipe_ingredients">Recipe Ingredients:</string>
+    <string name="recipe_steps">Recipe Steps:</string>
+    <string name="missing_ingredients_warning">Missing ingredients warning</string>
+    <string name="log_messages_button">Log Messages</string>
+    <string name="placeholder_ingredientstitle">Placeholder</string>
+    <string name="add_ingredients">Add Ingredients</string>
+    <string name="btnCheckIngredient">Check My Ingredients</string>
+    <string name="signup">Sign Up</string>
+    <string name="string_signin">Sign In</string>
+    <string name="searchIngredientInput">Search for an ingredient</string>
+    <string name="enoughIngredients">You have enough ingredients!</string>
 </resources>

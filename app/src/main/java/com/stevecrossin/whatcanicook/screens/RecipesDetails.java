@@ -36,13 +36,14 @@ public class RecipesDetails extends AppCompatActivity {
         recipeName.setText(recipe.getRecipeName());
         recipeIngredients.setText(recipe.getRecipeIngredients());
         recipeSteps.setText(recipe.getRecipeSteps());
+
         if (missingIngredients.size() > 0) {
             warning.setTextColor(Color.RED);
             warning.setText(String.format("You are missing: %s", missing));
         }
         else {
             warning.setTextColor(Color.GREEN);
-            warning.setText("You have enough ingredient!");
+            warning.setText(getString(R.string.enoughIngredients));
         }
     }
 }

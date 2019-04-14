@@ -122,9 +122,9 @@ public class Login extends AppCompatActivity {
 
                         currentLoginState = loginState;
                         if (loginState == NEW_USER) {
-                            loginButton.setText("Sign Up");
+                            loginButton.setText(getString(R.string.signup));
                         } else {
-                            loginButton.setText("Sign In");
+                            loginButton.setText(getString(R.string.string_signin));
                         }
                     }
                 }.execute(text.toString());
@@ -332,8 +332,10 @@ public class Login extends AppCompatActivity {
         AppDataRepo repository = new AppDataRepo(Login.this);
         if (!repository.haveIntolerance()) {
             ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
-            for (Intolerance intolerance : intolerances)
-                repository.insertIntolerance(intolerance);
+            if (intolerances != null) {
+                for (Intolerance intolerance : intolerances)
+                    repository.insertIntolerance(intolerance);
+            }
         }
     }
 
@@ -433,6 +435,7 @@ public class Login extends AppCompatActivity {
 
     }
 
+    @SuppressLint("StaticFieldLeak")
     private void isUserSignedIn() {
         new AsyncTask<Void, Void, User>() {
 

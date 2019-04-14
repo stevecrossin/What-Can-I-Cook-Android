@@ -21,7 +21,6 @@ import java.util.ArrayList;
 public class IngredientViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView ingredientName;
     private AppCompatCheckBox ingredientCheckBox;
-    private AppCompatImageView ingredientImage;
     private AppDataRepo repository;
 
     private static final String TAG = "IngredientViewHolder";
