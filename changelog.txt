@@ -177,3 +177,14 @@ Sunday 14 April
 
 What's next?
 + Enable exact match recipe search
+
+Monday 15 April
++ BRAVO!!! Milestone 3 reached!!! Recipe search has been fully implemented with missing ingredients mode and exact match mode!!!!
++ Switching between 2 modes by turning on/off the switch in recipe result
++ This function is carefully tested, both with SQL queries and in-app using.
++ I need holiday XD
+
+What's next?
++ A few displaying bugs in layout that needs to be fixed.
++ Images! 
++ Improve example data.

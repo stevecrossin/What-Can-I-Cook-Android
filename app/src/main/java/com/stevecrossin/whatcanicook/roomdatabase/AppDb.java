@@ -15,11 +15,13 @@ import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.entities.RecipeDao;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredientsDao;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotalDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 
 
-@Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class, LogRecords.class}, version = 5, exportSchema = false)
+@Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class, RecipeIngredientsTotal.class, LogRecords.class}, version = 6, exportSchema = false)
  public abstract class AppDb extends RoomDatabase {
 
     public abstract IngredientDao ingredientDao();
@@ -31,6 +33,8 @@ import com.stevecrossin.whatcanicook.entities.UserDao;
     public abstract RecipeDao recipeDao();
 
     public abstract RecipeIngredientsDao recipeIngredientsDao();
+
+    public abstract RecipeIngredientsTotalDao recipeIngredientsTotalDao();
 
     public abstract LogDao logDao();
 

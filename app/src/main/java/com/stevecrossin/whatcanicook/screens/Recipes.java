@@ -20,6 +20,7 @@ import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import org.apache.commons.csv.CSVFormat;
@@ -41,6 +42,7 @@ public class Recipes extends AppCompatActivity {
     private static final String TAG = "Recipes";
     ArrayList<Recipe> recipesFromCsv = new ArrayList<>();
     ArrayList<RecipeIngredients> recipeIngredientsFromCsv = new ArrayList<>();
+    ArrayList<RecipeIngredientsTotal> recipeIngredientsTotalsFromCsv = new ArrayList<>();
     Switch exactMatch;
 
     /**
@@ -57,16 +59,17 @@ public class Recipes extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
                     //update exact match
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                    loadRecipesExactMatch();
                 else
                     //normal search
-                    Log.d(TAG, "onCheckedChanged: " + isChecked);
+                    loadRecipes();
             }
         });
         repository = new AppDataRepo(this);
         loadRecipesFromCsv();
         loadRecipesToDb();
         loadRecipeIngredientsToDb();
+        loadRecipeIngredientsTotalToDb();
         initRecyclerItems();
     }
 
@@ -134,6 +137,29 @@ public class Recipes extends AppCompatActivity {
         }.execute();
     }
 
+    @SuppressLint("StaticFieldLeak")
+    //Load recipes into memory from csv file, apply filters.
+    public void loadRecipesExactMatch() {
+        new AsyncTask<Void, Void, ArrayList<Recipe>>() {
+            @Override
+            protected ArrayList<Recipe> doInBackground(Void... voids) {
+                ArrayList<Recipe> recipes = new ArrayList<>();
+                recipes.addAll(repository.getAllRecipesByCheckedIngredientsWithExactMatch());
+                for (Recipe recipe : recipes) {
+                    Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
+                    Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
+                }
+                return recipes;
+            }
+
+            @Override
+            protected void onPostExecute(ArrayList<Recipe> recipes) {
+                super.onPostExecute(recipes);
+                recipeViewAdapter.updateRecipes(recipes);
+            }
+        }.execute();
+    }
+
     /**
      * This method will parse data in the CSV files into 2 ArrayList: recipesFromCSV and recipeIngredientsFromCsv
      * Note*: The recipes raw data structure is more special than others
@@ -153,6 +179,8 @@ public class Recipes extends AppCompatActivity {
                     RecipeIngredients recipeIngredients = new RecipeIngredients(recipeName, ingredient);
                     recipeIngredientsFromCsv.add(recipeIngredients);
                 }
+                RecipeIngredientsTotal recipeIngredientsTotal = new RecipeIngredientsTotal(recipeName, ingredients.length);
+                recipeIngredientsTotalsFromCsv.add(recipeIngredientsTotal);
                 Recipe recipe = new Recipe(recipeName, ingredientString, recipeSteps);
                 recipesFromCsv.add(recipe);
             }
@@ -192,6 +220,23 @@ public class Recipes extends AppCompatActivity {
             protected Void doInBackground(Void... voids) {
                 if (!repository.haveRecipeIngredients()) {
                     repository.insertRecipeIngredients(recipeIngredientsFromCsv);
+                }
+                return null;
+            }
+        }.execute();
+
+    }
+
+    /**
+     * Loads recipes + ingredients to the DB if there is no data
+     */
+    @SuppressLint("StaticFieldLeak")
+    public void loadRecipeIngredientsTotalToDb() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                if (!repository.haveRecipeIngredientsTotal()) {
+                    repository.insertRecipeIngredientsTotal(recipeIngredientsTotalsFromCsv);
                 }
                 return null;
             }

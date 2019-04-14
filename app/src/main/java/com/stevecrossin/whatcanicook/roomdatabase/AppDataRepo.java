@@ -15,6 +15,8 @@ import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.entities.RecipeDao;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredientsDao;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
+import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotalDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 
@@ -33,6 +35,7 @@ public class AppDataRepo {
     private UserDao userDao;
     private RecipeDao recipeDao;
     private RecipeIngredientsDao recipeIngredientsDao;
+    private RecipeIngredientsTotalDao recipeIngredientsTotalDao;
     private LogDao logDao;
 
     /**
@@ -48,6 +51,7 @@ public class AppDataRepo {
         userDao = AppDb.getDatabase(context).userDao();
         recipeDao = AppDb.getDatabase(context).recipeDao();
         recipeIngredientsDao = AppDb.getDatabase(context).recipeIngredientsDao();
+        recipeIngredientsTotalDao = AppDb.getDatabase(context).recipeIngredientsTotalDao();
         logDao = AppDb.getDatabase(context).logDao();
 
         //intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
@@ -113,6 +117,13 @@ public class AppDataRepo {
         return false;
     }
 
+    public boolean haveRecipeIngredientsTotal() {
+        List<RecipeIngredientsTotal> recipeIngredientsTotals = recipeIngredientsTotalDao.getAllRecipesAndIngredientsTotal();
+        if (recipeIngredientsTotals.size() > 0)
+            return true;
+        return false;
+    }
+
     public void insertIngredients(ArrayList<Ingredient> ingredients) {
         ingredientDao.addIngredients(ingredients);
     }
@@ -120,6 +131,10 @@ public class AppDataRepo {
 
     public void insertIntolerance(Intolerance intolerance) {
         intoleranceDao.addIntolerance(intolerance);
+    }
+
+    public void insertRecipeIngredientsTotal(ArrayList<RecipeIngredientsTotal> recipeIngredientsTotals) {
+        recipeIngredientsTotalDao.addRecipeIngredientsTotal(recipeIngredientsTotals);
     }
 
     public void deleteAllIngredient() {
@@ -174,8 +189,16 @@ public class AppDataRepo {
         return recipeIngredientsDao.getAllRecipesByIngredient(ingredients);
     }
 
+    public List<RecipeIngredientsTotal> getAllRecipesAndIngredientsTotal() {
+        return recipeIngredientsTotalDao.getAllRecipesAndIngredientsTotal();
+    }
+
     public List<Recipe> getAllRecipesByCheckedIngredients(){
         return recipeDao.getAllRecipesByCheckedIngredients();
+    }
+
+    public List<Recipe> getAllRecipesByCheckedIngredientsWithExactMatch(){
+        return recipeDao.getAllRecipesByCheckedIngredientsWithExactMatch();
     }
 
     public List<Integer> getNumberOfMissingIngredientsByName(String name){

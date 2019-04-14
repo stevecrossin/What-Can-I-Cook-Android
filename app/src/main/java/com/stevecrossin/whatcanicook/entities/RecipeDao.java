@@ -19,6 +19,16 @@ public interface RecipeDao {
             " GROUP BY recipeingredients.recipe_name ORDER BY count(recipeingredients.recipe_name) DESC;")
     List<Recipe> getAllRecipesByCheckedIngredients();
 
+    @Query("SELECT recipe.* FROM recipeingredients\n" +
+            "JOIN recipe ON recipeingredients.recipe_name = Recipe.recipe_name\n" +
+            "JOIN recipeingredientstotal ON recipeingredients.recipe_name = recipeingredientstotal.recipe_name\n" +
+            "WHERE recipeingredients.recipe_ingredients IN\n" +
+            "(SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0)\n" +
+            "GROUP BY recipeingredients.recipe_name \n" +
+            "HAVING RecipeIngredientsTotal.total_ingredients = count(recipeingredients.recipe_name)\n" +
+            "ORDER BY count(recipeingredients.recipe_name) DESC;")
+    List<Recipe> getAllRecipesByCheckedIngredientsWithExactMatch();
+
     @Query(" SELECT count(recipe_name) FROM recipeingredients\n" +
             " WHERE recipeingredients.recipe_ingredients IN \n" +
             " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0) \n" +
