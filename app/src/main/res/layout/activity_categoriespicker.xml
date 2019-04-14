@@ -22,31 +22,49 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/ingredients_list"
         android:layout_width="0dp"
-        android:layout_height="524dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ingredientsearchbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dishchosentext"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/dishchosentext" />
+
+    <AutoCompleteTextView
+        android:id="@+id/ingredientsearchbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#ffffff"
+        android:completionHint="Search"
+        android:hint="@string/searchIngredientInput"
+        android:labelFor="@id/ingredientsearchbox"
+        android:padding="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCheckIngredient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_list"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
         android:id="@+id/buttonCheckIngredient"
-        android:layout_width="205dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="24dp"
         android:onClick="myIngredients"
-        android:text="@string/btnCheckIngredient"
+        android:text="@string/check_my_ingredients"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredients_list" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_list"
+        app:layout_constraintVertical_bias="0.67" />
 </android.support.constraint.ConstraintLayout>
