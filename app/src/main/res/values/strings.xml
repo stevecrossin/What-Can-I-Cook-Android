@@ -55,4 +55,5 @@
     <string name="signup">Sign Up</string>
     <string name="string_signin">Sign In</string>
     <string name="searchIngredientInput">Search for an ingredient</string>
+    <string name="enoughIngredients">You have enough ingredients!</string>
 </resources>

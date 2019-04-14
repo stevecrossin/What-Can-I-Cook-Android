@@ -19,7 +19,7 @@ import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 
 
-@Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class, LogRecords.class}, version = 5, exportSchema = false)
+@Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class, LogRecords.class}, version = 7, exportSchema = false)
  public abstract class AppDb extends RoomDatabase {
 
     public abstract IngredientDao ingredientDao();
