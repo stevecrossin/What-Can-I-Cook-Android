@@ -2,6 +2,7 @@ package com.stevecrossin.whatcanicook.screens;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -42,9 +43,9 @@ public class CategoryPicker extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String breakfast = intent.getStringExtra("DISH_TYPE");
+        String dishtype = intent.getStringExtra("DISH_TYPE");
         TextView textView = findViewById(R.id.dishchosentext);
-        textView.setText(breakfast);
+        textView.setText(dishtype);
 
         repository = new AppDataRepo(this);
 
