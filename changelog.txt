@@ -158,7 +158,7 @@ Thursday 11 April - Henry
 Thursday 11 April - Steve
 + Implement changes to login code, userDB, intolerances java files, main activity to fully support intolerances being saved and loaded across different users
 
-Friday 12 April - Saturday 13 April
+Friday 12 April - Saturday 13 April - Trong
 + Core function for recipes search is implemented. The backbone of the app is now created.
 + However, exact match for recipes is not implemented. Everytime user clicked on a rowed, missing recipes will be shown.
 + Subtasks/changes included:
@@ -170,10 +170,14 @@ What's next?
 + Enable exact match recipe search
 + Implement recipe detail scene
 
-Sunday 14 April
+Sunday 14 April - Trong
 + Recipe has been displayed in a separate scene (name, ingredients, steps, image - just a container)
    - This is done by passing the recipe user clicked to another scene
 + Showing users how many ingredients they are missing
 
 What's next?
 + Enable exact match recipe search
+
+Sunday 14 April - Steve
++ Fix some string values, and some code that could cause exceptions. Adjusted recipe results layout to stretch content
+Next: Update CSV files to format data in a cleaner way, start adding images, comment code
