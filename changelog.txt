@@ -194,3 +194,9 @@ What's next?
 + A few displaying bugs in layout that needs to be fixed.
 + Images! 
 + Improve example data.
+
+Henry Feedback: 
++ Good to see Milestone 3 reached (and you aimed and stayed on target for milestones).
++ I need a holiday too.
+
+
