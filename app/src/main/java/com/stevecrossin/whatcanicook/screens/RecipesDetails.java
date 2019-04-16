@@ -37,7 +37,7 @@ public class RecipesDetails extends AppCompatActivity {
         recipeIngredients.setText(recipe.getRecipeIngredients().replaceAll(":",",\n"));
 
         TextView recipeSteps = findViewById(R.id.recipe_steps_content);
-        recipeSteps.setText(recipe.getRecipeSteps());
+        recipeSteps.setText(recipe.getRecipeSteps().replaceAll(":",",\n"));
 
         TextView warning = findViewById(R.id.recipe_warning);
         if (missingIngredients.size() > 0) {
