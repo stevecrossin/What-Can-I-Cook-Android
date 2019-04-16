@@ -6,21 +6,31 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Ingredient {
+
     @PrimaryKey
     @ColumnInfo(name = "ingredient_id")
     private int ingredientID;
+
     @ColumnInfo(name = "ingredient_category")
     private String ingredientCategory;
+
     @ColumnInfo(name = "ingredient_subcat")
     private String ingredientSubCat;
+
     @ColumnInfo(name = "ingredient_name")
     private String ingredientName;
+
     @ColumnInfo(name = "ingredient_alternative")
     private String ingredientAlternative;
+
     @ColumnInfo(name = "ingredient_excluded")
     private boolean ingredientExcluded = false;
+
     @ColumnInfo(name = "ingredient_selected")
     private boolean ingredientSelected = false;
+
+    @ColumnInfo(name = "category_icon")
+    private String categoryIconName;
 
 
     public Ingredient(int ingredientID, String ingredientCategory, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
@@ -29,6 +39,7 @@ public class Ingredient {
         this.ingredientSubCat = ingredientSubCat;
         this.ingredientName = ingredientName;
         this.ingredientAlternative = ingredientAlternative;
+        this.categoryIconName = "meat";
     }
 
     public int getIngredientID() {
@@ -86,5 +97,13 @@ public class Ingredient {
 
     public void setIngredientSelected(boolean ingredientSelected) {
         this.ingredientSelected = ingredientSelected;
+    }
+
+    public String getCategoryIconName() {
+        return categoryIconName;
+    }
+
+    public void setCategoryIconName(String categoryIconName) {
+        this.categoryIconName = categoryIconName;
     }
 }

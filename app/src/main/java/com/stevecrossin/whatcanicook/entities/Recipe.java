@@ -21,10 +21,14 @@ public class Recipe implements Serializable {
     @ColumnInfo(name = "recipe_steps")
     private String recipeSteps;
 
+    @ColumnInfo(name = "recipe_image")
+    private String recipeImage;
+
     public Recipe(String recipeName, String recipeIngredients, String recipeSteps) {
         this.recipeName = recipeName;
         this.recipeIngredients = recipeIngredients;
         this.recipeSteps = recipeSteps;
+        this.recipeImage = "meat";
     }
 
     public int getRecipeId() {
@@ -57,5 +61,13 @@ public class Recipe implements Serializable {
 
     public void setRecipeSteps(String recipeSteps) {
         this.recipeSteps = recipeSteps;
+    }
+
+    public String getRecipeImage() {
+        return recipeImage;
+    }
+
+    public void setRecipeImage(String recipeImage) {
+        this.recipeImage = recipeImage;
     }
 }

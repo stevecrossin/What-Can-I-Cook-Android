@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.stevecrossin.whatcanicook.R;
@@ -28,15 +29,17 @@ public class RecipesDetails extends AppCompatActivity {
         for (String string : missingIngredients)
             missing += string + ", ";
         missing = missing.substring(0, missing.length() - 2);
-        TextView recipeName = findViewById(R.id.recipe_name);
-        TextView recipeIngredients = findViewById(R.id.recipe_ingredients);
-        TextView recipeSteps = findViewById(R.id.recipe_steps);
-        TextView warning = findViewById(R.id.recipe_warning);
 
+        TextView recipeName = findViewById(R.id.recipe_name);
         recipeName.setText(recipe.getRecipeName());
-        recipeIngredients.setText(recipe.getRecipeIngredients());
+
+        TextView recipeIngredients = findViewById(R.id.recipe_ingredients_content);
+        recipeIngredients.setText(recipe.getRecipeIngredients().replaceAll(":",",\n"));
+
+        TextView recipeSteps = findViewById(R.id.recipe_steps_content);
         recipeSteps.setText(recipe.getRecipeSteps());
 
+        TextView warning = findViewById(R.id.recipe_warning);
         if (missingIngredients.size() > 0) {
             warning.setTextColor(Color.RED);
             warning.setText(String.format("You are missing: %s", missing));
@@ -45,5 +48,11 @@ public class RecipesDetails extends AppCompatActivity {
             warning.setTextColor(Color.GREEN);
             warning.setText(getString(R.string.enoughIngredients));
         }
+
+
+        ImageView recipeImage = findViewById(R.id.recipe_img);
+        int drawableResourceId = this.getResources().getIdentifier(recipe.getRecipeImage(), "drawable", this.getPackageName());
+        recipeImage.setImageResource(drawableResourceId);
+
     }
 }

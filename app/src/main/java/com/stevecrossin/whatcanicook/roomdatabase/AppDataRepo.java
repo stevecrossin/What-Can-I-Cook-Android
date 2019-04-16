@@ -81,7 +81,7 @@ public class AppDataRepo {
         return intoleranceDao.getIntoleranceByName(intolerance);
     }
 
-    public List<String> getAllCategories() {
+    public List<Ingredient> getAllCategories() {
         return ingredientDao.getAllCategories();
     }
 

@@ -44,8 +44,8 @@ public interface IngredientDao {
     @Query("UPDATE ingredient SET ingredient_selected = 0 WHERE ingredient_name = :ingredientName;")
     void deselectIngredient(String ingredientName);
 
-    @Query("SELECT DISTINCT ingredient_category FROM ingredient;")
-    List<String> getAllCategories();
+    @Query("SELECT *  FROM ingredient GROUP By ingredient_category;")
+    List<Ingredient> getAllCategories();
 
     @Insert
     void addIngredients(ArrayList<Ingredient> ingredients);

@@ -11,12 +11,13 @@ import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
-    private ArrayList<String> categories;
+    private List<Ingredient> categories;
     private rowClickedListener rowClickedListener;
 
-    public CategoryViewAdapter(ArrayList<String> categories, CategoryViewAdapter.rowClickedListener rowClickedListener) {
+    public CategoryViewAdapter(List<Ingredient> categories, CategoryViewAdapter.rowClickedListener rowClickedListener) {
         this.categories = categories;
         this.rowClickedListener = rowClickedListener;
     }
@@ -29,11 +30,11 @@ public class CategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder ingredientViewHolder, @SuppressLint("RecyclerView") final int i) {
-        ingredientViewHolder.bindRow(categories.get(i));
+        ingredientViewHolder.bindRow(categories.get(i),ingredientViewHolder.itemView.getContext());
         ingredientViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rowClickedListener.onRowClicked(categories.get(i));
+                rowClickedListener.onRowClicked(categories.get(i).getIngredientCategory());
             }
         });
     }
@@ -43,7 +44,7 @@ public class CategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder
         return categories.size();
     }
 
-    public void updateCategories(ArrayList<String> categories) {
+    public void updateCategories(List<Ingredient> categories) {
         this.categories = categories;
         notifyDataSetChanged();
     }

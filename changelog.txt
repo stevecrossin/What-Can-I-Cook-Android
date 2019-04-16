@@ -183,8 +183,7 @@ Sunday 14 April - Steve
 rather than manual selection, updated CSV files to clean display, adjust other layouts. Intolerances UI issues fixed.
 Next: Enable images to display in category_viewholder, comment code
 
-
-Monday 15 April
+Monday 15 April - Trong
 + BRAVO!!! Milestone 3 reached!!! Recipe search has been fully implemented with missing ingredients mode and exact match mode!!!!
 + Switching between 2 modes by turning on/off the switch in recipe result
 + This function is carefully tested, both with SQL queries and in-app using.
@@ -199,4 +198,14 @@ Henry Feedback:
 + Good to see Milestone 3 reached (and you aimed and stayed on target for milestones).
 + I need a holiday too.
 
+Tuesday 16 April - Steve
++ Images implemented and display correctly in categories and for recipes
++ Layout fixed in recipes to allow separating of ingredients by colon separator, some bugs experienced in recipe steps, still in progress
++ I also badly need a holiday
+
+Next steps
++ Fix layout issue with recipe steps displaying correctly
++ Allow different images to be displayed based on CSV or whatever is in storage for that category/recipe
++ Code autocomplete textbox to allow easy search of ingredients.
++ Comment code (Yes, I haven't forgotten! :-))
 

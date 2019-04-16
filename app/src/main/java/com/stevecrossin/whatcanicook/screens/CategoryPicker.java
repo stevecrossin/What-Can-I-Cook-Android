@@ -27,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class handles the ingredients functions of the application.
@@ -68,7 +69,6 @@ public class CategoryPicker extends AppCompatActivity {
     This method will be performed in the background once the user navigates to the CategoryPicker chooser activity from the main app landing page.
     MainActivity will pass the dish option that was clicked (e.g. breakfast, dessert) and pass this to CategoryPicker activity, which will update the
     label at the top of the activity to "What's for breakfast/dinner/dessert etc.
-
     It also needs to
     1. Read all information from ingredients.csv, a read only document stored in permanent storage
     2. Append the ingredients room database with any new ingredients/delete any ingredients that are no longer present in the csv
@@ -77,21 +77,21 @@ public class CategoryPicker extends AppCompatActivity {
     5. Query database for ingredients that are not excluded, and update recyclerview in ingredient chooser activity with this list.
     */
 
-    final ArrayList<Ingredient> ingredients = loadIngredientsFromCsv();
+        final ArrayList<Ingredient> ingredients = loadIngredientsFromCsv();
 
-        new AsyncTask<Void, Void, ArrayList<String>>() {
+        new AsyncTask<Void, Void, List<Ingredient>>() {
             @Override
-            protected ArrayList<String> doInBackground(Void... voids) {
+            protected List<Ingredient> doInBackground(Void... voids) {
                 if (!repository.haveIngredient()) {
                     repository.insertIngredients(ingredients);
                 }
-                ArrayList<String> categories = new ArrayList<>();
+                ArrayList<Ingredient> categories = new ArrayList<>();
                 categories.addAll(repository.getAllCategories());
                 return categories;
             }
 
             @Override
-            protected void onPostExecute(ArrayList<String> categories) {
+            protected void onPostExecute(List<Ingredient> categories) {
                 super.onPostExecute(categories);
                 categoryViewAdapter.updateCategories(categories);
             }
@@ -115,7 +115,6 @@ public class CategoryPicker extends AppCompatActivity {
         /*
         When the user clicks the "Check my ingredients" the UI will navigate to the My CategoryPicker activity,
         and the recyclerview in that activity will be updated with the list of selected ingredients, where ingredientselected = true
-
         CategoryPicker can be removed from the list individually, and when an ingredient is removed from the My CategoryPicker Activity,
         it will perform a background task to change the ingredientselected database field to false
         */
@@ -176,7 +175,7 @@ public class CategoryPicker extends AppCompatActivity {
         RecyclerView ingredientsCategoryList = findViewById(R.id.ingredients_list);
         ingredientsCategoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         //ingredientsList.setHasFixedSize(false);
-        categoryViewAdapter = new CategoryViewAdapter(new ArrayList<String>(), new CategoryViewAdapter.rowClickedListener() {
+        categoryViewAdapter = new CategoryViewAdapter(new ArrayList<Ingredient>(), new CategoryViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(String category) {
                 Log.d(TAG, "Row is clicked");
@@ -201,4 +200,3 @@ public class CategoryPicker extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
