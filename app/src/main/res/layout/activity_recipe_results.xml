@@ -20,16 +20,17 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recipes_list"
         android:layout_width="0dp"
-        android:layout_height="517dp"
+        android:layout_height="475dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:paddingBottom="10dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/clearIngredients"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/clearIngredients"
@@ -58,5 +59,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipes_list" />
+
+    <LinearLayout
+        android:id="@+id/adding_list"
+        android:layout_width="277dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_name"></LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="109dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Do you also have: "
+        app:layout_constraintEnd_toStartOf="@+id/adding_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
 
 </android.support.constraint.ConstraintLayout>

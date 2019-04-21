@@ -193,9 +193,13 @@ public class AppDataRepo {
         return recipeIngredientsTotalDao.getAllRecipesAndIngredientsTotal();
     }
 
-    public List<Recipe> getAllRecipesByCheckedIngredients(){
-        return recipeDao.getAllRecipesByCheckedIngredients();
+    public List<Recipe> getAllRecipesByCheckedIngredients(int limit){
+        if (limit == 0)
+            return recipeDao.getAllRecipesByCheckedIngredients();
+        else
+            return recipeDao.getAllRecipesByCheckedIngredientsWithLimit(limit);
     }
+
 
     public List<Recipe> getAllRecipesByCheckedIngredientsWithExactMatch(){
         return recipeDao.getAllRecipesByCheckedIngredientsWithExactMatch();
@@ -205,8 +209,11 @@ public class AppDataRepo {
         return recipeDao.getNumberOfMissingIngredientsByName(name);
     }
 
-    public List<String> getMissingIngredientsByName(String name){
-        return recipeDao.getMissingIngredientsByName(name);
+    public List<String> getMissingIngredientsByName(String name, int limit){
+        if (limit == 0)
+            return recipeDao.getMissingIngredientsByName(name);
+        else
+            return recipeDao.getMissingIngredientsByNameWithLimit(name, limit);
     }
 
     public void insertRecipes(ArrayList<Recipe> recipes) {

@@ -209,3 +209,17 @@ Next steps
 + Code autocomplete textbox to allow easy search of ingredients.
 + Comment code (Yes, I haven't forgotten! :-))
 
+Sunday 21st April - Monday 22 April
++ Additional features for recipe search is implemted - Ingredient suggestion (section 3.2.9)
+   - After the user performs a search for recipes, the results will be displayed as normal. Additionally, the application will in the background be aware of recipes that the user is missing ingredients for, and display a list of suggested ingredients, which if selected, will update the list of recipes to the user.
+   - Already well-tested manually. The feature can be seen more obvious with better test data.
+   - How it is implemented: user is suggested 3 missing ingredient for one top most recipe that they are possible to cook.
+   - Once they clicked the ingredient, the recipe table will be updated. suggestion panel will also be updated with new ingredient
+   - If they are missing less than 3 ingredients for the top most possibly used recipe, suggestion panel only show those ingredients (either 1 or 2). 
+     Side effects: If they don't like the top most available recipe, the suggestion box still suggest ingredients for that recipe until they've clicked all. 
+
++ Happy Easter every one
+
+What's next:
+- Save recipe
+- Share recipe

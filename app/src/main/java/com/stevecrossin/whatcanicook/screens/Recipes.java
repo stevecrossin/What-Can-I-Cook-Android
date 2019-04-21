@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import com.stevecrossin.whatcanicook.R;
@@ -44,11 +45,13 @@ public class Recipes extends AppCompatActivity {
     ArrayList<RecipeIngredients> recipeIngredientsFromCsv = new ArrayList<>();
     ArrayList<RecipeIngredientsTotal> recipeIngredientsTotalsFromCsv = new ArrayList<>();
     Switch exactMatch;
+    LinearLayout addingList;
 
     /**
      * Scene initalization. This also loads the neccessary ingredient from the CSV to the database
      * @param savedInstanceState
      */
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,13 +68,66 @@ public class Recipes extends AppCompatActivity {
                     loadRecipes();
             }
         });
+        addingList = findViewById(R.id.adding_list);
         repository = new AppDataRepo(this);
         loadRecipesFromCsv();
         loadRecipesToDb();
         loadRecipeIngredientsToDb();
         loadRecipeIngredientsTotalToDb();
         initRecyclerItems();
+        initSuggestions();
     }
+
+    @SuppressLint("StaticFieldLeak")
+    private void initSuggestions() {
+        addingList.removeAllViews();
+        new AsyncTask<Void, Void, ArrayList<String>>() {
+            @Override
+            protected ArrayList<String> doInBackground(Void... voids) {
+                ArrayList<Recipe> similarRecipes = new ArrayList<>();
+                similarRecipes.addAll(repository.getAllRecipesByCheckedIngredients(1));
+                Log.d(TAG, "doInBackground: " + similarRecipes.get(0).getRecipeName());
+                if (similarRecipes.size() > 0){
+                    Recipe similarRecipe = similarRecipes.get(0);
+                    ArrayList<String> missingIngredients = new ArrayList<>();
+                    missingIngredients.addAll(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 3));
+                    Log.d(TAG, "doInBackground: " + missingIngredients.get(0) + missingIngredients.get(1)+ missingIngredients.get(2));
+                    return missingIngredients;
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(ArrayList<String> missingIngredients) {
+                super.onPostExecute(missingIngredients);
+                for (String string : missingIngredients){
+                    final Button ingredient = new Button(Recipes.this);
+                    ingredient.setText(string);
+                    ingredient.setHeight(5);
+                    ingredient.setWidth(10);
+                    ingredient.setTag(string);
+                    ingredient.setOnClickListener(btnClicked);
+                    addingList.addView(ingredient);
+                }
+            }
+        }.execute();
+    }
+    View.OnClickListener btnClicked = new View.OnClickListener() {
+        @SuppressLint("StaticFieldLeak")
+        @Override
+        public void onClick(View v) {
+            final Button ingredient = (Button)v;
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    repository.selectIngredient(ingredient.getText().toString());
+                    return null;
+                }
+            }.execute();
+            initRecyclerItems();
+            initSuggestions();
+        }
+    };
 
     /**
      * This will do the setup step for our recycle view:
@@ -93,7 +149,7 @@ public class Recipes extends AppCompatActivity {
                     @Override
                     protected Void doInBackground(Void... voids) {
                         ArrayList<String> missingIngredients = new ArrayList<>();
-                        missingIngredients.addAll(repository.getMissingIngredientsByName(recipe.getRecipeName()));
+                        missingIngredients.addAll(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
                         //for (String string : missingIngredients)
                         // Log.d(TAG, "Missing ingredients: " + string + "\n");
                         Intent intent = new Intent(Recipes.this, RecipesDetails.class);
@@ -121,7 +177,7 @@ public class Recipes extends AppCompatActivity {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
                 ArrayList<Recipe> recipes = new ArrayList<>();
-                recipes.addAll(repository.getAllRecipesByCheckedIngredients());
+                recipes.addAll(repository.getAllRecipesByCheckedIngredients(0));
                 for (Recipe recipe : recipes) {
                     Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
                     Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
