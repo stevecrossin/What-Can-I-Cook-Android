@@ -241,7 +241,7 @@ What's next for Steve (this week (whatever week that is!)
 + Commenting code blitz (WAY OVERDUE FOR ME, yes I know!)
 + Fix layout issues with app
 + Test logging to log scene
-+ Write the app about screen
++ Write the app about screen.
 + Try to source some better recipe data - what we have works as proof of concept, but its honestly garbage for actual release (I don't even know what vegetable shortening is...)
 
 All said and done, we've implemented all core features (though they need some polishing), and two "Nice to have" features, with save and share recipe coming up this week, and some other features somewhat simple to implement, giving plenty of time for testing and polishing
