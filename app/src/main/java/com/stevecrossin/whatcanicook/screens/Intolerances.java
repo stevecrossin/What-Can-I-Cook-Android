@@ -34,7 +34,6 @@ public class Intolerances extends AppCompatActivity {
     /**
      * Scene initalization. This also performs the loading of intolerances into the database.
      * Get every switches by their id in the layout and set a listener on check/uncheck event (see intoleranceSelected())
-     *
      * @param savedInstanceState
      */
 

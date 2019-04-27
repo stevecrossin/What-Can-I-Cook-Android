@@ -228,11 +228,16 @@ Saturday - Sunday 27/28 April - Steve
 + Images load from CSV and reference files in drawable for categories.
 + Early alpha testing was done on core functionality of the application, both on AVD and an actual phone. Bugs found mostly on layout issues and will be flagged for remediation.
 + Licenses.txt file create for app images.
++ Recipe images working! \o/
++ Recipe results - dynamic autosizing of text to fit
++ Bug fixes to buttons to suggest ingredients - there were layout problems
++ Recipe images also appearing in recipe results and not just detailed view - however may remove this later, depending on user feedback
++ Remove redundant, and old/unused code. Strip out unnecessary pseudocode.
++ AppDB updated to include pantry DAO, getter/setter methods written and basic pantry code.
 
 What's next for Steve (this week (whatever week that is!)
 + Pantry implementation - simplex function where they are given a text box that autocompletes and they type in what they have
 + Also ability to add ingredients by text search
-
 + Commenting code blitz (WAY OVERDUE FOR ME, yes I know!)
 + Fix layout issues with app
 + Test logging to log scene
@@ -243,8 +248,3 @@ All said and done, we've implemented all core features (though they need some po
 
 LETS DO THIS - 4 WEEKS TO GO TILL RELEASE!
 
-Sunday 28 April
-+ Recipe images working! \o/
-+ Recipe results - dynamic autosizing of text to fit
-+ Bug fixes to buttons to suggest ingredients - there were layout problems
-+ Recipe images also appearing in recipe results and not just detailed view - however may remove this later, depending on user feedback
