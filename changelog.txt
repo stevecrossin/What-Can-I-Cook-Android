@@ -232,7 +232,7 @@ Saturday - Sunday 27/28 April - Steve
 What's next for Steve (this week (whatever week that is!)
 + Pantry implementation - simplex function where they are given a text box that autocompletes and they type in what they have
 + Also ability to add ingredients by text search
-+ Recipe images - harder to find free ones
+
 + Commenting code blitz (WAY OVERDUE FOR ME, yes I know!)
 + Fix layout issues with app
 + Test logging to log scene
@@ -247,3 +247,4 @@ Sunday 28 April
 + Recipe images working! \o/
 + Recipe results - dynamic autosizing of text to fit
 + Bug fixes to buttons to suggest ingredients - there were layout problems
++ Recipe images also appearing in recipe results and not just detailed view - however may remove this later, depending on user feedback

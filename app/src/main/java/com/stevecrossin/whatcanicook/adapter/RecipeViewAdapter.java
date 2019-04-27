@@ -29,7 +29,7 @@ public class RecipeViewAdapter extends RecyclerView.Adapter<RecipeViewHolder>  {
 
     @Override
     public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder,final int i) {
-        recipeViewHolder.bindRow(recipes.get(i));
+        recipeViewHolder.bindRow(recipes.get(i), recipeViewHolder.itemView.getContext());
         recipeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
