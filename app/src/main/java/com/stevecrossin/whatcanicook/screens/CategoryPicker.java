@@ -146,10 +146,12 @@ public class CategoryPicker extends AppCompatActivity {
             for (CSVRecord record : records) {
                 String ingredientID =  record.get(0);
                 String ingredientCategory = record.get(1);
-                String ingredientSubCat = record.get(2);
-                String ingredientName = record.get(3);
-                String ingredientAlternative = record.get(4);
-                Ingredient ingredient = new Ingredient(Integer.parseInt(ingredientID), ingredientCategory, ingredientSubCat, ingredientName, ingredientAlternative);
+                String categoryIconName = record.get(2);
+                String ingredientSubCat = record.get(3);
+                String ingredientName = record.get(4);
+                String ingredientAlternative = record.get(5);
+
+                Ingredient ingredient = new Ingredient(Integer.parseInt(ingredientID), ingredientCategory, categoryIconName, ingredientSubCat, ingredientName, ingredientAlternative);
                 ingredients.add(ingredient);
             }
             return ingredients;

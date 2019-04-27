@@ -14,6 +14,9 @@ public class Ingredient {
     @ColumnInfo(name = "ingredient_category")
     private String ingredientCategory;
 
+    @ColumnInfo(name = "category_icon")
+    private String categoryIconName;
+
     @ColumnInfo(name = "ingredient_subcat")
     private String ingredientSubCat;
 
@@ -29,17 +32,17 @@ public class Ingredient {
     @ColumnInfo(name = "ingredient_selected")
     private boolean ingredientSelected = false;
 
-    @ColumnInfo(name = "category_icon")
-    private String categoryIconName;
 
 
-    public Ingredient(int ingredientID, String ingredientCategory, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
+
+    public Ingredient(int ingredientID, String ingredientCategory, String categoryIconName, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
         this.ingredientID = ingredientID;
         this.ingredientCategory = ingredientCategory;
+        this.categoryIconName = categoryIconName;
         this.ingredientSubCat = ingredientSubCat;
         this.ingredientName = ingredientName;
         this.ingredientAlternative = ingredientAlternative;
-        this.categoryIconName = "meat";
+
     }
 
     public int getIngredientID() {

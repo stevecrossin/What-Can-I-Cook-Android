@@ -1,15 +1,14 @@
 package com.stevecrossin.whatcanicook.adapter;
 
-import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.RecyclerView;
-import android.view.ContextMenu;
-import android.view.View;
+        import android.content.Context;
+        import android.support.annotation.NonNull;
+        import android.support.v7.widget.AppCompatImageView;
+        import android.support.v7.widget.AppCompatTextView;
+        import android.support.v7.widget.RecyclerView;
+        import android.view.View;
 
-import com.stevecrossin.whatcanicook.R;
-import com.stevecrossin.whatcanicook.entities.Ingredient;
+        import com.stevecrossin.whatcanicook.R;
+        import com.stevecrossin.whatcanicook.entities.Ingredient;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder {
 
@@ -19,7 +18,7 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
     public CategoryViewHolder(@NonNull View itemView) {
         super(itemView);
         categoryName = itemView.findViewById(R.id.category_name);
-        categoryImage = itemView.findViewById(R.id.recipe_img);
+        categoryImage = itemView.findViewById(R.id.category_img);
     }
 
     void bindRow(Ingredient category, Context context) {

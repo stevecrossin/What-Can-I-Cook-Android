@@ -223,3 +223,22 @@ Sunday 21st April - Monday 22 April
 What's next:
 - Save recipe
 - Share recipe
+
+Saturday - Sunday 27/28 April - Steve
++ Images load from CSV and reference files in drawable for categories.
++ Early alpha testing was done on core functionality of the application, both on AVD and an actual phone. Bugs found mostly on layout issues and will be flagged for remediation.
++ Licenses.txt file create for app images.
+
+What's next for Steve (this week (whatever week that is!)
++ Pantry implementation - simplex function where they are given a text box that autocompletes and they type in what they have
++ Also ability to add ingredients by text search
++ Recipe images - harder to find free ones
++ Commenting code blitz (WAY OVERDUE FOR ME, yes I know!)
++ Fix layout issues with app
++ Test logging to log scene
++ Write the app about screen
++ Try to source some better recipe data - what we have works as proof of concept, but its honestly garbage for actual release (I don't even know what vegetable shortening is...)
+
+All said and done, we've implemented all core features (though they need some polishing), and two "Nice to have" features, with save and share recipe coming up this week, and some other features somewhat simple to implement, giving plenty of time for testing and polishing
+
+LETS DO THIS - 4 WEEKS TO GO TILL RELEASE!

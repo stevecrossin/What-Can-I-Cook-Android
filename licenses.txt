@@ -1,0 +1,22 @@
+Licenses for images in this project:
+
+For the application icons as depicted in the design, free images have been sourced. All application icons are taken from Android’s default icons library.
+The licenses for the below do not require attribution as they are either CC0 or do not otherwise need to be attributed per the Pexels license (https://www.pexels.com/photo-license/)
+Breakfast icon: https://www.pexels.com/photo/variety-of-cooked-dishes-374052/
+Lunch icon: https://www.pexels.com/photo/food-in-a-plate-1860204/
+Dinner icon: https://www.pexels.com/photo/chicken-close-up-dish-food-265393/
+Dessert icon: https://www.pexels.com/photo/closeup-photo-of-cupcake-913135/
+Saved recipes icons: https://www.pexels.com/photo/books-on-bookshelves-1166657/
+Pantry icon: https://www.pexels.com/photo/egg-avocado-cooking-tomato-106877/
+
+Icons used for category selection were freely available icons, which are licensed under the Creative Commons Attribution-NoDerivs 3.0 Unported license. As per the license text at https://icons8.com/license, attribution to Icons8 in the about page is needed, which will be done in addition to reference here.
+
+Wine:
+Bread:
+Milk:
+Oil:
+FruitVeg:
+Meat:
+Nuts:
+Spices:
+Sugars & Sweets:
