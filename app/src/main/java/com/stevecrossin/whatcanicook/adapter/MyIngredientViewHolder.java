@@ -10,7 +10,7 @@ import android.widget.CompoundButton;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 
-public class MyIngredientViewHolder  extends RecyclerView.ViewHolder {
+public class MyIngredientViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView myIngredientName;
 
     public MyIngredientViewHolder(@NonNull View itemView) {

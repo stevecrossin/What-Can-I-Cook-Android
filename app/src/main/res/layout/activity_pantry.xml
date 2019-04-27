@@ -29,10 +29,28 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:background="@color/primaryLightColor"
-        app:layout_constraintBottom_toTopOf="@+id/pantryAddIngredients"
+        app:layout_constraintBottom_toTopOf="@+id/pantryIngredientsSearchBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pantryTitle"/>
+
+    <AutoCompleteTextView
+        android:id="@+id/pantryIngredientsSearchBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#ffffff"
+        android:completionHint="Search"
+        android:hint="@string/add_an_ingredient_to_pantry"
+        android:labelFor="@id/ingredientsearchbox"
+        android:padding="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/pantryAddIngredients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pantryRecycler"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
         android:id="@+id/pantryAddIngredients"

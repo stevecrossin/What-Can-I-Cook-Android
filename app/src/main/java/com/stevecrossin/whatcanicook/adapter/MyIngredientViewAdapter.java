@@ -27,7 +27,7 @@ public class MyIngredientViewAdapter extends RecyclerView.Adapter<MyIngredientVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyIngredientViewHolder myIngredientViewHolder,final int i) {
+    public void onBindViewHolder(@NonNull MyIngredientViewHolder myIngredientViewHolder, final int i) {
         myIngredientViewHolder.bindRow(ingredients.get(i));
         myIngredientViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

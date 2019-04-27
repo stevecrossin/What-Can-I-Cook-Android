@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class RecipesDetails extends AppCompatActivity {
     Recipe recipe;
     ArrayList<String> missingIngredients;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +33,16 @@ public class RecipesDetails extends AppCompatActivity {
         recipeName.setText(recipe.getRecipeName());
 
         TextView recipeIngredients = findViewById(R.id.recipe_ingredients_content);
-        recipeIngredients.setText(recipe.getRecipeIngredients().replaceAll(":",",\n"));
+        recipeIngredients.setText(recipe.getRecipeIngredients().replaceAll(":", ",\n"));
 
         TextView recipeSteps = findViewById(R.id.recipe_steps_content);
-        recipeSteps.setText(recipe.getRecipeSteps().replaceAll(":",",\n"));
+        recipeSteps.setText(recipe.getRecipeSteps().replaceAll(":", ",\n"));
 
         TextView warning = findViewById(R.id.recipe_warning);
         if (missingIngredients.size() > 0) {
             warning.setTextColor(Color.RED);
             warning.setText(String.format("You are missing: %s", missing));
-        }
-        else {
+        } else {
             warning.setTextColor(Color.GREEN);
             warning.setText(getString(R.string.enoughIngredients));
         }

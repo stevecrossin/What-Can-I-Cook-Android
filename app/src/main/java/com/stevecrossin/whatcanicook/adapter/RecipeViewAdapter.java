@@ -12,7 +12,7 @@ import com.stevecrossin.whatcanicook.entities.Recipe;
 
 import java.util.ArrayList;
 
-public class RecipeViewAdapter extends RecyclerView.Adapter<RecipeViewHolder>  {
+public class RecipeViewAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     private ArrayList<Recipe> recipes;
     private RecipeViewAdapter.rowClickedListener rowClickedListener;
 
@@ -28,7 +28,7 @@ public class RecipeViewAdapter extends RecyclerView.Adapter<RecipeViewHolder>  {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder,final int i) {
+    public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, final int i) {
         recipeViewHolder.bindRow(recipes.get(i), recipeViewHolder.itemView.getContext());
         recipeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

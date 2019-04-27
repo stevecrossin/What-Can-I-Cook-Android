@@ -26,6 +26,7 @@ public class MyIngredients extends AppCompatActivity {
 
     /**
      * Scence initialization.
+     *
      * @param savedInstanceState
      */
     @Override
@@ -55,7 +56,7 @@ public class MyIngredients extends AppCompatActivity {
             public void onRowClicked(Ingredient ingredient) {
                 Log.d(TAG, "onRowClicked: " + ingredient.getIngredientName());
             }
-        } );
+        });
         myIngredientsList.setAdapter(myIngredientViewAdapter);
         loadIngredients();
     }
@@ -72,7 +73,7 @@ public class MyIngredients extends AppCompatActivity {
             protected ArrayList<Ingredient> doInBackground(Void... voids) {
                 ArrayList<Ingredient> ingredients = new ArrayList<>();
                 ingredients.addAll(repository.getAllCheckedIngredients());
-                for (Ingredient ingredient : ingredients){
+                for (Ingredient ingredient : ingredients) {
                     Log.d(TAG, "ingredient name: " + ingredient.getIngredientName());
                     Log.d(TAG, "checked : " + ingredient.isIngredientSelected());
                 }
@@ -87,7 +88,7 @@ public class MyIngredients extends AppCompatActivity {
         }.execute();
     }
 
-    public void findRecipes(View view){
+    public void findRecipes(View view) {
         Intent intent = new Intent(MyIngredients.this, Recipes.class);
         startActivity(intent);
     }

@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Entity
 public class Recipe implements Serializable {
-    @PrimaryKey(autoGenerate=true)
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "recipe_id")
     private int recipeId;
 
@@ -23,7 +23,6 @@ public class Recipe implements Serializable {
 
     @ColumnInfo(name = "recipe_steps")
     private String recipeSteps;
-
 
 
     public Recipe(String recipeName, String recipeImage, String recipeIngredients, String recipeSteps) {

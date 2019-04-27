@@ -56,4 +56,5 @@
     <string name="string_signin">Sign In</string>
     <string name="searchIngredientInput">Search for an ingredient</string>
     <string name="enoughIngredients">You have enough ingredients!</string>
+    <string name="add_an_ingredient_to_pantry">Add an ingredient to pantry</string>
 </resources>

@@ -40,7 +40,6 @@ public class AppDataRepo {
     private LogDao logDao;
     private PantryDao pantryDao;
 
-
     public AppDataRepo(Context context) {
         ingredientDao = AppDb.getDatabase(context).ingredientDao();
         intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
@@ -50,8 +49,6 @@ public class AppDataRepo {
         recipeIngredientsTotalDao = AppDb.getDatabase(context).recipeIngredientsTotalDao();
         logDao = AppDb.getDatabase(context).logDao();
         pantryDao = AppDb.getDatabase(context).pantryDao();
-
-
     }
 
     public List<Ingredient> getAllIngredients() {
@@ -186,7 +183,7 @@ public class AppDataRepo {
         return recipeIngredientsTotalDao.getAllRecipesAndIngredientsTotal();
     }
 
-    public List<Recipe> getAllRecipesByCheckedIngredients(int limit){
+    public List<Recipe> getAllRecipesByCheckedIngredients(int limit) {
         if (limit == 0)
             return recipeDao.getAllRecipesByCheckedIngredients();
         else
@@ -194,15 +191,15 @@ public class AppDataRepo {
     }
 
 
-    public List<Recipe> getAllRecipesByCheckedIngredientsWithExactMatch(){
+    public List<Recipe> getAllRecipesByCheckedIngredientsWithExactMatch() {
         return recipeDao.getAllRecipesByCheckedIngredientsWithExactMatch();
     }
 
-    public List<Integer> getNumberOfMissingIngredientsByName(String name){
+    public List<Integer> getNumberOfMissingIngredientsByName(String name) {
         return recipeDao.getNumberOfMissingIngredientsByName(name);
     }
 
-    public List<String> getMissingIngredientsByName(String name, int limit){
+    public List<String> getMissingIngredientsByName(String name, int limit) {
         if (limit == 0)
             return recipeDao.getMissingIngredientsByName(name);
         else

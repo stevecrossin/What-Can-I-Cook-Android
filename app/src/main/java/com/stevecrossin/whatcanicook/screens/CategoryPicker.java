@@ -37,6 +37,7 @@ public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private CategoryViewAdapter categoryViewAdapter;
     private static final String TAG = "CategoryPicker";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +54,6 @@ public class CategoryPicker extends AppCompatActivity {
         initRecyclerItems();
     }
 
-
-    String ingredienttype;//Type of ingredient e.g meat, veg
-    String ingredientname;//Name of ingredient
-    String ingredientalternative;//Possible alternative ingredients e.g. canola to sunflower oil
-    Boolean ingredientselectable = true;//Whether or not the ingredient is selectable. Defaults to true.
-    Boolean ingredientselected = false;//Whether or not the ingredient has been selected for recipe searching. Defaults to false.
 
     /**
      * This will perform the initial load of the ingredients from the ingredients.csv file and its display in the CategoryPicker activity
@@ -96,41 +91,8 @@ public class CategoryPicker extends AppCompatActivity {
                 categoryViewAdapter.updateCategories(categories);
             }
         }.execute();
-
-
     }
 
-    //Notes when ingredients have been selected by the user, and handles searching of ingredients with the text box
-    public void ingredientSelected() {
-        /*
-        When a user navigates the ingredients chooser, they can either click on a category in the recyclerview, or search with a search box that filters the ingredients view,
-        that can then be clicked. Each ingredient has its own row in the database, and has an onClick listener to determine if clicked.
-        When any row is clicked, for that particular ingredient, the
-        */
-    }
-
-
-    //Handles the display of the selected ingredients in the My CategoryPicker activity
-    public void checkIngredients() {
-        /*
-        When the user clicks the "Check my ingredients" the UI will navigate to the My CategoryPicker activity,
-        and the recyclerview in that activity will be updated with the list of selected ingredients, where ingredientselected = true
-        CategoryPicker can be removed from the list individually, and when an ingredient is removed from the My CategoryPicker Activity,
-        it will perform a background task to change the ingredientselected database field to false
-        */
-    }
-
-    //Passes the selected ingredients to Recipe class
-    public void searchRecipe() {
-        /*
-        Once the user clicks the "Find Recipes" button in the My CategoryPicker activity, the following actions need to occur
-        1. Query the ingredients database for all ingredients where ingredientselectable = true, and ingredientselected = true with a getter method
-        This will pull a list of all currently selected valid ingredients. As a secondary piece of information, if any selected ingredients have alternatives,
-        this will be collected as well.
-        2. Pass that information in a parcel to the Recipes activity, which will perform the recipe results
-        */
-
-    }
 
     /**
      * This will perform the initial load of the ingredients from the ingredients.csv file
@@ -144,7 +106,7 @@ public class CategoryPicker extends AppCompatActivity {
             Reader in = new InputStreamReader(getResources().openRawResource(R.raw.ingredients));
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
             for (CSVRecord record : records) {
-                String ingredientID =  record.get(0);
+                String ingredientID = record.get(0);
                 String ingredientCategory = record.get(1);
                 String ingredientImage = record.get(2);
                 String ingredientSubCat = record.get(3);
@@ -155,14 +117,14 @@ public class CategoryPicker extends AppCompatActivity {
                 ingredients.add(ingredient);
             }
             return ingredients;
-        } catch (FileNotFoundException ex){
+        } catch (FileNotFoundException ex) {
             Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
-        } catch (IOException ex){
+        } catch (IOException ex) {
             Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
-        } catch (Exception ex){
+        } catch (Exception ex) {
             Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
-        return  null;
+        return null;
     }
 
     /**
@@ -181,7 +143,7 @@ public class CategoryPicker extends AppCompatActivity {
             @Override
             public void onRowClicked(String category) {
                 Log.d(TAG, "Row is clicked");
-                if (category != null){
+                if (category != null) {
                     Log.d(TAG, "Category: " + category);
                 } else
                     Log.d(TAG, "Category is null");
@@ -190,7 +152,7 @@ public class CategoryPicker extends AppCompatActivity {
                 intent.putExtra("CATEGORY", category);
                 startActivity(intent);
             }
-        } );
+        });
 
         ingredientsCategoryList.setAdapter(categoryViewAdapter);
 

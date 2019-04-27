@@ -32,7 +32,7 @@ public class IngredientViewHolder extends RecyclerView.ViewHolder {
         ingredientCheckBox = itemView.findViewById(R.id.ingredient_checkBox);
         repository = new AppDataRepo(itemView.getContext());
     }
-    
+
     void bindRow(Ingredient ingredient) {
         ingredientName.setText(ingredient.getIngredientName());
         if (ingredient.isIngredientSelected())
@@ -55,15 +55,16 @@ public class IngredientViewHolder extends RecyclerView.ViewHolder {
             protected Void doInBackground(Void... voids) {
                 ArrayList<Ingredient> list = new ArrayList<>();
                 list.addAll(repository.getIngredientsByName(ingredientName));
-                if (isSelected){
-                    for (Ingredient ingredient : list){
+                if (isSelected) {
+                    for (Ingredient ingredient : list) {
                         repository.selectIngredient(ingredient.getIngredientName());
                         Log.d(TAG, "Selected ingredient: " + ingredient.getIngredientName());
                     }
                 } else {
-                    for (Ingredient ingredient : list){
+                    for (Ingredient ingredient : list) {
                         repository.deselectIngredient(ingredient.getIngredientName());
-                        Log.d(TAG, "Deselected ingredient: " + ingredient.getIngredientName());ArrayList<Ingredient> list2 = new ArrayList<>();
+                        Log.d(TAG, "Deselected ingredient: " + ingredient.getIngredientName());
+                        ArrayList<Ingredient> list2 = new ArrayList<>();
                     }
                 }
                 return null;
