@@ -245,3 +245,5 @@ LETS DO THIS - 4 WEEKS TO GO TILL RELEASE!
 
 Sunday 28 April
 + Recipe images working! \o/
++ Recipe results - dynamic autosizing of text to fit
++ Bug fixes to buttons to suggest ingredients - there were layout problems

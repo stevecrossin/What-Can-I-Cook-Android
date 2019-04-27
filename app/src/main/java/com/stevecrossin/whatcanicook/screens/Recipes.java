@@ -104,9 +104,9 @@ public class Recipes extends AppCompatActivity {
                 for (String string : missingIngredients){
                     final Button ingredient = new Button(Recipes.this);
                     ingredient.setText(string);
-                    ingredient.setHeight(5);
-                    ingredient.setWidth(10);
                     ingredient.setTag(string);
+                    ingredient.setMaxWidth(10);
+                    ingredient.setTextSize(10);
                     ingredient.setOnClickListener(btnClicked);
                     addingList.addView(ingredient);
                 }

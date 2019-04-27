@@ -15,7 +15,7 @@ public class RecipeViewHolder  extends RecyclerView.ViewHolder{
     public RecipeViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        recipeName = itemView.findViewById(R.id.category_name);
+        recipeName = itemView.findViewById(R.id.recipe_name);
     }
 
     void bindRow(Recipe recipe) {
