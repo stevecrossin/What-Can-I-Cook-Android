@@ -38,6 +38,7 @@ public class Recipes extends AppCompatActivity {
     String recipename;
     String recipeingredients;//ingredients
     String recipesteps;
+    String recipeImage;
     private AppDataRepo repository;
     RecipeViewAdapter recipeViewAdapter;
     private static final String TAG = "Recipes";
@@ -226,18 +227,19 @@ public class Recipes extends AppCompatActivity {
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
             for (CSVRecord record : records) {
                 String recipeName = record.get(0);
-                String ingredientLists = record.get(1);
-                String ingredientString = record.get(2);
-                String recipeSteps = record.get(3);
+                String recipeImage = record.get(1);
+                String ingredientLists = record.get(2);
+                String ingredientString = record.get(3);
+                String recipeSteps = record.get(4);
                 String[] ingredients = ingredientLists.split(":");
 
                 for (String ingredient : ingredients) {
-                    RecipeIngredients recipeIngredients = new RecipeIngredients(recipeName, ingredient);
+                    RecipeIngredients recipeIngredients = new RecipeIngredients(recipeName, recipeImage, ingredient);
                     recipeIngredientsFromCsv.add(recipeIngredients);
                 }
                 RecipeIngredientsTotal recipeIngredientsTotal = new RecipeIngredientsTotal(recipeName, ingredients.length);
                 recipeIngredientsTotalsFromCsv.add(recipeIngredientsTotal);
-                Recipe recipe = new Recipe(recipeName, ingredientString, recipeSteps);
+                Recipe recipe = new Recipe(recipeName, recipeImage, ingredientString, recipeSteps);
                 recipesFromCsv.add(recipe);
             }
         } catch (FileNotFoundException ex) {

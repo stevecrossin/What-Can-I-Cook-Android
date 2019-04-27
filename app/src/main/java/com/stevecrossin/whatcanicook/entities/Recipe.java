@@ -15,20 +15,22 @@ public class Recipe implements Serializable {
     @ColumnInfo(name = "recipe_name")
     private String recipeName;
 
+    @ColumnInfo(name = "recipe_image")
+    private String recipeImage;
+
     @ColumnInfo(name = "recipe_ingredients")
     private String recipeIngredients;
 
     @ColumnInfo(name = "recipe_steps")
     private String recipeSteps;
 
-    @ColumnInfo(name = "recipe_image")
-    private String recipeImage;
 
-    public Recipe(String recipeName, String recipeIngredients, String recipeSteps) {
+
+    public Recipe(String recipeName, String recipeImage, String recipeIngredients, String recipeSteps) {
         this.recipeName = recipeName;
+        this.recipeImage = recipeImage;
         this.recipeIngredients = recipeIngredients;
         this.recipeSteps = recipeSteps;
-        this.recipeImage = "meat";
     }
 
     public int getRecipeId() {

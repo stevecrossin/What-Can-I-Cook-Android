@@ -13,11 +13,15 @@ public class RecipeIngredients {
     @ColumnInfo(name = "recipe_name")
     private String recipeName;
 
+    @ColumnInfo(name = "recipe_image")
+    private String recipeImage;
+
     @ColumnInfo(name = "recipe_ingredients")
     private String recipeIngredients;
 
-    public RecipeIngredients(String recipeName, String recipeIngredients) {
+    public RecipeIngredients(String recipeName, String recipeImage, String recipeIngredients) {
         this.recipeName = recipeName;
+        this.recipeImage = recipeImage;
         this.recipeIngredients = recipeIngredients;
     }
 
@@ -29,12 +33,20 @@ public class RecipeIngredients {
         return recipeIngredients;
     }
 
+    public String getRecipeImage() {
+        return recipeImage;
+    }
+
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
     }
 
     public void setRecipeIngredients(String recipeIngredients) {
         this.recipeIngredients = recipeIngredients;
+    }
+
+    public void setRecipeImage(String recipeImage) {
+        this.recipeImage = recipeImage;
     }
 
     public int getId() {

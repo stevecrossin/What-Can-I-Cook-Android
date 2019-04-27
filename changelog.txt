@@ -242,3 +242,6 @@ What's next for Steve (this week (whatever week that is!)
 All said and done, we've implemented all core features (though they need some polishing), and two "Nice to have" features, with save and share recipe coming up this week, and some other features somewhat simple to implement, giving plenty of time for testing and polishing
 
 LETS DO THIS - 4 WEEKS TO GO TILL RELEASE!
+
+Sunday 28 April
++ Recipe images working! \o/
