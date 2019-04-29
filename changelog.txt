@@ -288,6 +288,7 @@ Monday/Tues 29 April - Steve
 + Nix ad banner from categories and ingredients picker, makes layout too small
 + Sort ingredients CSV alphabetically
 + Add some common ingredients to CSV that were missing (SALT AND OIL IS NOW THERE)
++ Made some updates to CSV files, still in progress
 
 What's next
 
