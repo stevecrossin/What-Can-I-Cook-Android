@@ -2,8 +2,6 @@ package com.stevecrossin.whatcanicook.screens;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.Image;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,9 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.CategoryViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
@@ -24,7 +19,6 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -39,7 +33,6 @@ public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private CategoryViewAdapter categoryViewAdapter;
     private static final String TAG = "CategoryPicker";
-    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +50,6 @@ public class CategoryPicker extends AppCompatActivity {
 
         initRecyclerItems();
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
-        mAdView.loadAd(adRequest);
     }
 
 

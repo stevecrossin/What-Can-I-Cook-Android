@@ -258,51 +258,46 @@ o	Custom recipe database implemented and working within app
 Monday 29 April - Steve
 * Changelog updated, task list and bugs to fix written
 
-Monday 29th April
+Monday 29th April - Trong
 + Save recipe function is implemented (See section 3.2.1)
   - In the recipe search page, every recipe row will have a "Save" button similar to a floppy disk
   - When they clicked the icon, it will become a green "Checked" icon - that's when the recipe has been saved
-  - They can access their saved recipes in the "Saved Recipe" scene
-
-+ Bugs about what Steve has mentioned has been fixed. This is due to a log line for debugging purpose.
-
-What's next?
-+ Share function
-+ Bug fixes
-+ Comment code
-+ Anything left in the todo list
-
-Monday 29th April
+  - They can access their saved recipes in the "Saved Recipe"
 + Share recipe function is implemented (See section 3.2.2)
   - In the recipe detail page, there will be a "share" icon/button
   - When they clicked the icon, it will pop up a new intent, asking user which media they want to share via
   - Sharing recipe model is only TEXT-BASED, no image: recipe name, then new line, then recipe ingredients, then new line, then recipe steps.
-
-What's next?
-+ Bug fixes
-+ Comment code
-+ Anything left in the todo list
-+ Implement google ad
-
-
-Monday 29th April
 + Google ad function is implemented (See section 3.2.3)
   - Basically there is a little banner ad in almost every scene of the app. Except for log in and app splash scene.
   - I use the test/sample adUnitId from https://developers.google.com/admob/android/banner
   - We will have our own adUnitId in the future.
-
-What's next?
-+ Bug fixes
-+ Comment code
-+ Anything left in the todo list
-+ Custom recipe feature
-
-Monday 29th April
 + Custom recipe has been implemented. 
    - From the Saved Recipes window, users will have an option to add their own recipe, and from there can enter in their own recipes for future reference through text input.
    - The custom recipe, however, is still saved in the same db as the imported one. The only difference is that custom recipe has the field is_customed set to true.
++ Bugs in recipe search where no ingredients selected was fixed. Was caused by a log line for debugging purpose.
 
 What's next?
 + Bug fixes
 + Comment code
 + Improve "Saved recipe" page by adding an edit function and a delete function.
+
+Monday/Tues 29 April - Steve
++ Updated changelog to format better
++ Reviewed implemented code
++ Worked on pantry in private branch, and autocomplete
++ Nix ad banner from categories and ingredients picker, makes layout too small
++ Adjusted
+
+What's next
+
+* Finalise pantry and autocomplete text box
+* Write about page for app
+* Ensure logs are posted to log scene
+* Write user stories (as a user, I want to be able to do XYZ) and begin alpha testing
+* Add fructose intolerance, change "Choose a cuisine" to more suitable title (Had a friend do some testing and give feedback)
+* Vlookup ingredients and recipes to better match and ensure all ingredients in recipes exist in ingredients DB - data is crap
+* Debugging
+* Commenting code
+* Publish app for beta testing once all above complete, send out links to people to test
+
+Notes: Milestone 4 is nearly complete and will be completed on schedule or earlier. Most of the time after this will be dedicated to testing and bugfixes, trying to break the app every way possible to ensure everything functions correctly.

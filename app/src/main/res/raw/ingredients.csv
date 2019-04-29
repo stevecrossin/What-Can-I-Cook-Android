@@ -174,321 +174,324 @@
 173,Dairy & Alternatives,milk,Dairy & Alternativesalt,almond milk,\N,TRUE,FALSE
 174,Dairy & Alternatives,milk,Dairy & Alternativesalt,coconut milk,\N,TRUE,FALSE
 175,Dairy & Alternatives,milk,Dairy & Alternativesalt,hemp milk,\N,TRUE,FALSE
-176,Fats & Oils,oil,oils,vegetable oil,\N,TRUE,FALSE
-177,Fats & Oils,oil,oils,olive oil,\N,TRUE,FALSE
-178,Fats & Oils,oil,oils,coconut oil,\N,TRUE,FALSE
-179,Fats & Oils,oil,oils,sunflower oil,canola oil,TRUE,FALSE
-180,Fats & Oils,oil,oils,canola oil,sunflower oil,TRUE,FALSE
-181,Fats & Oils,oil,oils,peanut oil,\N,TRUE,FALSE
-182,Fats & Oils,oil,oils,cooking spray,\N,TRUE,FALSE
-183,Fats & Oils,oil,oils,sesame oil,\N,TRUE,FALSE
-184,Fats & Oils,oil,oils,shortening,\N,TRUE,FALSE
-185,Fats & Oils,oil,oils,lard,\N,TRUE,FALSE
-186,Fats & Oils,oil,oils,almond oil,\N,TRUE,FALSE
-187,Fats & Oils,oil,oils,grape seed oil,\N,TRUE,FALSE
-188,Fruits & Vegetables,fruit,fruit,lemon,\N,TRUE,FALSE
-189,Fruits & Vegetables,fruit,fruit,banana,\N,TRUE,FALSE
-190,Fruits & Vegetables,fruit,fruit,apple,\N,TRUE,FALSE
-191,Fruits & Vegetables,fruit,fruit,coconut,\N,TRUE,FALSE
-192,Fruits & Vegetables,fruit,fruit,mango,\N,TRUE,FALSE
-193,Fruits & Vegetables,fruit,fruit,lime,\N,TRUE,FALSE
-194,Fruits & Vegetables,fruit,fruit,orange,\N,TRUE,FALSE
-195,Fruits & Vegetables,fruit,fruit,pineapple,\N,TRUE,FALSE
-196,Fruits & Vegetables,fruit,fruit,strawberries,\N,TRUE,FALSE
-197,Fruits & Vegetables,fruit,fruit,raisin,\N,TRUE,FALSE
-198,Fruits & Vegetables,fruit,fruit,blueberries,\N,TRUE,FALSE
-199,Fruits & Vegetables,fruit,fruit,grape,\N,TRUE,FALSE
-200,Fruits & Vegetables,fruit,fruit,prunes,\N,TRUE,FALSE
-201,Fruits & Vegetables,fruit,fruit,nectarine,\N,TRUE,FALSE
-202,Fruits & Vegetables,fruit,fruit,fig,\N,TRUE,FALSE
-203,Fruits & Vegetables,fruit,fruit,peach,\N,TRUE,FALSE
-204,Fruits & Vegetables,fruit,fruit,cranberries,\N,TRUE,FALSE
-205,Fruits & Vegetables,fruit,fruit,raspberries,\N,TRUE,FALSE
-206,Fruits & Vegetables,fruit,fruit,pear,\N,TRUE,FALSE
-207,Fruits & Vegetables,fruit,fruit,cherry,\N,TRUE,FALSE
-208,Fruits & Vegetables,fruit,fruit,apricot,\N,TRUE,FALSE
-209,Fruits & Vegetables,fruit,fruit,blackberries,\N,TRUE,FALSE
-210,Fruits & Vegetables,fruit,fruit,berries,\N,TRUE,FALSE
-211,Fruits & Vegetables,fruit,fruit,date,\N,TRUE,FALSE
-212,Fruits & Vegetables,fruit,fruit,watermelon,\N,TRUE,FALSE
-213,Fruits & Vegetables,fruit,fruit,kiwi,\N,TRUE,FALSE
-214,Fruits & Vegetables,fruit,fruit,craisins,\N,TRUE,FALSE
-215,Fruits & Vegetables,fruit,fruit,mandarin,\N,TRUE,FALSE
-216,Fruits & Vegetables,fruit,fruit,cantaloupe,\N,TRUE,FALSE
-217,Fruits & Vegetables,fruit,fruit,plum,\N,TRUE,FALSE
-218,Fruits & Vegetables,fruit,fruit,papaya,\N,TRUE,FALSE
-219,Fruits & Vegetables,fruit,fruit,pomegranate,\N,TRUE,FALSE
-220,Fruits & Vegetables,fruit,fruit,apple,\N,TRUE,FALSE
-221,Fruits & Vegetables,fruit,fruit,rhubarb,\N,TRUE,FALSE
-222,Fruits & Vegetables,fruit,fruit,tangerine,\N,TRUE,FALSE
-223,Fruits & Vegetables,fruit,fruit,sultanas,\N,TRUE,FALSE
-224,Fruits & Vegetables,fruit,fruit,currant,\N,TRUE,FALSE
-225,Fruits & Vegetables,fruit,fruit,plantain,\N,TRUE,FALSE
-226,Fruits & Vegetables,fruit,fruit,passionfruit,\N,TRUE,FALSE
-227,Fruits & Vegetables,fruit,fruit,persimmons,\N,TRUE,FALSE
-228,Fruits & Vegetables,fruit,fruit,quince,\N,TRUE,FALSE
-229,Fruits & Vegetables,fruit,fruit,lychee,\N,TRUE,FALSE
-230,Fruits & Vegetables,fruit,fruit,tangelos,\N,TRUE,FALSE
-231,Fruits & Vegetables,fruit,fruit,boysenberry,\N,TRUE,FALSE
-232,Fruits & Vegetables,fruit,fruit,star F&V,\N,TRUE,FALSE
-233,Fruits & Vegetables,fruit,fruit,guava,\N,TRUE,FALSE
-234,Fruits & Vegetables,fruit,vegetables,peas,\N,TRUE,FALSE
-235,Fruits & Vegetables,fruit,vegetables,garlic,\N,TRUE,FALSE
-236,Fruits & Vegetables,fruit,vegetables,onion,\N,TRUE,FALSE
-237,Fruits & Vegetables,fruit,vegetables,olive,\N,TRUE,FALSE
-238,Fruits & Vegetables,fruit,vegetables,tomato,\N,TRUE,FALSE
-239,Fruits & Vegetables,fruit,vegetables,potato,\N,TRUE,FALSE
-240,Fruits & Vegetables,fruit,vegetables,salad greens,\N,TRUE,FALSE
-241,Fruits & Vegetables,fruit,vegetables,carrot,\N,TRUE,FALSE
-242,Fruits & Vegetables,fruit,vegetables,basil,\N,TRUE,FALSE
-243,Fruits & Vegetables,fruit,vegetables,parsley,\N,TRUE,FALSE
-244,Fruits & Vegetables,fruit,vegetables,rosemary,\N,TRUE,FALSE
-245,Fruits & Vegetables,fruit,vegetables,bell pepper,\N,TRUE,FALSE
-246,Fruits & Vegetables,fruit,vegetables,chili pepper,\N,TRUE,FALSE
-247,Fruits & Vegetables,fruit,vegetables,corn,\N,TRUE,FALSE
-248,Fruits & Vegetables,fruit,vegetables,ginger,\N,TRUE,FALSE
-249,Fruits & Vegetables,fruit,vegetables,mushroom,\N,TRUE,FALSE
-250,Fruits & Vegetables,fruit,vegetables,broccoli,\N,TRUE,FALSE
-251,Fruits & Vegetables,fruit,vegetables,spinach,\N,TRUE,FALSE
-252,Fruits & Vegetables,fruit,vegetables,green beans,\N,TRUE,FALSE
-253,Fruits & Vegetables,fruit,vegetables,celery,\N,TRUE,FALSE
-254,Fruits & Vegetables,fruit,vegetables,red onion,\N,TRUE,FALSE
-255,Fruits & Vegetables,fruit,vegetables,cilantro,\N,TRUE,FALSE
-256,Fruits & Vegetables,fruit,vegetables,cucumber,\N,TRUE,FALSE
-257,Fruits & Vegetables,fruit,vegetables,pickle,\N,TRUE,FALSE
-258,Fruits & Vegetables,fruit,vegetables,dill,\N,TRUE,FALSE
-259,Fruits & Vegetables,fruit,vegetables,avocado,\N,TRUE,FALSE
-260,Fruits & Vegetables,fruit,vegetables,sweet potato,\N,TRUE,FALSE
-261,Fruits & Vegetables,fruit,vegetables,zucchini,\N,TRUE,FALSE
-262,Fruits & Vegetables,fruit,vegetables,shallot,\N,TRUE,FALSE
-263,Fruits & Vegetables,fruit,vegetables,mixed vegetables,\N,TRUE,FALSE
-264,Fruits & Vegetables,fruit,vegetables,cabbage,\N,TRUE,FALSE
-265,Fruits & Vegetables,fruit,vegetables,asparagus,\N,TRUE,FALSE
-266,Fruits & Vegetables,fruit,vegetables,cauliflower,\N,TRUE,FALSE
-267,Fruits & Vegetables,fruit,vegetables,mint,\N,TRUE,FALSE
-268,Fruits & Vegetables,fruit,vegetables,pumpkin,\N,TRUE,FALSE
-269,Fruits & Vegetables,fruit,vegetables,kale,\N,TRUE,FALSE
-270,Fruits & Vegetables,fruit,vegetables,frozen vegetables,\N,TRUE,FALSE
-271,Fruits & Vegetables,fruit,vegetables,scallion,\N,TRUE,FALSE
-272,Fruits & Vegetables,fruit,vegetables,squash,\N,TRUE,FALSE
-273,Fruits & Vegetables,fruit,vegetables,sundried tomato,\N,TRUE,FALSE
-274,Fruits & Vegetables,fruit,vegetables,horseradish,\N,TRUE,FALSE
-275,Fruits & Vegetables,fruit,vegetables,beetroot,\N,TRUE,FALSE
-276,"Meat, Fish & Seafood",meat,meatred,beef mince,\N,TRUE,FALSE
-277,"Meat, Fish & Seafood",meat,meatred,bacon,\N,TRUE,FALSE
-278,"Meat, Fish & Seafood",meat,meatred,beef sausage,\N,TRUE,FALSE
-279,"Meat, Fish & Seafood",meat,meatred,pork sausage,\N,TRUE,FALSE
-280,"Meat, Fish & Seafood",meat,meatred,ham,\N,TRUE,FALSE
-281,"Meat, Fish & Seafood",meat,meatred,veal,\N,TRUE,FALSE
-282,"Meat, Fish & Seafood",meat,meatred,beef steak,\N,TRUE,FALSE
-283,"Meat, Fish & Seafood",meat,meatred,hot dog,\N,TRUE,FALSE
-284,"Meat, Fish & Seafood",meat,meatred,pork chops,\N,TRUE,FALSE
-285,"Meat, Fish & Seafood",meat,meatred,pork,\N,TRUE,FALSE
-286,"Meat, Fish & Seafood",meat,meatred,pepperoni,\N,TRUE,FALSE
-287,"Meat, Fish & Seafood",meat,meatred,pork mince,\N,TRUE,FALSE
-288,"Meat, Fish & Seafood",meat,meatred,chorizo,\N,TRUE,FALSE
-289,"Meat, Fish & Seafood",meat,meatred,salami,\N,TRUE,FALSE
-290,"Meat, Fish & Seafood",meat,meatred,pork roast,\N,TRUE,FALSE
-291,"Meat, Fish & Seafood",meat,meatred,pork ribs,\N,TRUE,FALSE
-292,"Meat, Fish & Seafood",meat,meatred,venison,\N,TRUE,FALSE
-293,"Meat, Fish & Seafood",meat,meatred,spam,\N,TRUE,FALSE
-294,"Meat, Fish & Seafood",meat,meatred,lamb,\N,TRUE,FALSE
-295,"Meat, Fish & Seafood",meat,meatred,pork shoulder,\N,TRUE,FALSE
-296,"Meat, Fish & Seafood",meat,meatred,beef roast,\N,TRUE,FALSE
-297,"Meat, Fish & Seafood",meat,meatred,bratwurst,\N,TRUE,FALSE
-298,"Meat, Fish & Seafood",meat,meatred,prosciutto,\N,TRUE,FALSE
-299,"Meat, Fish & Seafood",meat,meatred,bologna,\N,TRUE,FALSE
-300,"Meat, Fish & Seafood",meat,meatred,corned beef,\N,TRUE,FALSE
-301,"Meat, Fish & Seafood",meat,meatred,lamb chops,\N,TRUE,FALSE
-302,"Meat, Fish & Seafood",meat,meatred,ground lamb,\N,TRUE,FALSE
-303,"Meat, Fish & Seafood",meat,meatred,beef ribs,\N,TRUE,FALSE
-304,"Meat, Fish & Seafood",meat,meatred,duck,\N,TRUE,FALSE
-305,"Meat, Fish & Seafood",meat,meatred,pancetta,\N,TRUE,FALSE
-306,"Meat, Fish & Seafood",meat,meatred,beef liver,\N,TRUE,FALSE
-307,"Meat, Fish & Seafood",meat,meatred,leg of lamb,\N,TRUE,FALSE
-308,"Meat, Fish & Seafood",meat,meatred,beef shank,\N,TRUE,FALSE
-309,"Meat, Fish & Seafood",meat,meatred,pork belly,\N,TRUE,FALSE
-310,"Meat, Fish & Seafood",meat,meatred,lamb shoulder,\N,TRUE,FALSE
-311,"Meat, Fish & Seafood",meat,meatred,lamb shank,\N,TRUE,FALSE
-312,"Meat, Fish & Seafood",meat,meatwhite,chicken breast,\N,TRUE,FALSE
-313,"Meat, Fish & Seafood",meat,meatwhite,cooked chicken,\N,TRUE,FALSE
-314,"Meat, Fish & Seafood",meat,meatwhite,chicken thighs,\N,TRUE,FALSE
-315,"Meat, Fish & Seafood",meat,meatwhite,turkey mince,\N,TRUE,FALSE
-316,"Meat, Fish & Seafood",meat,meatwhite,turkey,\N,TRUE,FALSE
-317,"Meat, Fish & Seafood",meat,meatwhite,whole chicken,\N,TRUE,FALSE
-318,"Meat, Fish & Seafood",meat,meatwhite,chicken leg,\N,TRUE,FALSE
-319,"Meat, Fish & Seafood",meat,meatwhite,chicken wings,\N,TRUE,FALSE
-320,"Meat, Fish & Seafood",meat,meatwhite,chicken mince,\N,TRUE,FALSE
-321,"Meat, Fish & Seafood",meat,meatwhite,chicken roast,\N,TRUE,FALSE
-322,"Meat, Fish & Seafood",meat,meatwhite,chicken giblets,\N,TRUE,FALSE
-323,"Meat, Fish & Seafood",meat,fish,flake,\N,TRUE,FALSE
-324,"Meat, Fish & Seafood",meat,fish,barramundi,\N,TRUE,FALSE
-325,"Meat, Fish & Seafood",meat,fish,trout,\N,TRUE,FALSE
-326,"Meat, Fish & Seafood",meat,fish,blue grenadier,\N,TRUE,FALSE
-327,"Meat, Fish & Seafood",meat,fish,john dory,\N,TRUE,FALSE
-328,"Meat, Fish & Seafood",meat,fish,mackerel,\N,TRUE,FALSE
-329,"Meat, Fish & Seafood",meat,fish,tilapia,\N,TRUE,FALSE
-330,"Meat, Fish & Seafood",meat,fish,eel,\N,TRUE,FALSE
-331,"Meat, Fish & Seafood",meat,fish,sea bass,\N,TRUE,FALSE
-332,"Meat, Fish & Seafood",meat,fish,haddock,\N,TRUE,FALSE
-333,"Meat, Fish & Seafood",meat,fish,smoked salmon,\N,TRUE,FALSE
-334,"Meat, Fish & Seafood",meat,fish,salmon,\N,TRUE,FALSE
-335,"Meat, Fish & Seafood",meat,fish,whiting,\N,TRUE,FALSE
-336,"Meat, Fish & Seafood",meat,fish,anchovies,\N,TRUE,FALSE
-337,"Meat, Fish & Seafood",meat,fish,snapper,\N,TRUE,FALSE
-338,"Meat, Fish & Seafood",meat,fish,mullet,\N,TRUE,FALSE
-339,"Meat, Fish & Seafood",meat,fish,tuna,\N,TRUE,FALSE
-340,"Meat, Fish & Seafood",meat,fish,cod,\N,TRUE,FALSE
-341,"Meat, Fish & Seafood",meat,seafood,shrimp,\N,TRUE,FALSE
-342,"Meat, Fish & Seafood",meat,seafood,cockle,\N,TRUE,FALSE
-343,"Meat, Fish & Seafood",meat,seafood,crab meat,\N,TRUE,FALSE
-344,"Meat, Fish & Seafood",meat,seafood,crab,\N,TRUE,FALSE
-345,"Meat, Fish & Seafood",meat,seafood,scallop,\N,TRUE,FALSE
-346,"Meat, Fish & Seafood",meat,seafood,prawns,\N,TRUE,FALSE
-347,"Meat, Fish & Seafood",meat,seafood,clam,\N,TRUE,FALSE
-348,"Meat, Fish & Seafood",meat,seafood,lobster,\N,TRUE,FALSE
-349,"Meat, Fish & Seafood",meat,seafood,octopus,\N,TRUE,FALSE
-350,"Meat, Fish & Seafood",meat,seafood,calamari,\N,TRUE,FALSE
-351,"Meat, Fish & Seafood",meat,seafood,squid,\N,TRUE,FALSE
-352,"Meat, Fish & Seafood",meat,seafood,oyster,\N,TRUE,FALSE
-353,"Meat, Fish & Seafood",meat,seafood,mussel,\N,TRUE,FALSE
-354,Nuts & Legumes,nuts,altproteins,black beans,\N,TRUE,FALSE
-355,Nuts & Legumes,nuts,altproteins,chickpea,\N,TRUE,FALSE
-356,Nuts & Legumes,nuts,altproteins,lentil,\N,TRUE,FALSE
-357,Nuts & Legumes,nuts,altproteins,hummus,\N,TRUE,FALSE
-358,Nuts & Legumes,nuts,altproteins,soy beans,\N,TRUE,FALSE
-359,Nuts & Legumes,nuts,altproteins,pinto beans,\N,TRUE,FALSE
-360,Nuts & Legumes,nuts,altproteins,cannellini beans,\N,TRUE,FALSE
-361,Nuts & Legumes,nuts,altproteins,navy beans,\N,TRUE,FALSE
-362,Nuts & Legumes,nuts,altproteins,kidney beans,\N,TRUE,FALSE
-363,Nuts & Legumes,nuts,altproteins,lima beans,\N,TRUE,FALSE
-364,Nuts & Legumes,nuts,altproteins,green beans,\N,TRUE,FALSE
-365,Nuts & Legumes,nuts,altproteins,french beans,\N,TRUE,FALSE
-366,Nuts & Legumes,nuts,Nuts,peanut,\N,TRUE,FALSE
-367,Nuts & Legumes,nuts,Nuts,chestnut,\N,TRUE,FALSE
-368,Nuts & Legumes,nuts,Nuts,almond,\N,TRUE,FALSE
-369,Nuts & Legumes,nuts,Nuts,cashew,\N,TRUE,FALSE
-370,Nuts & Legumes,nuts,Nuts,walnut,\N,TRUE,FALSE
-371,Nuts & Legumes,nuts,Nuts,pecan,\N,TRUE,FALSE
-372,Nuts & Legumes,nuts,Nuts,flax,\N,TRUE,FALSE
-373,Nuts & Legumes,nuts,Nuts,pine nut,\N,TRUE,FALSE
-374,Nuts & Legumes,nuts,Nuts,pistachio,\N,TRUE,FALSE
-375,Nuts & Legumes,nuts,Nuts,almond meal,\N,TRUE,FALSE
-376,Nuts & Legumes,nuts,Nuts,praline,\N,TRUE,FALSE
-377,Nuts & Legumes,nuts,Nuts,hazelnut,\N,TRUE,FALSE
-378,Nuts & Legumes,nuts,Nuts,macadamia,\N,TRUE,FALSE
-379,Nuts & Legumes,nuts,Nuts,almond paste,\N,TRUE,FALSE
-380,Nuts & Legumes,nuts,Nuts,tree Nuts,\N,TRUE,FALSE
-381,Nuts & Legumes,nuts,Nuts,macaroon,\N,TRUE,FALSE
-382,Spices & Condiments,spices,condiments,mayonnaise,\N,TRUE,FALSE
-383,Spices & Condiments,spices,condiments,mustard,\N,TRUE,FALSE
-384,Spices & Condiments,spices,condiments,ketchup,\N,TRUE,FALSE
-385,Spices & Condiments,spices,condiments,vinegar,\N,TRUE,FALSE
-386,Spices & Condiments,spices,condiments,balsamic vinegar,\N,TRUE,FALSE
-387,Spices & Condiments,spices,condiments,wine vinegar,\N,TRUE,FALSE
-388,Spices & Condiments,spices,condiments,cider vinegar,\N,TRUE,FALSE
-389,Spices & Condiments,spices,condiments,rice vinegar,\N,TRUE,FALSE
-390,Spices & Condiments,spices,condiments,mirin,\N,TRUE,FALSE
-391,Spices & Condiments,spices,condiments,apple cider vinegar,\N,TRUE,FALSE
-392,Spices & Condiments,spices,condiments,meat sauce,\N,TRUE,FALSE
-393,Spices & Condiments,spices,condiments,blue cheese dressing,\N,TRUE,FALSE
-394,Spices & Condiments,spices,sauces,tomato sauce,\N,TRUE,FALSE
-395,Spices & Condiments,spices,sauces,french dressing,\N,TRUE,FALSE
-396,Spices & Condiments,spices,sauces,tomato paste,\N,TRUE,FALSE
-397,Spices & Condiments,spices,sauces,chicken gravy,\N,TRUE,FALSE
-398,Spices & Condiments,spices,sauces,pesto,\N,TRUE,FALSE
-399,Spices & Condiments,spices,sauces,beef gravy,\N,TRUE,FALSE
-400,Spices & Condiments,spices,sauces,alfredo sauce,\N,TRUE,FALSE
-401,Spices & Condiments,spices,sauces,curry paste,\N,TRUE,FALSE
-402,Spices & Condiments,spices,soupstock,meat stock,\N,TRUE,FALSE
-403,Spices & Condiments,spices,soupstock,champagne vinegar,\N,TRUE,FALSE
-404,Spices & Condiments,spices,soupstock,chicken stock,\N,TRUE,FALSE
-405,Spices & Condiments,spices,soupstock,mushroom soup,\N,TRUE,FALSE
-406,Spices & Condiments,spices,soupstock,beef stock,\N,TRUE,FALSE
-407,Spices & Condiments,spices,soupstock,tomato soup,\N,TRUE,FALSE
-408,Spices & Condiments,spices,soupstock,vegetable stock,\N,TRUE,FALSE
-409,Spices & Condiments,spices,soupstock,chicken soup,\N,TRUE,FALSE
-410,Spices & Condiments,spices,soupstock,celery soup,\N,TRUE,FALSE
-411,Spices & Condiments,spices,soupstock,onion soup,\N,TRUE,FALSE
-412,Spices & Condiments,spices,soupstock,vegetable soup,\N,TRUE,FALSE
-413,Spices & Condiments,spices,soupstock,dashi,\N,TRUE,FALSE
-414,Spices & Condiments,spices,spices,red pepper flake,\N,TRUE,FALSE
-415,Spices & Condiments,spices,spices,cinnamon,\N,TRUE,FALSE
-416,Spices & Condiments,spices,spices,chive,\N,TRUE,FALSE
-417,Spices & Condiments,spices,spices,vanilla,\N,TRUE,FALSE
-418,Spices & Condiments,spices,spices,garlic powder,\N,TRUE,FALSE
-419,Spices & Condiments,spices,spices,oregano,\N,TRUE,FALSE
-420,Spices & Condiments,spices,spices,paprika,\N,TRUE,FALSE
-421,Spices & Condiments,spices,spices,cayenne,\N,TRUE,FALSE
-422,Spices & Condiments,spices,spices,chili powder,\N,TRUE,FALSE
-423,Spices & Condiments,spices,spices,cumin,\N,TRUE,FALSE
-424,Spices & Condiments,spices,spices,italian seasoning,\N,TRUE,FALSE
-425,Spices & Condiments,spices,spices,thyme,\N,TRUE,FALSE
-426,Spices & Condiments,spices,spices,peppercorn,\N,TRUE,FALSE
-427,Spices & Condiments,spices,spices,nutmeg,\N,TRUE,FALSE
-428,Spices & Condiments,spices,spices,onion powder,\N,TRUE,FALSE
-429,Spices & Condiments,spices,spices,curry powder,\N,TRUE,FALSE
-430,Spices & Condiments,spices,spices,clove,\N,TRUE,FALSE
-431,Spices & Condiments,spices,spices,bay leaf,\N,TRUE,FALSE
-432,Spices & Condiments,spices,spices,taco seasoning,\N,TRUE,FALSE
-433,Spices & Condiments,spices,spices,sage,\N,TRUE,FALSE
-434,Spices & Condiments,spices,spices,ground nutmeg,\N,TRUE,FALSE
-435,Spices & Condiments,spices,spices,chinese five spice,\N,TRUE,FALSE
-436,Spices & Condiments,spices,spices,allspice,\N,TRUE,FALSE
-437,Spices & Condiments,spices,spices,turmeric,\N,TRUE,FALSE
-438,Spices & Condiments,spices,spices,ground coriander,\N,TRUE,FALSE
-439,Spices & Condiments,spices,spices,coriander,\N,TRUE,FALSE
-440,Spices & Condiments,spices,spices,cajun seasoning,\N,TRUE,FALSE
-441,Spices & Condiments,spices,spices,steak seasoning,\N,TRUE,FALSE
-442,Spices & Condiments,spices,spices,herbs,\N,TRUE,FALSE
-443,Spices & Condiments,spices,spices,celery salt,\N,TRUE,FALSE
-444,Spices & Condiments,spices,spices,vanilla essence,\N,TRUE,FALSE
-445,Spices & Condiments,spices,spices,poultry seasoning,\N,TRUE,FALSE
-446,Spices & Condiments,spices,spices,marjoram,\N,TRUE,FALSE
-447,Spices & Condiments,spices,spices,tarragon,\N,TRUE,FALSE
-448,Spices & Condiments,spices,spices,cardamom,\N,TRUE,FALSE
-449,Spices & Condiments,spices,spices,celery seed,\N,TRUE,FALSE
-450,Spices & Condiments,spices,spices,garam masala,\N,TRUE,FALSE
-451,Spices & Condiments,spices,spices,mustard seed,\N,TRUE,FALSE
-452,Spices & Condiments,spices,spices,chilli powder,\N,TRUE,FALSE
-453,Spices & Condiments,spices,spices,italian herbs,\N,TRUE,FALSE
-454,Spices & Condiments,spices,spices,saffron,\N,TRUE,FALSE
-455,Spices & Condiments,spices,spices,caraway,\N,TRUE,FALSE
-456,Spices & Condiments,spices,spices,herbes de provence,\N,TRUE,FALSE
-457,Spices & Condiments,spices,spices,italian spice,\N,TRUE,FALSE
-458,Spices & Condiments,spices,spices,star anise,\N,TRUE,FALSE
-459,Spices & Condiments,spices,spices,savory,\N,TRUE,FALSE
-460,Spices & Condiments,spices,spices,dill seed,\N,TRUE,FALSE
-461,Spices & Condiments,spices,spices,aniseed,\N,TRUE,FALSE
-462,Spices & Condiments,spices,spices,cacao,\N,TRUE,FALSE
-463,Spices & Condiments,spices,spices,tamarind,\N,TRUE,FALSE
-464,Spices & Condiments,spices,spices,cream of tartar,\N,TRUE,FALSE
-465,Spices & Condiments,spices,spices,bouillon,\N,TRUE,FALSE
-466,Spices & Condiments,spices,spices,ground ginger,\N,TRUE,FALSE
-467,Spices & Condiments,spices,spices,sesame seed,\N,TRUE,FALSE
-468,Spices & Condiments,spices,spices,apple cider,\N,TRUE,FALSE
-469,Spices & Condiments,spices,spices,chili sauce,\N,TRUE,FALSE
-470,Spices & Condiments,spices,spices,liquid smoke,\N,TRUE,FALSE
-471,Spices & Condiments,spices,spices,balsamic glaze,\N,TRUE,FALSE
-472,Spices & Condiments,spices,spices,hoisin sauce,\N,TRUE,FALSE
-473,Spices & Condiments,spices,spices,vegetable bouillon,\N,TRUE,FALSE
-474,Spices & Condiments,spices,spices,soya sauce,\N,TRUE,FALSE
-475,Spices & Condiments,spices,spices,rice wine,\N,TRUE,FALSE
-476,Spices & Condiments,spices,spices,rose water,\N,TRUE,FALSE
-477,Sugars & Sweets,candy,sweets,sugar,\N,TRUE,FALSE
-478,Sugars & Sweets,candy,sweets,honey,\N,TRUE,FALSE
-479,Sugars & Sweets,candy,sweets,confectioners sugar,\N,TRUE,FALSE
-480,Sugars & Sweets,candy,sweets,maple syrup,\N,TRUE,FALSE
-481,Sugars & Sweets,candy,sweets,syrup,\N,TRUE,FALSE
-482,Sugars & Sweets,candy,sweets,chocolate,\N,TRUE,FALSE
-483,Sugars & Sweets,candy,sweets,apple sauce,\N,TRUE,FALSE
-484,Sugars & Sweets,candy,sweets,graham cracker,\N,TRUE,FALSE
-485,Sugars & Sweets,candy,sweets,marshmallow,\N,TRUE,FALSE
-486,Sugars & Sweets,candy,sweets,potato chips,\N,TRUE,FALSE
-487,Sugars & Sweets,candy,sweets,pudding mix,\N,TRUE,FALSE
-488,Sugars & Sweets,candy,sweets,chocolate morsels,\N,TRUE,FALSE
-489,Sugars & Sweets,candy,sweets,bittersweet chocolate,\N,TRUE,FALSE
-490,Sugars & Sweets,candy,sweets,cookie dough,\N,TRUE,FALSE
-491,Sugars & Sweets,candy,sweets,chocolate syrup,\N,TRUE,FALSE
-492,Sugars & Sweets,candy,sweets,nutella,\N,TRUE,FALSE
-493,Sugars & Sweets,candy,sweets,apple juice,\N,TRUE,FALSE
+176,Fats & Oils,oil,oils,oil,\N,TRUE,FALSE
+177,Fats & Oils,oil,oils,vegetable oil,\N,TRUE,FALSE
+178,Fats & Oils,oil,oils,olive oil,\N,TRUE,FALSE
+179,Fats & Oils,oil,oils,coconut oil,\N,TRUE,FALSE
+180,Fats & Oils,oil,oils,sunflower oil,canola oil,TRUE,FALSE
+181,Fats & Oils,oil,oils,canola oil,sunflower oil,TRUE,FALSE
+182,Fats & Oils,oil,oils,peanut oil,\N,TRUE,FALSE
+183,Fats & Oils,oil,oils,cooking spray,\N,TRUE,FALSE
+184,Fats & Oils,oil,oils,sesame oil,\N,TRUE,FALSE
+185,Fats & Oils,oil,oils,shortening,\N,TRUE,FALSE
+186,Fats & Oils,oil,oils,lard,\N,TRUE,FALSE
+187,Fats & Oils,oil,oils,almond oil,\N,TRUE,FALSE
+188,Fats & Oils,oil,oils,grape seed oil,\N,TRUE,FALSE
+189,Fruits & Vegetables,fruit,fruit,lemon,\N,TRUE,FALSE
+190,Fruits & Vegetables,fruit,fruit,banana,\N,TRUE,FALSE
+191,Fruits & Vegetables,fruit,fruit,apple,\N,TRUE,FALSE
+192,Fruits & Vegetables,fruit,fruit,coconut,\N,TRUE,FALSE
+193,Fruits & Vegetables,fruit,fruit,mango,\N,TRUE,FALSE
+194,Fruits & Vegetables,fruit,fruit,lime,\N,TRUE,FALSE
+195,Fruits & Vegetables,fruit,fruit,orange,\N,TRUE,FALSE
+196,Fruits & Vegetables,fruit,fruit,pineapple,\N,TRUE,FALSE
+197,Fruits & Vegetables,fruit,fruit,strawberries,\N,TRUE,FALSE
+198,Fruits & Vegetables,fruit,fruit,raisin,\N,TRUE,FALSE
+199,Fruits & Vegetables,fruit,fruit,blueberries,\N,TRUE,FALSE
+200,Fruits & Vegetables,fruit,fruit,grape,\N,TRUE,FALSE
+201,Fruits & Vegetables,fruit,fruit,prunes,\N,TRUE,FALSE
+202,Fruits & Vegetables,fruit,fruit,nectarine,\N,TRUE,FALSE
+203,Fruits & Vegetables,fruit,fruit,fig,\N,TRUE,FALSE
+204,Fruits & Vegetables,fruit,fruit,peach,\N,TRUE,FALSE
+205,Fruits & Vegetables,fruit,fruit,cranberries,\N,TRUE,FALSE
+206,Fruits & Vegetables,fruit,fruit,raspberries,\N,TRUE,FALSE
+207,Fruits & Vegetables,fruit,fruit,pear,\N,TRUE,FALSE
+208,Fruits & Vegetables,fruit,fruit,cherry,\N,TRUE,FALSE
+209,Fruits & Vegetables,fruit,fruit,apricot,\N,TRUE,FALSE
+210,Fruits & Vegetables,fruit,fruit,blackberries,\N,TRUE,FALSE
+211,Fruits & Vegetables,fruit,fruit,berries,\N,TRUE,FALSE
+212,Fruits & Vegetables,fruit,fruit,date,\N,TRUE,FALSE
+213,Fruits & Vegetables,fruit,fruit,watermelon,\N,TRUE,FALSE
+214,Fruits & Vegetables,fruit,fruit,kiwi,\N,TRUE,FALSE
+215,Fruits & Vegetables,fruit,fruit,craisins,\N,TRUE,FALSE
+216,Fruits & Vegetables,fruit,fruit,mandarin,\N,TRUE,FALSE
+217,Fruits & Vegetables,fruit,fruit,cantaloupe,\N,TRUE,FALSE
+218,Fruits & Vegetables,fruit,fruit,plum,\N,TRUE,FALSE
+219,Fruits & Vegetables,fruit,fruit,papaya,\N,TRUE,FALSE
+220,Fruits & Vegetables,fruit,fruit,pomegranate,\N,TRUE,FALSE
+221,Fruits & Vegetables,fruit,fruit,apple,\N,TRUE,FALSE
+222,Fruits & Vegetables,fruit,fruit,rhubarb,\N,TRUE,FALSE
+223,Fruits & Vegetables,fruit,fruit,tangerine,\N,TRUE,FALSE
+224,Fruits & Vegetables,fruit,fruit,sultanas,\N,TRUE,FALSE
+225,Fruits & Vegetables,fruit,fruit,currant,\N,TRUE,FALSE
+226,Fruits & Vegetables,fruit,fruit,plantain,\N,TRUE,FALSE
+227,Fruits & Vegetables,fruit,fruit,passionfruit,\N,TRUE,FALSE
+228,Fruits & Vegetables,fruit,fruit,persimmons,\N,TRUE,FALSE
+229,Fruits & Vegetables,fruit,fruit,quince,\N,TRUE,FALSE
+230,Fruits & Vegetables,fruit,fruit,lychee,\N,TRUE,FALSE
+231,Fruits & Vegetables,fruit,fruit,tangelos,\N,TRUE,FALSE
+232,Fruits & Vegetables,fruit,fruit,boysenberry,\N,TRUE,FALSE
+233,Fruits & Vegetables,fruit,fruit,star F&V,\N,TRUE,FALSE
+234,Fruits & Vegetables,fruit,fruit,guava,\N,TRUE,FALSE
+235,Fruits & Vegetables,fruit,vegetables,peas,\N,TRUE,FALSE
+236,Fruits & Vegetables,fruit,vegetables,garlic,\N,TRUE,FALSE
+237,Fruits & Vegetables,fruit,vegetables,onion,\N,TRUE,FALSE
+238,Fruits & Vegetables,fruit,vegetables,olive,\N,TRUE,FALSE
+239,Fruits & Vegetables,fruit,vegetables,tomato,\N,TRUE,FALSE
+240,Fruits & Vegetables,fruit,vegetables,potato,\N,TRUE,FALSE
+241,Fruits & Vegetables,fruit,vegetables,salad greens,\N,TRUE,FALSE
+242,Fruits & Vegetables,fruit,vegetables,carrot,\N,TRUE,FALSE
+243,Fruits & Vegetables,fruit,vegetables,basil,\N,TRUE,FALSE
+244,Fruits & Vegetables,fruit,vegetables,parsley,\N,TRUE,FALSE
+245,Fruits & Vegetables,fruit,vegetables,rosemary,\N,TRUE,FALSE
+246,Fruits & Vegetables,fruit,vegetables,bell pepper,\N,TRUE,FALSE
+247,Fruits & Vegetables,fruit,vegetables,chili pepper,\N,TRUE,FALSE
+248,Fruits & Vegetables,fruit,vegetables,corn,\N,TRUE,FALSE
+249,Fruits & Vegetables,fruit,vegetables,ginger,\N,TRUE,FALSE
+250,Fruits & Vegetables,fruit,vegetables,mushroom,\N,TRUE,FALSE
+251,Fruits & Vegetables,fruit,vegetables,broccoli,\N,TRUE,FALSE
+252,Fruits & Vegetables,fruit,vegetables,spinach,\N,TRUE,FALSE
+253,Fruits & Vegetables,fruit,vegetables,green beans,\N,TRUE,FALSE
+254,Fruits & Vegetables,fruit,vegetables,celery,\N,TRUE,FALSE
+255,Fruits & Vegetables,fruit,vegetables,red onion,\N,TRUE,FALSE
+256,Fruits & Vegetables,fruit,vegetables,cilantro,\N,TRUE,FALSE
+257,Fruits & Vegetables,fruit,vegetables,cucumber,\N,TRUE,FALSE
+258,Fruits & Vegetables,fruit,vegetables,pickle,\N,TRUE,FALSE
+259,Fruits & Vegetables,fruit,vegetables,dill,\N,TRUE,FALSE
+260,Fruits & Vegetables,fruit,vegetables,avocado,\N,TRUE,FALSE
+261,Fruits & Vegetables,fruit,vegetables,sweet potato,\N,TRUE,FALSE
+262,Fruits & Vegetables,fruit,vegetables,zucchini,\N,TRUE,FALSE
+263,Fruits & Vegetables,fruit,vegetables,shallot,\N,TRUE,FALSE
+264,Fruits & Vegetables,fruit,vegetables,mixed vegetables,\N,TRUE,FALSE
+265,Fruits & Vegetables,fruit,vegetables,cabbage,\N,TRUE,FALSE
+266,Fruits & Vegetables,fruit,vegetables,asparagus,\N,TRUE,FALSE
+267,Fruits & Vegetables,fruit,vegetables,cauliflower,\N,TRUE,FALSE
+268,Fruits & Vegetables,fruit,vegetables,mint,\N,TRUE,FALSE
+269,Fruits & Vegetables,fruit,vegetables,pumpkin,\N,TRUE,FALSE
+270,Fruits & Vegetables,fruit,vegetables,kale,\N,TRUE,FALSE
+271,Fruits & Vegetables,fruit,vegetables,frozen vegetables,\N,TRUE,FALSE
+272,Fruits & Vegetables,fruit,vegetables,scallion,\N,TRUE,FALSE
+273,Fruits & Vegetables,fruit,vegetables,squash,\N,TRUE,FALSE
+274,Fruits & Vegetables,fruit,vegetables,sundried tomato,\N,TRUE,FALSE
+275,Fruits & Vegetables,fruit,vegetables,horseradish,\N,TRUE,FALSE
+276,Fruits & Vegetables,fruit,vegetables,beetroot,\N,TRUE,FALSE
+277,"Meat, Fish & Seafood",meat,meatred,beef mince,\N,TRUE,FALSE
+278,"Meat, Fish & Seafood",meat,meatred,bacon,\N,TRUE,FALSE
+279,"Meat, Fish & Seafood",meat,meatred,beef sausage,\N,TRUE,FALSE
+280,"Meat, Fish & Seafood",meat,meatred,pork sausage,\N,TRUE,FALSE
+281,"Meat, Fish & Seafood",meat,meatred,ham,\N,TRUE,FALSE
+282,"Meat, Fish & Seafood",meat,meatred,veal,\N,TRUE,FALSE
+283,"Meat, Fish & Seafood",meat,meatred,beef steak,\N,TRUE,FALSE
+284,"Meat, Fish & Seafood",meat,meatred,hot dog,\N,TRUE,FALSE
+285,"Meat, Fish & Seafood",meat,meatred,pork chops,\N,TRUE,FALSE
+286,"Meat, Fish & Seafood",meat,meatred,pork,\N,TRUE,FALSE
+287,"Meat, Fish & Seafood",meat,meatred,pepperoni,\N,TRUE,FALSE
+288,"Meat, Fish & Seafood",meat,meatred,pork mince,\N,TRUE,FALSE
+289,"Meat, Fish & Seafood",meat,meatred,chorizo,\N,TRUE,FALSE
+290,"Meat, Fish & Seafood",meat,meatred,salami,\N,TRUE,FALSE
+291,"Meat, Fish & Seafood",meat,meatred,pork roast,\N,TRUE,FALSE
+292,"Meat, Fish & Seafood",meat,meatred,pork ribs,\N,TRUE,FALSE
+293,"Meat, Fish & Seafood",meat,meatred,venison,\N,TRUE,FALSE
+294,"Meat, Fish & Seafood",meat,meatred,spam,\N,TRUE,FALSE
+295,"Meat, Fish & Seafood",meat,meatred,lamb,\N,TRUE,FALSE
+296,"Meat, Fish & Seafood",meat,meatred,pork shoulder,\N,TRUE,FALSE
+297,"Meat, Fish & Seafood",meat,meatred,beef roast,\N,TRUE,FALSE
+298,"Meat, Fish & Seafood",meat,meatred,bratwurst,\N,TRUE,FALSE
+299,"Meat, Fish & Seafood",meat,meatred,prosciutto,\N,TRUE,FALSE
+300,"Meat, Fish & Seafood",meat,meatred,bologna,\N,TRUE,FALSE
+301,"Meat, Fish & Seafood",meat,meatred,corned beef,\N,TRUE,FALSE
+302,"Meat, Fish & Seafood",meat,meatred,lamb chops,\N,TRUE,FALSE
+303,"Meat, Fish & Seafood",meat,meatred,ground lamb,\N,TRUE,FALSE
+304,"Meat, Fish & Seafood",meat,meatred,beef ribs,\N,TRUE,FALSE
+305,"Meat, Fish & Seafood",meat,meatred,duck,\N,TRUE,FALSE
+306,"Meat, Fish & Seafood",meat,meatred,pancetta,\N,TRUE,FALSE
+307,"Meat, Fish & Seafood",meat,meatred,beef liver,\N,TRUE,FALSE
+308,"Meat, Fish & Seafood",meat,meatred,leg of lamb,\N,TRUE,FALSE
+309,"Meat, Fish & Seafood",meat,meatred,beef shank,\N,TRUE,FALSE
+310,"Meat, Fish & Seafood",meat,meatred,pork belly,\N,TRUE,FALSE
+311,"Meat, Fish & Seafood",meat,meatred,lamb shoulder,\N,TRUE,FALSE
+312,"Meat, Fish & Seafood",meat,meatred,lamb shank,\N,TRUE,FALSE
+313,"Meat, Fish & Seafood",meat,meatwhite,chicken breast,\N,TRUE,FALSE
+314,"Meat, Fish & Seafood",meat,meatwhite,cooked chicken,\N,TRUE,FALSE
+315,"Meat, Fish & Seafood",meat,meatwhite,chicken thighs,\N,TRUE,FALSE
+316,"Meat, Fish & Seafood",meat,meatwhite,turkey mince,\N,TRUE,FALSE
+317,"Meat, Fish & Seafood",meat,meatwhite,turkey,\N,TRUE,FALSE
+318,"Meat, Fish & Seafood",meat,meatwhite,whole chicken,\N,TRUE,FALSE
+319,"Meat, Fish & Seafood",meat,meatwhite,chicken leg,\N,TRUE,FALSE
+320,"Meat, Fish & Seafood",meat,meatwhite,chicken wings,\N,TRUE,FALSE
+321,"Meat, Fish & Seafood",meat,meatwhite,chicken mince,\N,TRUE,FALSE
+322,"Meat, Fish & Seafood",meat,meatwhite,chicken roast,\N,TRUE,FALSE
+323,"Meat, Fish & Seafood",meat,meatwhite,chicken giblets,\N,TRUE,FALSE
+324,"Meat, Fish & Seafood",meat,fish,flake,\N,TRUE,FALSE
+325,"Meat, Fish & Seafood",meat,fish,barramundi,\N,TRUE,FALSE
+326,"Meat, Fish & Seafood",meat,fish,trout,\N,TRUE,FALSE
+327,"Meat, Fish & Seafood",meat,fish,blue grenadier,\N,TRUE,FALSE
+328,"Meat, Fish & Seafood",meat,fish,john dory,\N,TRUE,FALSE
+329,"Meat, Fish & Seafood",meat,fish,mackerel,\N,TRUE,FALSE
+330,"Meat, Fish & Seafood",meat,fish,tilapia,\N,TRUE,FALSE
+331,"Meat, Fish & Seafood",meat,fish,eel,\N,TRUE,FALSE
+332,"Meat, Fish & Seafood",meat,fish,sea bass,\N,TRUE,FALSE
+333,"Meat, Fish & Seafood",meat,fish,haddock,\N,TRUE,FALSE
+334,"Meat, Fish & Seafood",meat,fish,smoked salmon,\N,TRUE,FALSE
+335,"Meat, Fish & Seafood",meat,fish,salmon,\N,TRUE,FALSE
+336,"Meat, Fish & Seafood",meat,fish,whiting,\N,TRUE,FALSE
+337,"Meat, Fish & Seafood",meat,fish,anchovies,\N,TRUE,FALSE
+338,"Meat, Fish & Seafood",meat,fish,snapper,\N,TRUE,FALSE
+339,"Meat, Fish & Seafood",meat,fish,mullet,\N,TRUE,FALSE
+340,"Meat, Fish & Seafood",meat,fish,tuna,\N,TRUE,FALSE
+341,"Meat, Fish & Seafood",meat,fish,cod,\N,TRUE,FALSE
+342,"Meat, Fish & Seafood",meat,seafood,shrimp,\N,TRUE,FALSE
+343,"Meat, Fish & Seafood",meat,seafood,cockle,\N,TRUE,FALSE
+344,"Meat, Fish & Seafood",meat,seafood,crab meat,\N,TRUE,FALSE
+345,"Meat, Fish & Seafood",meat,seafood,crab,\N,TRUE,FALSE
+346,"Meat, Fish & Seafood",meat,seafood,scallop,\N,TRUE,FALSE
+347,"Meat, Fish & Seafood",meat,seafood,prawns,\N,TRUE,FALSE
+348,"Meat, Fish & Seafood",meat,seafood,clam,\N,TRUE,FALSE
+349,"Meat, Fish & Seafood",meat,seafood,lobster,\N,TRUE,FALSE
+350,"Meat, Fish & Seafood",meat,seafood,octopus,\N,TRUE,FALSE
+351,"Meat, Fish & Seafood",meat,seafood,calamari,\N,TRUE,FALSE
+352,"Meat, Fish & Seafood",meat,seafood,squid,\N,TRUE,FALSE
+353,"Meat, Fish & Seafood",meat,seafood,oyster,\N,TRUE,FALSE
+354,"Meat, Fish & Seafood",meat,seafood,mussel,\N,TRUE,FALSE
+355,Nuts & Legumes,nuts,altproteins,black beans,\N,TRUE,FALSE
+356,Nuts & Legumes,nuts,altproteins,chickpea,\N,TRUE,FALSE
+357,Nuts & Legumes,nuts,altproteins,lentil,\N,TRUE,FALSE
+358,Nuts & Legumes,nuts,altproteins,hummus,\N,TRUE,FALSE
+359,Nuts & Legumes,nuts,altproteins,soy beans,\N,TRUE,FALSE
+360,Nuts & Legumes,nuts,altproteins,pinto beans,\N,TRUE,FALSE
+361,Nuts & Legumes,nuts,altproteins,cannellini beans,\N,TRUE,FALSE
+362,Nuts & Legumes,nuts,altproteins,navy beans,\N,TRUE,FALSE
+363,Nuts & Legumes,nuts,altproteins,kidney beans,\N,TRUE,FALSE
+364,Nuts & Legumes,nuts,altproteins,lima beans,\N,TRUE,FALSE
+365,Nuts & Legumes,nuts,altproteins,green beans,\N,TRUE,FALSE
+366,Nuts & Legumes,nuts,altproteins,french beans,\N,TRUE,FALSE
+367,Nuts & Legumes,nuts,Nuts,peanut,\N,TRUE,FALSE
+368,Nuts & Legumes,nuts,Nuts,chestnut,\N,TRUE,FALSE
+369,Nuts & Legumes,nuts,Nuts,almond,\N,TRUE,FALSE
+370,Nuts & Legumes,nuts,Nuts,cashew,\N,TRUE,FALSE
+371,Nuts & Legumes,nuts,Nuts,walnut,\N,TRUE,FALSE
+372,Nuts & Legumes,nuts,Nuts,pecan,\N,TRUE,FALSE
+373,Nuts & Legumes,nuts,Nuts,flax,\N,TRUE,FALSE
+374,Nuts & Legumes,nuts,Nuts,pine nut,\N,TRUE,FALSE
+375,Nuts & Legumes,nuts,Nuts,pistachio,\N,TRUE,FALSE
+376,Nuts & Legumes,nuts,Nuts,almond meal,\N,TRUE,FALSE
+377,Nuts & Legumes,nuts,Nuts,praline,\N,TRUE,FALSE
+378,Nuts & Legumes,nuts,Nuts,hazelnut,\N,TRUE,FALSE
+379,Nuts & Legumes,nuts,Nuts,macadamia,\N,TRUE,FALSE
+380,Nuts & Legumes,nuts,Nuts,almond paste,\N,TRUE,FALSE
+381,Nuts & Legumes,nuts,Nuts,tree Nuts,\N,TRUE,FALSE
+382,Nuts & Legumes,nuts,Nuts,macaroon,\N,TRUE,FALSE
+383,Spices & Condiments,spices,condiments,mayonnaise,\N,TRUE,FALSE
+384,Spices & Condiments,spices,condiments,mustard,\N,TRUE,FALSE
+385,Spices & Condiments,spices,condiments,ketchup,\N,TRUE,FALSE
+386,Spices & Condiments,spices,condiments,vinegar,\N,TRUE,FALSE
+387,Spices & Condiments,spices,condiments,balsamic vinegar,\N,TRUE,FALSE
+388,Spices & Condiments,spices,condiments,wine vinegar,\N,TRUE,FALSE
+389,Spices & Condiments,spices,condiments,cider vinegar,\N,TRUE,FALSE
+390,Spices & Condiments,spices,condiments,rice vinegar,\N,TRUE,FALSE
+391,Spices & Condiments,spices,condiments,mirin,\N,TRUE,FALSE
+392,Spices & Condiments,spices,condiments,apple cider vinegar,\N,TRUE,FALSE
+393,Spices & Condiments,spices,condiments,meat sauce,\N,TRUE,FALSE
+394,Spices & Condiments,spices,condiments,blue cheese dressing,\N,TRUE,FALSE
+395,Spices & Condiments,spices,sauces,tomato sauce,\N,TRUE,FALSE
+396,Spices & Condiments,spices,sauces,french dressing,\N,TRUE,FALSE
+397,Spices & Condiments,spices,sauces,tomato paste,\N,TRUE,FALSE
+398,Spices & Condiments,spices,sauces,chicken gravy,\N,TRUE,FALSE
+399,Spices & Condiments,spices,sauces,pesto,\N,TRUE,FALSE
+400,Spices & Condiments,spices,sauces,beef gravy,\N,TRUE,FALSE
+401,Spices & Condiments,spices,sauces,alfredo sauce,\N,TRUE,FALSE
+402,Spices & Condiments,spices,sauces,curry paste,\N,TRUE,FALSE
+403,Spices & Condiments,spices,soupstock,meat stock,\N,TRUE,FALSE
+404,Spices & Condiments,spices,soupstock,champagne vinegar,\N,TRUE,FALSE
+405,Spices & Condiments,spices,soupstock,chicken stock,\N,TRUE,FALSE
+406,Spices & Condiments,spices,soupstock,mushroom soup,\N,TRUE,FALSE
+407,Spices & Condiments,spices,soupstock,beef stock,\N,TRUE,FALSE
+408,Spices & Condiments,spices,soupstock,tomato soup,\N,TRUE,FALSE
+409,Spices & Condiments,spices,soupstock,vegetable stock,\N,TRUE,FALSE
+410,Spices & Condiments,spices,soupstock,chicken soup,\N,TRUE,FALSE
+411,Spices & Condiments,spices,soupstock,celery soup,\N,TRUE,FALSE
+412,Spices & Condiments,spices,soupstock,onion soup,\N,TRUE,FALSE
+413,Spices & Condiments,spices,soupstock,vegetable soup,\N,TRUE,FALSE
+414,Spices & Condiments,spices,soupstock,dashi,\N,TRUE,FALSE
+415,Spices & Condiments,spices,spices,salt,\N,TRUE,FALSE
+416,Spices & Condiments,spices,spices,pepper,\N,TRUE,FALSE
+417,Spices & Condiments,spices,spices,red pepper flake,\N,TRUE,FALSE
+418,Spices & Condiments,spices,spices,cinnamon,\N,TRUE,FALSE
+419,Spices & Condiments,spices,spices,chive,\N,TRUE,FALSE
+420,Spices & Condiments,spices,spices,vanilla,\N,TRUE,FALSE
+421,Spices & Condiments,spices,spices,garlic powder,\N,TRUE,FALSE
+422,Spices & Condiments,spices,spices,oregano,\N,TRUE,FALSE
+423,Spices & Condiments,spices,spices,paprika,\N,TRUE,FALSE
+424,Spices & Condiments,spices,spices,cayenne,\N,TRUE,FALSE
+425,Spices & Condiments,spices,spices,chili powder,\N,TRUE,FALSE
+426,Spices & Condiments,spices,spices,cumin,\N,TRUE,FALSE
+427,Spices & Condiments,spices,spices,italian seasoning,\N,TRUE,FALSE
+428,Spices & Condiments,spices,spices,thyme,\N,TRUE,FALSE
+429,Spices & Condiments,spices,spices,peppercorn,\N,TRUE,FALSE
+430,Spices & Condiments,spices,spices,nutmeg,\N,TRUE,FALSE
+431,Spices & Condiments,spices,spices,onion powder,\N,TRUE,FALSE
+432,Spices & Condiments,spices,spices,curry powder,\N,TRUE,FALSE
+433,Spices & Condiments,spices,spices,clove,\N,TRUE,FALSE
+434,Spices & Condiments,spices,spices,bay leaf,\N,TRUE,FALSE
+435,Spices & Condiments,spices,spices,taco seasoning,\N,TRUE,FALSE
+436,Spices & Condiments,spices,spices,sage,\N,TRUE,FALSE
+437,Spices & Condiments,spices,spices,ground nutmeg,\N,TRUE,FALSE
+438,Spices & Condiments,spices,spices,chinese five spice,\N,TRUE,FALSE
+439,Spices & Condiments,spices,spices,allspice,\N,TRUE,FALSE
+440,Spices & Condiments,spices,spices,turmeric,\N,TRUE,FALSE
+441,Spices & Condiments,spices,spices,ground coriander,\N,TRUE,FALSE
+442,Spices & Condiments,spices,spices,coriander,\N,TRUE,FALSE
+443,Spices & Condiments,spices,spices,cajun seasoning,\N,TRUE,FALSE
+444,Spices & Condiments,spices,spices,steak seasoning,\N,TRUE,FALSE
+445,Spices & Condiments,spices,spices,herbs,\N,TRUE,FALSE
+446,Spices & Condiments,spices,spices,celery salt,\N,TRUE,FALSE
+447,Spices & Condiments,spices,spices,vanilla essence,\N,TRUE,FALSE
+448,Spices & Condiments,spices,spices,poultry seasoning,\N,TRUE,FALSE
+449,Spices & Condiments,spices,spices,marjoram,\N,TRUE,FALSE
+450,Spices & Condiments,spices,spices,tarragon,\N,TRUE,FALSE
+451,Spices & Condiments,spices,spices,cardamom,\N,TRUE,FALSE
+452,Spices & Condiments,spices,spices,celery seed,\N,TRUE,FALSE
+453,Spices & Condiments,spices,spices,garam masala,\N,TRUE,FALSE
+454,Spices & Condiments,spices,spices,mustard seed,\N,TRUE,FALSE
+455,Spices & Condiments,spices,spices,chilli powder,\N,TRUE,FALSE
+456,Spices & Condiments,spices,spices,italian herbs,\N,TRUE,FALSE
+457,Spices & Condiments,spices,spices,saffron,\N,TRUE,FALSE
+458,Spices & Condiments,spices,spices,caraway,\N,TRUE,FALSE
+459,Spices & Condiments,spices,spices,herbes de provence,\N,TRUE,FALSE
+460,Spices & Condiments,spices,spices,italian spice,\N,TRUE,FALSE
+461,Spices & Condiments,spices,spices,star anise,\N,TRUE,FALSE
+462,Spices & Condiments,spices,spices,savory,\N,TRUE,FALSE
+463,Spices & Condiments,spices,spices,dill seed,\N,TRUE,FALSE
+464,Spices & Condiments,spices,spices,aniseed,\N,TRUE,FALSE
+465,Spices & Condiments,spices,spices,cacao,\N,TRUE,FALSE
+466,Spices & Condiments,spices,spices,tamarind,\N,TRUE,FALSE
+467,Spices & Condiments,spices,spices,cream of tartar,\N,TRUE,FALSE
+468,Spices & Condiments,spices,spices,bouillon,\N,TRUE,FALSE
+469,Spices & Condiments,spices,spices,ground ginger,\N,TRUE,FALSE
+470,Spices & Condiments,spices,spices,sesame seed,\N,TRUE,FALSE
+471,Spices & Condiments,spices,spices,apple cider,\N,TRUE,FALSE
+472,Spices & Condiments,spices,spices,chili sauce,\N,TRUE,FALSE
+473,Spices & Condiments,spices,spices,liquid smoke,\N,TRUE,FALSE
+474,Spices & Condiments,spices,spices,balsamic glaze,\N,TRUE,FALSE
+475,Spices & Condiments,spices,spices,hoisin sauce,\N,TRUE,FALSE
+476,Spices & Condiments,spices,spices,vegetable bouillon,\N,TRUE,FALSE
+477,Spices & Condiments,spices,spices,soya sauce,\N,TRUE,FALSE
+478,Spices & Condiments,spices,spices,rice wine,\N,TRUE,FALSE
+479,Spices & Condiments,spices,spices,rose water,\N,TRUE,FALSE
+480,Sugars & Sweets,candy,sweets,sugar,\N,TRUE,FALSE
+481,Sugars & Sweets,candy,sweets,honey,\N,TRUE,FALSE
+482,Sugars & Sweets,candy,sweets,confectioners sugar,\N,TRUE,FALSE
+483,Sugars & Sweets,candy,sweets,maple syrup,\N,TRUE,FALSE
+484,Sugars & Sweets,candy,sweets,syrup,\N,TRUE,FALSE
+485,Sugars & Sweets,candy,sweets,chocolate,\N,TRUE,FALSE
+486,Sugars & Sweets,candy,sweets,apple sauce,\N,TRUE,FALSE
+487,Sugars & Sweets,candy,sweets,graham cracker,\N,TRUE,FALSE
+488,Sugars & Sweets,candy,sweets,marshmallow,\N,TRUE,FALSE
+489,Sugars & Sweets,candy,sweets,potato chips,\N,TRUE,FALSE
+490,Sugars & Sweets,candy,sweets,pudding mix,\N,TRUE,FALSE
+491,Sugars & Sweets,candy,sweets,chocolate morsels,\N,TRUE,FALSE
+492,Sugars & Sweets,candy,sweets,bittersweet chocolate,\N,TRUE,FALSE
+493,Sugars & Sweets,candy,sweets,cookie dough,\N,TRUE,FALSE
+494,Sugars & Sweets,candy,sweets,chocolate syrup,\N,TRUE,FALSE
+495,Sugars & Sweets,candy,sweets,nutella,\N,TRUE,FALSE
+496,Sugars & Sweets,candy,sweets,apple juice,\N,TRUE,FALSE

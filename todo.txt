@@ -3,9 +3,9 @@ Todo list
 * Finalise pantry with autocomplete textbox
 * Clean recipes CSV file
 * Source free images for recipes
-* Implement Google Ads for monetization
-* Fix ingredient suggestion feature
-* Implement custom recipe feature
+* Implement Google Ads for monetization (done with sample ID, Steve to create and have real ready for production)
+* Fix ingredient suggestion feature (done, needs testing)
+* Implement custom recipe feature (done)
 * COMMENTING CODE
 * About screen
 * Log screen

@@ -1,3 +1,6 @@
 Bugs to fix:
 
+* If ingredients selected has no recipes available, IndexOutOfBounds exception occurs - needs try/catch - Recipes.java:82, Recipes.java:87 (FIXED)
 * On landscape, MainActivity buttons not constrained identically
+* Ingredients are excluded based on dietary requirements, but recipes are not in standard search (Tested: Selected "lacto-veg (excludes meat, fish and eggs but not dairy), and results that needed eggs still appears"
+* Ingredient suggestion suggests ingredients that are supposed to be excluded
