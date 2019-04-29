@@ -14,4 +14,4 @@ Todo list
 * Bug fixes
 * Alpha testing
 * Steve to begin publication process
-
+* Meeting this week to discuss
