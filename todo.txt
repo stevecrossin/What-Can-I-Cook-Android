@@ -5,7 +5,6 @@ Todo list
 * Source free images for recipes
 * Implement Google Ads for monetization
 * Fix ingredient suggestion feature
-* Implement share and save function
 * Implement custom recipe feature
 * COMMENTING CODE
 * About screen

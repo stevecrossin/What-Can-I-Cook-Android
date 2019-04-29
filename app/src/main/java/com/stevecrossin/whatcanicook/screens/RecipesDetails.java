@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,11 +17,13 @@ import java.util.ArrayList;
 public class RecipesDetails extends AppCompatActivity {
     Recipe recipe;
     ArrayList<String> missingIngredients;
+    ImageButton shareButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_details);
+        shareButton = findViewById(R.id.share_button);
 
         Intent intent = getIntent();
         recipe = (Recipe) intent.getSerializableExtra("RECIPE");
@@ -51,6 +55,18 @@ public class RecipesDetails extends AppCompatActivity {
         ImageView recipeImage = findViewById(R.id.recipe_img);
         int drawableResourceId = this.getResources().getIdentifier(recipe.getRecipeImage(), "drawable", this.getPackageName());
         recipeImage.setImageResource(drawableResourceId);
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = recipe.getRecipeName() + "\n\n" + recipe.getRecipeIngredients() + "\n\n" + recipe.getRecipeSteps();
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, recipe.getRecipeName());
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share recipe via"));
+            }
+        });
 
     }
 }

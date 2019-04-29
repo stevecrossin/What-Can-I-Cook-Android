@@ -271,3 +271,15 @@ What's next?
 + Bug fixes
 + Comment code
 + Anything left in the todo list
+
+Monday 29th April
++ Share recipe function is implemented (See section 3.2.2)
+  - In the recipe detail page, there will be a "share" icon/button
+  - When they clicked the icon, it will pop up a new intent, asking user which media they want to share via
+  - Sharing recipe model is only TEXT-BASED, no image: recipe name, then new line, then recipe ingredients, then new line, then recipe steps.
+
+What's next?
++ Bug fixes
++ Comment code
++ Anything left in the todo list
++ Implement google ad
