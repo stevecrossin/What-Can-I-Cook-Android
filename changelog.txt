@@ -286,7 +286,8 @@ Monday/Tues 29 April - Steve
 + Reviewed implemented code
 + Worked on pantry in private branch, and autocomplete
 + Nix ad banner from categories and ingredients picker, makes layout too small
-+ Adjusted
++ Sort ingredients CSV alphabetically
++ Add some common ingredients to CSV that were missing (SALT AND OIL IS NOW THERE)
 
 What's next
 
