@@ -244,7 +244,16 @@ What's next for Steve (this week (whatever week that is!)
 + Write the app about screen.
 + Try to source some better recipe data - what we have works as proof of concept, but its honestly garbage for actual release (I don't even know what vegetable shortening is...)
 
-All said and done, we've implemented all core features (though they need some polishing), and two "Nice to have" features, with save and share recipe coming up this week, and some other features somewhat simple to implement, giving plenty of time for testing and polishing
+Milestone 3 is well and truly complete, with Milestone 4 mostly complete from code perspective, features implemented:
+o	Missing ingredient function implemented and working within app
+o	Ingredient suggestion implemented and working within app
 
-LETS DO THIS - 4 WEEKS TO GO TILL RELEASE!
+Missing features:
+o	Save recipe function implemented and working within app
+o	Share function implemented and working within app
+o	Banner ads function implemented and working within app
+o	Google Single SignIn implemented and working within app
+o	Custom recipe database implemented and working within app
 
+Monday 29 April - Steve
+* Changelog updated, task list and bugs to fix written
