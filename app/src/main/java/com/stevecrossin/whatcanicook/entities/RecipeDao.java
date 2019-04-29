@@ -9,8 +9,8 @@ import java.util.List;
 
 @Dao
 public interface RecipeDao {
-    @Query("SELECT * FROM recipe;")
-    List<Recipe> getAllRecipes();
+    @Query("SELECT * FROM recipe WHERE recipe_custom = 0;")
+    List<Recipe> getAllDefaultRecipes();
 
     @Query("SELECT * FROM recipe WHERE recipe_saved = 1;")
     List<Recipe> getAllSavedRecipes();
@@ -69,6 +69,9 @@ public interface RecipeDao {
 
     @Insert
     void addRecipes(ArrayList<Recipe> recipes);
+
+    @Insert
+    void addRecipe(Recipe recipe);
 
     @Query("DELETE FROM recipe;")
     void deleteAll();

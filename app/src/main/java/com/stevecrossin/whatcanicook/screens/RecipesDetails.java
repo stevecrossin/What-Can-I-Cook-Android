@@ -34,7 +34,8 @@ public class RecipesDetails extends AppCompatActivity {
         String missing = "";
         for (String string : missingIngredients)
             missing += string + ", ";
-        missing = missing.substring(0, missing.length() - 2);
+        if (!missing.equals(""))
+            missing = missing.substring(0, missing.length() - 2);
 
         TextView recipeName = findViewById(R.id.recipe_name);
         recipeName.setText(recipe.getRecipeName());

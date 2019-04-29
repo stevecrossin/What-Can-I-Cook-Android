@@ -104,15 +104,16 @@ public class Recipes extends AppCompatActivity {
             @Override
             protected void onPostExecute(ArrayList<String> missingIngredients) {
                 super.onPostExecute(missingIngredients);
-                for (String string : missingIngredients) {
-                    final Button ingredient = new Button(Recipes.this);
-                    ingredient.setText(string);
-                    ingredient.setTag(string);
-                    ingredient.setMaxWidth(10);
-                    ingredient.setTextSize(10);
-                    ingredient.setOnClickListener(btnClicked);
-                    addingList.addView(ingredient);
-                }
+                if (missingIngredients != null)
+                    for (String string : missingIngredients) {
+                        final Button ingredient = new Button(Recipes.this);
+                        ingredient.setText(string);
+                        ingredient.setTag(string);
+                        ingredient.setMaxWidth(10);
+                        ingredient.setTextSize(10);
+                        ingredient.setOnClickListener(btnClicked);
+                        addingList.addView(ingredient);
+                    }
             }
         }.execute();
     }

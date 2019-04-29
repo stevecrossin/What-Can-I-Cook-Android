@@ -67,6 +67,7 @@
         <activity android:name=".screens.Recipes" />
         <activity android:name=".screens.Login" />
         <activity android:name=".screens.RecipesDetails" />
+        <activity android:name=".screens.CustomRecipe" />
 
     </application>
 

@@ -94,7 +94,7 @@ public class AppDataRepo {
     }
 
     public boolean haveRecipe() {
-        List<Recipe> recipes = recipeDao.getAllRecipes();
+        List<Recipe> recipes = recipeDao.getAllDefaultRecipes();
         if (recipes.size() > 0)
             return true;
         return false;
@@ -160,7 +160,7 @@ public class AppDataRepo {
     }
 
     public List<Recipe> getAllRecipes() {
-        return recipeDao.getAllRecipes();
+        return recipeDao.getAllDefaultRecipes();
     }
 
     public List<Recipe> getRecipesByName(String recipeName) {
@@ -212,6 +212,10 @@ public class AppDataRepo {
 
     public void insertRecipes(ArrayList<Recipe> recipes) {
         recipeDao.addRecipes(recipes);
+    }
+
+    public void insertRecipe(Recipe recipe) {
+        recipeDao.addRecipe(recipe);
     }
 
     public void insertRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients) {

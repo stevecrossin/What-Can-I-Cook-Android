@@ -296,3 +296,13 @@ What's next?
 + Comment code
 + Anything left in the todo list
 + Custom recipe feature
+
+Monday 29th April
++ Custom recipe has been implemented. 
+   - From the Saved Recipes window, users will have an option to add their own recipe, and from there can enter in their own recipes for future reference through text input.
+   - The custom recipe, however, is still saved in the same db as the imported one. The only difference is that custom recipe has the field is_customed set to true.
+
+What's next?
++ Bug fixes
++ Comment code
++ Improve "Saved recipe" page by adding an edit function and a delete function.
