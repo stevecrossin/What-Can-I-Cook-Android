@@ -24,6 +24,9 @@ public class Recipe implements Serializable {
     @ColumnInfo(name = "recipe_steps")
     private String recipeSteps;
 
+    @ColumnInfo(name = "recipe_saved")
+    private boolean isSaved;
+
 
     public Recipe(String recipeName, String recipeImage, String recipeIngredients, String recipeSteps) {
         this.recipeName = recipeName;
@@ -70,5 +73,13 @@ public class Recipe implements Serializable {
 
     public void setRecipeImage(String recipeImage) {
         this.recipeImage = recipeImage;
+    }
+
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    public void setSaved(boolean saved) {
+        isSaved = saved;
     }
 }

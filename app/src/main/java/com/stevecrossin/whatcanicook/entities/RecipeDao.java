@@ -12,6 +12,9 @@ public interface RecipeDao {
     @Query("SELECT * FROM recipe;")
     List<Recipe> getAllRecipes();
 
+    @Query("SELECT * FROM recipe WHERE recipe_saved = 1;")
+    List<Recipe> getAllSavedRecipes();
+
     @Query("SELECT Recipe.* FROM recipeingredients\n" +
             "JOIN recipe ON recipeingredients.recipe_name = Recipe.recipe_name\n" +
             " WHERE recipeingredients.recipe_ingredients IN \n" +
@@ -60,6 +63,9 @@ public interface RecipeDao {
 
     @Query("SELECT * FROM recipe WHERE recipe_name IN (:recipeNames);")
     List<Recipe> getRecipesByNames(List<String> recipeNames);
+
+    @Query("UPDATE recipe SET recipe_saved = 1 WHERE recipe_id = :recipeId;")
+    void saveRecipe(int recipeId);
 
     @Insert
     void addRecipes(ArrayList<Recipe> recipes);

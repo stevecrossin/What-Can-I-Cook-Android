@@ -257,3 +257,17 @@ o	Custom recipe database implemented and working within app
 
 Monday 29 April - Steve
 * Changelog updated, task list and bugs to fix written
+
+Monday 29th April
++ Save recipe function is implemented (See section 3.2.1)
+  - In the recipe search page, every recipe row will have a "Save" button similar to a floppy disk
+  - When they clicked the icon, it will become a green "Checked" icon - that's when the recipe has been saved
+  - They can access their saved recipes in the "Saved Recipe" scene
+
++ Bugs about what Steve has mentioned has been fixed. This is due to a log line for debugging purpose.
+
+What's next?
++ Share function
++ Bug fixes
++ Comment code
++ Anything left in the todo list

@@ -195,6 +195,10 @@ public class AppDataRepo {
         return recipeDao.getAllRecipesByCheckedIngredientsWithExactMatch();
     }
 
+    public List<Recipe> getAllSavedRecipes(){
+        return recipeDao.getAllSavedRecipes();
+    }
+
     public List<Integer> getNumberOfMissingIngredientsByName(String name) {
         return recipeDao.getNumberOfMissingIngredientsByName(name);
     }
@@ -212,6 +216,10 @@ public class AppDataRepo {
 
     public void insertRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients) {
         recipeIngredientsDao.addRecipeIngredients(recipeIngredients);
+    }
+
+    public void saveRecipe(int recipeId){
+        recipeDao.saveRecipe(recipeId);
     }
 
     /**************** User Repo ***********************/
