@@ -1,0 +1,4 @@
+Bugs to fix:
+
+* If ingredients selected has no recipes available, IndexOutOfBounds exception occurs - needs try/catch - Recipes.java:82, Recipes.java:87
+* On landscape, MainActivity buttons not constrained identically
