@@ -8,6 +8,8 @@ import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
@@ -30,6 +32,7 @@ public class Intolerances extends AppCompatActivity {
     private AppDataRepo repository;
     private static final String TAG = "Intolerances";
     private ArrayList<String> intoleranceList = new ArrayList<>();
+    private AdView mAdView;
 
     /**
      * Scene initalization. This also performs the loading of intolerances into the database.
@@ -150,6 +153,10 @@ public class Intolerances extends AppCompatActivity {
                 intoleranceSelected(isChecked, "Eggs");
             }
         });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView.loadAd(adRequest);
 
     }
 

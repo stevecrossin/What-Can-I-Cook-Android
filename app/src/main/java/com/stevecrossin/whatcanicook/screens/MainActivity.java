@@ -1,22 +1,30 @@
 package com.stevecrossin.whatcanicook.screens;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView.loadAd(adRequest);
     }
 
 
@@ -78,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void logout(View view) {
         new AsyncTask<Void, Void, Void>() {
 

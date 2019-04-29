@@ -9,6 +9,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 
@@ -18,6 +20,7 @@ public class RecipesDetails extends AppCompatActivity {
     Recipe recipe;
     ArrayList<String> missingIngredients;
     ImageButton shareButton;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,10 @@ public class RecipesDetails extends AppCompatActivity {
                 startActivity(Intent.createChooser(sharingIntent, "Share recipe via"));
             }
         });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView.loadAd(adRequest);
 
     }
 }

@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.CategoryViewAdapter;
 import com.stevecrossin.whatcanicook.adapter.IngredientViewAdapter;
@@ -24,6 +26,7 @@ public class IngredientPicker extends AppCompatActivity {
     private static final String TAG = "IngredientPicker";
     private String category;
     IngredientViewAdapter ingredientViewAdapter;
+    private AdView mAdView;
 
     /**
      * Initialization of this scene. This will get the category string passed by last scene and display to 'categorychosentext'
@@ -44,6 +47,10 @@ public class IngredientPicker extends AppCompatActivity {
 
         repository = new AppDataRepo(this);
         initRecyclerItems();
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView.loadAd(adRequest);
     }
 
     /**

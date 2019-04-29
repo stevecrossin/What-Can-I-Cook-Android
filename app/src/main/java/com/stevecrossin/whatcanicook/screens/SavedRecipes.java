@@ -9,6 +9,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.RecipeViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Recipe;
@@ -20,6 +22,7 @@ public class SavedRecipes extends AppCompatActivity {
 
     RecipeViewAdapter recipeViewAdapter;
     private AppDataRepo repository;
+    private AdView mAdView;
 
     /*Set view as saved recipes activity*/
     @Override
@@ -27,7 +30,12 @@ public class SavedRecipes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_savedrecipes);
         repository = new AppDataRepo(this);
+
         initRecyclerItems();
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView.loadAd(adRequest);
     }
 
     private void initRecyclerItems() {

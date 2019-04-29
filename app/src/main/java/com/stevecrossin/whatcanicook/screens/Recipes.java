@@ -14,6 +14,8 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.MyIngredientViewAdapter;
 import com.stevecrossin.whatcanicook.adapter.RecipeViewAdapter;
@@ -43,6 +45,7 @@ public class Recipes extends AppCompatActivity {
     ArrayList<RecipeIngredientsTotal> recipeIngredientsTotalsFromCsv = new ArrayList<>();
     Switch exactMatch;
     LinearLayout addingList;
+    private AdView mAdView;
 
     /**
      * Scene initalization. This also loads the neccessary ingredient from the CSV to the database
@@ -74,6 +77,9 @@ public class Recipes extends AppCompatActivity {
         loadRecipeIngredientsTotalToDb();
         initRecyclerItems();
         initSuggestions();
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView.loadAd(adRequest);
     }
 
     @SuppressLint("StaticFieldLeak")

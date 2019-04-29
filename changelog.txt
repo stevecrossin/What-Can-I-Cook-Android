@@ -283,3 +283,16 @@ What's next?
 + Comment code
 + Anything left in the todo list
 + Implement google ad
+
+
+Monday 29th April
++ Google ad function is implemented (See section 3.2.3)
+  - Basically there is a little banner ad in almost every scene of the app. Except for log in and app splash scene.
+  - I use the test/sample adUnitId from https://developers.google.com/admob/android/banner
+  - We will have our own adUnitId in the future.
+
+What's next?
++ Bug fixes
++ Comment code
++ Anything left in the todo list
++ Custom recipe feature

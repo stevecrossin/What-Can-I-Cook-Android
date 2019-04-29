@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.CategoryViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
@@ -37,6 +39,7 @@ public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private CategoryViewAdapter categoryViewAdapter;
     private static final String TAG = "CategoryPicker";
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +52,14 @@ public class CategoryPicker extends AppCompatActivity {
         TextView textView = findViewById(R.id.dishchosentext);
         textView.setText(dishtype);
 
+
         repository = new AppDataRepo(this);
 
         initRecyclerItems();
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        mAdView.loadAd(adRequest);
     }
 
 
