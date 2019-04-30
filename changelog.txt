@@ -303,3 +303,13 @@ What's next
 * Publish app for beta testing once all above complete, send out links to people to test
 
 Notes: Milestone 4 is nearly complete and will be completed on schedule or earlier. Most of the time after this will be dedicated to testing and bugfixes, trying to break the app every way possible to ensure everything functions correctly.
+
+Tuesday/Wed 30 April - 1 May
+* Tons of data matching work on recipes/ingredients
+* Private branch almost complete to implement pantry, still undergoing final testing and will be merged today.
+
+What's next
+* Autocomplete search for ingredients
+* Google Sign in
+* Commenting
+* Bugfixes etc
