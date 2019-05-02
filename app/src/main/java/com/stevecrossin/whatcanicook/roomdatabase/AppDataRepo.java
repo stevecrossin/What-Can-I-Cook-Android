@@ -7,10 +7,11 @@ import android.os.AsyncTask;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
-import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
+import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.IntoleranceDao;
 import com.stevecrossin.whatcanicook.entities.LogDao;
+import com.stevecrossin.whatcanicook.entities.Pantry;
 import com.stevecrossin.whatcanicook.entities.PantryDao;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.entities.RecipeDao;
@@ -20,7 +21,6 @@ import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotalDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
-
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -40,6 +40,13 @@ public class AppDataRepo {
     private LogDao logDao;
     private PantryDao pantryDao;
 
+    /**
+     * private intoleranceDao intoleranceDao;
+     * private logsDao logsDao;
+     * private pantryDao pantryDao;
+     * private recipeDao recipeDao;
+     **/
+
     public AppDataRepo(Context context) {
         ingredientDao = AppDb.getDatabase(context).ingredientDao();
         intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
@@ -49,6 +56,11 @@ public class AppDataRepo {
         recipeIngredientsTotalDao = AppDb.getDatabase(context).recipeIngredientsTotalDao();
         logDao = AppDb.getDatabase(context).logDao();
         pantryDao = AppDb.getDatabase(context).pantryDao();
+
+        //intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
+
+        //recipeDao = AppDb.getDatabase(context).recipeDao();
+
     }
 
     public List<Ingredient> getAllIngredients() {
@@ -226,7 +238,7 @@ public class AppDataRepo {
         recipeDao.saveRecipe(recipeId);
     }
 
-    /**************** User Repo ***********************/
+    /**-************** User Repo ***********************/
 
 
     /**
@@ -249,6 +261,7 @@ public class AppDataRepo {
         if (!isLogin) {
             deleteAllIngredient();
             deleteAllIntolerance();
+            pantryDao.deleteAll();
         }
     }
 
@@ -294,5 +307,55 @@ public class AppDataRepo {
         }
                 .execute();
     }
+
+    public List<Ingredient> getAllTolerantIngredients() {
+        return ingredientDao.getAllTolerantIngredient();
+    }
+
+    //<editor-fold desc=" Pantry">
+
+    public void addIngredientToPantry(Ingredient ingredients) {
+        pantryDao.addIngredients(new Pantry(ingredients.getIngredientID()));
+        savePantryToUserDB();
+    }
+
+    public void clearUserIngredientsPantry() {
+        Gson gson = new Gson();
+        List<Pantry> pantries = new ArrayList<>();
+        userDao.updatePantryValue(gson.toJson(pantries));
+    }
+
+    public void deleteIngredientsPantry(){
+        pantryDao.deleteAll();
+    }
+
+    public List<Ingredient> getAllPantryIngredients() {
+        List<Pantry> pantries = pantryDao.getPantryIngredients();
+        List<Integer> integers = new ArrayList<>();
+
+        for (Pantry pantry : pantries) {
+            integers.add(pantry.getIngredientId());
+        }
+
+        return ingredientDao.getIngredientsById(integers);
+    }
+
+    public void removeIngredientFromPanty(int ingredientId) {
+        pantryDao.remove(ingredientId);
+    }
+
+    public void savePantryToUserDB() {
+        List<Pantry> pantries = pantryDao.getPantryIngredients();
+        Gson gson = new Gson();
+        gson.toJson(pantries);
+        userDao.updatePantryValue(gson.toJson(pantries));
+    }
+
+    public void addIngredientToPantry(Pantry pantry) {
+        pantryDao.addIngredients(pantry);
+    }
+
+
+    //</editor-fold>
 
 }

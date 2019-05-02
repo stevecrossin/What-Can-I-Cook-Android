@@ -148,7 +148,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-
     <Button
         android:id="@+id/logoutButton"
         android:layout_width="0dp"
@@ -159,7 +158,7 @@
         android:onClick="logout"
         android:text="@string/logout"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/dietaryNeedsButton"
         app:layout_constraintVertical_bias="0.0" />

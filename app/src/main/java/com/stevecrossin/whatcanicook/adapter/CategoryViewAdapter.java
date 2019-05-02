@@ -30,7 +30,7 @@ public class CategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder ingredientViewHolder, @SuppressLint("RecyclerView") final int i) {
-        ingredientViewHolder.bindRow(categories.get(i), ingredientViewHolder.itemView.getContext());
+        ingredientViewHolder.bindRow(categories.get(i),ingredientViewHolder.itemView.getContext());
         ingredientViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

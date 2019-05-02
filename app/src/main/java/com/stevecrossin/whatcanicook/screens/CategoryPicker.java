@@ -9,8 +9,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
+
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.adapter.CategoryIngredientsAutocompleteAdapter;
 import com.stevecrossin.whatcanicook.adapter.CategoryViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
@@ -34,6 +38,13 @@ public class CategoryPicker extends AppCompatActivity {
     private CategoryViewAdapter categoryViewAdapter;
     private static final String TAG = "CategoryPicker";
 
+    String ingredienttype;//Type of ingredient e.g meat, veg
+    String ingredientname;//Name of ingredient
+    String ingredientalternative;//Possible alternative ingredients e.g. canola to sunflower oil
+    Boolean ingredientselectable = true;//Whether or not the ingredient is selectable. Defaults to true.
+    Boolean ingredientselected = false;//Whether or not the ingredient has been selected for recipe searching. Defaults to false.
+    private AutoCompleteTextView autoCompleteTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,11 +56,59 @@ public class CategoryPicker extends AppCompatActivity {
         TextView textView = findViewById(R.id.dishchosentext);
         textView.setText(dishtype);
 
-
         repository = new AppDataRepo(this);
 
+        loadIngredients();
         initRecyclerItems();
+        setupAutoComplete();
+    }
 
+    private void setupAutoComplete() {
+        autoCompleteTextView = findViewById(R.id.recipe_name);
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                autoCompleteTextView.setText(null);
+                Ingredient ingredient = (Ingredient) parent.getItemAtPosition(position);
+                markIngredientAsSelected(ingredient.getIngredientName());
+            }
+        });
+
+        getAllIngredients();
+    }
+
+    public void markIngredientAsSelected(final String ingredientName) {
+        new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                AppDataRepo repo = new AppDataRepo(CategoryPicker.this);
+                repository.selectIngredient(ingredientName);
+                return null;
+            }
+
+        }.execute();
+    }
+
+
+
+
+    public void getAllIngredients() {
+        new AsyncTask<Void, Void, List<Ingredient>>() {
+
+            @Override
+            protected List<Ingredient> doInBackground(Void... voids) {
+                AppDataRepo repo = new AppDataRepo(CategoryPicker.this);
+                return repo.getAllIngredients();
+            }
+
+            @Override
+            protected void onPostExecute(List<Ingredient> ingredients) {
+                super.onPostExecute(ingredients);
+                CategoryIngredientsAutocompleteAdapter adapter = new CategoryIngredientsAutocompleteAdapter(CategoryPicker.this, ingredients);
+                autoCompleteTextView.setAdapter(adapter);
+            }
+        }.execute();
     }
 
 
@@ -89,8 +148,9 @@ public class CategoryPicker extends AppCompatActivity {
                 categoryViewAdapter.updateCategories(categories);
             }
         }.execute();
-    }
 
+
+    }
 
     /**
      * This will perform the initial load of the ingredients from the ingredients.csv file
@@ -106,12 +166,12 @@ public class CategoryPicker extends AppCompatActivity {
             for (CSVRecord record : records) {
                 String ingredientID = record.get(0);
                 String ingredientCategory = record.get(1);
-                String ingredientImage = record.get(2);
+                String categoryIconName = record.get(2);
                 String ingredientSubCat = record.get(3);
                 String ingredientName = record.get(4);
                 String ingredientAlternative = record.get(5);
 
-                Ingredient ingredient = new Ingredient(Integer.parseInt(ingredientID), ingredientCategory, ingredientImage, ingredientSubCat, ingredientName, ingredientAlternative);
+                Ingredient ingredient = new Ingredient(Integer.parseInt(ingredientID), ingredientCategory, categoryIconName, ingredientSubCat, ingredientName, ingredientAlternative);
                 ingredients.add(ingredient);
             }
             return ingredients;
@@ -154,7 +214,6 @@ public class CategoryPicker extends AppCompatActivity {
 
         ingredientsCategoryList.setAdapter(categoryViewAdapter);
 
-        loadIngredients();
     }
 
     public void myIngredients(View view) {

@@ -24,6 +24,8 @@ public class User {
     @ColumnInfo(name = "login_status")
     private boolean isLoggedIn;
 
+    @ColumnInfo(name = "saved_pantry")
+    private String integredents;
 
     public int getUserID() {
         return userID;
@@ -54,6 +56,7 @@ public class User {
         this.passKey = passKey;
         this.isLoggedIn = false;
         this.intolerances = "[]";
+        this.integredents = "[]";
     }
 
     public String getIntolerances() {
@@ -70,5 +73,13 @@ public class User {
 
     public void setLoggedIn(boolean loggedIn) {
         isLoggedIn = loggedIn;
+    }
+
+    public String getIntegredents() {
+        return integredents;
+    }
+
+    public void setIntegredents(String integredents) {
+        this.integredents = integredents;
     }
 }

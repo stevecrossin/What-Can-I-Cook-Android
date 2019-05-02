@@ -15,6 +15,7 @@ public interface RecipeDao {
     @Query("SELECT * FROM recipe WHERE recipe_saved = 1;")
     List<Recipe> getAllSavedRecipes();
 
+
     @Query("SELECT Recipe.* FROM recipeingredients\n" +
             "JOIN recipe ON recipeingredients.recipe_name = Recipe.recipe_name\n" +
             " WHERE recipeingredients.recipe_ingredients IN \n" +

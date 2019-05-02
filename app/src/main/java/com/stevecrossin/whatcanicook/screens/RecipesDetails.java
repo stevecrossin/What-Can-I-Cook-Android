@@ -55,7 +55,6 @@ public class RecipesDetails extends AppCompatActivity {
             warning.setText(getString(R.string.enoughIngredients));
         }
 
-
         ImageView recipeImage = findViewById(R.id.recipe_img);
         int drawableResourceId = this.getResources().getIdentifier(recipe.getRecipeImage(), "drawable", this.getPackageName());
         recipeImage.setImageResource(drawableResourceId);

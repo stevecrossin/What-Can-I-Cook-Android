@@ -3,15 +3,16 @@ package com.stevecrossin.whatcanicook.entities;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
-
-import com.stevecrossin.whatcanicook.entities.Ingredient;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Dao
 public interface IngredientDao {
+    /*
+    @Update()
+    void excludeIngredient(IngredientDao ingredientDao);
+    */
 
     @Query("SELECT * FROM ingredient;")
     List<Ingredient> getAllIngredients();
@@ -51,5 +52,13 @@ public interface IngredientDao {
 
     @Query("DELETE FROM ingredient;")
     void deleteAll();
+
+    @Query("SELECT *  FROM ingredient WHERE ingredient_excluded = 0")
+    List<Ingredient> getAllTolerantIngredient();
+
+
+    @Query("SELECT * FROM ingredient where ingredient_id IN(:ingredientIds)")
+    List<Ingredient> getIngredientsById(List<Integer> ingredientIds);
+
 
 }
