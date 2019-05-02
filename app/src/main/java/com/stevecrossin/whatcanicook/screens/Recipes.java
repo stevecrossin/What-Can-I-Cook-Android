@@ -18,10 +18,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import com.stevecrossin.whatcanicook.R;
-import com.stevecrossin.whatcanicook.adapter.MyIngredientViewAdapter;
 import com.stevecrossin.whatcanicook.adapter.RecipeViewAdapter;
-import com.stevecrossin.whatcanicook.entities.Ingredient;
-import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
@@ -38,10 +35,6 @@ import java.util.ArrayList;
 
 //This class handles all the recipes functions for this application, including reading the recipes and providing recipe results
 public class Recipes extends AppCompatActivity {
-    String recipename;
-    String recipeingredients;//ingredients
-    String recipesteps;
-    String recipeImage;
     private AppDataRepo repository;
     RecipeViewAdapter recipeViewAdapter;
     private static final String TAG = "Recipes";
@@ -54,7 +47,7 @@ public class Recipes extends AppCompatActivity {
 
     /**
      * Scene initalization. This also loads the neccessary ingredient from the CSV to the database
-     * @param savedInstanceState
+     * @param savedInstanceState - description goes here!
      */
     @SuppressLint("SetTextI18n")
     @Override
@@ -92,15 +85,12 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<String>>() {
             @Override
             protected ArrayList<String> doInBackground(Void... voids) {
-                ArrayList<Recipe> similarRecipes = new ArrayList<>();
-                similarRecipes.addAll(repository.getAllRecipesByCheckedIngredients(1));
-                //Log.d(TAG, "doInBackground: " + similarRecipes.get(0).getRecipeName());
+                ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(1));
+                //Log.d(TAG, "doInBackground: " + similarRecipes.get(0).getRecipeName()); - another bug!
                 if (similarRecipes.size() > 0){
                     Recipe similarRecipe = similarRecipes.get(0);
-                    ArrayList<String> missingIngredients = new ArrayList<>();
-                    missingIngredients.addAll(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 3));
-                    Log.d(TAG, "doInBackground: " + missingIngredients.get(0) + missingIngredients.get(1)+ missingIngredients.get(2));
-                    return missingIngredients;
+                    //Log.d(TAG, "doInBackground: " + missingIngredients.get(0) + missingIngredients.get(1)); - this causing a bug!
+                    return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 2));
                 }
                 return null;
             }
@@ -113,8 +103,9 @@ public class Recipes extends AppCompatActivity {
                         final Button ingredient = new Button(Recipes.this);
                         ingredient.setText(string);
                         ingredient.setTag(string);
-                        ingredient.setMaxWidth(10);
-                        ingredient.setTextSize(10);
+                        ingredient.setMaxWidth(20);
+                        ingredient.setMaxHeight(20);
+                        ingredient.setTextSize(8);
                         ingredient.setOnClickListener(btnClicked);
                         addingList.addView(ingredient);
                     }
@@ -157,8 +148,7 @@ public class Recipes extends AppCompatActivity {
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        ArrayList<String> missingIngredients = new ArrayList<>();
-                        missingIngredients.addAll(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
+                        ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
                         //for (String string : missingIngredients)
                         // Log.d(TAG, "Missing ingredients: " + string + "\n");
                         Intent intent = new Intent(Recipes.this, RecipesDetails.class);
@@ -185,8 +175,7 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>();
-                recipes.addAll(repository.getAllRecipesByCheckedIngredients(0));
+                ArrayList<Recipe> recipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(0));
                 for (Recipe recipe : recipes) {
                     Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
                     Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
@@ -208,8 +197,7 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>();
-                recipes.addAll(repository.getAllRecipesByCheckedIngredientsWithExactMatch());
+                ArrayList<Recipe> recipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredientsWithExactMatch());
                 for (Recipe recipe : recipes) {
                     Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
                     Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
@@ -310,65 +298,6 @@ public class Recipes extends AppCompatActivity {
 
     }
 
-    //Perform queries with ingredients data to find recipe results
-    //public void findRecipes() {
-       /*
-        This method will perform the following actions to check for recipe results
-        1. Take the parcel passed by the CategoryPicker.searchRecipe class
-        2. Query the ingredients provided against the recipes database, and check each row's ingredients column.
-        Data in the ingredients column is stored in this format, separated by semicolons.
-        "(chicken, 200, grams); (oil, 50, ml)"
-
-        The code will parse the ingredients names in that row and compare them to the selected ingredients passed.
-
-        If all ingredients are available, the recipe will be flagged as a valid ingredient, and will be passed to the next
-        function for display once query complete.
-
-        If some ingredients are available, the alternative ingredient for missing ingredients will be selected.
-        If the alternative ingredient matches the recipe ingredient, this recipe will be noted as possible to make
-        using an alternative and passed to the next function to display once query complete
-
-        If, even using alternative ingredients, the recipe cannot be reproduced, the recipe will be skipped and the
-        query will move onto the next row.
-
-        This method will continue until all rows in the table have been queried
-       */
-    //}
-
-    //Display recipe results
-    public void displayRecipes() {
-       /*
-       This method will handle outputting recipe results to display to the user.
-       Once the findRecipes method is complete, recipe results will be sorted and displayed, in order of
-       most number of ingredients used. Recipes that can be used using ingredients the user has, where the recipe
-       calls for a different ingredient, will be returned in the same priority, by most primary
-       ingredients used.
-
-       The recyclerview of the reciperesults will be updated, and output will be need to be presented in the following format:
-
-       Recipe Name, CategoryPicker user has e.g. "Roast chicken with potatoes, uses your chicken, potatoes and olive oil"
-       If a substituite is recommended, it will instead state
-       "Recipe Name, CategoryPicker they have, "You can substituite your X instead of Y"
-       e.g. "Roast chicken with potatoes, uses your chicken and potatoes. You can use your canola oil instead of olive oil"
-       */
-    }
-
-    //Display details of recipe when the recipe row is clicked
-    public void recipeInfo() {
-        /*
-        When the recipe row is clicked, a query will be run on the recipes database to extract the
-        recipe name, recipe ingredients including quantities and recipe steps, for that selected recipe.
-        This data will then be passed to the Recipe Details scene and displayed in a scrollable text view
-        */
-    }
-
-
-    /*
-        This method is executed when the "Start Over" button is clicked on the "Recipe Details" activity.
-        As the selected ingredients need to be reset to defaults, this button will perform a database update on
-        the ingredients database table to set all ingredientselected fields back to false, which will have the effect
-        of clearing the "My CategoryPicker" list. It will then navigate back to the MainActivity.
-    */
     public void resetIngredients(View view) {
         new AppDataRepo(this).clearIngredients();
         Intent intent = new Intent(this, MainActivity.class);

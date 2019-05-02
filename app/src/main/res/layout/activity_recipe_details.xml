@@ -12,34 +12,75 @@
         android:layout_height="wrap_content"
         android:background="@color/primaryColor">
 
+
         <TextView
             android:id="@+id/recipe_name"
-            android:layout_width="192dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/recipe_results"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/share_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/share_this_recipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/recipe_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/share" />
+
+        <TextView
+            android:id="@+id/recipe_warning"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:gravity="center"
-            android:text="@string/recipe_results"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:text="@string/missing_ingredients_warning"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/recipe_name"
+            />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/recipe_img"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_warning"
+            app:layout_constraintBottom_toTopOf="@id/recipe_ingredients"/>
 
         <TextView
             android:id="@+id/recipe_ingredients"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/recipe_ingredients"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_img" />
+            app:layout_constraintTop_toBottomOf="@+id/recipe_img"
+            app:layout_constraintBottom_toTopOf="@id/recipe_ingredients_content"/>
 
         <TextView
             android:id="@+id/recipe_ingredients_content"
@@ -52,7 +93,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipe_ingredients"
+            app:layout_constraintBottom_toTopOf="@id/recipe_steps"
             tools:text="@tools:sample/lorem/random" />
+
 
         <TextView
             android:id="@+id/recipe_steps"
@@ -66,7 +109,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_ingredients_content" />
+            app:layout_constraintTop_toBottomOf="@+id/recipe_ingredients_content"
+            app:layout_constraintBottom_toTopOf="@id/recipe_steps_content"/>
 
         <TextView
             android:id="@+id/recipe_steps_content"
@@ -78,46 +122,8 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_steps" />
-
-        <TextView
-            android:id="@+id/recipe_warning"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/missing_ingredients_warning"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
-
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/recipe_img"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_warning" />
-
-        <ImageButton
-            android:id="@+id/share_button"
-            android:layout_width="47dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.826"
-            app:layout_constraintStart_toEndOf="@+id/recipe_name"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/share" />
+            app:layout_constraintTop_toBottomOf="@+id/recipe_steps"
+            app:layout_constraintBottom_toTopOf="@id/adView"/>
 
         <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
@@ -128,7 +134,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="0dp"
             ads:adSize="BANNER"
             ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
             ads:layout_constraintBottom_toBottomOf="parent"

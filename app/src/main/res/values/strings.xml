@@ -60,4 +60,5 @@
     <string name="missing_suggestion_q">Do you also have:</string>
     <string name="exact_match_switch">Allow only exact match</string>
     <string name="start_over_btn">Start Over</string>
+    <string name="share_this_recipe">Share this recipe</string>
 </resources>

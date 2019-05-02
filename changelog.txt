@@ -319,6 +319,7 @@ Thursday/Friday 2-3 May - Steve
 * Autocomplete search of ingredients in ingredient search implemented and tested
 * Ability to delete ingredients selected rather than only clear ingredients implemented and tested
 * Constraints in pantry and recipe results fixed, bugs have been noted in bug fix to remediate
+* Squashing bugs
 
 Progress on Milestones:
 
