@@ -55,16 +55,15 @@ public class IngredientViewHolder extends RecyclerView.ViewHolder {
             protected Void doInBackground(Void... voids) {
                 ArrayList<Ingredient> list = new ArrayList<>();
                 list.addAll(repository.getIngredientsByName(ingredientName));
-                if (isSelected) {
-                    for (Ingredient ingredient : list) {
+                if (isSelected){
+                    for (Ingredient ingredient : list){
                         repository.selectIngredient(ingredient.getIngredientName());
                         Log.d(TAG, "Selected ingredient: " + ingredient.getIngredientName());
                     }
                 } else {
-                    for (Ingredient ingredient : list) {
+                    for (Ingredient ingredient : list){
                         repository.deselectIngredient(ingredient.getIngredientName());
-                        Log.d(TAG, "Deselected ingredient: " + ingredient.getIngredientName());
-                        ArrayList<Ingredient> list2 = new ArrayList<>();
+                        Log.d(TAG, "Deselected ingredient: " + ingredient.getIngredientName());ArrayList<Ingredient> list2 = new ArrayList<>();
                     }
                 }
                 return null;

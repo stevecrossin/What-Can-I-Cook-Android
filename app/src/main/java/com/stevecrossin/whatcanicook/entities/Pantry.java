@@ -8,32 +8,19 @@ import android.arch.persistence.room.PrimaryKey;
 public class Pantry {
 
     @PrimaryKey
-    @ColumnInfo(name = "pantry_id")
-    private int pantryIngID;
+    @ColumnInfo(name = "ingredient_id")
+    private int ingredientId;
 
-    @ColumnInfo(name = "pantry_ingredient")
-    private String pantryIngredient;
-
-
-    public Pantry(int pantryIngID, String pantryIngredient) {
-        this.pantryIngID = pantryIngID;
-        this.pantryIngredient = pantryIngredient;
-
+    public Pantry(int ingredientId) {
+        this.ingredientId = ingredientId;
     }
 
-    public int getPantryIngID() {
-        return pantryIngID;
+    public int getIngredientId() {
+        return ingredientId;
     }
 
-    public void setPantryIngID(int pantryIngID) {
-        this.pantryIngID = pantryIngID;
+    public void setIngredientId(int ingredientId) {
+        this.ingredientId = ingredientId;
     }
 
-    public String getPantryIngredient() {
-        return pantryIngredient;
-    }
-
-    public void setPantryIngredient(String pantryIngredient) {
-        this.pantryIngredient = pantryIngredient;
-    }
 }

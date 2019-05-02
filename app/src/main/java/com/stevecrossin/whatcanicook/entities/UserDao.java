@@ -28,4 +28,7 @@ public interface UserDao {
 
     @Query("UPDATE user SET saved_intolerances = :value  WHERE login_status = 1")
     void updateIntoleranceValue(String value);
+
+    @Query("UPDATE user SET saved_pantry = :value  WHERE login_status = 1")
+    void updatePantryValue(String value);
 }

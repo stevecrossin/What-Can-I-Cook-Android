@@ -16,7 +16,7 @@ Sunday 18 March - Steve
 
 End of Sunday 18 March - Steve
 
-* Room databsse implementation still not functional
+* Room database implementation still not functional
 * Core layouts that have been created: splash screen tested and functional, main activity functioning with layouts working correctly and dynamically adjusting to different screen sizes, pantry view working correctly. The start of an intolerance view,
 and saved recipes view has been created.
 
@@ -304,7 +304,7 @@ What's next
 
 Notes: Milestone 4 is nearly complete and will be completed on schedule or earlier. Most of the time after this will be dedicated to testing and bugfixes, trying to break the app every way possible to ensure everything functions correctly.
 
-Tuesday/Wed 30 April - 1 May
+Tuesday/Wed 30 April - 1 May - Steve
 * Tons of data matching work on recipes/ingredients
 * Private branch almost complete to implement pantry, still undergoing final testing and will be merged today.
 
@@ -313,3 +313,15 @@ What's next
 * Google Sign in
 * Commenting
 * Bugfixes etc
+
+Thursday/Friday 2-3 May - Steve
+* Pantry feature implemented and tested
+* Autocomplete search of ingredients in ingredient search implemented and tested
+* Ability to delete ingredients selected rather than only clear ingredients implemented and tested
+
+What's next
+* Tidy code - it's a mess, but it works
+* Comment all code, remove redundant junk
+* Write about page and licenses
+* Implement logs
+* Continue work on CSV data to clean.

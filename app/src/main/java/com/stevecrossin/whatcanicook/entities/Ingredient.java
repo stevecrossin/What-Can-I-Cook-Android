@@ -33,6 +33,8 @@ public class Ingredient {
     private boolean ingredientSelected = false;
 
 
+
+
     public Ingredient(int ingredientID, String ingredientCategory, String categoryIconName, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
         this.ingredientID = ingredientID;
         this.ingredientCategory = ingredientCategory;

@@ -28,6 +28,7 @@ import com.stevecrossin.whatcanicook.PasswordHash;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
+import com.stevecrossin.whatcanicook.entities.Pantry;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
@@ -42,7 +43,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.stevecrossin.whatcanicook.CurrentLoginState.*;
+import static com.stevecrossin.whatcanicook.CurrentLoginState.EXISTING_USER;
+import static com.stevecrossin.whatcanicook.CurrentLoginState.INVALID_PASSWORD;
+import static com.stevecrossin.whatcanicook.CurrentLoginState.NEW_USER;
 
 /**
  * A login screen that offers login via email/password. This code is based off the default Login Activity provided in Android Studio, and was modified based on that.
@@ -272,7 +275,7 @@ public class Login extends AppCompatActivity {
                         return EXISTING_USER;
                     }
                 } catch (Exception e) {
-                    //Log Msg needed here
+                    e.printStackTrace();
                 }
             } else if (currentLoginState == NEW_USER)
                 try {
@@ -326,6 +329,18 @@ public class Login extends AppCompatActivity {
         loadIntolerancesToDb();
         loadIngredientsTODb();
         updateToleranceToDb();
+        updatePantryToDb();
+    }
+
+    private void updatePantryToDb() {
+        AppDataRepo repository = new AppDataRepo(Login.this);
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<com.stevecrossin.whatcanicook.entities.Pantry>>() {
+        }.getType();
+        List<Pantry> pantryList = gson.fromJson(repository.getSignedUser().getIntegredents(), type);
+
+        for (com.stevecrossin.whatcanicook.entities.Pantry pantry : pantryList)
+            repository.addIngredientToPantry(pantry);
     }
 
     private void loadIntolerancesToDb() {

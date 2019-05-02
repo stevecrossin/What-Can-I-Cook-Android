@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor">
@@ -23,44 +22,46 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pantryRecycler"
         android:layout_width="0dp"
-        android:layout_height="432dp"
+        android:layout_height="0dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:background="@color/primaryLightColor"
+        app:layout_constraintBottom_toTopOf="@+id/pantryIngredientsSearchBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pantryTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/pantryTitle"/>
 
     <AutoCompleteTextView
+        android:completionThreshold="3"
         android:id="@+id/pantryIngredientsSearchBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="#ffffff"
-        android:completionHint="Search"
         android:hint="@string/add_an_ingredient_to_pantry"
         android:labelFor="@id/recipe_name"
         android:padding="8dp"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/pantryClearIngredients"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pantryRecycler" />
+        app:layout_constraintTop_toBottomOf="@+id/pantryRecycler"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
-        android:id="@+id/pantryAddIngredients"
+        android:id="@+id/pantryClearIngredients"
         android:layout_width="wrap_content"
-        android:layout_height="49dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/add_ingredients"
-        app:layout_constraintBottom_toTopOf="@+id/adView"
+        android:layout_marginBottom="24dp"
+        android:text="Clear Ingredients"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pantryIngredientsSearchBox" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"

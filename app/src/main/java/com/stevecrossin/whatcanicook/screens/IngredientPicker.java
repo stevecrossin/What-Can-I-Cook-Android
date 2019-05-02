@@ -26,7 +26,6 @@ public class IngredientPicker extends AppCompatActivity {
 
     /**
      * Initialization of this scene. This will get the category string passed by last scene and display to 'categorychosentext'
-     *
      * @param savedInstanceState
      */
     @Override
@@ -40,9 +39,10 @@ public class IngredientPicker extends AppCompatActivity {
         TextView textView = findViewById(R.id.categorychosentext);
         textView.setText(category);
 
-        repository = new AppDataRepo(this);
-        initRecyclerItems();
 
+        repository = new AppDataRepo(this);
+
+        initRecyclerItems();
     }
 
     /**
@@ -62,7 +62,7 @@ public class IngredientPicker extends AppCompatActivity {
             public void onRowClicked(Ingredient ingredient) {
                 Log.d(TAG, "onRowClicked: " + ingredient.getIngredientName());
             }
-        });
+        } );
 
         ingredientsList.setAdapter(ingredientViewAdapter);
 
@@ -81,7 +81,7 @@ public class IngredientPicker extends AppCompatActivity {
             protected ArrayList<Ingredient> doInBackground(Void... voids) {
                 ArrayList<Ingredient> ingredients = new ArrayList<>();
                 ingredients.addAll(repository.getIngredientsByCategory(category));
-                for (Ingredient ingredient : ingredients) {
+                for (Ingredient ingredient : ingredients){
                     Log.d(TAG, "ingredient name: " + ingredient.getIngredientName());
                     Log.d(TAG, "excluded : " + ingredient.isIngredientExcluded());
                 }
@@ -93,8 +93,9 @@ public class IngredientPicker extends AppCompatActivity {
                 super.onPostExecute(ingredients);
                 ingredientViewAdapter.updateIngredients(ingredients);
             }
-        }.
-                execute();
+        }.execute();
+
+
     }
 
     public void myIngredients(View view) {
