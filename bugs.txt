@@ -4,3 +4,4 @@ Bugs to fix:
 * On landscape, MainActivity buttons not constrained identically
 * Ingredients are excluded based on dietary requirements, but recipes are not in standard search (Tested: Selected "lacto-veg (excludes meat, fish and eggs but not dairy), and results that needed eggs still appears"
 * Ingredient suggestion suggests ingredients that are supposed to be excluded
+* Recipe_results - suggestions arent perfectly constrained when clicked

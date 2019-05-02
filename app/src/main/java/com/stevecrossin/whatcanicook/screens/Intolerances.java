@@ -31,7 +31,7 @@ public class Intolerances extends AppCompatActivity {
     Switch switchNuts, switchGluten, switchSoy, switchPork, switchLactoVeg, switchAlcohol, switchVegan, switchRedMeat, switchSeafood, switchLactoOvo, switchLactose, switchPescaterian, switchEgg;
     private AppDataRepo repository;
     private static final String TAG = "Intolerances";
-    private ArrayList<String> intoleranceList = new ArrayList<>();
+    //private ArrayList<String> intoleranceList = new ArrayList<>(); //unused, possible delete
     private AdView mAdView;
 
     /**

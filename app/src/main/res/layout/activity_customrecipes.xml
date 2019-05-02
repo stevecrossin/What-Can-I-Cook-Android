@@ -7,7 +7,7 @@
     android:background="@color/primaryColor">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/missingsuggestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toStartOf="@+id/recipe_name"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/missingsuggestion" />
 
     <TextView
         android:id="@+id/textView5"
@@ -75,7 +75,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/missingsuggestion" />
 
     <AutoCompleteTextView
         android:id="@+id/recipe_ingredients"

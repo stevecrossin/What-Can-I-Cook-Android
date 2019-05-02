@@ -318,6 +318,11 @@ Thursday/Friday 2-3 May - Steve
 * Pantry feature implemented and tested
 * Autocomplete search of ingredients in ingredient search implemented and tested
 * Ability to delete ingredients selected rather than only clear ingredients implemented and tested
+* Constraints in pantry and recipe results fixed, bugs have been noted in bug fix to remediate
+
+Progress on Milestones:
+
+Milestone 4 is complete except Google Sign In, which is a nice to have feature at this stage. Testing as part of Milestone 5 is also underway, and has been done on the app but will continue.
 
 What's next
 * Tidy code - it's a mess, but it works
@@ -325,3 +330,5 @@ What's next
 * Write about page and licenses
 * Implement logs
 * Continue work on CSV data to clean.
+* Google Sign In by this weekend
+* I am tired

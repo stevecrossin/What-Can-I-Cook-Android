@@ -94,7 +94,7 @@ public class Recipes extends AppCompatActivity {
             protected ArrayList<String> doInBackground(Void... voids) {
                 ArrayList<Recipe> similarRecipes = new ArrayList<>();
                 similarRecipes.addAll(repository.getAllRecipesByCheckedIngredients(1));
-                Log.d(TAG, "doInBackground: " + similarRecipes.get(0).getRecipeName());
+                //Log.d(TAG, "doInBackground: " + similarRecipes.get(0).getRecipeName());
                 if (similarRecipes.size() > 0){
                     Recipe similarRecipe = similarRecipes.get(0);
                     ArrayList<String> missingIngredients = new ArrayList<>();
