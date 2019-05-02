@@ -6,3 +6,4 @@ Bugs to fix:
 * Ingredient suggestion suggests ingredients that are supposed to be excluded
 * Recipe_results - suggestions arent perfectly constrained when clicked - fixed by changing limit to two ingredients, and text size (FIXED)
 * Can't add more than 7 ingredients without app crashing, seems to be bug in Recipes.java:85 amd 95 - caused by another Log.d (FIXED)
+* When clicking on suggested missing ingredient, activity reloads. Shouldn't happen!
