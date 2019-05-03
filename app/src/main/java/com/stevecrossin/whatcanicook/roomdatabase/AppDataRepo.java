@@ -163,6 +163,14 @@ public class AppDataRepo {
         ingredientDao.includeIngredient(ingredientName);
     }
 
+    public void excludeRecipe(String ingredientName) {
+        recipeDao.excludeRecipe(ingredientName);
+    }
+
+    public void includeRecipe(String ingredientName) {
+        recipeDao.includeRecipe(ingredientName);
+    }
+
     public void selectIngredient(String ingredientName) {
         ingredientDao.selectIngredient(ingredientName);
     }

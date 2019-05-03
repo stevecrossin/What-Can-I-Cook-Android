@@ -214,6 +214,7 @@ public class Intolerances extends AppCompatActivity {
                     repository.addTolerance(intoleranceName);
                     for (Intolerance intolerance : list) {
                         repository.excludeIngredient(intolerance.getIngredientName());
+                        repository.excludeRecipe(intolerance.getIngredientName());
                         Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
                     }
                 } else {
@@ -221,6 +222,7 @@ public class Intolerances extends AppCompatActivity {
                     repository.removeTolerance(intoleranceName);
                     for (Intolerance intolerance : list) {
                         repository.includeIngredient(intolerance.getIngredientName());
+                        repository.includeRecipe(intolerance.getIngredientName());
                         Log.d(TAG, "Include ingredient: " + intolerance.getIngredientName());
                     }
                 }

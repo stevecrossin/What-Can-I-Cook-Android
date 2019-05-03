@@ -19,14 +19,16 @@ public interface RecipeDao {
     @Query("SELECT Recipe.* FROM recipeingredients\n" +
             "JOIN recipe ON recipeingredients.recipe_name = Recipe.recipe_name\n" +
             " WHERE recipeingredients.recipe_ingredients IN \n" +
-            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0) \n" +
+            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1) \n" +
+            " AND recipe.recipe_excluded = 0 \n" +
             " GROUP BY recipeingredients.recipe_name ORDER BY count(recipeingredients.recipe_name) DESC;")
     List<Recipe> getAllRecipesByCheckedIngredients();
 
     @Query("SELECT Recipe.* FROM recipeingredients\n" +
             "JOIN recipe ON recipeingredients.recipe_name = Recipe.recipe_name\n" +
             " WHERE recipeingredients.recipe_ingredients IN \n" +
-            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0) \n" +
+            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1) \n" +
+            " AND recipe.recipe_excluded = 0 \n" +
             " GROUP BY recipeingredients.recipe_name ORDER BY count(recipeingredients.recipe_name) DESC LIMIT :limit;")
     List<Recipe> getAllRecipesByCheckedIngredientsWithLimit(int limit);
 
@@ -34,7 +36,8 @@ public interface RecipeDao {
             "JOIN recipe ON recipeingredients.recipe_name = Recipe.recipe_name\n" +
             "JOIN recipeingredientstotal ON recipeingredients.recipe_name = recipeingredientstotal.recipe_name\n" +
             "WHERE recipeingredients.recipe_ingredients IN\n" +
-            "(SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0)\n" +
+            "(SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1)\n" +
+            " AND recipe.recipe_excluded = 0 \n" +
             "GROUP BY recipeingredients.recipe_name \n" +
             "HAVING RecipeIngredientsTotal.total_ingredients = count(recipeingredients.recipe_name)\n" +
             "ORDER BY count(recipeingredients.recipe_name) DESC;")
@@ -42,7 +45,7 @@ public interface RecipeDao {
 
     @Query(" SELECT count(recipe_name) FROM recipeingredients\n" +
             " WHERE recipeingredients.recipe_ingredients IN \n" +
-            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0) \n" +
+            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1) \n" +
             " AND recipe_name = :name\n" +
             " GROUP BY recipeingredients.recipe_name ORDER BY count(recipe_name) DESC;")
     List<Integer> getNumberOfMissingIngredientsByName(String name);
@@ -50,13 +53,13 @@ public interface RecipeDao {
     @Query(" SELECT recipe_ingredients FROM RecipeIngredients\n" +
             " WHERE recipe_name = :name\n" +
             " AND recipeingredients.recipe_ingredients NOT IN \n" +
-            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0) ;")
+            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1) ;")
     List<String> getMissingIngredientsByName(String name);
 
     @Query(" SELECT recipe_ingredients FROM RecipeIngredients\n" +
             " WHERE recipe_name = :name\n" +
             " AND recipeingredients.recipe_ingredients NOT IN \n" +
-            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1 AND ingredient_excluded = 0) LIMIT :limit;")
+            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1) LIMIT :limit;")
     List<String> getMissingIngredientsByNameWithLimit(String name, int limit);
 
     @Query("SELECT * FROM recipe WHERE recipe_name = :recipeName;")
@@ -67,6 +70,16 @@ public interface RecipeDao {
 
     @Query("UPDATE recipe SET recipe_saved = 1 WHERE recipe_id = :recipeId;")
     void saveRecipe(int recipeId);
+
+    @Query("UPDATE Recipe SET recipe_excluded = recipe_excluded + 1 WHERE\n" +
+            "Recipe.recipe_name IN (SELECT recipe_name FROM recipeingredients\n" +
+            "WHERE recipeingredients.recipe_ingredients = :ingredientName)")
+    void excludeRecipe(String ingredientName);
+
+    @Query("UPDATE Recipe SET recipe_excluded = recipe_excluded - 1 WHERE\n" +
+            "Recipe.recipe_name IN (SELECT recipe_name FROM recipeingredients\n" +
+            "WHERE recipeingredients.recipe_ingredients = :ingredientName)")
+    void includeRecipe(String ingredientName);
 
     @Insert
     void addRecipes(ArrayList<Recipe> recipes);

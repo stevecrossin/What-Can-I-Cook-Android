@@ -445,6 +445,7 @@ public class Login extends AppCompatActivity {
             List<Intolerance> list = repository.getIntoleranceByName(intoleranceName);
             for (Intolerance intolerance : list) {
                 repository.excludeIngredient(intolerance.getIngredientName());
+                repository.excludeRecipe(intolerance.getIngredientName());
                 Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
             }
         }

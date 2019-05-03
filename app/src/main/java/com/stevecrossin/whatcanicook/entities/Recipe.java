@@ -24,6 +24,9 @@ public class Recipe implements Serializable {
     @ColumnInfo(name = "recipe_steps")
     private String recipeSteps;
 
+    @ColumnInfo(name = "recipe_excluded")
+    private int recipeExcluded = 0;
+
     @ColumnInfo(name = "recipe_saved")
     private boolean isSaved;
 
@@ -92,5 +95,13 @@ public class Recipe implements Serializable {
 
     public void setCustomed(boolean customed) {
         isCustomed = customed;
+    }
+
+    public int getRecipeExcluded() {
+        return recipeExcluded;
+    }
+
+    public void setRecipeExcluded(int recipeExcluded) {
+        this.recipeExcluded = recipeExcluded;
     }
 }

@@ -333,3 +333,12 @@ What's next
 * Continue work on CSV data to clean.
 * Google Sign In by this weekend
 * I am tired
+
+Saturday 4th May 
++ Fixed bug: Ingredients are excluded based on dietary requirements, but recipes are not in standard search (Tested: Selected "lacto-veg (excludes meat, fish and eggs but not dairy), and results that needed eggs still appears
++ Fixed bug: Ingredient suggestion suggests ingredients that are supposed to be excluded
+
+What's next?
++ Bug fixes
++ Comment code
++ Improve "Saved recipe" page by adding an edit function and a delete function.
