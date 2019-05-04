@@ -16,21 +16,11 @@ import android.widget.Switch;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.RecipeViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Recipe;
-import com.stevecrossin.whatcanicook.entities.RecipeIngredients;
-import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVRecord;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 
 //This class handles all the recipes functions for this application, including reading the recipes and providing recipe results
@@ -38,9 +28,6 @@ public class Recipes extends AppCompatActivity {
     private AppDataRepo repository;
     RecipeViewAdapter recipeViewAdapter;
     private static final String TAG = "Recipes";
-    ArrayList<Recipe> recipesFromCsv = new ArrayList<>();
-    ArrayList<RecipeIngredients> recipeIngredientsFromCsv = new ArrayList<>();
-    ArrayList<RecipeIngredientsTotal> recipeIngredientsTotalsFromCsv = new ArrayList<>();
     Switch exactMatch;
     LinearLayout addingList;
     private AdView mAdView;
@@ -68,10 +55,6 @@ public class Recipes extends AppCompatActivity {
         });
         addingList = findViewById(R.id.adding_list);
         repository = new AppDataRepo(this);
-        loadRecipesFromCsv();
-        loadRecipesToDb();
-        loadRecipeIngredientsToDb();
-        loadRecipeIngredientsTotalToDb();
         initRecyclerItems();
         initSuggestions();
         mAdView = findViewById(R.id.adView);
@@ -211,91 +194,6 @@ public class Recipes extends AppCompatActivity {
                 recipeViewAdapter.updateRecipes(recipes);
             }
         }.execute();
-    }
-
-    /**
-     * This method will parse data in the CSV files into 2 ArrayList: recipesFromCSV and recipeIngredientsFromCsv
-     * Note*: The recipes raw data structure is more special than others
-     */
-    private void loadRecipesFromCsv() {
-        try {
-            Reader in = new InputStreamReader(getResources().openRawResource(R.raw.recipes));
-            Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
-            for (CSVRecord record : records) {
-                String recipeName = record.get(0);
-                String recipeImage = record.get(1);
-                String ingredientLists = record.get(2);
-                String ingredientString = record.get(3);
-                String recipeSteps = record.get(4);
-                String[] ingredients = ingredientLists.split(":");
-
-                for (String ingredient : ingredients) {
-                    RecipeIngredients recipeIngredients = new RecipeIngredients(recipeName, recipeImage, ingredient);
-                    recipeIngredientsFromCsv.add(recipeIngredients);
-                }
-                RecipeIngredientsTotal recipeIngredientsTotal = new RecipeIngredientsTotal(recipeName, ingredients.length);
-                recipeIngredientsTotalsFromCsv.add(recipeIngredientsTotal);
-                Recipe recipe = new Recipe(recipeName, recipeImage, ingredientString, recipeSteps);
-                recipesFromCsv.add(recipe);
-            }
-        } catch (FileNotFoundException ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
-        } catch (IOException ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
-        } catch (Exception ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
-        }
-    }
-
-    /**
-     * Loads recipes to the DB if there is no data
-     */
-    @SuppressLint("StaticFieldLeak")
-    public void loadRecipesToDb() {
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                if (!repository.haveRecipe()) {
-                    repository.insertRecipes(recipesFromCsv);
-                }
-                return null;
-            }
-        }.execute();
-
-    }
-
-    /**
-     * Loads recipes + ingredients to the DB if there is no data
-     */
-    @SuppressLint("StaticFieldLeak")
-    public void loadRecipeIngredientsToDb() {
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                if (!repository.haveRecipeIngredients()) {
-                    repository.insertRecipeIngredients(recipeIngredientsFromCsv);
-                }
-                return null;
-            }
-        }.execute();
-
-    }
-
-    /**
-     * Loads recipes + ingredients to the DB if there is no data
-     */
-    @SuppressLint("StaticFieldLeak")
-    public void loadRecipeIngredientsTotalToDb() {
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                if (!repository.haveRecipeIngredientsTotal()) {
-                    repository.insertRecipeIngredientsTotal(recipeIngredientsTotalsFromCsv);
-                }
-                return null;
-            }
-        }.execute();
-
     }
 
     public void resetIngredients(View view) {

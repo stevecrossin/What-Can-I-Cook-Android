@@ -7,15 +7,26 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.stevecrossin.whatcanicook.screens.Login;
-import com.stevecrossin.whatcanicook.screens.MainActivity;
 
-//Splash screen code. This has essentially been coded the same way as my contacts application in SIT207 - worked well, no need to reinvent the wheel here
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 
 public class SplashScreenInit extends AppCompatActivity {
 
     /**
      * On creation of the activity, the toolbar will be removed, the splash screen will be displayed as full screen and the current view will be set to the contents of
      * activity_splash screen XML layout. It will then create an instance of the splash screen and start it.
+     *
+     * Code has been rewritten - using RXjava to perform tasks, the application will setup the application databases - by loading all files from CSV into their relevant databases
+     * by creating an instance of DBPopulatorUtil which has all this data migrated into one place, and then executing the relevant functions in that
+     * file.
+     *
+     * Once the application has performed all these operations, the Splash Screen Activity will end, and the Login Activity will start.
+     *
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,29 +34,58 @@ public class SplashScreenInit extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
-        SplashScreen splashScreen = new SplashScreen();
-        splashScreen.start();
+
+        setupDB();
     }
 
-    private class SplashScreen extends Thread {
-        /**
-         * Runs splash screen for 3 seconds, and handles any errors if they come up with a try/catch error
-         */
-        public void run() {
-            try {
-                sleep(3000);
-            } catch (InterruptedException error) {
-                error.printStackTrace();
-            }
+    private void setupDB() {
+        Observable.just(1, 2, 3)
+                .subscribeOn(Schedulers.io())
+                .doOnNext(new Consumer<Integer>() {
+                    @Override
+                    public void accept(Integer integer) {
+                        DBPopulatorUtil util = new DBPopulatorUtil();
+                        switch (integer) {
+                            case 1:
+                                util.loadIntolerancesToDb(SplashScreenInit.this);
+                                break;
+                            case 2:
+                                util.loadIngredientsTODb(SplashScreenInit.this);
+                                break;
 
-            /*
-             This will occur once the timer expires. The splash screen activity will finish, and the main activity will load. This will be altered to the login activity later once it is coded.
-             The splash screen instance will then be destroyed.
-             */
+                            case 3:
+                                util.loadRecipesFromCsvToDB(SplashScreenInit.this);
+                                break;
 
-            Intent intent = new Intent(com.stevecrossin.whatcanicook.SplashScreenInit.this, Login.class);
-            startActivity(intent);
-            com.stevecrossin.whatcanicook.SplashScreenInit.this.finish();
-        }
+                            default:
+                                break;
+                        }
+                    }
+                })
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Integer>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(Integer integer) {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {//Log message goes here
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Intent intent = new Intent(com.stevecrossin.whatcanicook.SplashScreenInit.this, Login.class);
+                        startActivity(intent);
+                        com.stevecrossin.whatcanicook.SplashScreenInit.this.finish();
+                    }
+                });
+
     }
+
 }

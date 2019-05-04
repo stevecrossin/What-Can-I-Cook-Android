@@ -19,13 +19,6 @@ import com.stevecrossin.whatcanicook.adapter.CategoryViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVRecord;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -129,17 +122,10 @@ public class CategoryPicker extends AppCompatActivity {
     5. Query database for ingredients that are not excluded, and update recyclerview in ingredient chooser activity with this list.
     */
 
-        final ArrayList<Ingredient> ingredients = loadIngredientsFromCsv();
-
         new AsyncTask<Void, Void, List<Ingredient>>() {
             @Override
             protected List<Ingredient> doInBackground(Void... voids) {
-                if (!repository.haveIngredient()) {
-                    repository.insertIngredients(ingredients);
-                }
-                ArrayList<Ingredient> categories = new ArrayList<>();
-                categories.addAll(repository.getAllCategories());
-                return categories;
+                return repository.getAllCategories();
             }
 
             @Override
@@ -150,39 +136,6 @@ public class CategoryPicker extends AppCompatActivity {
         }.execute();
 
 
-    }
-
-    /**
-     * This will perform the initial load of the ingredients from the ingredients.csv file
-     * For each of the record in the file, split the line by ',' delimiter
-     * Then construct a new Ingredient object with id, category, sub-category, name and alternative
-     * Finally return a list of ingredient
-     */
-    private ArrayList<Ingredient> loadIngredientsFromCsv() {
-        try {
-            ArrayList<Ingredient> ingredients = new ArrayList<>();
-            Reader in = new InputStreamReader(getResources().openRawResource(R.raw.ingredients));
-            Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
-            for (CSVRecord record : records) {
-                String ingredientID = record.get(0);
-                String ingredientCategory = record.get(1);
-                String categoryIconName = record.get(2);
-                String ingredientSubCat = record.get(3);
-                String ingredientName = record.get(4);
-                String ingredientAlternative = record.get(5);
-
-                Ingredient ingredient = new Ingredient(Integer.parseInt(ingredientID), ingredientCategory, categoryIconName, ingredientSubCat, ingredientName, ingredientAlternative);
-                ingredients.add(ingredient);
-            }
-            return ingredients;
-        } catch (FileNotFoundException ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
-        } catch (IOException ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
-        } catch (Exception ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
-        }
-        return null;
     }
 
     /**

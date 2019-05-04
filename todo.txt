@@ -1,16 +1,16 @@
 Todo list
 
-* Finalise pantry with autocomplete textbox
+* Finalise pantry with autocomplete textbox - done
 * Clean recipes CSV file
 * Source free images for recipes
 * Implement Google Ads for monetization (done with sample ID, Steve to create and have real ready for production)
-* Fix ingredient suggestion feature (done, needs testing)
+* Fix ingredient suggestion feature (done,)
 * Implement custom recipe feature (done)
 * COMMENTING CODE
 * About screen
 * Log screen
-* Check layouts constrain and scale to various different screen sizes
-* Bug fixes
+* Check layouts constrain and scale to various different screen sizes - mostly done
+* Bug fixes - see bug
 * Alpha testing
-* Steve to begin publication process
+* Steve to begin publication process - published as closed beta
 * Meeting this week to discuss

@@ -14,13 +14,6 @@ import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVRecord;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,7 +53,6 @@ public class Intolerances extends AppCompatActivity {
         switchEgg = findViewById(R.id.switchEgg);
 
         repository = new AppDataRepo(this);
-        loadIntolerancesToDb();
         updateUserTolerancePreference();
 
         switchNuts.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -160,40 +152,6 @@ public class Intolerances extends AppCompatActivity {
 
     }
 
-    //Handles loading of ingredient intolerances list
-    public ArrayList<Intolerance> loadIntolerancesFromCsv() {
-    /*
-    This method will handle the loading of the intolerances list. It will perform the following steps.
-    1. Load all possible intolerances from nintolerances.csv file, and use that data to update the Intolerance room database with any new entries
-    2. Query the savedintolerances column i the Users database for the current user. It will parse out multiple intolerances that are inside quotes and brackets, with the comma between
-    each intolerance separating them.
-    3. It will then mark the relevant intolerance as active in the intolerance database, ands also update the UI of the activity to mark the selected intolerances as active.
-    */
-        try {
-            ArrayList<Intolerance> intolerances = new ArrayList<>();
-            Reader in = new InputStreamReader(getResources().openRawResource(R.raw.intolerances));
-            Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
-            for (CSVRecord record : records) {
-                String intoleranceName = record.get(1);
-                String intoleranceIngredients = record.get(2);
-                String[] ingredients = intoleranceIngredients.split(":");
-
-                for (String ingredient : ingredients) {
-                    Intolerance intolerance = new Intolerance(intoleranceName, ingredient);
-                    intolerances.add(intolerance);
-                }
-            }
-            return intolerances;
-        } catch (FileNotFoundException ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
-        } catch (IOException ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
-        } catch (Exception ex) {
-            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
-        }
-        return null;
-    }
-
     @SuppressLint("StaticFieldLeak")
     public void intoleranceSelected(final boolean isSelected, final String intoleranceName) {
         /*
@@ -231,28 +189,6 @@ public class Intolerances extends AppCompatActivity {
         }.execute();
 
     }
-
-    /**
-     * Perform an async task in the background to load intolerances into the DB
-     * It will first construct an array list of Intolerance from the csv files
-     * Then insert those into the database if there is no data.
-     */
-    @SuppressLint("StaticFieldLeak")
-    public void loadIntolerancesToDb() {
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                if (!repository.haveIntolerance()) {
-                    ArrayList<Intolerance> intolerances = loadIntolerancesFromCsv();
-                    for (Intolerance intolerance : intolerances)
-                        repository.insertIntolerance(intolerance);
-                }
-                return null;
-            }
-        }.execute();
-
-    }
-
 
     public void updateUserTolerancePreference() {
 

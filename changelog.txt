@@ -334,7 +334,7 @@ What's next
 * Google Sign In by this weekend
 * I am tired
 
-Saturday 4th May 
+Saturday 4th May - Trong
 + Fixed bug: Ingredients are excluded based on dietary requirements, but recipes are not in standard search (Tested: Selected "lacto-veg (excludes meat, fish and eggs but not dairy), and results that needed eggs still appears
 + Fixed bug: Ingredient suggestion suggests ingredients that are supposed to be excluded
 
@@ -342,3 +342,22 @@ What's next?
 + Bug fixes
 + Comment code
 + Improve "Saved recipe" page by adding an edit function and a delete function.
+
+Sat 4 May - Steve
+* Tested bugfixes for recipe exclusion. Bug still existed - caused by databases not being loaded at initialisation.
+
++ Relocated code - major chamge. All data is loaded from CSV and into DB at runtime. Researched online best way to do this, and found RxJava to be a more efficient way to do this, so wrote a class
+"DbPopulatorUtil" that contains the loading of all files into CSV and into DB. Also modified the splash screen code, so this will be executed
+at loading of the application as an async task with multiple cases for file loading, with the LoginActivity starting once load is complete.
++ Discovered a flaw in recipe data - recipe steps dont match recipe. Already found source of problem, easy fix, re-parsing "recipe steps" from raw data - will be resolved by COB Saturday
+
+To do:
++ Alter recipe viewholder to display missing ingredients to end user, rather than just on the recipe details page, similar to original UI design
++ Alter missingingredients layout to have missing suggestions as just clickable text rather than buttons, similar to UI design.
++ Take a look at raw recipe data, identified how raw data is separated, try process to parse so more recipes can exist in the app
++ Try Google Single Sign In
++ Comment code
++ Other tasks as per todo list.
+
+
+With this update, most major bugs detected have been squashed.
