@@ -31,13 +31,11 @@ public class CategoryPicker extends AppCompatActivity {
     private CategoryViewAdapter categoryViewAdapter;
     private static final String TAG = "CategoryPicker";
 
-    String ingredienttype;//Type of ingredient e.g meat, veg
-    String ingredientname;//Name of ingredient
-    String ingredientalternative;//Possible alternative ingredients e.g. canola to sunflower oil
-    Boolean ingredientselectable = true;//Whether or not the ingredient is selectable. Defaults to true.
-    Boolean ingredientselected = false;//Whether or not the ingredient has been selected for recipe searching. Defaults to false.
     private AutoCompleteTextView autoCompleteTextView;
 
+    /**
+     * Perform these on the load of activity
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,7 +130,6 @@ public class CategoryPicker extends AppCompatActivity {
                 categoryViewAdapter.updateCategories(categories);
             }
         }.execute();
-
 
     }
 

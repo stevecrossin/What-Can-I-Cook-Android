@@ -29,6 +29,7 @@ public class About extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
         mAdView.loadAd(adRequest);
 
+        //Declaration of elements - being the textview and the source of text
         TextView aboutText = findViewById(R.id.aboutTextView);
 
         InputStream textInputStream = getResources().openRawResource(R.raw.about);
