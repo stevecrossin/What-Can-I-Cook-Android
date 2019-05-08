@@ -364,3 +364,9 @@ With this update, most major bugs detected have been squashed.
 
 Monday/Tuesday 6/7 May - Steve
 * Updates to CSV files to better match data and remediate recipe problems
+
+Wednesday 8/May - Henry
+- Looks great.
+- I haven't checked every point, but just make sure you go over everything in the Grading Criteria super carefully, to ensure you meet each point. You deserve top marks, just don't want anything to slip by :)
+
+
