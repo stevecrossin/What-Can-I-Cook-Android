@@ -371,4 +371,16 @@ Wednesday 8/May - Henry
 
 Wednesday/Thursday 8/9 May
 * Ingredients and recipes fix
-* Splash screen fixed, now loads correctly!
+* Splash screen fixed, now loads correctly as an image in portrait or landscape
+* Log scene activity created, intent to nav from about to logs
+* App icon designed
+* Function to read contents of "about.txt" and store in textview written
+
+Next:
+-Change Async tasks to Rxjava
+-Have logs sent to developer via intent
+-More testing
+-Commenting remaining code
+-Publish beta release, then final release before end of submission deadline
+-Add more recipes from master list
+-Fix intolerances data matching
