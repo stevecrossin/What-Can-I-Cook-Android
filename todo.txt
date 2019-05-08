@@ -1,16 +1,19 @@
 Todo list
 
 * Finalise pantry with autocomplete textbox - done
-* Clean recipes CSV file
-* Source free images for recipes
+* Clean recipes CSV file - done
+* Source free images for recipes - will go with user adding instead
 * Implement Google Ads for monetization (done with sample ID, Steve to create and have real ready for production)
-* Fix ingredient suggestion feature (done,)
+* Fix ingredient suggestion feature (done)
 * Implement custom recipe feature (done)
 * COMMENTING CODE
 * About screen
-* Log screen
-* Check layouts constrain and scale to various different screen sizes - mostly done
-* Bug fixes - see bug
+* Log screen - content posting there
+* Check layouts constrain and scale to various different screen sizes - done
+* Bug fixes - most done
 * Alpha testing
 * Steve to begin publication process - published as closed beta
-* Meeting this week to discuss
+* Add more recipes
+* Implement toasts for deletion of saved recipes, similar to removing ingredients
+* Update login screen
+* Add graphics to splash screen - DONE

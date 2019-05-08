@@ -36,13 +36,33 @@
 
     <Button
         android:id="@+id/clearLogs"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/secondaryColor"
         android:text="@string/btnClearLogs"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/logTextView"
+        app:layout_constraintEnd_toStartOf="@id/sendLogs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sendLogs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/secondaryColor"
+        android:text="Send Logs to Developer"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/logTextView"
+        app:layout_constraintStart_toEndOf="@id/clearLogs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/clearLogs"/>
+
 </android.support.constraint.ConstraintLayout>

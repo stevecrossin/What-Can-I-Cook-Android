@@ -84,8 +84,6 @@ public class CategoryPicker extends AppCompatActivity {
     }
 
 
-
-
     public void getAllIngredients() {
         new AsyncTask<Void, Void, List<Ingredient>>() {
 

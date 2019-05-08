@@ -30,11 +30,8 @@ public class SplashScreenInit extends AppCompatActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme_SplashTheme);
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_splash_screen);
-
         setupDB();
     }
 
@@ -64,8 +61,7 @@ public class SplashScreenInit extends AppCompatActivity {
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Integer>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
+                   public void onSubscribe(Disposable d) {
 
                     }
 
