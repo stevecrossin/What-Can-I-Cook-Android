@@ -346,7 +346,7 @@ What's next?
 Sat 4 May - Steve
 * Tested bugfixes for recipe exclusion. Bug still existed - caused by databases not being loaded at initialisation.
 
-+ Relocated code - major chamge. All data is loaded from CSV and into DB at runtime. Researched online best way to do this, and found RxJava to be a more efficient way to do this, so wrote a class
++ Relocated code - major change. All data is loaded from CSV and into DB at runtime. Researched online best way to do this, and found RxJava to be a more efficient way to do this, so wrote a class
 "DbPopulatorUtil" that contains the loading of all files into CSV and into DB. Also modified the splash screen code, so this will be executed
 at loading of the application as an async task with multiple cases for file loading, with the LoginActivity starting once load is complete.
 + Discovered a flaw in recipe data - recipe steps dont match recipe. Already found source of problem, easy fix, re-parsing "recipe steps" from raw data - will be resolved by COB Saturday
@@ -364,6 +364,10 @@ With this update, most major bugs detected have been squashed.
 
 Monday/Tuesday 6/7 May - Steve
 * Updates to CSV files to better match data and remediate recipe problems
+
+Wednesday 8/May - Henry
+ - Looks great.
+ - I haven't checked every point, but just make sure you go over everything in the Grading Criteria super carefully, to ensure you meet each point. You deserve top marks, just don't want anything to slip by :)
 
 Wednesday/Thursday 8/9 May
 * Ingredients and recipes fix
