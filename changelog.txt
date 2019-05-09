@@ -376,6 +376,7 @@ Wednesday/Thursday 8/9 May
 + App icon designed
 + Function to read contents of "about.txt" and store in textview written
 + Rename java files to more appropriate and meaningful files
++ BUGFIX - INGREDIENTS.CSV not formatted correct UGH!
 
 Next:
 -Change Async tasks to Rxjava
