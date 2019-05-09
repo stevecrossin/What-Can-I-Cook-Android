@@ -370,11 +370,12 @@ Wednesday 8/May - Henry
  - I haven't checked every point, but just make sure you go over everything in the Grading Criteria super carefully, to ensure you meet each point. You deserve top marks, just don't want anything to slip by :)
 
 Wednesday/Thursday 8/9 May
-* Ingredients and recipes fix
-* Splash screen fixed, now loads correctly as an image in portrait or landscape
-* Log scene activity created, intent to nav from about to logs
-* App icon designed
-* Function to read contents of "about.txt" and store in textview written
++ Ingredients and recipes fix
++ Splash screen fixed, now loads correctly as an image in portrait or landscape
++ Log scene activity created, intent to nav from about to logs
++ App icon designed
++ Function to read contents of "about.txt" and store in textview written
++ Rename java files to more appropriate and meaningful files
 
 Next:
 -Change Async tasks to Rxjava

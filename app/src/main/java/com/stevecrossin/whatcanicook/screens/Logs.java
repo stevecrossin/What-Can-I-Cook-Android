@@ -1,6 +1,16 @@
 package com.stevecrossin.whatcanicook.screens;
 
-public class Logs {
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.stevecrossin.whatcanicook.R;
+
+public class Logs extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_log);
+    }
     String logdetail;
 
     /**

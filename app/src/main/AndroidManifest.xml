@@ -53,6 +53,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
+        android:name=".screens.Logs"
+        android:label="Currently in Pantry"
+        android:parentActivityName=".screens.About"
+        android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".screens.Pantry"
             android:label="Currently in Pantry"
             android:parentActivityName=".screens.MainActivity"
