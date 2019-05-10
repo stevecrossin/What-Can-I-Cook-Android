@@ -55,7 +55,7 @@ public class CategoryPicker extends AppCompatActivity {
     }
 
     private void setupAutoComplete() {
-        autoCompleteTextView = findViewById(R.id.recipe_name);
+        autoCompleteTextView = findViewById(R.id.recipeManualEntry);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

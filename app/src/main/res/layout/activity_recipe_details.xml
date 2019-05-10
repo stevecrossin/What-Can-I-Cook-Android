@@ -14,7 +14,7 @@
 
 
         <TextView
-            android:id="@+id/recipe_name"
+            android:id="@+id/recipeManualEntry"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -37,7 +37,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/share_this_recipe"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/recipe_name"
+            app:layout_constraintStart_toEndOf="@+id/recipeManualEntry"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/share" />
 
@@ -52,7 +52,7 @@
             android:text="@string/missing_ingredients_warning"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_name"
+            app:layout_constraintTop_toBottomOf="@+id/recipeManualEntry"
             />
 
         <android.support.v7.widget.AppCompatImageView
@@ -65,10 +65,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipe_warning"
-            app:layout_constraintBottom_toTopOf="@id/recipe_ingredients"/>
+            app:layout_constraintBottom_toTopOf="@id/recipeIngredientsEntry"/>
 
         <TextView
-            android:id="@+id/recipe_ingredients"
+            android:id="@+id/recipeIngredientsEntry"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -92,13 +92,13 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_ingredients"
-            app:layout_constraintBottom_toTopOf="@id/recipe_steps"
+            app:layout_constraintTop_toBottomOf="@+id/recipeIngredientsEntry"
+            app:layout_constraintBottom_toTopOf="@id/recipeStepsEntry"
             tools:text="@tools:sample/lorem/random" />
 
 
         <TextView
-            android:id="@+id/recipe_steps"
+            android:id="@+id/recipeStepsEntry"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -122,7 +122,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_steps"
+            app:layout_constraintTop_toBottomOf="@+id/recipeStepsEntry"
             app:layout_constraintBottom_toTopOf="@id/adView"/>
 
         <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"

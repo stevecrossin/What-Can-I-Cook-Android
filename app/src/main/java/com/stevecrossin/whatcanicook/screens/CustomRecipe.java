@@ -9,13 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 
-import com.google.android.gms.ads.AdRequest;
 import com.stevecrossin.whatcanicook.R;
-import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
-
-import java.util.ArrayList;
 
 public class CustomRecipe extends AppCompatActivity {
     private AppDataRepo repository;
@@ -27,9 +23,9 @@ public class CustomRecipe extends AppCompatActivity {
         setContentView(R.layout.activity_customrecipes);
         repository = new AppDataRepo(this);
 
-        recipeName = findViewById(R.id.recipe_name);
-        recipeIngredients = findViewById(R.id.recipe_ingredients);
-        recipeSteps = findViewById(R.id.recipe_steps);
+        recipeName = findViewById(R.id.recipeManualEntry);
+        recipeIngredients = findViewById(R.id.recipeIngredientsEntry);
+        recipeSteps = findViewById(R.id.recipeStepsEntry);
     }
 
     @SuppressLint("StaticFieldLeak")

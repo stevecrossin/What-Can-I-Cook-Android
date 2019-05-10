@@ -369,7 +369,7 @@ Wednesday 8/May - Henry
  - Looks great.
  - I haven't checked every point, but just make sure you go over everything in the Grading Criteria super carefully, to ensure you meet each point. You deserve top marks, just don't want anything to slip by :)
 
-Wednesday/Thursday 8/9 May
+Wednesday/Thursday 8/9 May - Steve
 + Ingredients and recipes fix
 + Splash screen fixed, now loads correctly as an image in portrait or landscape
 + Log scene activity created, intent to nav from about to logs
@@ -386,3 +386,22 @@ Next:
 -Publish beta release, then final release before end of submission deadline
 -Add more recipes from master list
 -Fix intolerances data matching
+
+Friday 10 May - Steve
++ Style changes, implemented correct colour scheme across app
++ App icon implemented and tested
++ Constraints fixed in some layouts that were set with fixed
++ Fixed issues with intolerances not matching and having updated ingredients added
++ Published updated closed beta to Google Play store
++ About page displays contents of about.txt, text is written
+
+Whats next
++ Add more recipes data
++ Comment methods and functions
++ Delete custom recipes
++ Post logs to log scene
++ Bug fixes and more testing
+
+Nice to have
++ Logs sent to dev via email - if its quick and can implement easily
++ Change remaining async to rxjava - time consuming, but nice to have if i can

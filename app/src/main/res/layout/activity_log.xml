@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryColor">
@@ -43,7 +42,6 @@
         android:layout_marginBottom="8dp"
         android:background="@color/secondaryColor"
         android:text="@string/btnClearLogs"
-        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/logTextView"
         app:layout_constraintEnd_toStartOf="@id/sendLogs"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,8 +55,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@color/secondaryColor"
-        android:text="Send Logs to Developer"
-        android:textSize="18sp"
+        android:text="@string/sendLogsDev"
         app:layout_constraintTop_toBottomOf="@id/logTextView"
         app:layout_constraintStart_toEndOf="@id/clearLogs"
         app:layout_constraintBottom_toBottomOf="parent"
