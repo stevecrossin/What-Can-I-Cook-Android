@@ -42,7 +42,7 @@
         android:layout_marginBottom="8dp"
         android:background="#ffffff"
         android:hint="@string/add_an_ingredient_to_pantry"
-        android:labelFor="@id/recipeManualEntry"
+        android:labelFor="@id/recipe_name"
         android:padding="8dp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/pantryClearIngredients"
@@ -53,17 +53,15 @@
 
     <Button
         android:id="@+id/pantryClearIngredients"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:text="@string/btnClearIngredients"
-        android:background="@color/secondaryColor"
+        android:text="Clear Ingredients"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pantryIngredientsSearchBox"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
@@ -80,7 +78,7 @@
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toBottomOf="@+id/pantryClearIngredients" />
+        ads:layout_constraintTop_toBottomOf="@+id/recipe_steps_content" />
 
 
 </android.support.constraint.ConstraintLayout>

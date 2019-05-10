@@ -37,7 +37,7 @@ public class RecipesDetails extends AppCompatActivity {
         if (!missing.equals(""))
             missing = missing.substring(0, missing.length() - 2);
 
-        TextView recipeName = findViewById(R.id.recipeManualEntry);
+        TextView recipeName = findViewById(R.id.recipe_name);
         recipeName.setText(recipe.getRecipeName());
 
         TextView recipeIngredients = findViewById(R.id.recipe_ingredients_content);

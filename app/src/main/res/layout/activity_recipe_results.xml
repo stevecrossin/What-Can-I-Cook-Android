@@ -7,7 +7,7 @@
     android:background="@color/primaryColor">
 
     <TextView
-        android:id="@+id/recipeManualEntry"
+        android:id="@+id/recipe_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/customrecipetitle"
+        android:id="@+id/missingsuggestion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toTopOf="@+id/recipes_list"
         app:layout_constraintEnd_toStartOf="@+id/adding_list"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeManualEntry"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_name"
         />
 
     <LinearLayout
@@ -43,8 +43,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/recipes_list"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/customrecipetitle"
-        app:layout_constraintTop_toBottomOf="@+id/recipeManualEntry">
+        app:layout_constraintStart_toEndOf="@+id/missingsuggestion"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_name">
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -80,10 +80,9 @@
         android:id="@+id/clearIngredients"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/secondaryColor"
         android:onClick="resetIngredients"
         android:text="@string/start_over_btn"
