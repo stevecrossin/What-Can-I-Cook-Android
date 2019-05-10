@@ -1,5 +1,7 @@
 Todo list
 
+
+* Move missing ingredients to reciperow viewholder
 * Finalise pantry with autocomplete textbox - done
 * Clean recipes CSV file - done
 * Source free images for recipes - will go with user adding instead
