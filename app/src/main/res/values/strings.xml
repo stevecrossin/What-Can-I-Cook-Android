@@ -3,7 +3,7 @@
     <string name="appName">What Can I Cook?</string>
     <string name="about">About the App</string>
     <string name="dietary_needs">Dietary Requirements</string>
-    <string name="main_menu_name">Choose a Cuisine</string>
+    <string name="main_menu_name">Pick a Dish</string>
     <string name="appAboutInfo">Text about app goes here</string>
     <string name="logButtonText">Log Messages</string>
     <string name="backButtonText">Back</string>
@@ -62,7 +62,20 @@
     <string name="start_over_btn">Start Over</string>
     <string name="share_this_recipe">Share this recipe</string>
     <string name="sendLogsDe">Send Logs to Developer</string>
-    <string name="loginTitle">Login</string>
     <string name="addCustomRecipeButton">Add Custom Recipe</string>
     <string name="savedRecipesPage">Saved Recipes</string>
+    <string name="btnFindRecips">Find Recipes</string>
+    <string name="sendLogsDev">Send Logs to Developer</string>
+    <string name="btnClearIngredients">Clear Ingredients</string>
+    <string name="btnAddRecipe">Add recipe</string>
+    <string name="recipeNameHint">Enter your recipe name</string>
+    <string name="recipeIngredientHint">Enter your ingredients</string>
+    <string name="recipeStepsHint">Enter your recipe steps</string>
+    <string name="loginTitle">Login</string>
+    <string name="customRecipesTitle">Add your recipe</string>
+    <string name="customRecipeNameLabel">Recipe name:</string>
+    <string name="customRecipeIngLabel">Recipe ingredients:</string>
+    <string name="customRecipeStepsLabel">Recipe steps:</string>
+    <string name="myIngredientsTitleLabel">My Ingredients</string>
+    <string name="btnFindRecipesLabel">Find Recipes</string>
 </resources>
