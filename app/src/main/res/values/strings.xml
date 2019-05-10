@@ -61,4 +61,8 @@
     <string name="exact_match_switch">Allow only exact match</string>
     <string name="start_over_btn">Start Over</string>
     <string name="share_this_recipe">Share this recipe</string>
+    <string name="sendLogsDe">Send Logs to Developer</string>
+    <string name="loginTitle">Login</string>
+    <string name="addCustomRecipeButton">Add Custom Recipe</string>
+    <string name="savedRecipesPage">Saved Recipes</string>
 </resources>
