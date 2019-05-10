@@ -12,7 +12,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:text="@string/custom_recipes_title"
+        android:text="@string/customRecipesTitle"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,15 +26,15 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
-        android:text="@string/custom_recipe_name_title"
+        android:text="@string/customRecipeNameLabel"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/recipeManualEntry"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_name"
         app:layout_constraintTop_toBottomOf="@+id/customrecipetitle"
         app:layout_constraintBottom_toTopOf="@id/customRecipeIngredients"/>
 
     <AutoCompleteTextView
-        android:id="@+id/recipeManualEntry"
+        android:id="@+id/recipe_name"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="0dp"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/customrecipetitle"
         app:layout_constraintTop_toTopOf="@id/customRecipeName"
-        app:layout_constraintBottom_toTopOf="@id/recipeIngredientsEntry"/>
+        app:layout_constraintBottom_toTopOf="@id/recipe_ingredients"/>
 
     <TextView
         android:id="@+id/customRecipeIngredients"
@@ -61,18 +61,18 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
-        android:text="@string/custom_ingredients_needed"
+        android:text="@string/customRecipeIngLabel"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/recipeIngredientsEntry"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_ingredients"
         app:layout_constraintTop_toBottomOf="@+id/customRecipeName"
         app:layout_constraintBottom_toTopOf="@id/customRecipeSteps" />
 
     <AutoCompleteTextView
-        android:id="@+id/recipeIngredientsEntry"
+        android:id="@+id/recipe_ingredients"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="0dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="#ffffff"
@@ -84,9 +84,9 @@
         android:visibility="visible"
         app:layout_constraintStart_toEndOf="@id/customRecipeIngredients"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeManualEntry"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_name"
         app:layout_constraintTop_toTopOf="@id/customRecipeIngredients"
-        app:layout_constraintBottom_toTopOf="@id/recipeStepsEntry"/>
+        app:layout_constraintBottom_toTopOf="@id/recipe_steps"/>
 
     <TextView
         android:id="@+id/customRecipeSteps"
@@ -96,18 +96,18 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
-        android:text="@string/custom_recipe_steps"
+        android:text="@string/customRecipeStepsLabel"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/recipeStepsEntry"
+        app:layout_constraintEnd_toStartOf="@+id/recipe_steps"
         app:layout_constraintTop_toBottomOf="@+id/customRecipeIngredients"
         app:layout_constraintBottom_toTopOf="@id/add_recipe" />
 
     <AutoCompleteTextView
-        android:id="@+id/recipeStepsEntry"
+        android:id="@+id/recipe_steps"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="0dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="#ffffff"
@@ -119,7 +119,7 @@
         android:visibility="visible"
         app:layout_constraintStart_toEndOf="@id/customRecipeSteps"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeIngredientsEntry"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_ingredients"
         app:layout_constraintTop_toTopOf="@id/customRecipeSteps"
         app:layout_constraintBottom_toTopOf="@id/add_recipe" />
 
@@ -137,6 +137,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipeStepsEntry" />
+        app:layout_constraintTop_toBottomOf="@+id/recipe_steps" />
 
 </android.support.constraint.ConstraintLayout>

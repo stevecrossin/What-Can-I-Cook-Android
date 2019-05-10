@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/recipeManualEntry"
+            android:id="@+id/recipe_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
