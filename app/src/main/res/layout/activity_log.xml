@@ -20,8 +20,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/logTextView"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/logView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -34,8 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logTitle"
-        android:textAlignment="center"
-        tools:text="This view will in the future show you any problems you may have had in the app, and give you the option to send to the developer for feedback. As this app is in beta, this is currently not functional." />
+        android:textAlignment="center"/>
 
     <Button
         android:id="@+id/clearLogs"
@@ -46,7 +45,7 @@
         android:layout_marginBottom="16dp"
         android:background="@color/secondaryColor"
         android:text="@string/btnClearLogs"
-        app:layout_constraintTop_toBottomOf="@id/logTextView"
+        app:layout_constraintTop_toBottomOf="@id/logView"
         app:layout_constraintEnd_toStartOf="@id/sendLogs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -60,7 +59,7 @@
         android:layout_marginBottom="16dp"
         android:background="@color/secondaryColor"
         android:text="@string/sendLogsDe"
-        app:layout_constraintTop_toBottomOf="@id/logTextView"
+        app:layout_constraintTop_toBottomOf="@id/logView"
         app:layout_constraintStart_toEndOf="@id/clearLogs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

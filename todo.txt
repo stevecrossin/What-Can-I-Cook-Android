@@ -1,21 +1,24 @@
 Todo list
 
-
-* Move missing ingredients to reciperow viewholder
+DONE
 * Finalise pantry with autocomplete textbox - done
 * Clean recipes CSV file - done
-* Source free images for recipes - will go with user adding instead
-* Implement Google Ads for monetization (done with sample ID, Steve to create and have real ready for production)
-* Fix ingredient suggestion feature (done)
-* Implement custom recipe feature (done)
-* COMMENTING CODE
-* About screen
-* Log screen - content posting there
+* About screen - done
+* Log screen - content posting there - done, including clear
 * Check layouts constrain and scale to various different screen sizes - done
 * Bug fixes - most done
+* Fix ingredient suggestion feature (done)
+* Implement custom recipe feature (done)
+* Update login screen
+* Add graphics to splash screen - DONE
+
+
+TO DO
+* Move missing ingredients to reciperow viewholder - in prog
+* Source free images for recipes - will go with user adding instead
+* Implement Google Ads for monetization (done with sample ID, Steve to create and have real ready for production)
+* COMMENTING CODE
 * Alpha testing
 * Steve to begin publication process - published as closed beta
 * Add more recipes
 * Implement toasts for deletion of saved recipes, similar to removing ingredients
-* Update login screen
-* Add graphics to splash screen - DONE

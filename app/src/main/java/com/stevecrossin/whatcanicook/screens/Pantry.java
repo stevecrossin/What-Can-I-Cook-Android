@@ -1,27 +1,26 @@
 package com.stevecrossin.whatcanicook.screens;
 
+import android.annotation.SuppressLint;
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.PantryAutocompleteAdapter;
 import com.stevecrossin.whatcanicook.adapter.PantryRecycleViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
-
-import android.database.sqlite.SQLiteConstraintException;
-import android.text.TextUtils;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +55,6 @@ public class Pantry extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 autoCompleteTextView.setText(null);
                 Ingredient ingredient = (Ingredient) parent.getItemAtPosition(position);
-                //comment this out - moved (PantryRecycleViewAdapter) recyclerView.getAdapter()).updateCategories(ingredient);
                 addPantryIngredientToDB(ingredient);
             }
         });
@@ -115,6 +113,8 @@ public class Pantry extends AppCompatActivity {
      * SQLLiteConstraint exception which has been caught. A toast will also be shown to the user advising them that the ingredient already exists in the pantry.
      * caught to
      */
+
+    @SuppressLint("StaticFieldLeak")
     public void addPantryIngredientToDB(final Ingredient ingredient) {
         new AsyncTask<Void, Void, String>() {
 
@@ -124,6 +124,7 @@ public class Pantry extends AppCompatActivity {
                 try {
                     repo.addIngredientToPantry(ingredient);
                 } catch (SQLiteConstraintException e) {
+                    repo.insertLogs("Attempted to add an ingredient in the pantry that already existed");
                     return "Ingredient already exists in pantry";
                 } finally {
                     repo.savePantryToUserDB();
@@ -136,7 +137,8 @@ public class Pantry extends AppCompatActivity {
                 super.onPostExecute(message);
                 if (!TextUtils.isEmpty(message)){
                     Toast.makeText(Pantry.this,message,Toast.LENGTH_SHORT).show();
-                }else {
+                }
+                else {
                     ((PantryRecycleViewAdapter) recyclerView.getAdapter()).updateCategories(ingredient);
                 }
             }
@@ -172,39 +174,4 @@ public class Pantry extends AppCompatActivity {
 
     }
 
-    /**
-     * This is the method to add ingredients to the pantry. Steps to code it are below.
-     */
-
-    private void addPantryItem() {
-        /*
-        This method will be called when a user clicks the "Add CategoryPicker" button from the Pantry activity. The following steps need to occur
-        1. The UI will navigate from the "Pantry" activity to a modified view of the Add CategoryPicker activity normally used for recipe searches.
-        The label at the top needs to be updated to "Add CategoryPicker"
-        The ingredientselected method as noted in CategoryPicker.java will be duplicated partially here, when a user selects an ingredient, it will be added to a list
-        in the background.
-        Once the user has selected all their ingredients and clicks "Check My CategoryPicker", the user will be taken to the "My CategoryPicker".
-        If any ingredients selected are already in the pantry, an alert or some notification needs to be presented notifying the user of this.
-        activity and be presented with their ingredients. The button presented will say "save ingredients to pantry" instead of "Find Recipes".
-        2. The app will then take the strings for each individual ingredient, and add them to the pantry database, one per line, in the background.
-        3. An exception handler needs to be coded to account for the possiblity the user will not add any ingredients.
-        4. The application will then navigate back to the "My Pantry" activity, which will then refresh with the loadPantry method.
-        */
-
-
-    }
-
-    /**
-     * This method will will delete an ingredient from the users pantry list
-     */
-
-    public void deletePantryItem() {
-        /*
-        This method will be called when a user selects an ingredient in the pantry activity and clicks the delete cross.
-        When this done, it will need to perform a few actions
-        1. Take the name of the ingredient marked for deletion
-        2. Find that ingredient in the Pantry database, and delete its entry
-        3. Remove the ingredient from the list in the pantry activity
-        */
-    }
 }

@@ -1,48 +1,90 @@
 package com.stevecrossin.whatcanicook.screens;
 
+import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.adapter.LogsAdapter;
+import com.stevecrossin.whatcanicook.entities.LogRecords;
+import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
+
+import java.util.ArrayList;
 
 public class Logs extends AppCompatActivity {
+
+    private LogsAdapter logsAdapter;
+    AppDataRepo logsRepo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
+        logsRepo = new AppDataRepo(this);
+        initialiseRecyclerItems();
+
+        Button button = findViewById(R.id.clearLogs);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logsRepo.clearLog();
+                refreshContent();
+            }
+        });
     }
-    String logdetail;
+
+    private void initialiseRecyclerItems() {
+        RecyclerView logsList = findViewById(R.id.logView);
+        logsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        logsList.setHasFixedSize(false);
+        logsAdapter = new LogsAdapter(new ArrayList<LogRecords>());
+        logsList.setAdapter(logsAdapter);
+        refreshContent();
+
+    }
 
     /**
-     * This function will append the logfile database with a log record
+     * Handles refresh of the recyclerview. Performs a database query in the background, adds all the logs from log database
+     * and updates the recyclerview with the content.
+     * Performed in the background as if this is performed on the UI thread, an exception will occur.
      */
 
-    //Loads logs that currently exist in app.
-    public void loadLogs() {
-        /*
-        This method is called when the user selects the View LogRecords button in the Info activity. When clicked, the UI will then:
-        1. Navigate to logs scene
-        2. Perform query of logs database, and fetch all records
-        3. Pass that data to log scene and display in text box.
-        */
+    @SuppressLint("StaticFieldLeak")
+    private void refreshContent() {
+
+        new AsyncTask<Void, Void, ArrayList<LogRecords>>() {
+            @Override
+            protected ArrayList<LogRecords> doInBackground(Void... voids) {
+                ArrayList<LogRecords> logDatabases = new ArrayList<>();
+                logDatabases.addAll(logsRepo.getLogs());
+                return logDatabases;
+            }
+
+            /**
+             *  Update LogsAdapter with result of getLogs that occurred in the background
+             */
+            @Override
+            protected void onPostExecute(ArrayList<LogRecords> logs) {
+                super.onPostExecute(logs);
+                logsAdapter.updateLogs(logs);
+            }
+        }.execute();
     }
 
-    //Appends log database when criteria met (e.g. caught exception)
-    public void addLogRecord(String message) {
-        /*
-        When triggered due to exception or otherwise, this method will:
-        1. Receive log message from method that has returned exception
-        2. Add that log record to the logs database
-        */
-    }
 
-    //Clear all logs from database
-    public void clearLog() {
-        /*
-        When "Clear logs" button is clicked from log scene, this method will
-        1. Perform database update to delete all records
-        2. Clear the textview in the Log activity
-        */
+    /**
+     * Refreshes content when activity is resumed
+     */
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshContent();
     }
 
 

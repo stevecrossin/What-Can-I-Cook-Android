@@ -30,7 +30,7 @@ public class LogRecords {
         this.logs = logs;
     }
 
-    LogRecords(String logs) {
+    public LogRecords(String logs) {
         this.logs = logs;
     }
 }

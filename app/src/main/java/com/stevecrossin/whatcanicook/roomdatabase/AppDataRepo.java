@@ -11,6 +11,7 @@ import com.stevecrossin.whatcanicook.entities.IngredientDao;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.IntoleranceDao;
 import com.stevecrossin.whatcanicook.entities.LogDao;
+import com.stevecrossin.whatcanicook.entities.LogRecords;
 import com.stevecrossin.whatcanicook.entities.Pantry;
 import com.stevecrossin.whatcanicook.entities.PantryDao;
 import com.stevecrossin.whatcanicook.entities.Recipe;
@@ -296,6 +297,45 @@ public class AppDataRepo {
         List<String> tolerance = gson.fromJson(user.getIntolerances(), type);
         tolerance.remove(intoleranceName);
         userDao.updateIntoleranceValue(gson.toJson(tolerance));
+    }
+
+    /**
+     * Fetch all logs saved in the database through select command from logdao
+     */
+    public List<LogRecords> getLogs() {
+        return logDao.getLogs();
+    }
+
+
+    /**
+     * Handles insertion of logs. When method runs, insertion into log database will occur through insert command in logdao
+     ***/
+    @SuppressLint("StaticFieldLeak")
+    public void insertLogs(final String error) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                logDao.insertLog(new LogRecords(error));
+                return null;
+            }
+        }
+                .execute();
+
+    }
+
+    /**
+     * Handles the deletion of logs from log database through logdao
+     **/
+    @SuppressLint("StaticFieldLeak")
+    public void clearLog() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                logDao.clearLog();
+                return null;
+            }
+        }
+                .execute();
     }
 
 
