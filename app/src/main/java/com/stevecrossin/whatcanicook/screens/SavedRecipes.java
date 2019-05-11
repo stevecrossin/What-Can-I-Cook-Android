@@ -62,10 +62,7 @@ public class SavedRecipes extends AppCompatActivity {
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        ArrayList<String> missingIngredients = new ArrayList<>();
-                        missingIngredients.addAll(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
-                        //for (String string : missingIngredients)
-                        // Log.d(TAG, "Missing ingredients: " + string + "\n");
+                        ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
                         Intent intent = new Intent(SavedRecipes.this, RecipesDetails.class);
                         intent.putExtra("RECIPE", recipe);
                         intent.putExtra("MISSING", missingIngredients);
@@ -86,10 +83,8 @@ public class SavedRecipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>();
-                recipes.addAll(repository.getAllSavedRecipes());
 
-                return recipes;
+                return new ArrayList<>(repository.getAllSavedRecipes());
             }
 
             @Override

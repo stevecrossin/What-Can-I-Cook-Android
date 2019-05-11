@@ -28,8 +28,7 @@ public class MyIngredients extends AppCompatActivity {
     private static final String TAG = "MyIngredients";
 
     /**
-     * Scence initialization.
-     * @param savedInstanceState
+     * Scence initialization
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +54,9 @@ public class MyIngredients extends AppCompatActivity {
     private void initRecyclerItems() {
         RecyclerView myIngredientsList = findViewById(R.id.my_ingredients_list);
         myIngredientsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        //ingredientsList.setHasFixedSize(false);
         myIngredientViewAdapter = new MyIngredientViewAdapter(new ArrayList<Ingredient>(), new MyIngredientViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(Ingredient ingredient) {
-                Log.d(TAG, "onRowClicked: " + ingredient.getIngredientName());
             }
         } );
         myIngredientsList.setAdapter(myIngredientViewAdapter);
@@ -76,13 +73,7 @@ public class MyIngredients extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Ingredient>>() {
             @Override
             protected ArrayList<Ingredient> doInBackground(Void... voids) {
-                ArrayList<Ingredient> ingredients = new ArrayList<>();
-                ingredients.addAll(repository.getAllCheckedIngredients());
-                for (Ingredient ingredient : ingredients){
-                    Log.d(TAG, "ingredient name: " + ingredient.getIngredientName());
-                    Log.d(TAG, "checked : " + ingredient.isIngredientSelected());
-                }
-                return ingredients;
+                return new ArrayList<>(repository.getAllCheckedIngredients());
             }
 
             @Override

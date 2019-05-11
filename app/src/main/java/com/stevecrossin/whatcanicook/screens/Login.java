@@ -131,8 +131,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        /**
-         * This adds an onClick listener to the login button. Once the button is clicked - it will call the tryLogin method
+        /*
+          This adds an onClick listener to the login button. Once the button is clicked - it will call the tryLogin method
          */
         loginButton = findViewById(R.id.loginButton);
     }
@@ -299,7 +299,7 @@ public class Login extends AppCompatActivity {
             } else {
                 passwordView.setError("Password Incorrect");
                 passwordView.requestFocus();
-                loginButton.setText("Sign In");
+                loginButton.setText(getString(R.string.sign_in_text));
             }
         }
 
@@ -350,7 +350,6 @@ public class Login extends AppCompatActivity {
             for (Intolerance intolerance : list) {
                 repository.excludeIngredient(intolerance.getIngredientName());
                 repository.excludeRecipe(intolerance.getIngredientName());
-                Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
             }
         }
 

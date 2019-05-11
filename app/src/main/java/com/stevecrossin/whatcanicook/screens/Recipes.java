@@ -152,12 +152,7 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(0));
-                for (Recipe recipe : recipes) {
-                    Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
-                    Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
-                }
-                return recipes;
+                return new ArrayList<>(repository.getAllRecipesByCheckedIngredients(0));
             }
 
             @Override
@@ -174,12 +169,7 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredientsWithExactMatch());
-                for (Recipe recipe : recipes) {
-                    Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
-                    Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
-                }
-                return recipes;
+                return new ArrayList<>(repository.getAllRecipesByCheckedIngredientsWithExactMatch());
             }
 
             @Override

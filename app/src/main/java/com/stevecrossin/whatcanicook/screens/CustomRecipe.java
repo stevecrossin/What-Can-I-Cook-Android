@@ -35,7 +35,6 @@ public class CustomRecipe extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     public void addCustomRecipe(View view) {
 
-        Log.d(TAG, "addCustomRecipe: " + recipeName.getText().toString() + " " + recipeIngredients.getText().toString() + " " + recipeSteps.getText().toString());
         final Recipe customRecipe = new Recipe(recipeName.getText().toString(), "", recipeIngredients.getText().toString(), recipeSteps.getText().toString());
         customRecipe.setCustomed(true);
         customRecipe.setSaved(true);

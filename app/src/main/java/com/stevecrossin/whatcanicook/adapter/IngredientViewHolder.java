@@ -18,14 +18,12 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
-public class IngredientViewHolder extends RecyclerView.ViewHolder {
+class IngredientViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView ingredientName;
     private AppCompatCheckBox ingredientCheckBox;
     private AppDataRepo repository;
 
-    private static final String TAG = "IngredientViewHolder";
-
-    public IngredientViewHolder(@NonNull View itemView) {
+    IngredientViewHolder(@NonNull View itemView) {
         super(itemView);
         this.setIsRecyclable(false);
         ingredientName = itemView.findViewById(R.id.ingredient_name);
@@ -42,28 +40,24 @@ public class IngredientViewHolder extends RecyclerView.ViewHolder {
         ingredientCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Log.d(TAG, "onCheckedChanged: " + ingredientName.getText());
                 ingredientSelected(isChecked, ingredientName.getText().toString());
             }
         });
     }
 
     @SuppressLint("StaticFieldLeak")
-    public void ingredientSelected(final boolean isSelected, final String ingredientName) {
+    private void ingredientSelected(final boolean isSelected, final String ingredientName) {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                ArrayList<Ingredient> list = new ArrayList<>();
-                list.addAll(repository.getIngredientsByName(ingredientName));
+                ArrayList<Ingredient> list = new ArrayList<>(repository.getIngredientsByName(ingredientName));
                 if (isSelected){
                     for (Ingredient ingredient : list){
                         repository.selectIngredient(ingredient.getIngredientName());
-                        Log.d(TAG, "Selected ingredient: " + ingredient.getIngredientName());
                     }
                 } else {
                     for (Ingredient ingredient : list){
                         repository.deselectIngredient(ingredient.getIngredientName());
-                        Log.d(TAG, "Deselected ingredient: " + ingredient.getIngredientName());ArrayList<Ingredient> list2 = new ArrayList<>();
                     }
                 }
                 return null;

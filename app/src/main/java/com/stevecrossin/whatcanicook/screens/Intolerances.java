@@ -24,13 +24,10 @@ public class Intolerances extends AppCompatActivity {
     Switch switchNuts, switchGluten, switchSoy, switchPork, switchLactoVeg, switchAlcohol, switchVegan, switchRedMeat, switchSeafood, switchLactoOvo, switchLactose, switchPescaterian, switchEgg;
     private AppDataRepo repository;
     private static final String TAG = "Intolerances";
-    //private ArrayList<String> intoleranceList = new ArrayList<>(); //unused, possible delete
-    private AdView mAdView;
 
     /**
      * Scene initalization. This also performs the loading of intolerances into the database.
      * Get every switches by their id in the layout and set a listener on check/uncheck event (see intoleranceSelected())
-     * @param savedInstanceState
      */
 
     @Override
@@ -59,7 +56,6 @@ public class Intolerances extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 intoleranceSelected(isChecked, "No nuts");
-                Log.d(TAG, "Nut checked: " + isChecked);
             }
         });
         switchGluten.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -146,7 +142,8 @@ public class Intolerances extends AppCompatActivity {
             }
         });
 
-        mAdView = findViewById(R.id.adView);
+        //private ArrayList<String> intoleranceList = new ArrayList<>(); //unused, possible delete
+        AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -165,15 +162,13 @@ public class Intolerances extends AppCompatActivity {
         new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                ArrayList<Intolerance> list = new ArrayList<>();
-                list.addAll(repository.getIntoleranceByName(intoleranceName));
+                ArrayList<Intolerance> list = new ArrayList<>(repository.getIntoleranceByName(intoleranceName));
                 if (isSelected) {
                     repository.excludeIntolerance(intoleranceName);
                     repository.addTolerance(intoleranceName);
                     for (Intolerance intolerance : list) {
                         repository.excludeIngredient(intolerance.getIngredientName());
                         repository.excludeRecipe(intolerance.getIngredientName());
-                        Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
                     }
                 } else {
                     repository.includeIntolerance(intoleranceName);
@@ -181,7 +176,6 @@ public class Intolerances extends AppCompatActivity {
                     for (Intolerance intolerance : list) {
                         repository.includeIngredient(intolerance.getIngredientName());
                         repository.includeRecipe(intolerance.getIngredientName());
-                        Log.d(TAG, "Include ingredient: " + intolerance.getIngredientName());
                     }
                 }
                 return null;
@@ -190,6 +184,7 @@ public class Intolerances extends AppCompatActivity {
 
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void updateUserTolerancePreference() {
 
         new AsyncTask<Void, List<Intolerance>, List<Intolerance>>() {
@@ -201,9 +196,8 @@ public class Intolerances extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Intolerance> intolerances) {
                 super.onPostExecute(intolerances);
-                List<Intolerance> excludeCategory = intolerances;
-                if (!excludeCategory.isEmpty()) {
-                    for (Intolerance categoryName : excludeCategory) {
+                if (!intolerances.isEmpty()) {
+                    for (Intolerance categoryName : intolerances) {
                         if (categoryName.getIntoleranceName().equals("No nuts") && categoryName.isIntoleranceSelected()) {
                             switchNuts.setChecked(true);
                         } else if (categoryName.getIntoleranceName().equals("Gluten") && categoryName.isIntoleranceSelected()) {

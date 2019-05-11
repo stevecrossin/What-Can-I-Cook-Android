@@ -73,7 +73,6 @@ public class CategoryPicker extends AppCompatActivity {
 
             @Override
             protected Void doInBackground(Void... voids) {
-                //AppDataRepo repo = new AppDataRepo(CategoryPicker.this);
                 repository.selectIngredient(ingredientName);
                 return null;
             }
@@ -148,12 +147,6 @@ public class CategoryPicker extends AppCompatActivity {
         categoryViewAdapter = new CategoryViewAdapter(new ArrayList<Ingredient>(), new CategoryViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(String category) {
-                Log.d(TAG, "Row is clicked");
-                if (category != null) {
-                    Log.d(TAG, "Category: " + category);
-                } else
-                    Log.d(TAG, "Category is null");
-
                 Intent intent = new Intent(CategoryPicker.this, IngredientPicker.class);
                 intent.putExtra("CATEGORY", category);
                 startActivity(intent);
