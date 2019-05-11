@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class RecipesDetails extends AppCompatActivity {
     Recipe recipe;
     ArrayList<String> missingIngredients;
+
     ImageButton shareButton;
-    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class RecipesDetails extends AppCompatActivity {
             }
         });
 
-        mAdView = findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 

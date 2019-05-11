@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
@@ -29,8 +28,6 @@ import java.util.List;
 public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private CategoryViewAdapter categoryViewAdapter;
-    private static final String TAG = "CategoryPicker";
-
     private AutoCompleteTextView autoCompleteTextView;
 
     /**
@@ -68,6 +65,7 @@ public class CategoryPicker extends AppCompatActivity {
         getAllIngredients();
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void markIngredientAsSelected(final String ingredientName) {
         new AsyncTask<Void, Void, Void>() {
 
@@ -81,6 +79,7 @@ public class CategoryPicker extends AppCompatActivity {
     }
 
 
+    @SuppressLint("StaticFieldLeak")
     public void getAllIngredients() {
         new AsyncTask<Void, Void, List<Ingredient>>() {
 

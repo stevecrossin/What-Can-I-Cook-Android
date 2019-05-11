@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -55,12 +54,11 @@ public class IngredientPicker extends AppCompatActivity {
     private void initRecyclerItems() {
         RecyclerView ingredientsList = findViewById(R.id.ingredients_list);
         ingredientsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        //ingredientsList.setHasFixedSize(false);
         ingredientViewAdapter = new IngredientViewAdapter(new ArrayList<Ingredient>(), new IngredientViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(Ingredient ingredient) {
             }
-        } );
+        });
 
         ingredientsList.setAdapter(ingredientViewAdapter);
 

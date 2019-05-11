@@ -26,13 +26,13 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/add_recipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/savedRecipeTitle"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:scrollbars="vertical">
+        app:layout_constraintTop_toBottomOf="@+id/savedRecipeTitle">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -44,12 +44,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/addCustomRecipeButton"
         android:background="@color/secondaryColor"
+        android:text="@string/addCustomRecipeButton"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saved_recipes_list"
-        app:layout_constraintBottom_toTopOf="@id/adView"/>
+        app:layout_constraintTop_toBottomOf="@+id/saved_recipes_list" />
 
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"

@@ -60,9 +60,7 @@ public class Logs extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<LogRecords>>() {
             @Override
             protected ArrayList<LogRecords> doInBackground(Void... voids) {
-                ArrayList<LogRecords> logDatabases = new ArrayList<>();
-                logDatabases.addAll(logsRepo.getLogs());
-                return logDatabases;
+                return new ArrayList<>(logsRepo.getLogs());
             }
 
             /**

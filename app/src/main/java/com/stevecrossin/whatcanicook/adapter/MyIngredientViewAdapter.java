@@ -1,5 +1,6 @@
 package com.stevecrossin.whatcanicook.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -43,6 +44,7 @@ public class MyIngredientViewAdapter extends RecyclerView.Adapter<MyIngredientVi
         });
 
         myIngredientViewHolder.closeImage.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View v) {
                 new AsyncTask<Void, Void, Void>() {

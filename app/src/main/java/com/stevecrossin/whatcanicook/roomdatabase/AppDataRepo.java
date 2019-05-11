@@ -24,7 +24,6 @@ import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotalDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,39 +93,30 @@ public class AppDataRepo {
         return intoleranceDao.getAllIntolerances();
     }
 
+
     public boolean haveIngredient() {
         List<Ingredient> ingredients = ingredientDao.getAllIngredients();
-        if (ingredients.size() > 0)
-            return true;
-        return false;
+        return ingredients.size() > 0;
     }
 
     public boolean haveIntolerance() {
         List<Intolerance> intolerances = intoleranceDao.getAllIntolerances();
-        if (intolerances.size() > 0)
-            return true;
-        return false;
+        return intolerances.size() > 0;
     }
 
     public boolean haveRecipe() {
         List<Recipe> recipes = recipeDao.getAllDefaultRecipes();
-        if (recipes.size() > 0)
-            return true;
-        return false;
+        return recipes.size() > 0;
     }
 
     public boolean haveRecipeIngredients() {
         List<RecipeIngredients> recipeIngredients = recipeIngredientsDao.getAllRecipesAndIngredients();
-        if (recipeIngredients.size() > 0)
-            return true;
-        return false;
+        return recipeIngredients.size() > 0;
     }
 
     public boolean haveRecipeIngredientsTotal() {
         List<RecipeIngredientsTotal> recipeIngredientsTotals = recipeIngredientsTotalDao.getAllRecipesAndIngredientsTotal();
-        if (recipeIngredientsTotals.size() > 0)
-            return true;
-        return false;
+        return recipeIngredientsTotals.size() > 0;
     }
 
     public void insertIngredients(ArrayList<Ingredient> ingredients) {
@@ -138,15 +128,19 @@ public class AppDataRepo {
         intoleranceDao.addIntolerance(intolerance);
     }
 
+    public List<Intolerance> getUniqueTolerance() {
+        return intoleranceDao.getUniqueIntolerance();
+    }
+
     public void insertRecipeIngredientsTotal(ArrayList<RecipeIngredientsTotal> recipeIngredientsTotals) {
         recipeIngredientsTotalDao.addRecipeIngredientsTotal(recipeIngredientsTotals);
     }
 
-    public void deleteAllIngredient() {
+    private void deleteAllIngredient() {
         ingredientDao.deleteAll();
     }
 
-    public void deleteAllIntolerance() {
+    private void deleteAllIntolerance() {
         intoleranceDao.deleteAll();
     }
 
@@ -218,7 +212,7 @@ public class AppDataRepo {
         return recipeDao.getAllRecipesByCheckedIngredientsWithExactMatch();
     }
 
-    public List<Recipe> getAllSavedRecipes(){
+    public List<Recipe> getAllSavedRecipes() {
         return recipeDao.getAllSavedRecipes();
     }
 
@@ -245,11 +239,11 @@ public class AppDataRepo {
         recipeIngredientsDao.addRecipeIngredients(recipeIngredients);
     }
 
-    public void saveRecipe(int recipeId){
+    public void saveRecipe(int recipeId) {
         recipeDao.saveRecipe(recipeId);
     }
 
-    /**-************** User Repo ***********************/
+    /*-************** User Repo ***********************/
 
 
     /**
@@ -341,8 +335,6 @@ public class AppDataRepo {
     }
 
 
-    /**************** User Repo ***********************/
-
     /**
      * Handles the clearing of all selected ingredients
      **/
@@ -375,7 +367,7 @@ public class AppDataRepo {
         userDao.updatePantryValue(gson.toJson(pantries));
     }
 
-    public void deleteIngredientsPantry(){
+    public void deleteIngredientsPantry() {
         pantryDao.deleteAll();
     }
 

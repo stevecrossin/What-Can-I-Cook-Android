@@ -25,13 +25,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
-        android:textSize="16sp"
         android:text="@string/missing_suggestion_q"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/adding_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_name"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
 
     <LinearLayout
         android:id="@+id/adding_list"
@@ -45,8 +44,7 @@
         app:layout_constraintBottom_toTopOf="@+id/recipes_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/missingsuggestion">
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/missingsuggestion" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recipes_list"
@@ -57,11 +55,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:scrollbars="vertical"
-        tools:listitem="@layout/recipe_row"
         app:layout_constraintBottom_toTopOf="@+id/exactMatch_switch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adding_list"/>
+        app:layout_constraintTop_toBottomOf="@+id/adding_list"
+        tools:listitem="@layout/recipe_row" />
 
     <Switch
         android:id="@+id/exactMatch_switch"
@@ -89,10 +87,9 @@
         android:onClick="resetIngredients"
         android:text="@string/start_over_btn"
         app:layout_constraintBottom_toTopOf="@id/adView"
-        app:layout_constraintTop_toBottomOf="@id/exactMatch_switch"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exactMatch_switch" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"

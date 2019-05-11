@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,8 +23,6 @@ public class SavedRecipes extends AppCompatActivity {
 
     RecipeViewAdapter recipeViewAdapter;
     private AppDataRepo repository;
-    private AdView mAdView;
-    private Button addRecipeButton;
 
     /*Set view as saved recipes activity*/
     @Override
@@ -33,7 +30,7 @@ public class SavedRecipes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_savedrecipes);
         repository = new AppDataRepo(this);
-        addRecipeButton = findViewById(R.id.add_recipe);
+        Button addRecipeButton = findViewById(R.id.add_recipe);
 
         addRecipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +43,7 @@ public class SavedRecipes extends AppCompatActivity {
 
         initRecyclerItems();
 
-        mAdView = findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }

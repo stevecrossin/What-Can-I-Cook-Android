@@ -4,16 +4,13 @@ import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
-import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
@@ -51,12 +48,12 @@ class IngredientViewHolder extends RecyclerView.ViewHolder {
             @Override
             protected Void doInBackground(Void... voids) {
                 ArrayList<Ingredient> list = new ArrayList<>(repository.getIngredientsByName(ingredientName));
-                if (isSelected){
-                    for (Ingredient ingredient : list){
+                if (isSelected) {
+                    for (Ingredient ingredient : list) {
                         repository.selectIngredient(ingredient.getIngredientName());
                     }
                 } else {
-                    for (Ingredient ingredient : list){
+                    for (Ingredient ingredient : list) {
                         repository.deselectIngredient(ingredient.getIngredientName());
                     }
                 }

@@ -1,5 +1,6 @@
 package com.stevecrossin.whatcanicook.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
@@ -35,6 +36,7 @@ public class PantryRecycleViewAdapter extends RecyclerView.Adapter<CategoryViewH
         final Ingredient ingredient = categories.get(i);
         viewHolder.getCategoryName().setText(ingredient.getIngredientName());
         viewHolder.getCategoryImage().setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View v) {
                 new AsyncTask<Void, Void, Void>() {

@@ -417,12 +417,14 @@ Next:
 + Bug fixes and more testing
 
 Sunday 12 May - Steve
-+ Bug fixes, removed log.d calls as per android studio requirements, implement Mobile Ads with actual adIDs.
-+ Uploaded update to Play Store
++ Bug fixes, removed log.d calls as per android studio requirements, implement Mobile Ads with actual adIDs. The app now serves up real banner ads (and hopefully that will one day translate to $$$ *fingers crossed*)
++ Uploaded update to Play Store - done, is now production version - https://play.google.com/store/apps/details?id=com.stevecrossin.whatcanicook
++ Convert intolerance view from switches to recycler to tidy up app code, and allow constraining on landscape - done
++ Refined code as per Android suggestions
 
 + Comment methods and functions
-+ Ability to delete custom recipes
++ Ability to delete custom recipes - Trong is working on this
 + More testing
-+ Convert intolerance view from switches to recycler
 
-With this update, all milestones are completed. All bugs are fixed, app is published. Certain functions need to be commented, and recipes will be added later but enough exists for proof of concept.
+With this update, Milestone 5 is complete. Milestoe 6 is esentially complete, with app published, application all milestones are completed. All bugs have been tested for and are fixed, app is published. Last feature to add is completely optional.
+Certain functions need to be commented, and recipes will be added later but enough exists for proof of concept.

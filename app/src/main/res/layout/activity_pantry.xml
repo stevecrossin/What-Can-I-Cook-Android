@@ -31,16 +31,16 @@
         app:layout_constraintBottom_toTopOf="@+id/pantryIngredientsSearchBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pantryTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/pantryTitle" />
 
     <AutoCompleteTextView
-        android:completionThreshold="3"
         android:id="@+id/pantryIngredientsSearchBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         android:background="#ffffff"
+        android:completionThreshold="3"
         android:hint="@string/add_an_ingredient_to_pantry"
         android:labelFor="@id/recipe_name"
         android:padding="8dp"
@@ -58,12 +58,12 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/btnClearIngredients"
         android:background="@color/secondaryColor"
+        android:text="@string/btnClearIngredients"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pantryIngredientsSearchBox"/>
+        app:layout_constraintTop_toBottomOf="@id/pantryIngredientsSearchBox" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"

@@ -34,16 +34,16 @@ public class Pantry extends AppCompatActivity {
 
     private AutoCompleteTextView autoCompleteTextView;
     private RecyclerView recyclerView;
-    private AdView mAdView;
 
     /*Set view as pantry activity*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry);
-        mAdView = findViewById(R.id.adView);
+        AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);
         initView();
         getPantryIngredient();
         loadPantry();
@@ -138,10 +138,9 @@ public class Pantry extends AppCompatActivity {
             @Override
             protected void onPostExecute(String message) {
                 super.onPostExecute(message);
-                if (!TextUtils.isEmpty(message)){
-                    Toast.makeText(Pantry.this,message,Toast.LENGTH_SHORT).show();
-                }
-                else {
+                if (!TextUtils.isEmpty(message)) {
+                    Toast.makeText(Pantry.this, message, Toast.LENGTH_SHORT).show();
+                } else {
                     ((PantryRecycleViewAdapter) Objects.requireNonNull(recyclerView.getAdapter())).updateCategories(ingredient);
                 }
             }
