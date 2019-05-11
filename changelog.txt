@@ -415,3 +415,12 @@ Next:
 + Comment methods and functions
 + Ability to delete custom recipes
 + Bug fixes and more testing
+
+Sunday 12 May - Steve
++ Bug fixes, removed log.d calls as per android studio requirements, implement Mobile Ads with actual adIDs.
++ Uploaded update to Play Store
+
++ Comment methods and functions
++ Ability to delete custom recipes
++ Bug fixes and more testing
++ Convert intolerance view from switches to recycler
