@@ -73,7 +73,7 @@ public class CategoryPicker extends AppCompatActivity {
 
             @Override
             protected Void doInBackground(Void... voids) {
-                AppDataRepo repo = new AppDataRepo(CategoryPicker.this);
+                //AppDataRepo repo = new AppDataRepo(CategoryPicker.this);
                 repository.selectIngredient(ingredientName);
                 return null;
             }

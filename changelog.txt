@@ -405,3 +405,7 @@ Whats next
 Nice to have
 + Logs sent to dev via email - if its quick and can implement easily
 + Change remaining async to rxjava - time consuming, but nice to have if i can
+
+Saturday 11 May - Steve
++ Squashed bug - pantry allowed adding of same ingredient twice which caused SQLExcpetion - has been handled
+

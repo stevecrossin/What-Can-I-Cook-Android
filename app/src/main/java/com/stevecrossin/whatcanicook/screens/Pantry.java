@@ -19,6 +19,10 @@ import com.stevecrossin.whatcanicook.adapter.PantryRecycleViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
+import android.database.sqlite.SQLiteConstraintException;
+import android.text.TextUtils;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +56,7 @@ public class Pantry extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 autoCompleteTextView.setText(null);
                 Ingredient ingredient = (Ingredient) parent.getItemAtPosition(position);
-                ((PantryRecycleViewAdapter) recyclerView.getAdapter()).updateCategories(ingredient);
+                //comment this out - moved (PantryRecycleViewAdapter) recyclerView.getAdapter()).updateCategories(ingredient);
                 addPantryIngredientToDB(ingredient);
             }
         });
@@ -105,14 +109,36 @@ public class Pantry extends AppCompatActivity {
         }.execute();
     }
 
+
+    /**
+     * This adds the ingredient in the pantry to the pantry database. It is possible for the end user to attempt to add an ingredient to the pantry twice - this causes an
+     * SQLLiteConstraint exception which has been caught. A toast will also be shown to the user advising them that the ingredient already exists in the pantry.
+     * caught to
+     */
     public void addPantryIngredientToDB(final Ingredient ingredient) {
-        new AsyncTask<Void, Void, Void>() {
+        new AsyncTask<Void, Void, String>() {
 
             @Override
-            protected Void doInBackground(Void... voids) {
+            protected String doInBackground(Void... voids) {
                 AppDataRepo repo = new AppDataRepo(Pantry.this);
-                repo.addIngredientToPantry(ingredient);
+                try {
+                    repo.addIngredientToPantry(ingredient);
+                } catch (SQLiteConstraintException e) {
+                    return "Ingredient already exists in pantry";
+                } finally {
+                    repo.savePantryToUserDB();
+                }
                 return null;
+            }
+
+            @Override
+            protected void onPostExecute(String message) {
+                super.onPostExecute(message);
+                if (!TextUtils.isEmpty(message)){
+                    Toast.makeText(Pantry.this,message,Toast.LENGTH_SHORT).show();
+                }else {
+                    ((PantryRecycleViewAdapter) recyclerView.getAdapter()).updateCategories(ingredient);
+                }
             }
         }.execute();
     }
