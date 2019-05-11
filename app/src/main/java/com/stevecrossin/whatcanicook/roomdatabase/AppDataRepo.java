@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.stevecrossin.whatcanicook.DBPopulatorUtil;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
@@ -22,6 +23,7 @@ import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotalDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
+
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -58,9 +60,9 @@ public class AppDataRepo {
         logDao = AppDb.getDatabase(context).logDao();
         pantryDao = AppDb.getDatabase(context).pantryDao();
 
-        //intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
+    }
 
-        //recipeDao = AppDb.getDatabase(context).recipeDao();
+    public AppDataRepo(DBPopulatorUtil dbPopulatorUtil) {
 
     }
 

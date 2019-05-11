@@ -61,7 +61,7 @@ public class CategoryIngredientsAutocompleteAdapter extends ArrayAdapter<Ingredi
         return nameFilter;
     }
 
-    private Filter nameFilter = new Filter() {
+    private final Filter nameFilter = new Filter() {
 
         @Override
         public CharSequence convertResultToString(Object resultValue) {

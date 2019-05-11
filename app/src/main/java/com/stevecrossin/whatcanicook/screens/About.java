@@ -1,6 +1,7 @@
 package com.stevecrossin.whatcanicook.screens;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import org.w3c.dom.Text;
 
@@ -39,17 +41,17 @@ public class About extends AppCompatActivity {
         int t;
         try {
             t = textInputStream.read();
-            while (t != -1)
-            {
+            while (t != -1) {
                 textOutputStream.write(t);
                 t = textInputStream.read();
             }
             textInputStream.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
+            new AppDataRepo(About.this).insertLogs("Error getting about text - file doesn't exist");
             e.printStackTrace();
+
+            aboutText.setText(textOutputStream.toString());
         }
-        aboutText.setText(textOutputStream.toString());
     }
 
     //Navigate to Log View

@@ -266,6 +266,7 @@ public class Login extends AppCompatActivity {
                         return EXISTING_USER;
                     }
                 } catch (Exception e) {
+                    new AppDataRepo(Login.this).insertLogs("Error getting password hash");
                     e.printStackTrace();
                 }
             } else if (currentLoginState == NEW_USER)
@@ -276,6 +277,7 @@ public class Login extends AppCompatActivity {
                     onLoginSuccess(repo.getUserName(userName).getUserID());
                     return EXISTING_USER;
                 } catch (Exception e) {
+                    new AppDataRepo(Login.this).insertLogs("Error getting password hash");
                     e.printStackTrace();
                 }
             return INVALID_PASSWORD;

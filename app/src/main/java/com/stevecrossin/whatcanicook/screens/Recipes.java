@@ -69,10 +69,8 @@ public class Recipes extends AppCompatActivity {
             @Override
             protected ArrayList<String> doInBackground(Void... voids) {
                 ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(1));
-                //Log.d(TAG, "doInBackground: " + similarRecipes.get(0).getRecipeName()); - another bug!
                 if (similarRecipes.size() > 0){
                     Recipe similarRecipe = similarRecipes.get(0);
-                    //Log.d(TAG, "doInBackground: " + missingIngredients.get(0) + missingIngredients.get(1)); - this causing a bug!
                     return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 2));
                 }
                 return null;
@@ -123,7 +121,6 @@ public class Recipes extends AppCompatActivity {
     private void initRecyclerItems() {
         RecyclerView recipesList = findViewById(R.id.recipes_list);
         recipesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        //ingredientsList.setHasFixedSize(false);
         recipeViewAdapter = new RecipeViewAdapter(new ArrayList<Recipe>(), new RecipeViewAdapter.rowClickedListener() {
             @SuppressLint("StaticFieldLeak")
             @Override
@@ -132,8 +129,6 @@ public class Recipes extends AppCompatActivity {
                     @Override
                     protected Void doInBackground(Void... voids) {
                         ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
-                        //for (String string : missingIngredients)
-                        // Log.d(TAG, "Missing ingredients: " + string + "\n");
                         Intent intent = new Intent(Recipes.this, RecipesDetails.class);
                         intent.putExtra("RECIPE", recipe);
                         intent.putExtra("MISSING", missingIngredients);
