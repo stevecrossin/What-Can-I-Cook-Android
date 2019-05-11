@@ -49,10 +49,10 @@ public class About extends AppCompatActivity {
         } catch (IOException e) {
             new AppDataRepo(About.this).insertLogs("Error getting about text - file doesn't exist");
             e.printStackTrace();
-
+        }
             aboutText.setText(textOutputStream.toString());
         }
-    }
+
 
     //Navigate to Log View
     public void viewLogs(View view) {
