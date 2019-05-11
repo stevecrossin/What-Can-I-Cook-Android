@@ -44,6 +44,7 @@ public class DBPopulatorUtil {
     }
 
     private ArrayList<Intolerance> loadIntolerancesFromCsv(Context context) {
+        AppDataRepo repo = new AppDataRepo(DBPopulatorUtil.this);
     /*
     This method will handle the loading of the intolerances list. It will perform the following steps.
     1. Load all possible intolerances from nintolerances.csv file, and use that data to update the Intolerance room database with any new entries
@@ -67,10 +68,13 @@ public class DBPopulatorUtil {
             }
             return intolerances;
         } catch (FileNotFoundException ex) {
+            repo.insertLogs("Tried to load from a CSV file that doesn't exist");
             Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
         } catch (IOException ex) {
+            repo.insertLogs("IO error with file");
             Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
         } catch (Exception ex) {
+            repo.insertLogs("Parsing error with CSV file");
             Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
         return null;
@@ -99,6 +103,7 @@ public class DBPopulatorUtil {
     }
 
     private ArrayList<Ingredient> loadIngredientsFromCsv(Context context) {
+        AppDataRepo repo = new AppDataRepo(DBPopulatorUtil.this);
         try {
             ArrayList<Ingredient> ingredients = new ArrayList<>();
             Reader in = new InputStreamReader(context.getResources().openRawResource(R.raw.ingredients));
@@ -115,10 +120,13 @@ public class DBPopulatorUtil {
             }
             return ingredients;
         } catch (FileNotFoundException ex) {
+            repo.insertLogs("Tried to load from a CSV file that doesn't exist");
             Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
         } catch (IOException ex) {
+            repo.insertLogs("IO error with file");
             Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
         } catch (Exception ex) {
+            repo.insertLogs("Parsing error with CSV file");
             Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
         return null;
@@ -130,6 +138,7 @@ public class DBPopulatorUtil {
      * Note*: The recipes raw data structure is more special than others
      */
     public void loadRecipesFromCsvToDB(Context context) {
+        AppDataRepo repo = new AppDataRepo(DBPopulatorUtil.this);
         try {
             Reader in = new InputStreamReader(context.getResources().openRawResource(R.raw.recipes));
             Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().withDelimiter(',').parse(in);
@@ -159,10 +168,13 @@ public class DBPopulatorUtil {
             loadRecipeIngredientsToDb(context, recipeIngredientsFromCsv);
             loadRecipeIngredientsTotalToDb(context, recipeIngredientsTotalsFromCsv);
         } catch (FileNotFoundException ex) {
+            repo.insertLogs("Tried to load from a CSV file that doesn't exist");
             Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
         } catch (IOException ex) {
+            repo.insertLogs("IO error with file");
             Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
         } catch (Exception ex) {
+            repo.insertLogs("Parsing error with CSV file");
             Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
     }
@@ -189,10 +201,8 @@ public class DBPopulatorUtil {
 
     /**
      * Loads recipes + ingredients to the DB if there is no data
-     *
-     * @param context
-     * @param recipeIngredientsTotalsFromCsv
      */
+
     private void loadRecipeIngredientsTotalToDb(Context context, ArrayList<RecipeIngredientsTotal> recipeIngredientsTotalsFromCsv) {
         AppDataRepo repository = new AppDataRepo(context);
         if (!repository.haveRecipeIngredientsTotal()) {

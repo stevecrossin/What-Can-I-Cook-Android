@@ -409,3 +409,9 @@ Nice to have
 Saturday 11 May - Steve
 + Squashed bug - pantry allowed adding of same ingredient twice which caused SQLExcpetion - has been handled and toast added to alert user
 + Logging implemented, now logged to log scene
++ All possible exceptions log to log scene
+
+Next:
++ Comment methods and functions
++ Ability to delete custom recipes
++ Bug fixes and more testing
