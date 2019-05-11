@@ -58,7 +58,7 @@ public class Recipes extends AppCompatActivity {
         initRecyclerItems();
         initSuggestions();
         mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }
 

@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.stevecrossin.whatcanicook.CurrentLoginState;
@@ -65,6 +66,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        MobileAds.initialize(this, "ca-app-pub-6486258628588307~4051321968");
         loginUIView = findViewById(R.id.login_form);
         progressView = findViewById(R.id.login_progress);
         usernameView = findViewById(R.id.userNameEntry);
