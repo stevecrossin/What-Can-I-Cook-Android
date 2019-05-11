@@ -67,7 +67,7 @@
     <string name="btnFindRecips">Find Recipes</string>
     <string name="sendLogsDev">Send Logs to Developer</string>
     <string name="btnClearIngredients">Clear Ingredients</string>
-    <string name="btnAddRecipe">Add recipe</string>
+    <string name="btnAddRecipe">Save recipe</string>
     <string name="recipeNameHint">Enter your recipe name</string>
     <string name="recipeIngredientHint">Enter your ingredients</string>
     <string name="recipeStepsHint">Enter your recipe steps</string>
