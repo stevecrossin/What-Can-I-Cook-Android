@@ -65,10 +65,10 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<String>>() {
             @Override
             protected ArrayList<String> doInBackground(Void... voids) {
-                ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(5));
+                ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(4));
                 if (similarRecipes.size() > 0) {
                     Recipe similarRecipe = similarRecipes.get(0);
-                    return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 6));
+                    return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 4));
                 }
                 return null;
             }
