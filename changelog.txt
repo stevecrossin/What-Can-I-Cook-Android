@@ -422,5 +422,7 @@ Sunday 12 May - Steve
 
 + Comment methods and functions
 + Ability to delete custom recipes
-+ Bug fixes and more testing
++ More testing
 + Convert intolerance view from switches to recycler
+
+With this update, all milestones are completed. All bugs are fixed, app is published. Certain functions need to be commented, and recipes will be added later but enough exists for proof of concept.

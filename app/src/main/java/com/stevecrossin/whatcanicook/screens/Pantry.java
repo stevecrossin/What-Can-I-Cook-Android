@@ -24,6 +24,7 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /*
 This class covers the Pantry screen and database. CategoryPicker added here will be stored in a Room Database
@@ -65,6 +66,7 @@ public class Pantry extends AppCompatActivity {
 
         Button clearAll = findViewById(R.id.pantryClearIngredients);
         clearAll.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View v) {
                 new AsyncTask<Void, Void, Void>() {
@@ -87,6 +89,7 @@ public class Pantry extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void getPantryIngredient() {
         final AppDataRepo repository = new AppDataRepo(this);
 
@@ -139,7 +142,7 @@ public class Pantry extends AppCompatActivity {
                     Toast.makeText(Pantry.this,message,Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    ((PantryRecycleViewAdapter) recyclerView.getAdapter()).updateCategories(ingredient);
+                    ((PantryRecycleViewAdapter) Objects.requireNonNull(recyclerView.getAdapter())).updateCategories(ingredient);
                 }
             }
         }.execute();
@@ -149,6 +152,7 @@ public class Pantry extends AppCompatActivity {
      * This will load the contents of the pantry database
      */
 
+    @SuppressLint("StaticFieldLeak")
     public void loadPantry() {
         /*
         This method will be called when a user clicks the "My Pantry" button, or is otherwise navigated back to the pantry scene through the app
@@ -167,7 +171,7 @@ public class Pantry extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Ingredient> ingredients) {
                 super.onPostExecute(ingredients);
-                ((PantryRecycleViewAdapter) recyclerView.getAdapter()).updateCategories(ingredients);
+                ((PantryRecycleViewAdapter) Objects.requireNonNull(recyclerView.getAdapter())).updateCategories(ingredients);
             }
         }.execute();
 
