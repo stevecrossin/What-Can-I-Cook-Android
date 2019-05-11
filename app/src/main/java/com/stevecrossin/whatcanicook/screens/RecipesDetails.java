@@ -31,27 +31,27 @@ public class RecipesDetails extends AppCompatActivity {
         Intent intent = getIntent();
         recipe = (Recipe) intent.getSerializableExtra("RECIPE");
         missingIngredients = intent.getStringArrayListExtra("MISSING");
-        String missing = "";
+        StringBuilder missing = new StringBuilder();
         for (String string : missingIngredients)
-            missing += string + ", ";
-        if (!missing.equals(""))
-            missing = missing.substring(0, missing.length() - 2);
+            missing.append(string).append(", ");
+        if (!missing.toString().equals(""))
+            missing = new StringBuilder(missing.substring(0, missing.length() - 2));
 
         TextView recipeName = findViewById(R.id.recipe_name);
         recipeName.setText(recipe.getRecipeName());
 
         TextView recipeIngredients = findViewById(R.id.recipe_ingredients_content);
-        recipeIngredients.setText(recipe.getRecipeIngredients().replaceAll(":", ",\n"));
+        recipeIngredients.setText(recipe.getRecipeIngredients().replaceAll(":", "\n"));
 
         TextView recipeSteps = findViewById(R.id.recipe_steps_content);
-        recipeSteps.setText(recipe.getRecipeSteps().replaceAll(":", ",\n"));
+        recipeSteps.setText(recipe.getRecipeSteps().replaceAll(":", "\n"));
 
         TextView warning = findViewById(R.id.recipe_warning);
         if (missingIngredients.size() > 0) {
             warning.setTextColor(Color.RED);
-            warning.setText(String.format("You are missing: %s", missing));
+            warning.setText(String.format("You are missing: %s", missing.toString()));
         } else {
-            warning.setTextColor(Color.GREEN);
+            warning.setTextColor(Color.parseColor("#006400"));
             warning.setText(getString(R.string.enoughIngredients));
         }
 
