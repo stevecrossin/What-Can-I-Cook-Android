@@ -422,9 +422,12 @@ Sunday 12 May - Steve
 + Convert intolerance view from switches to recycler to tidy up app code, and allow constraining on landscape - done
 + Refined code as per Android suggestions
 
+In progress
 + Comment methods and functions
 + Ability to delete custom recipes - Trong is working on this
 + More testing
++ Trong to allow more suggestions to be given for ingredients at reciperesults activity
+
 
 With this update, Milestone 5 is complete. Milestone 6 is essentially complete, with app published, application all milestones are completed. All bugs have been tested for and are fixed, app is published. Last feature to add is completely optional.
 Certain functions need to be commented, and recipes will be added later but enough exists for proof of concept.

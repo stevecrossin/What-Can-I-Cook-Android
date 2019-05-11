@@ -16,7 +16,9 @@ DONE
 
 TO DO - MANDATORY
 * Comment all missing code
-* Implement toasts for deletion of saved recipes, similar to removing ingredients
+* Implement ability to delete saved recipes (and unsave recipes that are in the DB but not custom. Create toasts for confirming deletion of saved recipes. RecipeViewHolder when it is viewed in Saved Recipes
+should not have a tick mark.
+* Trong to allow more suggestions to be given for ingredients at reciperesults activity
 
 NICE TO HAVE
 * Source free images for recipes - if we have time
