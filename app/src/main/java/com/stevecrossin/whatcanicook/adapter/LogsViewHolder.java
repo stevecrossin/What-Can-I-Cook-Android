@@ -16,13 +16,13 @@ class LogsViewHolder extends RecyclerView.ViewHolder {
 
     LogsViewHolder(@NonNull View itemView) {
         super(itemView);
-        /** Initialise the fields of the item view - in this case the log**/
+        /* Initialise the fields of the item view - in this case the log*/
         log = itemView.findViewById(R.id.log);
     }
 
     /**
      * Binds each row in the view holder to record in the log database and sets text in row to that database record.
-     * @param logDatabase
+     *
      */
     void bindRow(LogRecords logDatabase) {
         log.setText(logDatabase.getLogs());

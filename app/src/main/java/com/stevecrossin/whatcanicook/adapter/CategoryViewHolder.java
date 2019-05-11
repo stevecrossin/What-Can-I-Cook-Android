@@ -10,12 +10,13 @@ import android.view.View;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 
-public class CategoryViewHolder extends RecyclerView.ViewHolder {
+class CategoryViewHolder extends RecyclerView.ViewHolder {
 
     private AppCompatTextView categoryName;
 
     private AppCompatImageView categoryImage;
-    public CategoryViewHolder(@NonNull View itemView) {
+
+    CategoryViewHolder(@NonNull View itemView) {
         super(itemView);
         categoryName = itemView.findViewById(R.id.category_name);
         categoryImage = itemView.findViewById(R.id.category_img);
@@ -28,11 +29,11 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public AppCompatTextView getCategoryName() {
+    AppCompatTextView getCategoryName() {
         return categoryName;
     }
 
-    public AppCompatImageView getCategoryImage() {
+    AppCompatImageView getCategoryImage() {
         return categoryImage;
     }
 }

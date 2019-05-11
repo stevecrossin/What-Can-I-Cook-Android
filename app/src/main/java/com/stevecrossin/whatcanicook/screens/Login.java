@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -21,6 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.stevecrossin.whatcanicook.CurrentLoginState;
@@ -65,6 +65,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        MobileAds.initialize(this, "ca-app-pub-6486258628588307~4051321968");
         loginUIView = findViewById(R.id.login_form);
         progressView = findViewById(R.id.login_progress);
         usernameView = findViewById(R.id.userNameEntry);
@@ -129,8 +130,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        /**
-         * This adds an onClick listener to the login button. Once the button is clicked - it will call the tryLogin method
+        /*
+          This adds an onClick listener to the login button. Once the button is clicked - it will call the tryLogin method
          */
         loginButton = findViewById(R.id.loginButton);
     }
@@ -297,7 +298,7 @@ public class Login extends AppCompatActivity {
             } else {
                 passwordView.setError("Password Incorrect");
                 passwordView.requestFocus();
-                loginButton.setText("Sign In");
+                loginButton.setText(getString(R.string.sign_in_text));
             }
         }
 
@@ -348,7 +349,6 @@ public class Login extends AppCompatActivity {
             for (Intolerance intolerance : list) {
                 repository.excludeIngredient(intolerance.getIngredientName());
                 repository.excludeRecipe(intolerance.getIngredientName());
-                Log.d(TAG, "Exclude ingredient: " + intolerance.getIngredientName());
             }
         }
 

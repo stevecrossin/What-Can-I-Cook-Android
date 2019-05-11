@@ -9,10 +9,6 @@ import java.util.List;
 
 @Dao
 public interface IngredientDao {
-    /*
-    @Update()
-    void excludeIngredient(IngredientDao ingredientDao);
-    */
 
     @Query("SELECT * FROM ingredient;")
     List<Ingredient> getAllIngredients();
@@ -46,9 +42,6 @@ public interface IngredientDao {
 
     @Insert
     void addIngredients(ArrayList<Ingredient> ingredients);
-
-    @Insert
-    void addIngredient(Ingredient ingredient);
 
     @Query("DELETE FROM ingredient;")
     void deleteAll();

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,8 +23,6 @@ public class SavedRecipes extends AppCompatActivity {
 
     RecipeViewAdapter recipeViewAdapter;
     private AppDataRepo repository;
-    private AdView mAdView;
-    private Button addRecipeButton;
 
     /*Set view as saved recipes activity*/
     @Override
@@ -33,7 +30,7 @@ public class SavedRecipes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_savedrecipes);
         repository = new AppDataRepo(this);
-        addRecipeButton = findViewById(R.id.add_recipe);
+        Button addRecipeButton = findViewById(R.id.add_recipe);
 
         addRecipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,8 +43,8 @@ public class SavedRecipes extends AppCompatActivity {
 
         initRecyclerItems();
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }
 
@@ -62,10 +59,7 @@ public class SavedRecipes extends AppCompatActivity {
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        ArrayList<String> missingIngredients = new ArrayList<>();
-                        missingIngredients.addAll(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
-                        //for (String string : missingIngredients)
-                        // Log.d(TAG, "Missing ingredients: " + string + "\n");
+                        ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
                         Intent intent = new Intent(SavedRecipes.this, RecipesDetails.class);
                         intent.putExtra("RECIPE", recipe);
                         intent.putExtra("MISSING", missingIngredients);
@@ -86,10 +80,8 @@ public class SavedRecipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>();
-                recipes.addAll(repository.getAllSavedRecipes());
 
-                return recipes;
+                return new ArrayList<>(repository.getAllSavedRecipes());
             }
 
             @Override

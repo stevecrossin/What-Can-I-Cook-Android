@@ -1,14 +1,9 @@
 package com.stevecrossin.whatcanicook.entities;
 
 import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
-import com.stevecrossin.whatcanicook.entities.Ingredient;
-import com.stevecrossin.whatcanicook.entities.Intolerance;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Dao
@@ -21,6 +16,9 @@ public interface IntoleranceDao {
 
     @Query("SELECT * FROM intolerance;")
     List<Intolerance> getAllIntolerances();
+
+    @Query("SELECT * FROM intolerance GROUP BY intolerance_name")
+    List<Intolerance> getUniqueIntolerance();
 
     @Query("DELETE FROM intolerance;")
     void deleteAll();

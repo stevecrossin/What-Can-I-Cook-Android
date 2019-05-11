@@ -26,13 +26,13 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/add_recipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/savedRecipeTitle"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:scrollbars="vertical">
+        app:layout_constraintTop_toBottomOf="@+id/savedRecipeTitle">
 
     </android.support.v7.widget.RecyclerView>
 
@@ -44,12 +44,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/addCustomRecipeButton"
         android:background="@color/secondaryColor"
+        android:text="@string/addCustomRecipeButton"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saved_recipes_list"
-        app:layout_constraintBottom_toTopOf="@id/adView"/>
+        app:layout_constraintTop_toBottomOf="@+id/saved_recipes_list" />
 
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -57,12 +57,8 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        ads:adUnitId="ca-app-pub-6486258628588307/2998449961"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"

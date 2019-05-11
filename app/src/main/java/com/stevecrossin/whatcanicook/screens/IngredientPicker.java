@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,7 +25,6 @@ public class IngredientPicker extends AppCompatActivity {
 
     /**
      * Initialization of this scene. This will get the category string passed by last scene and display to 'categorychosentext'
-     * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +54,11 @@ public class IngredientPicker extends AppCompatActivity {
     private void initRecyclerItems() {
         RecyclerView ingredientsList = findViewById(R.id.ingredients_list);
         ingredientsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        //ingredientsList.setHasFixedSize(false);
         ingredientViewAdapter = new IngredientViewAdapter(new ArrayList<Ingredient>(), new IngredientViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(Ingredient ingredient) {
-                Log.d(TAG, "onRowClicked: " + ingredient.getIngredientName());
             }
-        } );
+        });
 
         ingredientsList.setAdapter(ingredientViewAdapter);
 
@@ -79,13 +75,7 @@ public class IngredientPicker extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Ingredient>>() {
             @Override
             protected ArrayList<Ingredient> doInBackground(Void... voids) {
-                ArrayList<Ingredient> ingredients = new ArrayList<>();
-                ingredients.addAll(repository.getIngredientsByCategory(category));
-                for (Ingredient ingredient : ingredients){
-                    Log.d(TAG, "ingredient name: " + ingredient.getIngredientName());
-                    Log.d(TAG, "excluded : " + ingredient.isIngredientExcluded());
-                }
-                return ingredients;
+                return new ArrayList<>(repository.getIngredientsByCategory(category));
             }
 
             @Override

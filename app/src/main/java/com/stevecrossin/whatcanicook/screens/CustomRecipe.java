@@ -5,22 +5,18 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 
-import com.google.android.gms.ads.AdRequest;
 import com.stevecrossin.whatcanicook.R;
-import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
-import java.util.ArrayList;
 
 public class CustomRecipe extends AppCompatActivity {
     private AppDataRepo repository;
     AutoCompleteTextView recipeName, recipeIngredients, recipeSteps;
-    private static final String TAG = "CustomRecipe";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +31,6 @@ public class CustomRecipe extends AppCompatActivity {
     @SuppressLint("StaticFieldLeak")
     public void addCustomRecipe(View view) {
 
-        Log.d(TAG, "addCustomRecipe: " + recipeName.getText().toString() + " " + recipeIngredients.getText().toString() + " " + recipeSteps.getText().toString());
         final Recipe customRecipe = new Recipe(recipeName.getText().toString(), "", recipeIngredients.getText().toString(), recipeSteps.getText().toString());
         customRecipe.setCustomed(true);
         customRecipe.setSaved(true);

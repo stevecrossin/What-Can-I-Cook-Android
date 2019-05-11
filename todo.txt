@@ -11,14 +11,13 @@ DONE
 * Implement custom recipe feature (done)
 * Update login screen
 * Add graphics to splash screen - DONE
+* Implement Google Ads for monetization - done fully
+* App published as production app - meets all requirements, no crashes as per google console
 
-
-TO DO
-* Move missing ingredients to reciperow viewholder - in prog
-* Source free images for recipes - will go with user adding instead
-* Implement Google Ads for monetization (done with sample ID, Steve to create and have real ready for production)
-* COMMENTING CODE
-* Alpha testing
-* Steve to begin publication process - published as closed beta
-* Add more recipes
+TO DO - MANDATORY
+* Comment all missing code
 * Implement toasts for deletion of saved recipes, similar to removing ingredients
+
+NICE TO HAVE
+* Source free images for recipes - if we have time
+* Add more recipes

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -30,11 +29,9 @@ public class Recipes extends AppCompatActivity {
     private static final String TAG = "Recipes";
     Switch exactMatch;
     LinearLayout addingList;
-    private AdView mAdView;
 
     /**
      * Scene initalization. This also loads the neccessary ingredient from the CSV to the database
-     * @param savedInstanceState - description goes here!
      */
     @SuppressLint("SetTextI18n")
     @Override
@@ -57,8 +54,8 @@ public class Recipes extends AppCompatActivity {
         repository = new AppDataRepo(this);
         initRecyclerItems();
         initSuggestions();
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }
 
@@ -68,10 +65,10 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<String>>() {
             @Override
             protected ArrayList<String> doInBackground(Void... voids) {
-                ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(5));
-                if (similarRecipes.size() > 0){
+                ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(4));
+                if (similarRecipes.size() > 0) {
                     Recipe similarRecipe = similarRecipes.get(0);
-                    return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 6));
+                    return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 4));
                 }
                 return null;
             }
@@ -80,7 +77,7 @@ public class Recipes extends AppCompatActivity {
             protected void onPostExecute(ArrayList<String> missingIngredients) {
                 super.onPostExecute(missingIngredients);
                 if (missingIngredients != null)
-                    for (String string : missingIngredients){
+                    for (String string : missingIngredients) {
                         final TextView ingredient = new TextView(Recipes.this);
                         ingredient.setText(string);
                         ingredient.setTag(string);
@@ -92,6 +89,7 @@ public class Recipes extends AppCompatActivity {
             }
         }.execute();
     }
+
     View.OnClickListener missingClicked = new View.OnClickListener() {
         @SuppressLint("StaticFieldLeak")
         @Override
@@ -152,12 +150,7 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(0));
-                for (Recipe recipe : recipes) {
-                    Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
-                    Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
-                }
-                return recipes;
+                return new ArrayList<>(repository.getAllRecipesByCheckedIngredients(0));
             }
 
             @Override
@@ -174,12 +167,7 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
             protected ArrayList<Recipe> doInBackground(Void... voids) {
-                ArrayList<Recipe> recipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredientsWithExactMatch());
-                for (Recipe recipe : recipes) {
-                    Log.d(TAG, "Recipe name: " + recipe.getRecipeName());
-                    Log.d(TAG, "Recipe ingredients: " + recipe.getRecipeIngredients());
-                }
-                return recipes;
+                return new ArrayList<>(repository.getAllRecipesByCheckedIngredientsWithExactMatch());
             }
 
             @Override

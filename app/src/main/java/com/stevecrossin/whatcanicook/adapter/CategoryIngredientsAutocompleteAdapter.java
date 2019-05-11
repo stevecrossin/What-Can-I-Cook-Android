@@ -22,15 +22,49 @@ public class CategoryIngredientsAutocompleteAdapter extends ArrayAdapter<Ingredi
     private List<Ingredient> ingredients;
     private Context context;
     private int resourceId;
-    private List<Ingredient> filteredList,tempList;
+    private List<Ingredient> filteredList, tempList;
+    private final Filter nameFilter = new Filter() {
 
+        @Override
+        public CharSequence convertResultToString(Object resultValue) {
+            return ((Ingredient) resultValue).getIngredientName();
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            List<Ingredient> filteredList = (List<Ingredient>) results.values;
+            if (results.count > 0) {
+                clear();
+                for (Ingredient ingredient : filteredList) {
+                    add(ingredient);
+                }
+                notifyDataSetChanged();
+            }
+        }
+
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            FilterResults filterResults = new FilterResults();
+            if (constraint != null) {
+                filteredList.clear();
+                for (Ingredient ingredient : tempList) {
+                    if (ingredient.getIngredientName().contains(constraint)) {
+                        filteredList.add(ingredient);
+                    }
+                }
+                filterResults.values = filteredList;
+                filterResults.count = filteredList.size();
+            }
+            return filterResults;
+        }
+    };
 
     public CategoryIngredientsAutocompleteAdapter(@NonNull Context context, @NonNull List<Ingredient> ingredients) {
         super(context, R.layout.pantry_autocomplete_item, ingredients);
         this.ingredients = ingredients;
         this.context = context;
         this.resourceId = R.layout.pantry_autocomplete_item;
-        filteredList = new ArrayList<Ingredient>();
+        filteredList = new ArrayList<>();
         tempList = new ArrayList<>(ingredients);
     }
 
@@ -60,43 +94,6 @@ public class CategoryIngredientsAutocompleteAdapter extends ArrayAdapter<Ingredi
 
         return nameFilter;
     }
-
-    private final Filter nameFilter = new Filter() {
-
-        @Override
-        public CharSequence convertResultToString(Object resultValue) {
-            String str = ((Ingredient) resultValue).getIngredientName();
-            return str;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            List<Ingredient> filteredList = (List<Ingredient>) results.values;
-            if (results != null && results.count > 0) {
-                clear();
-                for (Ingredient ingredient : filteredList) {
-                    add(ingredient);
-                }
-                notifyDataSetChanged();
-            }
-        }
-
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            FilterResults filterResults = new FilterResults();
-            if (constraint != null) {
-                filteredList.clear();
-                for (Ingredient ingredient : tempList) {
-                    if (ingredient.getIngredientName().contains(constraint)) {
-                        filteredList.add(ingredient);
-                    }
-                }
-                filterResults.values = filteredList;
-                filterResults.count = filteredList.size();
-            }
-            return filterResults;
-        }
-    };
 
 
 }

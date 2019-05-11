@@ -31,7 +31,7 @@ public class DBPopulatorUtil {
      * Then insert those into the database if there is no data.
      */
     @SuppressLint("StaticFieldLeak")
-    public void loadIntolerancesToDb(Context context) {
+    void loadIntolerancesToDb(Context context) {
         AppDataRepo repository = new AppDataRepo(context);
         if (!repository.haveIntolerance()) {
             DBPopulatorUtil dbPopulatorUtil = new DBPopulatorUtil();
@@ -69,19 +69,16 @@ public class DBPopulatorUtil {
             return intolerances;
         } catch (FileNotFoundException ex) {
             repo.insertLogs("Tried to load from a CSV file that doesn't exist");
-            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
         } catch (IOException ex) {
             repo.insertLogs("IO error with file");
-            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
         } catch (Exception ex) {
             repo.insertLogs("Parsing error with CSV file");
-            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
         return null;
     }
 
 
-    public void loadIngredientsTODb(Context context) {
+    void loadIngredientsTODb(Context context) {
     /*
     This method will be performed in the background once the user navigates to the CategoryPicker chooser activity from the main app landing page.
     MainActivity will pass the dish option that was clicked (e.g. breakfast, dessert) and pass this to CategoryPicker activity, which will update the
@@ -121,13 +118,10 @@ public class DBPopulatorUtil {
             return ingredients;
         } catch (FileNotFoundException ex) {
             repo.insertLogs("Tried to load from a CSV file that doesn't exist");
-            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
         } catch (IOException ex) {
             repo.insertLogs("IO error with file");
-            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
         } catch (Exception ex) {
             repo.insertLogs("Parsing error with CSV file");
-            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
         return null;
     }
@@ -137,7 +131,7 @@ public class DBPopulatorUtil {
      * This method will parse data in the CSV files into 2 ArrayList: recipesFromCSV and recipeIngredientsFromCsv
      * Note*: The recipes raw data structure is more special than others
      */
-    public void loadRecipesFromCsvToDB(Context context) {
+    void loadRecipesFromCsvToDB(Context context) {
         AppDataRepo repo = new AppDataRepo(DBPopulatorUtil.this);
         try {
             Reader in = new InputStreamReader(context.getResources().openRawResource(R.raw.recipes));
@@ -169,13 +163,10 @@ public class DBPopulatorUtil {
             loadRecipeIngredientsTotalToDb(context, recipeIngredientsTotalsFromCsv);
         } catch (FileNotFoundException ex) {
             repo.insertLogs("Tried to load from a CSV file that doesn't exist");
-            Log.d(TAG, "loadIngredientsFromCsv: File not found exception" + ex.getMessage());
         } catch (IOException ex) {
             repo.insertLogs("IO error with file");
-            Log.d(TAG, "loadIngredientsFromCsv: IO exception" + ex.getMessage());
         } catch (Exception ex) {
             repo.insertLogs("Parsing error with CSV file");
-            Log.d(TAG, "loadIngredientsFromCsv: Other exception (could be parsing)" + ex.toString());
         }
     }
 

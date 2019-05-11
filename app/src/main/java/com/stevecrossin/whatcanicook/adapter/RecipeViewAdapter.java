@@ -1,5 +1,6 @@
 package com.stevecrossin.whatcanicook.adapter;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.stevecrossin.whatcanicook.R;
-import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class RecipeViewAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, final int i) {
+    public void onBindViewHolder(@NonNull RecipeViewHolder recipeViewHolder, @SuppressLint("RecyclerView") final int i) {
         recipeViewHolder.bindRow(recipes.get(i), recipeViewHolder.itemView.getContext());
         recipeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

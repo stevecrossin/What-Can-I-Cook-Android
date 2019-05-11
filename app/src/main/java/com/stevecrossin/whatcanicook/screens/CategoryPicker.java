@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
@@ -29,8 +28,6 @@ import java.util.List;
 public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private CategoryViewAdapter categoryViewAdapter;
-    private static final String TAG = "CategoryPicker";
-
     private AutoCompleteTextView autoCompleteTextView;
 
     /**
@@ -68,12 +65,12 @@ public class CategoryPicker extends AppCompatActivity {
         getAllIngredients();
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void markIngredientAsSelected(final String ingredientName) {
         new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(Void... voids) {
-                //AppDataRepo repo = new AppDataRepo(CategoryPicker.this);
                 repository.selectIngredient(ingredientName);
                 return null;
             }
@@ -82,6 +79,7 @@ public class CategoryPicker extends AppCompatActivity {
     }
 
 
+    @SuppressLint("StaticFieldLeak")
     public void getAllIngredients() {
         new AsyncTask<Void, Void, List<Ingredient>>() {
 
@@ -148,12 +146,6 @@ public class CategoryPicker extends AppCompatActivity {
         categoryViewAdapter = new CategoryViewAdapter(new ArrayList<Ingredient>(), new CategoryViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(String category) {
-                Log.d(TAG, "Row is clicked");
-                if (category != null) {
-                    Log.d(TAG, "Category: " + category);
-                } else
-                    Log.d(TAG, "Category is null");
-
                 Intent intent = new Intent(CategoryPicker.this, IngredientPicker.class);
                 intent.putExtra("CATEGORY", category);
                 startActivity(intent);

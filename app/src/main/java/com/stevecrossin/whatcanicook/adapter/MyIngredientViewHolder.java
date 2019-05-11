@@ -9,12 +9,12 @@ import android.view.View;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 
-public class MyIngredientViewHolder  extends RecyclerView.ViewHolder {
+class MyIngredientViewHolder extends RecyclerView.ViewHolder {
 
     private AppCompatTextView myIngredientName;
-    public AppCompatImageView closeImage;
+    AppCompatImageView closeImage;
 
-    public MyIngredientViewHolder(@NonNull View itemView) {
+    MyIngredientViewHolder(@NonNull View itemView) {
         super(itemView);
         myIngredientName = itemView.findViewById(R.id.category_name);
         closeImage = itemView.findViewById(R.id.close_img);

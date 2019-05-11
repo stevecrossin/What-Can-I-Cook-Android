@@ -1,7 +1,6 @@
 package com.stevecrossin.whatcanicook.screens;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,14 +11,12 @@ import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
-import org.w3c.dom.Text;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 public class About extends AppCompatActivity {
-    private AdView mAdView;
+
     /*
     Loads About Activity when the class is called/created
     */
@@ -27,8 +24,8 @@ public class About extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+        AdView mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
         //Declaration of elements - being the textview and the source of text
@@ -50,8 +47,8 @@ public class About extends AppCompatActivity {
             new AppDataRepo(About.this).insertLogs("Error getting about text - file doesn't exist");
             e.printStackTrace();
         }
-            aboutText.setText(textOutputStream.toString());
-        }
+        aboutText.setText(textOutputStream.toString());
+    }
 
 
     //Navigate to Log View
