@@ -9,10 +9,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -68,10 +68,10 @@ public class Recipes extends AppCompatActivity {
         new AsyncTask<Void, Void, ArrayList<String>>() {
             @Override
             protected ArrayList<String> doInBackground(Void... voids) {
-                ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(1));
+                ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(5));
                 if (similarRecipes.size() > 0){
                     Recipe similarRecipe = similarRecipes.get(0);
-                    return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 2));
+                    return new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 6));
                 }
                 return null;
             }
@@ -81,23 +81,22 @@ public class Recipes extends AppCompatActivity {
                 super.onPostExecute(missingIngredients);
                 if (missingIngredients != null)
                     for (String string : missingIngredients){
-                        final Button ingredient = new Button(Recipes.this);
+                        final TextView ingredient = new TextView(Recipes.this);
                         ingredient.setText(string);
                         ingredient.setTag(string);
-                        ingredient.setMaxWidth(20);
-                        ingredient.setMaxHeight(20);
-                        ingredient.setTextSize(8);
-                        ingredient.setOnClickListener(btnClicked);
+                        ingredient.setTextSize(14);
+                        ingredient.setPadding(20, 0, 20, 0);
+                        ingredient.setOnClickListener(missingClicked);
                         addingList.addView(ingredient);
                     }
             }
         }.execute();
     }
-    View.OnClickListener btnClicked = new View.OnClickListener() {
+    View.OnClickListener missingClicked = new View.OnClickListener() {
         @SuppressLint("StaticFieldLeak")
         @Override
         public void onClick(View v) {
-            final Button ingredient = (Button)v;
+            final TextView ingredient = (TextView) v;
             new AsyncTask<Void, Void, Void>() {
                 @Override
                 protected Void doInBackground(Void... voids) {
