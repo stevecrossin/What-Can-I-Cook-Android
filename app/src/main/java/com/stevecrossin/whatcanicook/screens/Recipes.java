@@ -133,10 +133,8 @@ public class Recipes extends AppCompatActivity {
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
                         Intent intent = new Intent(Recipes.this, RecipesDetails.class);
                         intent.putExtra("RECIPE", recipe);
-                        intent.putExtra("MISSING", missingIngredients);
                         startActivity(intent);
                         return null;
                     }

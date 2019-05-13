@@ -30,12 +30,14 @@ public class RecipesDetails extends AppCompatActivity {
 
         Intent intent = getIntent();
         recipe = (Recipe) intent.getSerializableExtra("RECIPE");
+        /*
         missingIngredients = intent.getStringArrayListExtra("MISSING");
         StringBuilder missing = new StringBuilder();
         for (String string : missingIngredients)
             missing.append(string).append(", ");
         if (!missing.toString().equals(""))
             missing = new StringBuilder(missing.substring(0, missing.length() - 2));
+        */
 
         TextView recipeName = findViewById(R.id.recipe_name);
         recipeName.setText(recipe.getRecipeName());
@@ -46,6 +48,7 @@ public class RecipesDetails extends AppCompatActivity {
         TextView recipeSteps = findViewById(R.id.recipe_steps_content);
         recipeSteps.setText(recipe.getRecipeSteps().replaceAll(":", "\n"));
 
+        /*
         TextView warning = findViewById(R.id.recipe_warning);
         if (missingIngredients.size() > 0) {
             warning.setTextColor(Color.RED);
@@ -54,7 +57,7 @@ public class RecipesDetails extends AppCompatActivity {
             warning.setTextColor(Color.parseColor("#006400"));
             warning.setText(getString(R.string.enoughIngredients));
         }
-
+        */
         ImageView recipeImage = findViewById(R.id.recipe_img);
         int drawableResourceId = this.getResources().getIdentifier(recipe.getRecipeImage(), "drawable", this.getPackageName());
         recipeImage.setImageResource(drawableResourceId);

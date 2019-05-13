@@ -446,3 +446,9 @@ Monday 13 May - Trong
 
 In progress
 + Comment methods and functions
+
+Tuesday 14 May - Trong
++ Improvement: missing ingredients are shown in recipe search page instead of detail page.
+
+In progress
++ Comment methods and functions
