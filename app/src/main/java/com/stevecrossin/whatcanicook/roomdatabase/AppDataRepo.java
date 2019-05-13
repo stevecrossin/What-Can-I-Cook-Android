@@ -247,6 +247,14 @@ public class AppDataRepo {
         recipeDao.saveRecipe(recipeId);
     }
 
+    public void unSaveRecipe(int recipeId) {
+        recipeDao.unSaveRecipe(recipeId);
+    }
+
+    public void removeRecipe(int recipeId) {
+        recipeDao.deleteRecipe(recipeId);
+    }
+
     /*-************** User Repo ***********************/
 
 

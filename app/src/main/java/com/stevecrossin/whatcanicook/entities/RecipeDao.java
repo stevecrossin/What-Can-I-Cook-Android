@@ -79,6 +79,9 @@ public interface RecipeDao {
     @Query("UPDATE recipe SET recipe_saved = 1 WHERE recipe_id = :recipeId;")
     void saveRecipe(int recipeId);
 
+    @Query("UPDATE recipe SET recipe_saved = 0 WHERE recipe_id = :recipeId;")
+    void unSaveRecipe(int recipeId);
+
     @Query("UPDATE Recipe SET recipe_excluded = recipe_excluded + 1 WHERE\n" +
             "Recipe.recipe_name IN (SELECT recipe_name FROM recipeingredients\n" +
             "WHERE recipeingredients.recipe_ingredients = :ingredientName)")
@@ -94,6 +97,9 @@ public interface RecipeDao {
 
     @Insert
     void addRecipe(Recipe recipe);
+
+    @Query("DELETE FROM recipe WHERE recipe_id = :recipeId")
+    void deleteRecipe(int recipeId);
 
     @Query("DELETE FROM recipe;")
     void deleteAll();

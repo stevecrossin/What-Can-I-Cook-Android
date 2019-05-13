@@ -440,3 +440,9 @@ Monday 13 May - Trong
 In progress
 + Comment methods and functions
 + Ability to delete custom recipes
+
+Monday 13 May - Trong
++ Improvement: User now can unsave recipes and delete custom recipes
+
+In progress
++ Comment methods and functions

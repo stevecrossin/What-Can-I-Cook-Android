@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.adapter.MyRecipesViewAdapter;
 import com.stevecrossin.whatcanicook.adapter.RecipeViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 
 public class SavedRecipes extends AppCompatActivity {
 
-    RecipeViewAdapter recipeViewAdapter;
+    MyRecipesViewAdapter recipeViewAdapter;
     private AppDataRepo repository;
 
     /*Set view as saved recipes activity*/
@@ -52,7 +53,7 @@ public class SavedRecipes extends AppCompatActivity {
         RecyclerView recipesList = findViewById(R.id.saved_recipes_list);
         recipesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         //ingredientsList.setHasFixedSize(false);
-        recipeViewAdapter = new RecipeViewAdapter(new ArrayList<Recipe>(), new RecipeViewAdapter.rowClickedListener() {
+        recipeViewAdapter = new MyRecipesViewAdapter(new ArrayList<Recipe>(), new MyRecipesViewAdapter.rowClickedListener() {
             @SuppressLint("StaticFieldLeak")
             @Override
             public void onRowClicked(final Recipe recipe) {
