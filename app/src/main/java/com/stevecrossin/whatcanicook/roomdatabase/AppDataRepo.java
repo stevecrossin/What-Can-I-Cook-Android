@@ -207,6 +207,10 @@ public class AppDataRepo {
             return recipeDao.getAllRecipesByCheckedIngredientsWithLimit(limit);
     }
 
+    public List<Recipe> getAllRecipesByCheckedIngredientsWithOffset(int offset) {
+        return recipeDao.getAllRecipesByCheckedIngredientsWithOffset(offset);
+    }
+
 
     public List<Recipe> getAllRecipesByCheckedIngredientsWithExactMatch() {
         return recipeDao.getAllRecipesByCheckedIngredientsWithExactMatch();

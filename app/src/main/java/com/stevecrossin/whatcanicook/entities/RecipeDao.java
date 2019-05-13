@@ -29,6 +29,14 @@ public interface RecipeDao {
             " WHERE recipeingredients.recipe_ingredients IN \n" +
             " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1) \n" +
             " AND recipe.recipe_excluded = 0 \n" +
+            " GROUP BY recipeingredients.recipe_name ORDER BY count(recipeingredients.recipe_name) DESC LIMIT 100 OFFSET :offset;")
+    List<Recipe> getAllRecipesByCheckedIngredientsWithOffset(int offset);
+
+    @Query("SELECT Recipe.* FROM recipeingredients\n" +
+            "JOIN recipe ON recipeingredients.recipe_name = Recipe.recipe_name\n" +
+            " WHERE recipeingredients.recipe_ingredients IN \n" +
+            " (SELECT ingredient_name FROM ingredient WHERE ingredient_selected = 1) \n" +
+            " AND recipe.recipe_excluded = 0 \n" +
             " GROUP BY recipeingredients.recipe_name ORDER BY count(recipeingredients.recipe_name) DESC LIMIT :limit;")
     List<Recipe> getAllRecipesByCheckedIngredientsWithLimit(int limit);
 

@@ -431,3 +431,12 @@ In progress
 
 With this update, Milestone 5 is complete. Milestone 6 is essentially complete, with app published, application all milestones are completed. All bugs have been tested for and are fixed, app is published. Last feature to add is completely optional.
 Certain functions need to be commented, and recipes will be added later but enough exists for proof of concept.
+
+
+Monday 13 May - Trong
++ Bug fixes: Allow more suggestions to be given for ingredients at reciperesults activity
+	- Suggestion pane now can keep getting new ingredients without running out. 
+
+In progress
++ Comment methods and functions
++ Ability to delete custom recipes
