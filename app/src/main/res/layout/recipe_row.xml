@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:background="@color/listview_item">
 
+        <!--
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/recipe_img"
             android:layout_width="40dp"
@@ -25,38 +26,36 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+            -->
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/recipe_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:gravity="center_vertical"
-            android:autoSizeMinTextSize="6dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:autoSizeMaxTextSize="100dp"
+            android:autoSizeMinTextSize="6dp"
             android:autoSizeStepGranularity="1dp"
-            app:layout_constraintBottom_toTopOf="parent"
+            android:gravity="center_vertical"
             app:layout_constraintEnd_toStartOf="@id/recipe_save_button"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/recipe_img"
+            app:layout_constraintBottom_toTopOf="@id/recipe_missing_ingredients"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:targetApi="o" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/recipe_missing_ingredients"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:autoSizeMaxTextSize="100dp"
-            android:autoSizeMinTextSize="6dp"
-            android:autoSizeStepGranularity="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="10sp"
             android:gravity="center_vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/recipe_save_button"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/recipe_img"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipe_name"
             tools:targetApi="o" />
 

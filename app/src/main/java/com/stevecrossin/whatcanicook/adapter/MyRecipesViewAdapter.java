@@ -19,7 +19,7 @@ public class MyRecipesViewAdapter extends RecyclerView.Adapter<MyRecipesViewHold
     private ArrayList<Recipe> recipes;
     private MyRecipesViewAdapter.rowClickedListener rowClickedListener;
     private Context context;
-    AppDataRepo repo = new AppDataRepo(context);
+    private AppDataRepo repo = new AppDataRepo(context);
 
 
     public MyRecipesViewAdapter(ArrayList<Recipe> recipes, MyRecipesViewAdapter.rowClickedListener rowClickedListener) {

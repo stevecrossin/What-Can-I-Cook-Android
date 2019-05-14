@@ -133,10 +133,8 @@ public class Recipes extends AppCompatActivity {
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
                         Intent intent = new Intent(Recipes.this, RecipesDetails.class);
                         intent.putExtra("RECIPE", recipe);
-                        intent.putExtra("MISSING", missingIngredients);
                         startActivity(intent);
                         return null;
                     }
@@ -188,6 +186,12 @@ public class Recipes extends AppCompatActivity {
 
     public void resetIngredients(View view) {
         new AppDataRepo(this).clearIngredients();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    //Navigate to Main Activity
+    public void navigateHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
