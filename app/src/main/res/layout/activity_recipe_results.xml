@@ -48,10 +48,10 @@
 
     <LinearLayout
         android:id="@+id/adding_list"
+        android:layout_height="24dp"
         android:layout_width="match_parent"
-        android:visibility="gone"
         android:layout_marginEnd="8dp"
-        android:layout_height="wrap_content"
+        android:visibility="gone"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"

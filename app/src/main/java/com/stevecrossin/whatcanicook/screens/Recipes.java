@@ -125,7 +125,10 @@ public class Recipes extends AppCompatActivity {
                         ingredient.setEllipsize(TextUtils.TruncateAt.END);
                         addingList.addView(ingredient);
                     }
+                } else {
+                    addingList.setVisibility(View.GONE);
                 }
+
             }
         }.execute();
     }
