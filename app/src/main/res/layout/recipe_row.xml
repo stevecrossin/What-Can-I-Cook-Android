@@ -16,27 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/listview_item">
-
-        <!--
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/recipe_img"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-            -->
-
+        
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/recipe_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:autoSizeMaxTextSize="100dp"
-            android:autoSizeMinTextSize="6dp"
-            android:autoSizeStepGranularity="1dp"
+            android:textSize="14sp"
             android:gravity="center_vertical"
             app:layout_constraintEnd_toStartOf="@id/recipe_save_button"
             app:layout_constraintHorizontal_bias="0.0"
@@ -51,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:textSize="10sp"
+            android:textSize="12sp"
             android:gravity="center_vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/recipe_save_button"
