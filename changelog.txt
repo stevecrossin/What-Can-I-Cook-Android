@@ -462,6 +462,9 @@ without flaws
 
 Whats left
 + Comment code
-+ Any last bugs
++ Any last bugs (but all have really been found)
 + Add toasts to remaining error messages
 + IF I HAVE TIME ONLY - add toasts advising recipes were deleted when X is clicked (Or snackbar asking for confirmation of deletion)
++ Record video
+
+Milestone - all milestones are now completed. Some functions need to be commented, but all bugs have been thoroughly tested for, caught and are logged. App published to app store.
