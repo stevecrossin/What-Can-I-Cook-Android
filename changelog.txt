@@ -470,3 +470,14 @@ Whats left
 
 Milestone - all milestones are now completed. Some functions need to be commented, but all bugs have been thoroughly tested for, caught and are logged. App published to app store.
 
+Wednesday 15 May - Steve
++ Snackbar added to confirm deletion
++ Started to comment code
++ Recipe recyclerview elements given stable IDs to prevent weird refresh each time element is clicked, now recycler elements rearrange themselves.
++ Missingingredients code adjusted to hide the view when it is empty, and also not cut off text. Sizes changed
++ Bugfixes
+
+To do
++ Comment code - like, a lot
++ Record video
++ Submit

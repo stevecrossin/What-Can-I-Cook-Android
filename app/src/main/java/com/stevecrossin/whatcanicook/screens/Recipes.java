@@ -2,11 +2,13 @@ package com.stevecrossin.whatcanicook.screens;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -30,8 +32,27 @@ public class Recipes extends AppCompatActivity {
     Switch exactMatch;
     LinearLayout addingList;
 
+    //This needs to be commented
+    View.OnClickListener missingClicked = new View.OnClickListener() {
+        @SuppressLint("StaticFieldLeak")
+        @Override
+        public void onClick(View v) {
+            final TextView ingredient = (TextView) v;
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    repository.selectIngredient(ingredient.getText().toString());
+                    return null;
+                }
+            }.execute();
+            loadRecipes();
+            initSuggestions();
+        }
+    };
+
     /**
-     * Scene initalization. This also loads the neccessary ingredient from the CSV to the database
+     * Scene initalization. Sets the layouts and draws the elements, listenes to the
+     * exact match switch and calls the relevant function if it is changed, sets visibility of adding list by default to invisible, initialises recyclerviews and ads.
      */
     @SuppressLint("SetTextI18n")
     @Override
@@ -51,6 +72,7 @@ public class Recipes extends AppCompatActivity {
             }
         });
         addingList = findViewById(R.id.adding_list);
+        addingList.setVisibility(View.GONE);
         repository = new AppDataRepo(this);
         initRecyclerItems();
         initSuggestions();
@@ -59,6 +81,7 @@ public class Recipes extends AppCompatActivity {
         mAdView.loadAd(adRequest);
     }
 
+    //Initialises the suggestion of missing ingredients - Trong this needs more comments
     @SuppressLint("StaticFieldLeak")
     private void initSuggestions() {
         addingList.removeAllViews();
@@ -69,51 +92,43 @@ public class Recipes extends AppCompatActivity {
                 ArrayList<Recipe> similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredients(0));
                 if (similarRecipes.size() > 0) {
                     Recipe similarRecipe = similarRecipes.get(0);
-                    ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 4));
+                    ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 3));
                     while (missingIngredients.size() == 0 && offset <= similarRecipes.size() - 1){
                         offset += 1;
                         similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredientsWithOffset(offset));
                         similarRecipe = similarRecipes.get(0);
-                        missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 4));
+                        missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 3));
                     }
                     return missingIngredients;
                 }
                 return null;
             }
 
+            //Loads the missing ingredients into the viewholder. If missingIngredients are not empty and size is greater than zero, each will be displayed
+            //in the viewholder, with the details set such as size, lenfth, padding, and onclick listeners. Also will have its visibility set to visible if true, otherwise will be hidden
+
+            //Trong pls comment more
             @Override
             protected void onPostExecute(ArrayList<String> missingIngredients) {
                 super.onPostExecute(missingIngredients);
-                if (missingIngredients != null)
+                if (missingIngredients != null && missingIngredients.size() > 0) {
+                    addingList.setVisibility(View.VISIBLE);
                     for (String string : missingIngredients) {
                         final TextView ingredient = new TextView(Recipes.this);
                         ingredient.setText(string);
                         ingredient.setTag(string);
-                        ingredient.setTextSize(12);
+                        ingredient.setTextSize(15);
+                        ingredient.setTypeface(null, Typeface.BOLD);
                         ingredient.setPadding(20, 0, 20, 0);
                         ingredient.setOnClickListener(missingClicked);
+                        ingredient.setSingleLine(true);
+                        ingredient.setEllipsize(TextUtils.TruncateAt.END);
                         addingList.addView(ingredient);
                     }
+                }
             }
         }.execute();
     }
-
-    View.OnClickListener missingClicked = new View.OnClickListener() {
-        @SuppressLint("StaticFieldLeak")
-        @Override
-        public void onClick(View v) {
-            final TextView ingredient = (TextView) v;
-            new AsyncTask<Void, Void, Void>() {
-                @Override
-                protected Void doInBackground(Void... voids) {
-                    repository.selectIngredient(ingredient.getText().toString());
-                    return null;
-                }
-            }.execute();
-            initRecyclerItems();
-            initSuggestions();
-        }
-    };
 
     /**
      * This will do the setup step for our recycle view:
@@ -142,6 +157,9 @@ public class Recipes extends AppCompatActivity {
             }
 
         });
+        //Stable IDs (learned here - https://medium.com/@hanru.yeh/recyclerviews-views-are-blinking-when-notifydatasetchanged-c7b76d5149a2) - this enables recyclerview
+        //to update its contents without refreshing in an ugly way
+        recipeViewAdapter.setHasStableIds(true);
         recipesList.setAdapter(recipeViewAdapter);
         loadRecipes();
     }
@@ -184,6 +202,7 @@ public class Recipes extends AppCompatActivity {
         }.execute();
     }
 
+    //When user clicks "Start Over" it will clear the ingredients from the database and navigate back to the MainActivity
     public void resetIngredients(View view) {
         new AppDataRepo(this).clearIngredients();
         Intent intent = new Intent(this, MainActivity.class);

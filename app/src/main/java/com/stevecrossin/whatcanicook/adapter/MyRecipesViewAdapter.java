@@ -18,13 +18,16 @@ import java.util.ArrayList;
 public class MyRecipesViewAdapter extends RecyclerView.Adapter<MyRecipesViewHolder>{
     private ArrayList<Recipe> recipes;
     private MyRecipesViewAdapter.rowClickedListener rowClickedListener;
+    private MyRecipesViewAdapter.removeClickedListener removeClickedListener;
     private Context context;
     private AppDataRepo repo = new AppDataRepo(context);
 
 
-    public MyRecipesViewAdapter(ArrayList<Recipe> recipes, MyRecipesViewAdapter.rowClickedListener rowClickedListener) {
+    //Adapter for Recyclerview of Saved Recipes. Contains onClick listeners for the clicking of the recipes and also of the X that removes recipes
+    public MyRecipesViewAdapter(ArrayList<Recipe> recipes, MyRecipesViewAdapter.rowClickedListener rowClickedListener, MyRecipesViewAdapter.removeClickedListener removeClickedListener) {
         this.recipes = recipes;
         this.rowClickedListener = rowClickedListener;
+        this.removeClickedListener = removeClickedListener;
     }
 
     @NonNull
@@ -44,45 +47,61 @@ public class MyRecipesViewAdapter extends RecyclerView.Adapter<MyRecipesViewHold
                 rowClickedListener.onRowClicked(recipes.get(i));
             }
         });
-
         recipeViewHolder.recipeRemoveButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View v) {
-                new AsyncTask<Void, Void, Void>() {
-                    @Override
-                    protected Void doInBackground(Void... voids) {
-                        if (recipe.isSaved()){
-                            repo.unSaveRecipe(recipe.getRecipeId());
-                        }
-                        else{
-                            repo.removeRecipe(recipe.getRecipeId());
-                        }
-                        return null;
-                    }
-
-                    @Override
-                    protected void onPostExecute(Void aVoid) {
-                        super.onPostExecute(aVoid);
-                        recipes.remove(recipeViewHolder.getAdapterPosition());
-                        notifyItemRemoved(recipeViewHolder.getAdapterPosition());
-                    }
-                }.execute();
+                removeClickedListener.onRemoveClicked(recipes.get(i), recipeViewHolder);
             }
         });
     }
 
+    /**
+     * Task to remove the recipe. This is performed in background. If the recipe was a saved recipe, it will be "unsaved" otherwise if it was a custom
+     * recipe it will be removed from the DB
+     */
+
+    public void removeRecipefromSaved(final Recipe recipe, final MyRecipesViewHolder recipeViewHolder) {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                if (recipe.isSaved()) {
+                    repo.unSaveRecipe(recipe.getRecipeId());
+                } else {
+                    repo.removeRecipe(recipe.getRecipeId());
+                }
+                return null;
+            }
+
+            //After the task has been executed, the recipe row will be removed from the viewholder
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                recipes.remove(recipeViewHolder.getAdapterPosition());
+                notifyItemRemoved(recipeViewHolder.getAdapterPosition());
+            }
+        }.execute();
+    }
+
+    //Gets count of items to be in recyclerview? - trong - help
     @Override
     public int getItemCount() {
         return recipes.size();
     }
 
+    //Updates recipes in the view - again help!
     public void updateRecipes(ArrayList<Recipe> recipes) {
         this.recipes = recipes;
         notifyDataSetChanged();
     }
 
+    //Listener for row click
     public interface rowClickedListener {
         void onRowClicked(Recipe recipe);
+    }
+
+    //Listener for remove click
+    public interface removeClickedListener {
+        void onRemoveClicked(Recipe recipe, MyRecipesViewHolder recipeViewHolder);
     }
 }

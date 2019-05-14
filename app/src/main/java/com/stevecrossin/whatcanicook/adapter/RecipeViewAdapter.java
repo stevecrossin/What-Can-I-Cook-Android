@@ -51,4 +51,10 @@ public class RecipeViewAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     public interface rowClickedListener {
         void onRowClicked(Recipe recipe);
     }
+
+    @Override
+    public long getItemId(int position) {
+        Recipe recipe = recipes.get(position);
+        return recipe.getRecipeId();
+    }
 }
