@@ -459,7 +459,7 @@ Tuesday 14 May - Steve
 + Remove redundant and unneeded code
 + Correct some last errors with recipes.csv - all recipes now tested and 100% working
 without flaws
-+ Found a few more style bugs on recipe results - fixed
++ Found a few more style bugs on recipe results - fixed, and adjusted text sizing for readability
 
 Whats left
 + Comment code
