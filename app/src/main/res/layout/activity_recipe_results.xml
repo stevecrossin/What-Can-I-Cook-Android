@@ -33,8 +33,9 @@
     <TextView
         android:id="@+id/missingsuggestion"
         android:layout_width="0dp"
+        android:layout_marginStart="8dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
+        android:gravity="center"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="4dp"
@@ -48,10 +49,11 @@
     <LinearLayout
         android:id="@+id/adding_list"
         android:layout_width="0dp"
+        android:layout_marginEnd="8dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:gravity="center"
         android:layout_marginBottom="4dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/recipes_list"

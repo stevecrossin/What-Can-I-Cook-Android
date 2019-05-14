@@ -89,7 +89,7 @@ public class Recipes extends AppCompatActivity {
                         final TextView ingredient = new TextView(Recipes.this);
                         ingredient.setText(string);
                         ingredient.setTag(string);
-                        ingredient.setTextSize(14);
+                        ingredient.setTextSize(12);
                         ingredient.setPadding(20, 0, 20, 0);
                         ingredient.setOnClickListener(missingClicked);
                         addingList.addView(ingredient);

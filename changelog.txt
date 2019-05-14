@@ -459,6 +459,7 @@ Tuesday 14 May - Steve
 + Remove redundant and unneeded code
 + Correct some last errors with recipes.csv - all recipes now tested and 100% working
 without flaws
++ Found a few more style bugs on recipe results - fixed
 
 Whats left
 + Comment code
@@ -468,3 +469,4 @@ Whats left
 + Record video
 
 Milestone - all milestones are now completed. Some functions need to be commented, but all bugs have been thoroughly tested for, caught and are logged. App published to app store.
+
