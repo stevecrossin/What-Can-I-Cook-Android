@@ -1,6 +1,7 @@
 package com.stevecrossin.whatcanicook.screens;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -85,5 +86,10 @@ public class Logs extends AppCompatActivity {
         refreshContent();
     }
 
+    //Navigate to Main Activity
+    public void navigateHome(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }

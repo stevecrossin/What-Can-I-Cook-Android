@@ -452,3 +452,16 @@ Tuesday 14 May - Trong
 
 In progress
 + Comment methods and functions
+
+Tuesday 14 May - Steve
++ Fix layouts so missing ingredients showed correctly in recipe viewholder
++ Adjust constraints in recipe details to align to each element better
++ Remove redundant and unneeded code
++ Correct some last errors with recipes.csv - all recipes now tested and 100% working
+without flaws
+
+Whats left
++ Comment code
++ Any last bugs
++ Add toasts to remaining error messages
++ IF I HAVE TIME ONLY - add toasts advising recipes were deleted when X is clicked (Or snackbar asking for confirmation of deletion)

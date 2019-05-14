@@ -14,7 +14,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.adapter.MyRecipesViewAdapter;
-import com.stevecrossin.whatcanicook.adapter.RecipeViewAdapter;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
@@ -37,7 +36,6 @@ public class SavedRecipes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SavedRecipes.this, CustomRecipe.class);
-                //intent.putExtra("CATEGORY", category);
                 startActivity(intent);
             }
         });
@@ -47,12 +45,12 @@ public class SavedRecipes extends AppCompatActivity {
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
     }
 
     private void initRecyclerItems() {
         RecyclerView recipesList = findViewById(R.id.saved_recipes_list);
         recipesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        //ingredientsList.setHasFixedSize(false);
         recipeViewAdapter = new MyRecipesViewAdapter(new ArrayList<Recipe>(), new MyRecipesViewAdapter.rowClickedListener() {
             @SuppressLint("StaticFieldLeak")
             @Override
@@ -92,4 +90,6 @@ public class SavedRecipes extends AppCompatActivity {
             }
         }.execute();
     }
+
+
 }

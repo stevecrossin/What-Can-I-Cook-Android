@@ -18,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:text="@string/recipe_results"
             android:textAlignment="center"
@@ -28,29 +28,29 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/go_to_home_page"
+            android:onClick="navigateHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/home" />
+
+        <ImageButton
             android:id="@+id/share_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/share_this_recipe"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/recipe_name"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/share" />
-
-        <TextView
-            android:id="@+id/recipe_warning"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/recipe_img"
@@ -59,10 +59,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toTopOf="@id/recipe_ingredients"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipe_warning" />
+            app:layout_constraintTop_toBottomOf="@+id/recipe_name" />
 
         <TextView
             android:id="@+id/recipe_ingredients"
@@ -83,16 +82,15 @@
             android:id="@+id/recipe_ingredients_content"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:gravity="top"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/recipe_steps"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipe_ingredients"
             tools:text="@tools:sample/lorem/random" />
-
 
         <TextView
             android:id="@+id/recipe_steps"
@@ -117,7 +115,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/adView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/recipe_steps" />
@@ -132,8 +129,7 @@
             ads:adUnitId="ca-app-pub-6486258628588307/9902414440"
             ads:layout_constraintBottom_toBottomOf="parent"
             ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toBottomOf="@+id/recipe_steps_content" />
+            ads:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

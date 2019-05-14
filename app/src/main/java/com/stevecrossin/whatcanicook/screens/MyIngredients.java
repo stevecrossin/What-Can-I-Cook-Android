@@ -85,4 +85,10 @@ public class MyIngredients extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Navigate to Main Activity
+    public void navigateHome(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }

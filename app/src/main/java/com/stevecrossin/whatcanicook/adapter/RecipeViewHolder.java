@@ -19,7 +19,7 @@ import java.util.ArrayList;
 class RecipeViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView recipeName;
     private AppCompatTextView recipeMissingIngredients;
-    private AppCompatImageView recipeImage;
+    //private AppCompatImageView recipeImage;
     private AppCompatImageView recipeSaveButton;
     private AppDataRepo repository;
     private ArrayList<String> missingIngredients;
@@ -31,7 +31,7 @@ class RecipeViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
         recipeName = itemView.findViewById(R.id.recipe_name);
-        recipeImage = itemView.findViewById(R.id.recipe_img);
+        //recipeImage = itemView.findViewById(R.id.recipe_img);
         recipeMissingIngredients = itemView.findViewById(R.id.recipe_missing_ingredients);
         recipeSaveButton = itemView.findViewById(R.id.recipe_save_button);
 
@@ -41,8 +41,6 @@ class RecipeViewHolder extends RecyclerView.ViewHolder {
     @SuppressLint("StaticFieldLeak")
     void bindRow(final Recipe recipe, final Context context) {
         recipeName.setText(recipe.getRecipeName());
-        int drawableResourceId = context.getResources().getIdentifier(recipe.getRecipeImage(), "drawable", context.getPackageName());
-        recipeImage.setImageResource(drawableResourceId);
         if (recipe.isSaved())
             recipeSaveButton.setImageResource(R.drawable.tick_icon);
         else
