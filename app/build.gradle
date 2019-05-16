@@ -4,10 +4,10 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.stevecrossin.whatcanicook"
-        minSdkVersion 21
+        minSdkVersion 20
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.8"
+        versionCode 21
+        versionName "1.9"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
