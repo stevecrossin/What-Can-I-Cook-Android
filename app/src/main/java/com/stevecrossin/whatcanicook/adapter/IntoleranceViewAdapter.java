@@ -18,6 +18,9 @@ public class IntoleranceViewAdapter extends RecyclerView.Adapter<IntoleranceView
     private IntoleranceViewAdapter.rowClickedListener rowClickedListener;
 
 
+    /**
+     * Creates a new instance of Intolerance Adapter, which contains the dietary requirements to be displayed in the adapter and the rowclicklistener
+     */
     public IntoleranceViewAdapter(ArrayList<Intolerance> intoleranceList, IntoleranceViewAdapter.rowClickedListener rowClickedListener) {
         this.intoleranceList = intoleranceList;
         this.rowClickedListener = rowClickedListener;
