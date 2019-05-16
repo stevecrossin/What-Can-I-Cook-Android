@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -19,6 +20,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
@@ -35,6 +37,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 import static com.stevecrossin.whatcanicook.CurrentLoginState.EXISTING_USER;
+import static com.stevecrossin.whatcanicook.CurrentLoginState.HASH_ERROR;
 import static com.stevecrossin.whatcanicook.CurrentLoginState.INVALID_PASSWORD;
 import static com.stevecrossin.whatcanicook.CurrentLoginState.NEW_USER;
 
@@ -56,6 +59,21 @@ public class Login extends AppCompatActivity {
     private View loginUIView;
     private Button loginButton;
     private CurrentLoginState currentLoginState = INVALID_PASSWORD; //Default state = Invalid Pass - deny access
+    AppDataRepo repo = new AppDataRepo(Login.this);
+
+    /**
+     * Rule to check if username and password valid, being an email must comply with the xxx@yy.zz structure with only certain values allowed, and password must be at least 6 characters
+     **/
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        isUserSignedIn();
+    }
 
     /**
      * This method executes upon creation of the activity, which sets the current views as activity_login.xml, and sets the elements to display based on the user ID.
@@ -98,7 +116,7 @@ public class Login extends AppCompatActivity {
                 new AsyncTask<String, Void, CurrentLoginState>() {
                     @SuppressLint("WrongThread")
                     protected CurrentLoginState doInBackground(String... params) {
-                        if (checkUsernameValid(params[0])) {
+                        if (isValidEmail(params[0])) {
                             User user = new AppDataRepo(Login.this).getUserName(params[0]);
                             CurrentLoginState currentLoginState;
                             currentLoginState = (user != null) ?
@@ -118,11 +136,13 @@ public class Login extends AppCompatActivity {
                         currentLoginState = loginState;
                         if (loginState == NEW_USER) {
                             loginButton.setText(getString(R.string.signup));
-                        } else {
+                        } else if (loginState == EXISTING_USER) {
                             loginButton.setText(getString(R.string.string_signin));
+                        } else {
+                            loginButton.setText(getString(R.string.signup));
                         }
                     }
-                }.execute(text.toString());
+                }.execute(usernameView.getText().toString());
             }
 
             //This code has no functions, but is needed for the above implemented code to work correctly
@@ -134,13 +154,6 @@ public class Login extends AppCompatActivity {
           This adds an onClick listener to the login button. Once the button is clicked - it will call the tryLogin method
          */
         loginButton = findViewById(R.id.loginButton);
-    }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        isUserSignedIn();
     }
 
     /**
@@ -175,7 +188,7 @@ public class Login extends AppCompatActivity {
             usernameView.setError("Field cannot be empty");
             focusView = usernameView;
             cancel = true;
-        } else if (!checkUsernameValid(username)) {
+        } else if (!isValidEmail(username)) {
             usernameView.setError("Email address entered is invalid");
             focusView = usernameView;
             cancel = true;
@@ -191,14 +204,9 @@ public class Login extends AppCompatActivity {
             authenticationTask.execute((Void) null);
         }
     }
-
     /**
      * These are the rules to check if username and password valid, being an email must comply with the xxx@yy.zz structure with only certain values allowed, and password must be at least 6 characters
      **/
-    public static boolean checkUsernameValid(String email) {
-        String VALID_EMAIL_ADDRESS_REGEX = "[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
-        return email.matches(VALID_EMAIL_ADDRESS_REGEX);
-    }
 
     private boolean checkPasswordValid(String password) {
         return password.length() > 6;
@@ -230,7 +238,6 @@ public class Login extends AppCompatActivity {
         });
     }
 
-
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
@@ -240,12 +247,10 @@ public class Login extends AppCompatActivity {
 
         private final String userName;
         private final String passKey;
-        //private final String dietaryNeeds;
 
         LoginTask(String email, String password) {
             userName = email;
             passKey = password;
-            //dietaryNeeds = dietary;
         }
 
         /**
@@ -268,7 +273,7 @@ public class Login extends AppCompatActivity {
                     }
                 } catch (Exception e) {
                     new AppDataRepo(Login.this).insertLogs("Error getting password hash");
-                    e.printStackTrace();
+                    return HASH_ERROR;
                 }
             } else if (currentLoginState == NEW_USER)
                 try {
@@ -279,7 +284,7 @@ public class Login extends AppCompatActivity {
                     return EXISTING_USER;
                 } catch (Exception e) {
                     new AppDataRepo(Login.this).insertLogs("Error getting password hash");
-                    e.printStackTrace();
+                    return HASH_ERROR;
                 }
             return INVALID_PASSWORD;
         }
@@ -295,6 +300,8 @@ public class Login extends AppCompatActivity {
 
             if (success == EXISTING_USER) {
                 goToNextScreen();
+            } else if (success == HASH_ERROR) {
+                Toast.makeText(Login.this, "Error getting password hash", Toast.LENGTH_SHORT).show();
             } else {
                 passwordView.setError("Password Incorrect");
                 passwordView.requestFocus();

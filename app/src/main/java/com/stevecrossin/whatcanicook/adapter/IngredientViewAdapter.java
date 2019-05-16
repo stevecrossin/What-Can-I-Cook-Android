@@ -18,17 +18,27 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHo
     private IngredientViewAdapter.rowClickedListener rowClickedListener;
 
 
+    /**
+     * Creates a new instance of IngredientView Adapter, which contains the ingredients to be displayed in the adapter and the rowclicklistener
+     */
     public IngredientViewAdapter(ArrayList<Ingredient> ingredients, IngredientViewAdapter.rowClickedListener rowClickedListener) {
         this.ingredients = ingredients;
         this.rowClickedListener = rowClickedListener;
     }
 
+    /**
+     * Initialise IngredientViewHolder with the Row View that is to be inflated. Uses ingredient_row as the layout for each row in the viewholder
+     */
     @NonNull
     @Override
     public IngredientViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         return new IngredientViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.ingredient_row, viewGroup, false));
     }
 
+    /**
+     * Override method for the RecyclerView, which is called to display the data at the specified position.
+     * First, the Ingredients are fetched and bound to the viewholder with the bindRow method. Then, an event listener is setup for each row when clicked.
+     */
     @Override
     public void onBindViewHolder(@NonNull IngredientViewHolder ingredientViewHolder, @SuppressLint("RecyclerView") final int i) {
         ingredientViewHolder.bindRow(ingredients.get(i));
@@ -40,16 +50,26 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHo
         });
     }
 
+    /**
+     * Sets the size of the adapter which contains the number of items that will be shown in the RecyclerView.
+     * This is based on the size (number) of ingredients that exist
+     */
     @Override
     public int getItemCount() {
         return ingredients.size();
     }
 
+    /**
+     * Updates and then notifies the ingredients database whenever an update occurs
+     */
     public void updateIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
         notifyDataSetChanged();
     }
 
+    /**
+     * Interface that has the onRowClicked method to implement
+     */
     public interface rowClickedListener {
         void onRowClicked(Ingredient ingredient);
     }

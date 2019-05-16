@@ -2,7 +2,7 @@ package com.stevecrossin.whatcanicook;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
+import android.widget.Toast;
 
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
@@ -69,10 +69,13 @@ public class DBPopulatorUtil {
             return intolerances;
         } catch (FileNotFoundException ex) {
             repo.insertLogs("Tried to load from a CSV file that doesn't exist");
+            Toast.makeText(context, "Loading from CSV file failed as it doesn't exist", Toast.LENGTH_SHORT).show();
         } catch (IOException ex) {
             repo.insertLogs("IO error with file");
+            Toast.makeText(context, "Input/output error with CSV file", Toast.LENGTH_SHORT).show();
         } catch (Exception ex) {
             repo.insertLogs("Parsing error with CSV file");
+            Toast.makeText(context, "Error parsing the CSV file into the database", Toast.LENGTH_SHORT).show();
         }
         return null;
     }
@@ -118,10 +121,13 @@ public class DBPopulatorUtil {
             return ingredients;
         } catch (FileNotFoundException ex) {
             repo.insertLogs("Tried to load from a CSV file that doesn't exist");
+            Toast.makeText(context, "Loading from CSV file failed as it doesn't exist", Toast.LENGTH_SHORT).show();
         } catch (IOException ex) {
             repo.insertLogs("IO error with file");
+            Toast.makeText(context, "Input/output error with CSV file", Toast.LENGTH_SHORT).show();
         } catch (Exception ex) {
             repo.insertLogs("Parsing error with CSV file");
+            Toast.makeText(context, "Error parsing the CSV file into the database", Toast.LENGTH_SHORT).show();
         }
         return null;
     }
@@ -163,10 +169,13 @@ public class DBPopulatorUtil {
             loadRecipeIngredientsTotalToDb(context, recipeIngredientsTotalsFromCsv);
         } catch (FileNotFoundException ex) {
             repo.insertLogs("Tried to load from a CSV file that doesn't exist");
+            Toast.makeText(context, "Loading from CSV file failed as it doesn't exist", Toast.LENGTH_SHORT).show();
         } catch (IOException ex) {
             repo.insertLogs("IO error with file");
+            Toast.makeText(context, "Input/output error with CSV file", Toast.LENGTH_SHORT).show();
         } catch (Exception ex) {
             repo.insertLogs("Parsing error with CSV file");
+            Toast.makeText(context, "Error parsing the CSV file into the database", Toast.LENGTH_SHORT).show();
         }
     }
 

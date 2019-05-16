@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -45,7 +46,7 @@ public class About extends AppCompatActivity {
             textInputStream.close();
         } catch (IOException e) {
             new AppDataRepo(About.this).insertLogs("Error getting about text - file doesn't exist");
-            e.printStackTrace();
+            Toast.makeText(About.this, "Ingredient already exists in pantry", Toast.LENGTH_SHORT).show();
         }
         aboutText.setText(textOutputStream.toString());
     }

@@ -20,6 +20,10 @@ class IngredientViewHolder extends RecyclerView.ViewHolder {
     private AppCompatCheckBox ingredientCheckBox;
     private AppDataRepo repository;
 
+    /**
+     * Initialise the fields of each row in the viewholder - in this case the name of the ingredient and the checkbox.
+     * Also creates a new instance of the AppDataRepo. This view is also not recyclable to prevent scrolling issues
+     */
     IngredientViewHolder(@NonNull View itemView) {
         super(itemView);
         this.setIsRecyclable(false);
@@ -28,6 +32,12 @@ class IngredientViewHolder extends RecyclerView.ViewHolder {
         repository = new AppDataRepo(itemView.getContext());
     }
 
+    /**
+     * Binds each row in the view holder to a record in the ingredients database and sets text in row to that database record.
+     * Checks the ingredients database to see if the ingredient is noted as "selected", and if so, sets the checkbox to "checked"
+     * otherwise the ingredient is not checked. Also contains instance of checkchangedlistener - once the ingredient is selected/deselected
+     * this text is taken and converted to a string
+     **/
     void bindRow(Ingredient ingredient) {
         ingredientName.setText(ingredient.getIngredientName());
         if (ingredient.isIngredientSelected())
@@ -42,6 +52,10 @@ class IngredientViewHolder extends RecyclerView.ViewHolder {
         });
     }
 
+    /**
+     * This method is caled when an ingredient has been selected. This will perform an AsyncTask to call the database to change the value
+     * of that ingredient to either selected (ingredientSelected=1), or deselected (ingredientSelected=0), based on the value of the string passed from bindrow() and whether the checkbox was ticked or unselected.
+     */
     @SuppressLint("StaticFieldLeak")
     private void ingredientSelected(final boolean isSelected, final String ingredientName) {
         new AsyncTask<Void, Void, Void>() {

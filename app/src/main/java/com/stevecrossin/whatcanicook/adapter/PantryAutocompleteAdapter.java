@@ -23,6 +23,15 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
     private Context context;
     private int resourceId;
     private List<Ingredient> filteredList, tempList;
+
+    /**
+     * Method that defines how to filter the ingredients list, based on the user input. Creates a new instance of filter, then
+     * takes their character inputs and then converts that to a string, and then will get all the ingredient names
+     * based on that text input.
+     * <p>
+     * Once this has been completed, results will be published in the AutoComplete Adapter and are filtered based on the results entered
+     * E.g. if user types "chicken" in the field, all ingredients with "chicken" will be displayed, all without it will be hidden.
+     */
     private Filter nameFilter = new Filter() {
 
         @Override
@@ -30,6 +39,10 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
             return ((Ingredient) resultValue).getIngredientName();
         }
 
+        /**
+         * As per above filter method, this publishes the results of the filter that was performed. If there are any results, the ingredient will be added to the
+         * filtered list, otherwise the list will be cleared (zero results displayed)
+         */
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             List<Ingredient> filteredList = (List<Ingredient>) results.values;
@@ -42,6 +55,12 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
             }
         }
 
+        /**
+         * Starts an asynchronous filtering operation. Calling this method cancels all previous non-executed filtering requests and posts a new
+         * filtering request that will be executed later. The constraint in this method is the text entered - if the constraint isnt equal to null, the list will be cleared.
+         * If it equals null (no constraint exists) then ingredients will be added to the filtered list. This list will then become "results" with the count known. These filtered results will
+         * then be returned.
+         */
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults filterResults = new FilterResults();
@@ -59,6 +78,9 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         }
     };
 
+    /**
+     * Creates the instance of the AutoComplete adapter, and declares the variables and UI elements to the adapter
+     */
     public PantryAutocompleteAdapter(@NonNull Context context, @NonNull List<Ingredient> ingredients) {
         super(context, R.layout.pantry_autocomplete_item, ingredients);
         this.ingredients = ingredients;
@@ -68,6 +90,10 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         tempList = new ArrayList<>(ingredients);
     }
 
+
+    /**Layout inflater
+     * Sets the text of each row in the layout based on the position of elements in the list, gets the ingredient name, and then returns that view
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -78,17 +104,22 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         return view;
     }
 
+    /**Sets the size of the adapter, which controls the number of items that are shown in the RecyclerView**/
     @Override
     public int getCount() {
         return ingredients.size();
     }
 
+    /**Gets the items in the adapter**/
     @Nullable
     @Override
     public Ingredient getItem(int position) {
         return ingredients.get(position);
     }
 
+    /**
+     * Gets an instance of the filter
+     */
     @Override
     public Filter getFilter() {
 

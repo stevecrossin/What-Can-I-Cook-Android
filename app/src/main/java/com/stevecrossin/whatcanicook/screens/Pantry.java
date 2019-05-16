@@ -49,6 +49,14 @@ public class Pantry extends AppCompatActivity {
         loadPantry();
     }
 
+    /**
+     * This is method is responsible for setting the OnClick listener for the Pantry autocompleteTextView.
+     * OnThe OnClick listener has multiple elements, to handle clearing users ingredients from the pantry, delete individual ingredients
+     * from the pantry and for handling actions when the end user performs actions.
+     * <p>
+     * It also initialises the view by finding the elements that should be displayed in the view, specifically the autocomplete textview and the recycler view, also sets the adapter for the
+     * recycler view
+     */
     private void initView() {
         autoCompleteTextView = findViewById(R.id.pantryIngredientsSearchBox);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,6 +97,9 @@ public class Pantry extends AppCompatActivity {
         });
     }
 
+    /**
+     * This is method is responsible for getting a list of all ingredients from the appdata repo and returning them into a new instance of the Pantry AutoComplete Adapter
+     * */
     @SuppressLint("StaticFieldLeak")
     public void getPantryIngredient() {
         final AppDataRepo repository = new AppDataRepo(this);

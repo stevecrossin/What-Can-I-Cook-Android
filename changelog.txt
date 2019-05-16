@@ -481,3 +481,17 @@ To do
 + Comment code - like, a lot
 + Record video
 + Submit
+
+Thursday 16 May - Steve
+* Final bug fixes - as noted in bugs.txt
+* Comment code - 50% complete
+* Alter login code to enable
+* Add toasts to any caught exceptions that didn't have toasts
+* Review Google Play ANR/Crash report, verified that past crashes/ANRs have been caught or remedied completely with code and no longer exist
+* Remedied problems with how ads are displayed - identified issue is on Google's end and is coded correctly. Adjusted layout to hide ad elements when not being served
+
+* Finish commenting code
+* Publish video
+* Verify all HD criteria has been met for assignment
+* Submit assignment
+* Celebrate!
