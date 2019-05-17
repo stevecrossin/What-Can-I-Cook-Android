@@ -43,15 +43,16 @@ public class DBPopulatorUtil {
         }
     }
 
+    /**
+     * This method will handle the loading of the intolerances list. It will perform the following steps.
+     * 1. Load all possible intolerances from intolerances.csv file, and use that data to update the Intolerance room database with any new entries
+     * 2. Query the savedintolerances column i the Users database for the current user. It will parse out multiple intolerances that are inside quotes and brackets, with the comma between each intolerance separating them.
+     * 3. It will then mark the relevant intolerance as active in the intolerance database, ands also update the UI of the activity to mark the selected intolerances as active.
+     * If any errors exist with the permanent CSV files, an exception is caught, logged and the end user is notified via a toast.
+     */
     private ArrayList<Intolerance> loadIntolerancesFromCsv(Context context) {
         AppDataRepo repo = new AppDataRepo(DBPopulatorUtil.this);
-    /*
-    This method will handle the loading of the intolerances list. It will perform the following steps.
-    1. Load all possible intolerances from nintolerances.csv file, and use that data to update the Intolerance room database with any new entries
-    2. Query the savedintolerances column i the Users database for the current user. It will parse out multiple intolerances that are inside quotes and brackets, with the comma between
-    each intolerance separating them.
-    3. It will then mark the relevant intolerance as active in the intolerance database, ands also update the UI of the activity to mark the selected intolerances as active.
-    */
+
         try {
             ArrayList<Intolerance> intolerances = new ArrayList<>();
             Reader in = new InputStreamReader(context.getResources().openRawResource(R.raw.intolerances));
@@ -80,19 +81,19 @@ public class DBPopulatorUtil {
         return null;
     }
 
+    /**
+     * This method will be performed in the background on app load and handles loading of the ingredients from CSV into the database.
+     * <p>
+     * It will
+     * 1. Read all information from ingredients.csv, a read only document stored in permanent storage
+     * 2. Append the ingredients room database with any new ingredients/delete any ingredients that are no longer present in the csv
+     * 3. Perform query on intolerances database to determine which intolerances are currently active
+     * 4. Update ingredientselectable column in ingredients database to false when ingredient matches exclusion criteria
+     * 5. Query database for ingredients that are not excluded, and update recyclerview in ingredient chooser activity with this list.
+     * If any errors exist with the permanent CSV files, an exception is caught, logged and the end user is notified via a toast.
+     */
 
     void loadIngredientsTODb(Context context) {
-    /*
-    This method will be performed in the background once the user navigates to the CategoryPicker chooser activity from the main app landing page.
-    MainActivity will pass the dish option that was clicked (e.g. breakfast, dessert) and pass this to CategoryPicker activity, which will update the
-    label at the top of the activity to "What's for breakfast/dinner/dessert etc.
-    It also needs to
-    1. Read all information from ingredients.csv, a read only document stored in permanent storage
-    2. Append the ingredients room database with any new ingredients/delete any ingredients that are no longer present in the csv
-    3. Perform query on intolerances database to determine which intolerances are currently active
-    4. Update ingredientselectable column in ingredients database to false when ingredient matches exclusion criteria
-    5. Query database for ingredients that are not excluded, and update recyclerview in ingredient chooser activity with this list.
-    */
 
         AppDataRepo repository = new AppDataRepo(context);
         if (!repository.haveIngredient()) {
@@ -135,7 +136,8 @@ public class DBPopulatorUtil {
 
     /**
      * This method will parse data in the CSV files into 2 ArrayList: recipesFromCSV and recipeIngredientsFromCsv
-     * Note*: The recipes raw data structure is more special than others
+     * A split function also exists to parse out the recipe steps.
+     * If any errors exist with the permanent CSV files, an exception is caught, logged and the end user is notified via a toast.
      */
     void loadRecipesFromCsvToDB(Context context) {
         AppDataRepo repo = new AppDataRepo(DBPopulatorUtil.this);
