@@ -92,6 +92,7 @@ public class CategoryIngredientsAutocompleteAdapter extends ArrayAdapter<Ingredi
 
     /**
      * Layout inflater
+     * Inflates the layout and reuse the view if it has already been inflated then
      * Sets the text of each row in the layout based on the position of elements in the list, gets the ingredient name, and then returns that view
      */
     @NonNull
@@ -99,22 +100,36 @@ public class CategoryIngredientsAutocompleteAdapter extends ArrayAdapter<Ingredi
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        TextView view = (TextView) inflater.inflate(resourceId, parent, false);
-        view.setText(ingredients.get(position).getIngredientName());
-        return view;
+        if (convertView == null) {
+            convertView = inflater.inflate(resourceId, parent, false);
+        }
+        ((TextView) convertView).setText(ingredients.get(position).getIngredientName());
+
+        return convertView;
     }
 
+    /**
+     * Sets the size of the adapter which contains the number of items that will be shown in the RecyclerView.
+     * This is based on the size (number) of categories that exist
+     */
     @Override
     public int getCount() {
         return ingredients.size();
     }
 
+    /**
+     * Gets the items in the adapter, and returns the ingredients into their relevant position into that adapter
+     ***/
     @Nullable
     @Override
     public Ingredient getItem(int position) {
         return ingredients.get(position);
     }
 
+    /**
+     * Gets an instance of the ingredient filter
+     */
+    @NonNull
     @Override
     public Filter getFilter() {
 
