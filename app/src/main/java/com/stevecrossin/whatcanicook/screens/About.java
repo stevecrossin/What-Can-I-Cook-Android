@@ -57,7 +57,7 @@ public class About extends AppCompatActivity {
 
 
     /**
-     * This is an OnClick method that is called when the "View Logs" button is clicked in the activity. It will handle changing the view from the current view, to the Logs.class, and then start that activity.
+     * This is an OnClick method that is called when the "View Logs" button is clicked in the activity. It will load the Logs.class, and then start that activity.
      */
     public void viewLogs(View view) {
         Intent intent = new Intent(this, Logs.class);

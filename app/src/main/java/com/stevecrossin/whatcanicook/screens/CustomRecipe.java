@@ -12,11 +12,16 @@ import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
+//
 
 public class CustomRecipe extends AppCompatActivity {
     private AppDataRepo repository;
     AutoCompleteTextView recipeName, recipeIngredients, recipeSteps;
 
+    /**
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_customrecipes XML, find by ID and then load the UI elements in that XML file into that view.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,13 @@ public class CustomRecipe extends AppCompatActivity {
         recipeSteps = findViewById(R.id.recipe_steps);
     }
 
+    /**
+     * This method is called when the user clicks the "Save Recipe" button in the activity.
+     * It will get the text contents that are currently stored in the text boxes, being the recipe name, ingredients and steps and convert them to a string. It will then
+     * through an async task insert this recipe into the recipe database, also noting the recipe as saved, and a custom recipe (not a recipe that came with the app).
+     * <p>
+     * Finally, the application will load the SavedRecipes.class into memory and start that activity.
+     */
     @SuppressLint("StaticFieldLeak")
     public void addCustomRecipe(View view) {
 
