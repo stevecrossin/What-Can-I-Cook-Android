@@ -15,7 +15,11 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    /**
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_main XML and load the UI elements in that XML file into that view.
+     * Load Google Ads for the activity and send an adRequest to load an ad.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Navigate to Ingredients view with search for Breakfast Dishes
+    /**
+     * This is an OnClick method that is called when the "Breakfast" button is clicked in the activity. It will load the CategoryPicker.class,
+     * and pass via intent the dish type (breakfast), and then start that activity.
+     */
     public void breakfastIngredients(View view) {
         findViewById(R.id.breakfastbutton);
         String breakfast = ("What's for Breakfast");
@@ -36,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Navigate to Ingredients view with search for Lunch Dishes
+    /**
+     * This is an OnClick method that is called when the "Lunch" button is clicked in the activity. It will load the CategoryPicker.class,
+     * and pass via intent the dish type (lunch), and then start that activity.
+     */
     public void lunchIngredients(View view) {
         findViewById(R.id.lunch);
         String lunch = ("What's for Lunch?");
@@ -46,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Navigate to Ingredients view with search for Dinner Dishes
+    /**
+     * This is an OnClick method that is called when the "Dinner" button is clicked in the activity. It will load the CategoryPicker.class,
+     * and pass via intent the dish type (dinner), and then start that activity.
+     */
     public void dinnerIngredients(View view) {
         findViewById(R.id.dinner);
         String dessert = ("What's for Dinner?");
@@ -56,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Navigate to Ingredients view with search for Dessert Dishes
+    /**
+     * This is an OnClick method that is called when the "Dessert" button is clicked in the activity. It will load the CategoryPicker.class,
+     * and pass via intent the dish type (dessert), and then start that activity.
+     */
     public void dessertIngredients(View view) {
         findViewById(R.id.dessert);
         String dessert = ("What's for Dessert?");
@@ -66,24 +82,37 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Navigate to Saved Recipes view
+    /**
+     * This is an OnClick method that is called when the "Saved Recipes" button is clicked in the activity. It will load the SavedRecipes.class, and then start that activity.
+     */
     public void savedRecipes(View view) {
         Intent intent = new Intent(this, SavedRecipes.class);
         startActivity(intent);
     }
 
-    //Navigate to Pantry view
+    /**
+     * This is an OnClick method that is called when the "My Pantry" button is clicked in the activity. It will load the Pantry.class, and then start that activity.
+     */
     public void userPantry(View view) {
         Intent intent = new Intent(this, Pantry.class);
         startActivity(intent);
     }
 
-    //Navigate to Dietary Preferences view
+    /**
+     * This is an OnClick method that is called when the "Dietary Preferences" button is clicked in the activity. It will load the Intolerances.class, and then start that activity.
+     */
     public void dietaryPreferences(View view) {
         Intent intent = new Intent(this, Intolerances.class);
         startActivity(intent);
     }
 
+    /**
+     * This is an OnClick method that is called when the "Logout" button is clicked in the activity.
+     * It will create a new instance of the AppDataRepo and get the signed in user, and their user ID will be updated as per the DB operation, to set isLogin for that user in
+     * the DB to "false".
+     * <p>
+     * Once this is completed, the method will load the Login.class, and then start that activity.
+     */
     @SuppressLint("StaticFieldLeak")
     public void logout(View view) {
         new AsyncTask<Void, Void, Void>() {
@@ -106,7 +135,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Navigate to About View
+    /**
+     * This is an OnClick method that is called when the "About" icon is clicked in the activity. It will handle changing the view from the current view, to the About class, and then start that activity.
+     */
     public void aboutApp(View view) {
         Intent intent = new Intent(this, About.class);
         startActivity(intent);
