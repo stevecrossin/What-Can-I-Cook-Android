@@ -10,42 +10,40 @@ import com.stevecrossin.whatcanicook.entities.LogRecords;
 
 import java.util.ArrayList;
 
-/**
- * Logs Adapter, based off Recycler View. This holds an ArrayList of the contents of the log database.
- * I learned how to Implement and use RecyclerView were learned from the following resources:
- * https://developer.android.com/reference/android/support/v7/widget/RecyclerView - RecyclerView resource from Android
- * https://codelabs.developers.google.com/codelabs/android-room-with-a-view/#0 - Android Room with a View
- * https://www.youtube.com/watch?v=9ZCK5BOU6wk&index=29- YouTube - RecyclerView - through to video 32
- */
 public class LogsAdapter extends RecyclerView.Adapter<LogsViewHolder> {
     private ArrayList<LogRecords> logDatabases;
 
+    /**
+     * Creates a new instance of LogsAdapter, which contains the logs to be displayed in the adapter from the logDB
+     */
     public LogsAdapter(ArrayList<LogRecords> logs) {
         this.logDatabases = logs;
     }
 
 
+    /**
+     * Initialise the LogsView with the Row View that is to be inflated. Uses log_row as the layout for each row in the viewholder
+     */
     @NonNull
     @Override
     public LogsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        /**Initialise ContactViewHolder with the Row View to be inflated**/
+
         return new LogsViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.log_row, viewGroup, false));
     }
 
     /**
-     * this method is called to update each row in the recyclerView. @contactViewHolder is for referencing the view on the row.
-     *
-     * @position tells us the row position in the RecyclerView
-     **/
+     * Override method for the RecyclerView, which is called to display the data at the specified position.
+     * Log records are fetched and bound to the viewholder with the bindRow method.
+     */
     @Override
     public void onBindViewHolder(@NonNull LogsViewHolder logsViewHolder, final int i) {
         logsViewHolder.bindRow(logDatabases.get(i));
-
     }
 
     /**
-     * set the size of this adapter. This controls the number of items shown on the recyclerView
-     **/
+     * Sets the size of the adapter which contains the number of items that will be shown in the RecyclerView.
+     * This is based on the size (number) of log entries that exist in the database
+     */
     @Override
     public int getItemCount() {
         return logDatabases.size();
@@ -53,8 +51,8 @@ public class LogsAdapter extends RecyclerView.Adapter<LogsViewHolder> {
 
 
     /**
-     * Updates logs db when ever an update occurs
-     **/
+     * Updates the list with new values, and then notifies DB that the data has been changed
+     */
     public void updateLogs(ArrayList<LogRecords> logDatabases) {
         this.logDatabases = logDatabases;
         notifyDataSetChanged();
