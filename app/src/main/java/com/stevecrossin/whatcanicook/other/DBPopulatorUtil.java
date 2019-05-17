@@ -1,9 +1,10 @@
-package com.stevecrossin.whatcanicook;
+package com.stevecrossin.whatcanicook.other;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.Recipe;

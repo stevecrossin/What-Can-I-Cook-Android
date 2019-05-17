@@ -1,4 +1,4 @@
-package com.stevecrossin.whatcanicook;
+package com.stevecrossin.whatcanicook.other;
 
 /**
  * Handles the current login state for the application. Default state is INVALID_PASSWORD, which denies access to the application.

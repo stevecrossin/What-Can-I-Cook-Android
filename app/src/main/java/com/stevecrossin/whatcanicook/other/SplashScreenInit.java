@@ -1,11 +1,10 @@
-package com.stevecrossin.whatcanicook;
+package com.stevecrossin.whatcanicook.other;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Window;
-import android.view.WindowManager;
 
+import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.screens.Login;
 
 import io.reactivex.Observable;
@@ -76,9 +75,9 @@ public class SplashScreenInit extends AppCompatActivity {
 
                     @Override
                     public void onComplete() {
-                        Intent intent = new Intent(com.stevecrossin.whatcanicook.SplashScreenInit.this, Login.class);
+                        Intent intent = new Intent(SplashScreenInit.this, Login.class);
                         startActivity(intent);
-                        com.stevecrossin.whatcanicook.SplashScreenInit.this.finish();
+                        SplashScreenInit.this.finish();
                     }
                 });
 

@@ -22,7 +22,8 @@
             android:value="ca-app-pub-6486258628588307~4051321968"/>
 
         <!--Notes splash screen is the launcher screen-->
-        <activity android:name=".SplashScreenInit"
+        <activity
+            android:name=".other.SplashScreenInit"
             android:theme="@style/AppTheme.SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

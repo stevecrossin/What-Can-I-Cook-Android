@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.stevecrossin.whatcanicook.DBPopulatorUtil;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
@@ -23,6 +22,7 @@ import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotal;
 import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotalDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
+import com.stevecrossin.whatcanicook.other.DBPopulatorUtil;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -408,8 +408,5 @@ public class AppDataRepo {
     public void addIngredientToPantry(Pantry pantry) {
         pantryDao.addIngredients(pantry);
     }
-
-
-    //</editor-fold>
 
 }

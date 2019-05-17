@@ -25,21 +25,21 @@ import android.widget.Toast;
 import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.stevecrossin.whatcanicook.CurrentLoginState;
-import com.stevecrossin.whatcanicook.PasswordHash;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Intolerance;
 import com.stevecrossin.whatcanicook.entities.Pantry;
 import com.stevecrossin.whatcanicook.entities.User;
+import com.stevecrossin.whatcanicook.other.CurrentLoginState;
+import com.stevecrossin.whatcanicook.other.PasswordHash;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.lang.reflect.Type;
 import java.util.List;
 
-import static com.stevecrossin.whatcanicook.CurrentLoginState.EXISTING_USER;
-import static com.stevecrossin.whatcanicook.CurrentLoginState.HASH_ERROR;
-import static com.stevecrossin.whatcanicook.CurrentLoginState.INVALID_PASSWORD;
-import static com.stevecrossin.whatcanicook.CurrentLoginState.NEW_USER;
+import static com.stevecrossin.whatcanicook.other.CurrentLoginState.EXISTING_USER;
+import static com.stevecrossin.whatcanicook.other.CurrentLoginState.HASH_ERROR;
+import static com.stevecrossin.whatcanicook.other.CurrentLoginState.INVALID_PASSWORD;
+import static com.stevecrossin.whatcanicook.other.CurrentLoginState.NEW_USER;
 
 /**
  * A login screen that offers login via email/password. This code is based off the default Login Activity provided in Android Studio, and was modified based on that.
