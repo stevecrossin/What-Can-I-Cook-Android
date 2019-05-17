@@ -45,7 +45,7 @@ public class MyIngredientViewAdapter extends RecyclerView.Adapter<MyIngredientVi
      * Additionally, an onClick listener exists for the closeImage UI element. This UI element controls the removal of ingredients.When this element is clicked, it gets the position of the row in the adapter and gets the ingredient name.
      * <p>
      * It will then pass this via an Async task to the deSelectIngredient method
-     * in AppRepo which will in turn perform the deselection of the ingredient in the database. Once this is completed, the database will be notified of the removal, and the ingredient
+     * in AppRepo which will in turn perform the deselection of the ingredient in the database. Once this is completed, the adapter will be notified of the removal, and the ingredient
      * will be removed from the ViewHolder and the list is updated without the removed item.
      */
     @Override
