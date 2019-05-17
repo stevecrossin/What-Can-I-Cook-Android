@@ -4,6 +4,9 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+/**
+ * Intolerances database - definition of data model as it will be saved and handled in the database schema
+ */
 @Entity
 public class Intolerance {
     @PrimaryKey(autoGenerate = true)
@@ -19,15 +22,10 @@ public class Intolerance {
     @ColumnInfo(name = "intolerance_selected")
     private boolean intoleranceSelected;
 
-    public Intolerance(String intoleranceName, String ingredientName) {
-        this.intoleranceName = intoleranceName;
-        this.ingredientName = ingredientName;
-        this.intoleranceSelected = false;
-    }
-
-    public int getIntoleranceID() {
-        return intoleranceID;
-    }
+    /**
+     * Getter and setter methods for the database. Each method returns or sets the relevant field in the database
+     * Some setter methods are not utilised as the fields are never called to be changed (e.g. id, category) as they are fixed values.
+     */
 
     public String getIntoleranceName() {
         return intoleranceName;
@@ -55,5 +53,15 @@ public class Intolerance {
 
     public boolean isIntoleranceSelected() {
         return intoleranceSelected;
+    }
+
+    public int getIntoleranceID() {
+        return intoleranceID;
+    }
+
+    public Intolerance(String intoleranceName, String ingredientName) {
+        this.intoleranceName = intoleranceName;
+        this.ingredientName = ingredientName;
+        this.intoleranceSelected = false;
     }
 }

@@ -6,6 +6,9 @@ import android.arch.persistence.room.PrimaryKey;
 
 import java.io.Serializable;
 
+/**
+ * Recipe database - definition of data model as it will be saved and handled in the database schema
+ */
 @Entity
 public class Recipe implements Serializable {
     @PrimaryKey(autoGenerate = true)
@@ -33,17 +36,11 @@ public class Recipe implements Serializable {
     @ColumnInfo(name = "recipe_custom")
     private boolean isCustomed;
 
+    /**
+     * Getter and setter methods for the database. Each method returns or sets the relevant field in the database
+     * Some setter methods are not utilised as the fields are never called to be changed (e.g. id, category) as they are fixed values.
+     */
 
-    public Recipe(String recipeName, String recipeImage, String recipeIngredients, String recipeSteps) {
-        this.recipeName = recipeName;
-        this.recipeImage = recipeImage;
-        this.recipeIngredients = recipeIngredients;
-        this.recipeSteps = recipeSteps;
-    }
-
-    public int getRecipeId() {
-        return recipeId;
-    }
 
     public String getRecipeName() {
         return recipeName;
@@ -103,5 +100,16 @@ public class Recipe implements Serializable {
 
     public void setRecipeExcluded(int recipeExcluded) {
         this.recipeExcluded = recipeExcluded;
+    }
+
+    public int getRecipeId() {
+        return recipeId;
+    }
+
+    public Recipe(String recipeName, String recipeImage, String recipeIngredients, String recipeSteps) {
+        this.recipeName = recipeName;
+        this.recipeImage = recipeImage;
+        this.recipeIngredients = recipeIngredients;
+        this.recipeSteps = recipeSteps;
     }
 }

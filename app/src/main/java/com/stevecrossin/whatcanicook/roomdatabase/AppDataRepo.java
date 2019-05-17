@@ -42,13 +42,6 @@ public class AppDataRepo {
     private LogDao logDao;
     private PantryDao pantryDao;
 
-    /**
-     * private intoleranceDao intoleranceDao;
-     * private logsDao logsDao;
-     * private pantryDao pantryDao;
-     * private recipeDao recipeDao;
-     **/
-
     public AppDataRepo(Context context) {
         ingredientDao = AppDb.getDatabase(context).ingredientDao();
         intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
@@ -184,16 +177,8 @@ public class AppDataRepo {
         return recipeDao.getRecipesByName(recipeName);
     }
 
-    public List<Recipe> getRecipesByNames(ArrayList<String> recipeNames) {
-        return recipeDao.getRecipesByNames(recipeNames);
-    }
-
     public List<RecipeIngredients> getAllRecipesAndIngredients() {
         return recipeIngredientsDao.getAllRecipesAndIngredients();
-    }
-
-    public List<String> getAllRecipesByIngredient(ArrayList<String> ingredients) {
-        return recipeIngredientsDao.getAllRecipesByIngredient(ingredients);
     }
 
     public List<RecipeIngredientsTotal> getAllRecipesAndIngredientsTotal() {
@@ -218,10 +203,6 @@ public class AppDataRepo {
 
     public List<Recipe> getAllSavedRecipes() {
         return recipeDao.getAllSavedRecipes();
-    }
-
-    public List<Integer> getNumberOfMissingIngredientsByName(String name) {
-        return recipeDao.getNumberOfMissingIngredientsByName(name);
     }
 
     public List<String> getMissingIngredientsByName(String name, int limit) {
@@ -366,7 +347,6 @@ public class AppDataRepo {
         return ingredientDao.getAllTolerantIngredient();
     }
 
-    //<editor-fold desc=" Pantry">
 
     public void addIngredientToPantry(Ingredient ingredients) {
         pantryDao.addIngredients(new Pantry(ingredients.getIngredientID()));

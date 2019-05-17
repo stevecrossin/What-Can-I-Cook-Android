@@ -11,19 +11,20 @@ import java.util.List;
 public interface LogDao {
 
     /**
-     * Define all the operations that will be carried out in the database
-     *
-     * @Query (select) - selects all records from log database
-     * @Insert - inserts log record into the database. Conflict strategy is set to fail the insert if the record already exists.
-     * @Query (delete) - deletes all records in the log.
+     * Selects all records from log database
      */
-
     @Query("SELECT * FROM logs")
     List<LogRecords> getLogs();
 
+    /**
+     * Inserts log record into the database. Conflict strategy is set to fail the insert if the record already exists.
+     */
     @Insert(onConflict = OnConflictStrategy.FAIL)
     void insertLog(LogRecords logDatabase);
 
+    /**
+     * Deletes all records in the log.
+     */
     @Query("DELETE FROM logs")
     void clearLog();
 }

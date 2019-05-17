@@ -15,7 +15,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -34,7 +33,13 @@ public class SavedRecipes extends AppCompatActivity {
     ConstraintLayout mainLayout;
     Snackbar snackBar;
 
-    /*Set view as saved recipes activity*/
+    /**
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_savedrecipes XML and load the UI elements in that XML file into that view.
+     * Set anOnClick listener to the "Add Custom Recipe" button, when user clicks it will navigate them to the CustomRecipe scene
+     * Call the initRecyclerItems method
+     * Load Google Ads for the activity and send an adRequest to load an ad.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +64,21 @@ public class SavedRecipes extends AppCompatActivity {
 
     }
 
+    /**
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the recyclerView in the layout, with the ID being saved_recipes_list
+     * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
+     * 3. Set up onClick listener for recycleview on row clicked
+     * <p>
+     * Every time a row is clicked, user will be navigated to the RecipesDetails page
+     * Extra data is also passed, including the recipe object.
+     * <p>
+     * 4. Set adapter for the RecyclerView
+     * 5. Call loadRecipes() method to populate data into recycler
+     * <p>
+     * After this, a new instance of removeClickListener will be created. When the user clicks the "X" in the row, a snackbar will be shown asking them to confirm deletion. Once they click "Yes", the removeRecipeFromSaved function in myRecipesViewHolder
+     * wll be executed
+     */
     private void initRecyclerItems() {
         RecyclerView recipesList = findViewById(R.id.saved_recipes_list);
         recipesList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -69,10 +89,8 @@ public class SavedRecipes extends AppCompatActivity {
                 new AsyncTask<Void, Void, Void>() {
                     @Override
                     protected Void doInBackground(Void... voids) {
-                        ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(recipe.getRecipeName(), 0));
                         Intent intent = new Intent(SavedRecipes.this, RecipesDetails.class);
                         intent.putExtra("RECIPE", recipe);
-                        intent.putExtra("MISSING", missingIngredients);
                         startActivity(intent);
                         return null;
                     }
@@ -80,8 +98,6 @@ public class SavedRecipes extends AppCompatActivity {
             }
 
         },
-                //New instance of remove click listener. OnClick of the X, a snackbar will be shown asking them to confirm the deletion/removal. Once clicked, it will be removed
-                //from saved recipes
                 new MyRecipesViewAdapter.removeClickedListener() {
                     @SuppressLint("StaticFieldLeak")
                     @Override
@@ -98,8 +114,13 @@ public class SavedRecipes extends AppCompatActivity {
         loadRecipes();
     }
 
+
+    /**
+     * Method serves to load saved recipes and then update the recycleView adapter.
+     * This function performs an async task in the background to get a list of Saved Recipes from the database (getAllSavedRecipes)
+     * It will then store those Saved Recipes in an ArrayList and return the list to the recipeViewAdapter so that the recyclerView is updated.
+     */
     @SuppressLint("StaticFieldLeak")
-    //Load recipes into memory from csv file, apply filters.
     public void loadRecipes() {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
@@ -116,8 +137,10 @@ public class SavedRecipes extends AppCompatActivity {
         }.execute();
     }
 
-    //Shows and hides the snackbar. Will also hide the keypad when this pops up. Snackbar will be shown for a "long" period of time". Also sets the text in the snackbar
-    //and colours
+    /**
+     * Shows the snackbar. Will also hide the keypad when this pops up. Snackbar will be shown for a "long" period of time". Also sets the text in the snackbar
+     */
+
     public void showSnackBar(String message, String actionText, View.OnClickListener listener) {
         if (!TextUtils.isEmpty(message)) {
             hideSnackBar();
@@ -132,24 +155,21 @@ public class SavedRecipes extends AppCompatActivity {
                 snackBar.setActionTextColor(ContextCompat.getColor(this, R.color.primaryColor));
             }
 
-            // This is a tweak to show snackBar text
-            // with more than two lines
-            TextView snackText = snackBar.getView().findViewById(R.id.snackbar_text);
-            if (snackText != null) {
-                snackText.setMaxLines(6);
-            }
-
             snackBar.show();
         }
     }
 
-    //Hides snacbar
+    /**
+     * Hides the snackbar
+     */
     public void hideSnackBar() {
         if (snackBar != null && snackBar.isShown())
             snackBar.dismiss();
     }
 
-    //Functon to hide and show the keypad
+    /**
+     * Function to force show/hide the keypad. Method learned and implemented from a snippet on StackOverFlow - https://stackoverflow.com/questions/1109022/close-hide-the-android-soft-keyboard
+     */
     public void showForceKeypad(Context context, View view, boolean show) {
         if (context != null) {
             InputMethodManager imm = (InputMethodManager) context

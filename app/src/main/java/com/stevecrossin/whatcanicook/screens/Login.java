@@ -336,7 +336,7 @@ public class Login extends AppCompatActivity {
         Gson gson = new Gson();
         Type type = new TypeToken<List<com.stevecrossin.whatcanicook.entities.Pantry>>() {
         }.getType();
-        List<Pantry> pantryList = gson.fromJson(repository.getSignedUser().getIntegredents(), type);
+        List<Pantry> pantryList = gson.fromJson(repository.getSignedUser().getSavedIngredients(), type);
 
         for (com.stevecrossin.whatcanicook.entities.Pantry pantry : pantryList)
             repository.addIngredientToPantry(pantry);

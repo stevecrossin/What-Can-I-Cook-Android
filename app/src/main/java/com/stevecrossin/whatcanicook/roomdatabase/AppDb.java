@@ -22,7 +22,10 @@ import com.stevecrossin.whatcanicook.entities.RecipeIngredientsTotalDao;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.entities.UserDao;
 
-
+/**
+ * Declaration of entities that that exist in the Room Database, and the version number of the database. This version number needs to be updated every time the underlying code for database entities is modified, or the application
+ * may crash
+ */
 @Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class, RecipeIngredientsTotal.class, LogRecords.class, Pantry.class}, version = 9, exportSchema = false)
 public abstract class AppDb extends RoomDatabase {
 
@@ -45,9 +48,8 @@ public abstract class AppDb extends RoomDatabase {
     private static AppDb INSTANCE;
 
     /**
-     * Run room DB as singluar instance
+     * Run room DB as singluar instance. This ensures the ability to access Room as a single instance throughout the lifespan of the application.
      */
-
     static AppDb getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (AppDb.class) {

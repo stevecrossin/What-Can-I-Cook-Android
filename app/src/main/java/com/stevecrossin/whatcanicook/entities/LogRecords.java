@@ -4,15 +4,21 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+/**
+ * LogRecords database - definition of data model as it will be saved and handled in the database schema
+ */
 @Entity(tableName = "logs")
 public class LogRecords {
 
-    //Database table structure
     @PrimaryKey(autoGenerate = true)
     private int log_id;
 
     @ColumnInfo(name = "error_log")
     private String logs;
+
+    /**
+     * Getter and setter methods for the database. Each method returns or sets the relevant field in the database
+     */
 
     int getLog_id() {
         return log_id;

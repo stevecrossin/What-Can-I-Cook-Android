@@ -5,6 +5,9 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
+/**
+ * User database - definition of data model as it will be saved and handled in the database schema. Also a requirement that username is unique
+ */
 @Entity(tableName = "user", indices = {@Index(value = {"user_name"}, unique = true)})
 
 public class User {
@@ -25,7 +28,12 @@ public class User {
     private boolean isLoggedIn;
 
     @ColumnInfo(name = "saved_pantry")
-    private String integredents;
+    private String savedIngredients;
+
+    /**
+     * Getter and setter methods for the database. Each method returns or sets the relevant field in the database
+     * Some setter methods are not utilised as the fields are never called to be changed (e.g. id, category) as they are fixed values.
+     */
 
     public int getUserID() {
         return userID;
@@ -51,14 +59,6 @@ public class User {
         this.passKey = passKey;
     }
 
-    public User(String userName, String passKey) {
-        this.userName = userName;
-        this.passKey = passKey;
-        this.isLoggedIn = false;
-        this.intolerances = "[]";
-        this.integredents = "[]";
-    }
-
     public String getIntolerances() {
         return intolerances;
     }
@@ -75,11 +75,19 @@ public class User {
         isLoggedIn = loggedIn;
     }
 
-    public String getIntegredents() {
-        return integredents;
+    public String getSavedIngredients() {
+        return savedIngredients;
     }
 
-    public void setIntegredents(String integredents) {
-        this.integredents = integredents;
+    public void setSavedIngredients(String savedIngredients) {
+        this.savedIngredients = savedIngredients;
+    }
+
+    public User(String userName, String passKey) {
+        this.userName = userName;
+        this.passKey = passKey;
+        this.isLoggedIn = false;
+        this.intolerances = "[]";
+        this.savedIngredients = "[]";
     }
 }

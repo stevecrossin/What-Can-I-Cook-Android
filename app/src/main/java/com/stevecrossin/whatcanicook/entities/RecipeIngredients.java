@@ -4,6 +4,9 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+/**
+ * Recipe Ingredients database - definition of data model as it will be saved and handled in the database schema
+ */
 @Entity
 public class RecipeIngredients {
     @PrimaryKey(autoGenerate = true)
@@ -19,15 +22,10 @@ public class RecipeIngredients {
     @ColumnInfo(name = "recipe_ingredients")
     private String recipeIngredients;
 
-    public RecipeIngredients(String recipeName, String recipeImage, String recipeIngredients) {
-        this.recipeName = recipeName;
-        this.recipeImage = recipeImage;
-        this.recipeIngredients = recipeIngredients;
-    }
-
-    public String getRecipeName() {
-        return recipeName;
-    }
+    /**
+     * Getter and setter methods for the database. Each method returns or sets the relevant field in the database
+     * Some setter methods are not utilised as the fields are never called to be changed (e.g. id, category) as they are fixed values.
+     */
 
     public String getRecipeIngredients() {
         return recipeIngredients;
@@ -55,5 +53,15 @@ public class RecipeIngredients {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getRecipeName() {
+        return recipeName;
+    }
+
+    public RecipeIngredients(String recipeName, String recipeImage, String recipeIngredients) {
+        this.recipeName = recipeName;
+        this.recipeImage = recipeImage;
+        this.recipeIngredients = recipeIngredients;
     }
 }

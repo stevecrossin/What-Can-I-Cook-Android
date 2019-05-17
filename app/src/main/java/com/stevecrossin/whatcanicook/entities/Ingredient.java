@@ -4,6 +4,9 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+/**
+ * Ingredients database - definition of data model as it will be saved and handled in the database schema
+ */
 @Entity
 public class Ingredient {
 
@@ -32,22 +35,10 @@ public class Ingredient {
     @ColumnInfo(name = "ingredient_selected")
     private boolean ingredientSelected = false;
 
-
-
-
-    public Ingredient(int ingredientID, String ingredientCategory, String categoryIconName, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
-        this.ingredientID = ingredientID;
-        this.ingredientCategory = ingredientCategory;
-        this.categoryIconName = categoryIconName;
-        this.ingredientSubCat = ingredientSubCat;
-        this.ingredientName = ingredientName;
-        this.ingredientAlternative = ingredientAlternative;
-
-    }
-
-    public int getIngredientID() {
-        return ingredientID;
-    }
+    /**
+     * Getter and setter methods for the database. Each method returns or sets the relevant field in the database
+     * Some setter methods are not utilised as the fields are never called to be changed (e.g. id, category) as they are fixed values.
+     */
 
     public String getIngredientCategory() {
         return ingredientCategory;
@@ -64,7 +55,6 @@ public class Ingredient {
     public String getIngredientAlternative() {
         return ingredientAlternative;
     }
-
 
     public void setIngredientID(int ingredientID) {
         this.ingredientID = ingredientID;
@@ -109,4 +99,19 @@ public class Ingredient {
     public void setCategoryIconName(String categoryIconName) {
         this.categoryIconName = categoryIconName;
     }
+
+    public int getIngredientID() {
+        return ingredientID;
+    }
+
+    public Ingredient(int ingredientID, String ingredientCategory, String categoryIconName, String ingredientSubCat, String ingredientName, String ingredientAlternative) {
+        this.ingredientID = ingredientID;
+        this.ingredientCategory = ingredientCategory;
+        this.categoryIconName = categoryIconName;
+        this.ingredientSubCat = ingredientSubCat;
+        this.ingredientName = ingredientName;
+        this.ingredientAlternative = ingredientAlternative;
+    }
+
+
 }

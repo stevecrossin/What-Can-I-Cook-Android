@@ -9,13 +9,16 @@ import java.util.List;
 
 @Dao
 public interface RecipeIngredientsDao {
+
+    /**
+     * Get all recipe ingredients from the recipeIngredients database.
+     */
     @Query("SELECT * FROM recipeingredients;")
     List<RecipeIngredients> getAllRecipesAndIngredients();
 
-    //Some initial code for recipe search
-    @Query("SELECT recipe_name FROM recipeingredients WHERE recipe_ingredients IN (:ingredients) GROUP BY recipe_name ORDER BY count(recipe_name) DESC;")
-    List<String> getAllRecipesByIngredient(List<String> ingredients);
-
+    /**
+     * Adds a list of recipe ingredients from an array into the recipeIngredients database
+     */
     @Insert
     void addRecipeIngredients(ArrayList<RecipeIngredients> recipeIngredients);
 }
