@@ -394,7 +394,7 @@ public class AppDataRepo {
         return ingredientDao.getIngredientsById(integers);
     }
 
-    public void removeIngredientFromPanty(int ingredientId) {
+    public void removeIngredientFromPantry(int ingredientId) {
         pantryDao.remove(ingredientId);
     }
 
