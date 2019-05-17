@@ -59,7 +59,7 @@ public class CategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder
     }
 
     /**
-     * Updates and then notifies the categories database whenever an update occurs
+     * Updates the list with new values, and then notifies DB that the data has been changed
      */
     public void updateCategories(List<Ingredient> categories) {
         this.categories = categories;
