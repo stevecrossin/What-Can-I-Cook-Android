@@ -17,7 +17,6 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHo
     private ArrayList<Ingredient> ingredients;
     private IngredientViewAdapter.rowClickedListener rowClickedListener;
 
-
     /**
      * Creates a new instance of IngredientView Adapter, which contains the ingredients to be displayed in the adapter and the rowclicklistener
      */
@@ -60,7 +59,7 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHo
     }
 
     /**
-     * Updates and then notifies the ingredients database whenever an update occurs
+     * Updates the list with new values, and then notifies DB that the data has been changed
      */
     public void updateIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
