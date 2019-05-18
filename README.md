@@ -15,11 +15,19 @@ The github link for the project can be found at: https://github.com/stevecrossin
 The application has also been published to the Google Play Store: https://play.google.com/store/apps/details?id=com.stevecrossin.whatcanicook
 A basic website has also been created for the application here: https://what-can-i-cook.flycricket.io
 
+## Getting Started ##
+
 As this is an Android application, it can be run two different ways.
 
 The GitHub repo can be cloned or downloaded in a ZIP format from GitHub and compiled in Android Studio and then run on an emulator, or a physical device.
-Alternatively, the application can be run directly from the app-release.apk onto a device, which is found in the /app/release folder.
 
+You can do so by performing this operation.
+```
+$ git://github.com/stevecrossin/What-Can-I-Cook.git
+```
+Alternatively, the application can be run directly onto a physical device by transferring the app-release.apk onto the device, which is found in the /app/release folder.
+
+Lastly, you can download the latest release of the application from [Google Play](https://play.google.com/store/apps/details?id=com.stevecrossin.whatcanicook)
 
 ## Directory structure ##
 The root of the github project contains:
@@ -43,5 +51,3 @@ Additionally, the root of the github project contains:
 ## Permission ##
 Unless permission is otherwise provided by myself, this code is NOT free to be reused or modified for any purpose. Please contact me
 at stevecrossin@gmail.com if you wish to re-use or otherwise modify this code.
-
-
