@@ -15,7 +15,7 @@ All features have been fully implemented and an overview of the progress it took
 
 ## Getting Started ##
 
-As this is an Android application, it can be run two different ways.
+As this is an Android application, it can be run several different ways.
 
 The GitHub repo can be cloned or downloaded in a ZIP format from GitHub and compiled in Android Studio and then run on an emulator, or a physical device.
 
