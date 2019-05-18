@@ -6,7 +6,7 @@ android {
         applicationId "com.stevecrossin.whatcanicook"
         minSdkVersion 20
         targetSdkVersion 28
-        versionCode 24
+        versionCode 25
         versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
