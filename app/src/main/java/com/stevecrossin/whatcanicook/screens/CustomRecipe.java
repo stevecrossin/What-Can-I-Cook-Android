@@ -27,7 +27,6 @@ public class CustomRecipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customrecipes);
         repository = new AppDataRepo(this);
-
         recipeName = findViewById(R.id.recipe_name);
         recipeIngredients = findViewById(R.id.recipe_ingredients);
         recipeSteps = findViewById(R.id.recipe_steps);

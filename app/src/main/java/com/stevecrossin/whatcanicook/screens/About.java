@@ -55,7 +55,6 @@ public class About extends AppCompatActivity {
         aboutText.setText(textOutputStream.toString());
     }
 
-
     /**
      * This is an OnClick method that is called when the "View Logs" button is clicked in the activity. It will load the Logs.class, and then start that activity.
      */

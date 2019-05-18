@@ -21,10 +21,6 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * This class handles the ingredients functions of the application.
- */
-
 public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private CategoryViewAdapter categoryViewAdapter;
@@ -34,7 +30,7 @@ public class CategoryPicker extends AppCompatActivity {
      * On creation of the activity, perform these functions.
      * Set the current view as the activity_categoriespicker XML and load the UI elements in that XML file into that view.
      * Get the string passed from the previous activity (MainActivity) as an intent, and then set the dishchosentext textview to the contents of that string
-     *
+     * <p>
      * Initialise an instance of the AppDataRepo
      * Call the initRecyclerItems method
      * Call the setupAutoComplete method
@@ -57,7 +53,6 @@ public class CategoryPicker extends AppCompatActivity {
         setupAutoComplete();
     }
 
-
     /**
      * Method to setup the autoCompleteAdapter. Finds the textView by ID and sets up an onClick listener, and gets the items position in the adapter that
      * has been selected. Once it has been selected, call the  then calls the markIngredientAsSelected, then finally call the getAllIngredients method
@@ -72,7 +67,6 @@ public class CategoryPicker extends AppCompatActivity {
                 markIngredientAsSelected(ingredient.getIngredientName());
             }
         });
-
         getAllIngredients();
     }
 
@@ -92,7 +86,6 @@ public class CategoryPicker extends AppCompatActivity {
 
         }.execute();
     }
-
 
     /**
      * Get all ingredients from the AppRepo database via an async task and create a new instance of the AutoComplete adapter,
@@ -117,7 +110,6 @@ public class CategoryPicker extends AppCompatActivity {
         }.execute();
     }
 
-
     /**
      * This will perform the initial load of the ingredients list, specifically the categories of ingredient,
      * by calling the getAllCategories operation from the App Data Repo as an async task, and return the categories.
@@ -125,7 +117,6 @@ public class CategoryPicker extends AppCompatActivity {
      */
     @SuppressLint("StaticFieldLeak")
     public void loadIngredients() {
-
 
         new AsyncTask<Void, Void, List<Ingredient>>() {
             @Override
@@ -142,18 +133,15 @@ public class CategoryPicker extends AppCompatActivity {
 
     }
 
-
     /**
      * Performs the setup for the recyclerView. The method will:
      * 1. Find the recyclerView in the layout, with the ID being ingredients_list.
      * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
      * 3. Set up onClick listener for recycleview on row clicked
-     * 4. Set up the adapter for the recycler view.
-     * <p>
      * Every time a row is clicked, via intent the name of the category will selected will be passed to the IngredientPicker class, and then that activity will be loaded.
-     *
+     * <p>
+     * 4. Set up the adapter for the recycler view as categoryViewAdapter
      */
-
     private void initRecyclerItems() {
         RecyclerView ingredientsCategoryList = findViewById(R.id.ingredients_list);
         ingredientsCategoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -167,7 +155,6 @@ public class CategoryPicker extends AppCompatActivity {
         });
 
         ingredientsCategoryList.setAdapter(categoryViewAdapter);
-
     }
 
     /**
