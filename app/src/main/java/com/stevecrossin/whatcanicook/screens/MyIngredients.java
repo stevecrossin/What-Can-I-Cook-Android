@@ -24,7 +24,11 @@ public class MyIngredients extends AppCompatActivity {
     private static final String TAG = "MyIngredients";
 
     /**
-     * Scence initialization
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_myingredients XML and load the UI elements in that XML file into that view.
+     * Load Google Ads for the activity and send an adRequest to load an ad.
+     * Initialise an instance of the AppDataRepo
+     * Call the initRecyclerItems method
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +37,17 @@ public class MyIngredients extends AppCompatActivity {
         AdView mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
         repository = new AppDataRepo(this);
-
         initRecyclerItems();
     }
-
     /**
-     * This will do the setup step for our recycle view:
-     * 1. find the recycle view in the layout with id my_ingredients_list
-     * 2. set the layout manager
-     * 3. set up event listener for recycleview on row clicked [DEBUGGING PURPOSE]
-     * 4. set adapter for the recycle view
-     * 5. finall, call loadingredients method to populate data
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the recyclerView in the layout, with the ID being my_ingredients_list
+     * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
+     * 3. Set up onClick listener for recycleview on click which will call the rowClickListener in the adapter
+     *
+     * 4. Set adapter for the RecyclerView
+     * 5. Call loadIngredients() method to populate data into recycler
      */
     private void initRecyclerItems() {
         RecyclerView myIngredientsList = findViewById(R.id.my_ingredients_list);
@@ -60,9 +62,9 @@ public class MyIngredients extends AppCompatActivity {
     }
 
     /**
-     * Core function to load ingredients and update recycleview adapter.
+     * Method serves to load ingredients and then update the recycleView adapter.
      * This function performs an async task in the background to get a list of ingredient from the database (getAllCheckedIngredients)
-     * It will then store those ingredients in an ArrayList and return the list.
+     * It will then store those ingredients in an ArrayList and return the list to the recipeViewAdapter so that the recyclerView is updated.
      */
     @SuppressLint("StaticFieldLeak")
     public void loadIngredients() {
@@ -80,12 +82,17 @@ public class MyIngredients extends AppCompatActivity {
         }.execute();
     }
 
+    /**
+     * This is an OnClick method that is called when the "Find Recipes" button is clicked in the activity. It will load the Recipes.class, and then start that activity.
+     */
     public void findRecipes(View view) {
         Intent intent = new Intent(MyIngredients.this, Recipes.class);
         startActivity(intent);
     }
 
-    //Navigate to Main Activity
+    /**
+     * This is an OnClick method that is called when the "Home" icon is clicked in the activity. It will load the MainActivity.class, and then start that activity.
+     */
     public void navigateHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

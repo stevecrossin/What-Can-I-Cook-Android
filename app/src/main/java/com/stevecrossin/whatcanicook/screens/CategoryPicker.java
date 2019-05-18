@@ -32,8 +32,7 @@ public class CategoryPicker extends AppCompatActivity {
      * Get the string passed from the previous activity (MainActivity) as an intent, and then set the dishchosentext textview to the contents of that string
      * <p>
      * Initialise an instance of the AppDataRepo
-     * Call the initRecyclerItems method
-     * Call the setupAutoComplete method
+     * Call the loadIngredients, initRecyclerItems and setupAutoComplete methods
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -53,10 +53,8 @@ public class Recipes extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked)
-                    //update exact match
                     loadRecipesExactMatch();
                 else
-                    //normal search
                     loadRecipes();
             }
         });

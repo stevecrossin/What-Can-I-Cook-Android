@@ -114,7 +114,6 @@ public class SavedRecipes extends AppCompatActivity {
         loadRecipes();
     }
 
-
     /**
      * Method serves to load saved recipes and then update the recycleView adapter.
      * This function performs an async task in the background to get a list of Saved Recipes from the database (getAllSavedRecipes)
@@ -158,7 +157,6 @@ public class SavedRecipes extends AppCompatActivity {
             snackBar.show();
         }
     }
-
     /**
      * Hides the snackbar
      */

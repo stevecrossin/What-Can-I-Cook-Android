@@ -21,7 +21,7 @@ public class MyIngredientViewAdapter extends RecyclerView.Adapter<MyIngredientVi
     private Context context;
 
     /**
-     * Creates a new instance of MyIngredientView Adapter, which contains the ingredients to be displayed in the adapter and the rowclicklistener
+     * Creates a new instance of MyIngredientView Adapter, which contains the ingredients to be displayed in the adapter and the rowClickListener
      */
     public MyIngredientViewAdapter(ArrayList<Ingredient> ingredients, MyIngredientViewAdapter.rowClickedListener rowClickedListener) {
         this.ingredients = ingredients;

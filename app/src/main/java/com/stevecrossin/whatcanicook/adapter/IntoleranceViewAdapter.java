@@ -4,7 +4,6 @@ package com.stevecrossin.whatcanicook.adapter;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import com.stevecrossin.whatcanicook.R;
@@ -15,15 +14,12 @@ import java.util.List;
 
 public class IntoleranceViewAdapter extends RecyclerView.Adapter<IntoleranceViewHolder> {
     private List<Intolerance> intoleranceList;
-    private IntoleranceViewAdapter.rowClickedListener rowClickedListener;
-
 
     /**
      * Creates a new instance of Intolerance Adapter, which contains the elements, being the dietary requirements to be displayed in the adapter and the rowclicklistener
      */
-    public IntoleranceViewAdapter(ArrayList<Intolerance> intoleranceList, IntoleranceViewAdapter.rowClickedListener rowClickedListener) {
+    public IntoleranceViewAdapter(ArrayList<Intolerance> intoleranceList) {
         this.intoleranceList = intoleranceList;
-        this.rowClickedListener = rowClickedListener;
     }
 
     /**
@@ -37,17 +33,11 @@ public class IntoleranceViewAdapter extends RecyclerView.Adapter<IntoleranceView
 
     /**
      * Override method for the RecyclerView, which is called to display the data at the specified position.
-     * First, the intolerances are fetched and bound to the viewholder with the bindRow method. Then, an event listener is setup for each row when clicked.
+     * First, the intolerances are fetched and bound to the viewholder with the bindRow method.
      */
     @Override
     public void onBindViewHolder(@NonNull final IntoleranceViewHolder intoleranceViewHolder, int i) {
         intoleranceViewHolder.bindRow(intoleranceList.get(i));
-        intoleranceViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rowClickedListener.onRowClicked(intoleranceList.get(intoleranceViewHolder.getAdapterPosition()));
-            }
-        });
     }
 
     /**

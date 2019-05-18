@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -20,12 +19,15 @@ import java.util.List;
 
 public class Intolerances extends AppCompatActivity {
     private AppDataRepo repository;
-    private static final String TAG = "IngredientPicker";
     private IntoleranceViewAdapter intoleranceViewAdapter;
 
-
     /**
-     * Initialization of this scene. This will get the category string passed by last scene and display to 'categorychosentext'
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_dietaryneeds XML and load the UI elements in that XML file into that view.
+     *
+     * Initialise an instance of the AppDataRepo
+     * Call the initRecyclerItems method
+     * Load Google Ads for the activity and send an adRequest to load an ad.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,33 +41,25 @@ public class Intolerances extends AppCompatActivity {
     }
 
     /**
-     * This will do the setup step for our recycle view:
-     * 1. find the recycle view in the layout with id ingredients_list
-     * 2. set the layout manager
-     * 3. set up event listener for recycleview on row clicked [DEBUGGING PURPOSE]
-     * 4. set adapter for the recycle view
-     * 5. finall, call loadingredients method to populate data
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the recyclerView in the layout, with the ID being intolerance_list.
+     * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
+     * 3. Set up the adapter for the recycler view as intoleranceViewAdapter
+     * 4. Call the loadIntolerances method
      */
-
     private void initRecyclerItems() {
         RecyclerView intoleranceList = findViewById(R.id.intolerance_list);
         intoleranceList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        intoleranceViewAdapter = new IntoleranceViewAdapter(new ArrayList<Intolerance>(), new IntoleranceViewAdapter.rowClickedListener() {
-            @Override
-            public void onRowClicked(Intolerance intolerance) {
-                Log.d(TAG, "onRowClicked: " + intolerance.getIntoleranceName());
-            }
-        });
+        intoleranceViewAdapter = new IntoleranceViewAdapter(new ArrayList<Intolerance>());
 
         intoleranceList.setAdapter(intoleranceViewAdapter);
-
         loadIntolerances();
     }
 
     /**
-     * Core function to load ingredients and update recycleview adapter.
-     * This function performs an async task in the background to get a list of ingredient from the database (getByCategory)
-     * It will then store those ingredients in an ArrayList and return the list.
+     * This will perform the initial load of the intolerances list, specifically the list of all unique intolerances
+     * by calling the getUniqueTolerance operation from the App Data Repo as an async task, and return the intolerances.
+     * Once this task is complete, the contents of the intoleranceViewAdapter will be updated.
      */
     @SuppressLint("StaticFieldLeak")
     public void loadIntolerances() {
@@ -81,8 +75,5 @@ public class Intolerances extends AppCompatActivity {
                 intoleranceViewAdapter.updateIntolerances(intolerances);
             }
         }.execute();
-
-
     }
-
 }
