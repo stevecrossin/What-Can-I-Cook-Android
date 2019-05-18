@@ -19,49 +19,44 @@ import java.util.ArrayList;
 
 public class IngredientPicker extends AppCompatActivity {
     private AppDataRepo repository;
-    private static final String TAG = "IngredientPicker";
     private String category;
     IngredientViewAdapter ingredientViewAdapter;
 
     /**
-     * Initialization of this scene. This will get the category string passed by last scene and display to 'categorychosentext'
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_ingredientsPicker XML and load the UI elements in that XML file into that view.
+     * Get the string passed from the previous activity (CategoriesPicker) as an intent, and then set the categorychosentext textview to the contents of that string
+     * <p>
+     * Initialise an instance of the AppDataRepo
+     * Call the initRecyclerItems method
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredientspicker);
-
         Intent intent = getIntent();
-
         category = intent.getStringExtra("CATEGORY");
         TextView textView = findViewById(R.id.categorychosentext);
         textView.setText(category);
 
-
         repository = new AppDataRepo(this);
-
         initRecyclerItems();
     }
 
     /**
-     * This will do the setup step for our recycle view:
-     * 1. find the recycle view in the layout with id ingredients_list
-     * 2. set the layout manager
-     * 3. set up event listener for recycleview on row clicked [DEBUGGING PURPOSE]
-     * 4. set adapter for the recycle view
-     * 5. finall, call loadingredients method to populate data
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the recyclerView in the layout, with the ID being ingredients_list.
+     * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
+     * 3. Set up the adapter for the recycler view as categoryViewAdapter
+     * Finally, call the loadIngredients method.
      */
     private void initRecyclerItems() {
         RecyclerView ingredientsList = findViewById(R.id.ingredients_list);
         ingredientsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        ingredientViewAdapter = new IngredientViewAdapter(new ArrayList<Ingredient>(), new IngredientViewAdapter.rowClickedListener() {
-            @Override
-            public void onRowClicked(Ingredient ingredient) {
-            }
+        ingredientViewAdapter = new IngredientViewAdapter(new ArrayList<Ingredient>() {
         });
 
         ingredientsList.setAdapter(ingredientViewAdapter);
-
         loadIngredients();
     }
 
@@ -84,10 +79,11 @@ public class IngredientPicker extends AppCompatActivity {
                 ingredientViewAdapter.updateIngredients(ingredients);
             }
         }.execute();
-
-
     }
 
+    /**
+     * This is an OnClick method that is called when the "Check My Ingredients" button is clicked in the activity. It will load the MyIngredients class, and then start that activity.
+     */
     public void myIngredients(View view) {
         Intent intent = new Intent(IngredientPicker.this, MyIngredients.class);
         startActivity(intent);
