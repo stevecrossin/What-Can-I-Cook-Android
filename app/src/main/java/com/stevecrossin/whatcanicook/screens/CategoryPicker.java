@@ -24,7 +24,6 @@ import java.util.List;
 /**
  * This class handles the ingredients functions of the application.
  */
-//
 
 public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
