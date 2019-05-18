@@ -11,9 +11,9 @@ cuisines and dietary requirements.
 
 All features have been fully implemented and an overview of the progress it took to get the application from start to completion can be found in the changelog.txt file.
 
-The github link for the project can be found at: https://github.com/stevecrossin/What-Can-I-Cook
-The application has also been published to the Google Play Store: https://play.google.com/store/apps/details?id=com.stevecrossin.whatcanicook
-A basic website has also been created for the application here: https://what-can-i-cook.flycricket.io
+*The github link for the project can be found at: https://github.com/stevecrossin/What-Can-I-Cook
+*The application has also been published to the Google Play Store: https://play.google.com/store/apps/details?id=com.stevecrossin.whatcanicook
+*A basic website has also been created for the application here, to attract new users: https://what-can-i-cook.flycricket.io
 
 ## Getting Started ##
 
