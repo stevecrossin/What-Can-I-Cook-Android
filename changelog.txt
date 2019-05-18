@@ -510,3 +510,7 @@ Friday/Saturday 17-18 May - Steve
 
 What's left?
 Record video and submit
+
+Sunday 19 May - Steve
+* Upload updated APK to GitHub
+* Some more tests, fixed minor issue with how layout appears on devices with a screen "notch" e.g. Pixel 3.
