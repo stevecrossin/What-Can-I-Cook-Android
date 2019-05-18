@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import com.stevecrossin.whatcanicook.R;
@@ -15,14 +14,12 @@ import java.util.ArrayList;
 
 public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHolder> {
     private ArrayList<Ingredient> ingredients;
-    private IngredientViewAdapter.rowClickedListener rowClickedListener;
 
     /**
      * Creates a new instance of IngredientView Adapter, which contains the ingredients to be displayed in the adapter and the rowclicklistener
      */
-    public IngredientViewAdapter(ArrayList<Ingredient> ingredients, IngredientViewAdapter.rowClickedListener rowClickedListener) {
+    public IngredientViewAdapter(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
-        this.rowClickedListener = rowClickedListener;
     }
 
     /**
@@ -36,17 +33,11 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHo
 
     /**
      * Override method for the RecyclerView, which is called to display the data at the specified position.
-     * First, the Ingredients are fetched and bound to the viewholder with the bindRow method. Then, an event listener is setup for each row when clicked.
+     * First, the Ingredients are fetched and bound to the viewholder with the bindRow method.
      */
     @Override
     public void onBindViewHolder(@NonNull IngredientViewHolder ingredientViewHolder, @SuppressLint("RecyclerView") final int i) {
         ingredientViewHolder.bindRow(ingredients.get(i));
-        ingredientViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rowClickedListener.onRowClicked(ingredients.get(i));
-            }
-        });
     }
 
     /**
@@ -64,12 +55,5 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHo
     public void updateIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
         notifyDataSetChanged();
-    }
-
-    /**
-     * Interface that has the onRowClicked method to implement
-     */
-    public interface rowClickedListener {
-        void onRowClicked(Ingredient ingredient);
     }
 }
