@@ -49,6 +49,7 @@ Additionally, the root of the github project contains:
 * [licenses.txt](https://github.com/stevecrossin/What-Can-I-Cook/blob/master/licenses.txt) - a list of all resources used in this application and the underlying copyrights and permissions for the use of those resources
 * [todo.txt](https://github.com/stevecrossin/What-Can-I-Cook/blob/master/todo.txt) - a list of all changes that needed to be made as the app progressed
 * [userstories.txt](https://github.com/stevecrossin/What-Can-I-Cook/blob/master/userstories.txt) - definition of some desired behaviour that the end user should be able to perform
+[/publishinginfo](https://github.com/stevecrossin/What-Can-I-Cook/tree/master/publishinginfo) - contains all the images for the Play Store listing, and the text for the listing as well (though redundant as the app is already published)
 
 ## Core Features ##
 The below list details the core features of the application, a rough outline of their purpose and how they function.
