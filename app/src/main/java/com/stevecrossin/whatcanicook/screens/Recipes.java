@@ -24,35 +24,24 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
-//This class handles all the recipes functions for this application, including reading the recipes and providing recipe results
 public class Recipes extends AppCompatActivity {
     private AppDataRepo repository;
     RecipeViewAdapter recipeViewAdapter;
-    private static final String TAG = "Recipes";
     Switch exactMatch;
     LinearLayout addingList;
 
-    //This needs to be commented
-    View.OnClickListener missingClicked = new View.OnClickListener() {
-        @SuppressLint("StaticFieldLeak")
-        @Override
-        public void onClick(View v) {
-            final TextView ingredient = (TextView) v;
-            new AsyncTask<Void, Void, Void>() {
-                @Override
-                protected Void doInBackground(Void... voids) {
-                    repository.selectIngredient(ingredient.getText().toString());
-                    return null;
-                }
-            }.execute();
-            loadRecipes();
-            initSuggestions();
-        }
-    };
-
     /**
-     * Scene initalization. Sets the layouts and draws the elements, listenes to the
-     * exact match switch and calls the relevant function if it is changed, sets visibility of adding list by default to invisible, initialises recyclerviews and ads.
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the view for the layout and set it as current, being activity_recipe_results, and load all other UI elements to the view, including the
+     * exact match switch, and the addingList where missing ingredients are displayed, which is hidden by default.
+     * <p>
+     * 2. Set an onCheckChanged listener to the switch that determines exact match requested or not, and call the relevant method when clicked.
+     * <p>
+     * This gets ingredients from the database with an onClick listener defined as missingClicked that will then call the loadRecipes
+     * and the initSuggestions method
+     * <p>
+     * Load Google Ads for the activity and send an adRequest to load an ad.
+     * Call the initRecyclerItems and initSuggestions methods
      */
     @SuppressLint("SetTextI18n")
     @Override
@@ -81,7 +70,39 @@ public class Recipes extends AppCompatActivity {
         mAdView.loadAd(adRequest);
     }
 
-    //Initialises the suggestion of missing ingredients - Trong this needs more comments
+    View.OnClickListener missingClicked = new View.OnClickListener() {
+        @SuppressLint("StaticFieldLeak")
+        @Override
+        public void onClick(View v) {
+            final TextView ingredient = (TextView) v;
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(Void... voids) {
+                    repository.selectIngredient(ingredient.getText().toString());
+                    return null;
+                }
+            }.execute();
+            loadRecipes();
+            initSuggestions();
+        }
+    };
+
+    /**
+     * Initialize the suggestion of ingredients.
+     * Initially a list of suggested ingredient (addingList) is empty
+     * The AsyncTask will be called and performed in the background to return a list of missing ingredients (an array list of string)
+     * It will call the database method getAllRecipesByCheckedIngredients() to get all recipes whose ingredients are most similar to what user is having.
+     * <p>
+     * If some recipes exist for their selected ingredients:
+     * (a) it will try to pick the top most recipe - the recipe with the most ingredients that the user has, then return in a descending order.
+     * (b) Using the top most similar recipe, we again make a call to DB with getMissingIngredientsByName() that returns a list of 3 top most missing ingredients for that recipe.
+     * If there existed some missing ingredients, return them
+     * (c) If there is no missing ingredients, we will move on to pick the second top most similar recipe.
+     * (d) We can achieve this by incrementing the offset value by one and call the DB method getAllRecipesByCheckedIngredientsWithOffset() with offset as parameter.
+     * The above (a), (b), (c) and (d) step is then done again in a while loop.
+     * The loop will not be entered anymore when ALL of the recipes have NO MORE missing ingredients.
+     * This will enable the user to be able to continuously click on the suggested missing ingredient until there is no more.
+     */
     @SuppressLint("StaticFieldLeak")
     private void initSuggestions() {
         addingList.removeAllViews();
@@ -93,7 +114,7 @@ public class Recipes extends AppCompatActivity {
                 if (similarRecipes.size() > 0) {
                     Recipe similarRecipe = similarRecipes.get(0);
                     ArrayList<String> missingIngredients = new ArrayList<>(repository.getMissingIngredientsByName(similarRecipe.getRecipeName(), 3));
-                    while (missingIngredients.size() == 0 && offset <= similarRecipes.size() - 1){
+                    while (missingIngredients.size() == 0 && offset <= similarRecipes.size() - 1) {
                         offset += 1;
                         similarRecipes = new ArrayList<>(repository.getAllRecipesByCheckedIngredientsWithOffset(offset));
                         similarRecipe = similarRecipes.get(0);
@@ -104,10 +125,15 @@ public class Recipes extends AppCompatActivity {
                 return null;
             }
 
-            //Loads the missing ingredients into the viewholder. If missingIngredients are not empty and size is greater than zero, each will be displayed
-            //in the viewholder, with the details set such as size, lenfth, padding, and onclick listeners. Also will have its visibility set to visible if true, otherwise will be hidden
-
-            //Trong pls comment more
+            /**
+             * Method to load the missing ingredients into the viewholder.
+             * If missingIngredients are not empty and size is greater than zero, each missing will be displayed
+             * in the viewholder (addingList), parameters such as size, length, padding, and onclick listeners are defined.
+             * <p>
+             * Also defined as single line only, with an ellipis to exist at the end of any ingredient to prevent cutoff.
+             * Each missing ingredient will be set an onclick listener
+             * The list will have its visibility set to true if missing ingredients exist, otherwise it well be set back to "false"
+             */
             @Override
             protected void onPostExecute(ArrayList<String> missingIngredients) {
                 super.onPostExecute(missingIngredients);
@@ -134,12 +160,18 @@ public class Recipes extends AppCompatActivity {
     }
 
     /**
-     * This will do the setup step for our recycle view:
-     * 1. find the recycle view in the layout with id recipes_list
-     * 2. set the layout manager
-     * 3. set up event listener for recycleview on row clicked
-     * 4. set adapter for the recycle view
-     * 5. finall, call loadRecipes() method to populate data
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the recyclerView in the layout, with the ID being saved_recipes_list
+     * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
+     * 3. Set up onClick listener for recycleview on row clicked
+     * <p>
+     * Every time a row is clicked, user will be navigated to the RecipesDetails page
+     * Extra data is also passed, including the recipe object.
+     * <p>
+     * 4. Set adapter for the RecyclerView
+     * 5. Call loadRecipes() method to populate data into recycler
+     * <p>
+     * Additionally, all adapters have stable IDs. This was implemented to enable the recylerView elements to update in a clean way without visibly refreshing.
      */
     private void initRecyclerItems() {
         RecyclerView recipesList = findViewById(R.id.recipes_list);
@@ -160,19 +192,18 @@ public class Recipes extends AppCompatActivity {
             }
 
         });
-        //Stable IDs (learned here - https://medium.com/@hanru.yeh/recyclerviews-views-are-blinking-when-notifydatasetchanged-c7b76d5149a2) - this enables recyclerview
-        //to update its contents without refreshing in an ugly way
         recipeViewAdapter.setHasStableIds(true);
         recipesList.setAdapter(recipeViewAdapter);
         loadRecipes();
     }
 
     /**
-     * Testing method. Trying to load all recipes into the recycleview to simulate recipe search
-     * This in the future will be replaced with findRecipes and displayRecipes below
+     * Method serves to load all recipes from DB that match the users ingredients (can have missing ingredients) and then update the recycleView adapter.
+     * This function performs an async task in the background to get a list of all ingredients from the database, including recipes
+     * with missing ingredients (getAllRecipesByCheckedIngredients)
+     * It will then store those Recipes in an ArrayList and return the list to the recipeViewAdapter so that the recyclerView is updated.
      */
     @SuppressLint("StaticFieldLeak")
-    //Load recipes into memory from csv file, apply filters.
     public void loadRecipes() {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
@@ -188,8 +219,12 @@ public class Recipes extends AppCompatActivity {
         }.execute();
     }
 
+    /**
+     * Method serves to load all recipes from DB that exactly match the users ingredients (no missing) and then update the recycleView adapter.
+     * This function performs an async task in the background to get a list of all ingredients from the database that have no missing ingredients (getAllRecipesByCheckedIngredientsWithExactMatch)
+     * It will then store those Recipes in an ArrayList and return the list to the recipeViewAdapter so that the recyclerView is updated.
+     */
     @SuppressLint("StaticFieldLeak")
-    //Load recipes into memory from csv file, apply filters.
     public void loadRecipesExactMatch() {
         new AsyncTask<Void, Void, ArrayList<Recipe>>() {
             @Override
@@ -205,14 +240,21 @@ public class Recipes extends AppCompatActivity {
         }.execute();
     }
 
-    //When user clicks "Start Over" it will clear the ingredients from the database and navigate back to the MainActivity
+    /**
+     * This is an OnClick method that is called when the "Start Over" icon is clicked in the activity. It will create a new instance of AppDataRepo and then perform the clearIngredients function
+     * which will reset all ingredients to "ingredient_selected=0" as per the method defined in the repo.
+     * <p>
+     * It will then load the MainActivity.class, and then start that activity.
+     */
     public void resetIngredients(View view) {
         new AppDataRepo(this).clearIngredients();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    //Navigate to Main Activity
+    /**
+     * This is an OnClick method that is called when the "Home" icon is clicked in the activity. It will load the MainActivity.class, and then start that activity.
+     */
     public void navigateHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
