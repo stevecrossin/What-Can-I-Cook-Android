@@ -24,6 +24,7 @@ import java.util.List;
 /**
  * This class handles the ingredients functions of the application.
  */
+//
 
 public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
@@ -31,7 +32,13 @@ public class CategoryPicker extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteTextView;
 
     /**
-     * Perform these on the load of activity
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_categoriespicker XML and load the UI elements in that XML file into that view.
+     * Get the string passed from the previous activity (MainActivity) as an intent, and then set the dishchosentext textview to the contents of that string
+     *
+     * Initialise an instance of the AppDataRepo
+     * Call the initRecyclerItems method
+     * Call the setupAutoComplete method
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +58,11 @@ public class CategoryPicker extends AppCompatActivity {
         setupAutoComplete();
     }
 
+
+    /**
+     * Method to setup the autoCompleteAdapter. Finds the textView by ID and sets up an onClick listener, and gets the items position in the adapter that
+     * has been selected. Once it has been selected, call the  then calls the markIngredientAsSelected, then finally call the getAllIngredients method
+     */
     private void setupAutoComplete() {
         autoCompleteTextView = findViewById(R.id.recipe_name);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,6 +77,10 @@ public class CategoryPicker extends AppCompatActivity {
         getAllIngredients();
     }
 
+    /**
+     * Method to call to mark ingredients as selected. This is called from the setupAutoComplete onClick method, which when called runs an async task
+     * to run in background the database operation to select the ingredient from the database
+     */
     @SuppressLint("StaticFieldLeak")
     public void markIngredientAsSelected(final String ingredientName) {
         new AsyncTask<Void, Void, Void>() {
@@ -79,6 +95,10 @@ public class CategoryPicker extends AppCompatActivity {
     }
 
 
+    /**
+     * Get all ingredients from the AppRepo database via an async task and create a new instance of the AutoComplete adapter,
+     * and populate the adapter with the contents
+     */
     @SuppressLint("StaticFieldLeak")
     public void getAllIngredients() {
         new AsyncTask<Void, Void, List<Ingredient>>() {
@@ -100,21 +120,13 @@ public class CategoryPicker extends AppCompatActivity {
 
 
     /**
-     * This will perform the initial load of the ingredients from the ingredients.csv file and its display in the CategoryPicker activity
+     * This will perform the initial load of the ingredients list, specifically the categories of ingredient,
+     * by calling the getAllCategories operation from the App Data Repo as an async task, and return the categories.
+     * Once this task is complete, the contents of the categoryViewAdapter will be updated.
      */
     @SuppressLint("StaticFieldLeak")
     public void loadIngredients() {
-    /*
-    This method will be performed in the background once the user navigates to the CategoryPicker chooser activity from the main app landing page.
-    MainActivity will pass the dish option that was clicked (e.g. breakfast, dessert) and pass this to CategoryPicker activity, which will update the
-    label at the top of the activity to "What's for breakfast/dinner/dessert etc.
-    It also needs to
-    1. Read all information from ingredients.csv, a read only document stored in permanent storage
-    2. Append the ingredients room database with any new ingredients/delete any ingredients that are no longer present in the csv
-    3. Perform query on intolerances database to determine which intolerances are currently active
-    4. Update ingredientselectable column in ingredients database to false when ingredient matches exclusion criteria
-    5. Query database for ingredients that are not excluded, and update recyclerview in ingredient chooser activity with this list.
-    */
+
 
         new AsyncTask<Void, Void, List<Ingredient>>() {
             @Override
@@ -131,18 +143,21 @@ public class CategoryPicker extends AppCompatActivity {
 
     }
 
+
     /**
-     * This will do the setup step for our recycle view:
-     * 1. find the recycle view in the layout
-     * 2. set the layout manager
-     * 3. set up event listener for recycleview on row clicked
-     * 4. set adapter for the recycle view
-     * 5. finall, call loadingredients method to populate data
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the recyclerView in the layout, with the ID being ingredients_list.
+     * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
+     * 3. Set up onClick listener for recycleview on row clicked
+     * 4. Set up the adapter for the recycler view.
+     * <p>
+     * Every time a row is clicked, via intent the name of the category will selected will be passed to the IngredientPicker class, and then that activity will be loaded.
+     *
      */
+
     private void initRecyclerItems() {
         RecyclerView ingredientsCategoryList = findViewById(R.id.ingredients_list);
         ingredientsCategoryList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        //ingredientsList.setHasFixedSize(false);
         categoryViewAdapter = new CategoryViewAdapter(new ArrayList<Ingredient>(), new CategoryViewAdapter.rowClickedListener() {
             @Override
             public void onRowClicked(String category) {
@@ -156,6 +171,9 @@ public class CategoryPicker extends AppCompatActivity {
 
     }
 
+    /**
+     * This is an OnClick method that is called when the "Check My Ingredients" button is clicked in the activity. It will load the MyIngredients class, and then start that activity.
+     */
     public void myIngredients(View view) {
         Intent intent = new Intent(CategoryPicker.this, MyIngredients.class);
         startActivity(intent);
