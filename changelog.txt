@@ -1,0 +1,512 @@
+Changelog:
+
+Milestone 1 (Week 3 progress - Steve Crossin) - almost complete, however UI still being worked on
+
+Saturday 17 March - Steve
+* Ingredients, Intolerances, Logs, Pantry, Recipes and Users java classes have been created with core methods and instructions
+on how to implement in pseudocode.
+* Ingredients.csv has been populated, completed and formatted as per database table requirement.
+
+Sunday 18 March - Steve
+* Intolerances.csv has been created, completed and formatted per database table requirements - gluten filter needs to be confirmed to ensure filter not too restrictive
+* SplitExample.java has been sourced to determine and test how to split strings from csv files
+* All core java files have been created but not populated with pseudocode or actual code except as noted on Sat 17 entry
+* Colour scheme for application has been implemented, action bar has been disabled for main view
+* Room database code and data objects code has begun to be written but is not yet functional
+
+End of Sunday 18 March - Steve
+
+* Room database implementation still not functional
+* Core layouts that have been created: splash screen tested and functional, main activity functioning with layouts working correctly and dynamically adjusting to different screen sizes, pantry view working correctly. The start of an intolerance view,
+and saved recipes view has been created.
+
+* Passing of dish type to ingredients picker screen coded, tested and verified working
+* Manifest file updated, all core XML files have been created
+
+Changes made as of 21 March - milestone 1 complete - Steve
+
+* All core UI is complete including dietary intolerances
+* Initial code to enable login screen to function working
+
+22 March - Steve
++ Corrected issues with intolerances layout
++ Continued work on parsing recipes CSV
++ Continued to build database tables
+
+Sunday 24 March - Monday 25 March - Hieu
+* Reading from ingredients.csv and extract unique categories and display to the recycle view.
+This is done dynamically so whenever there're new ingredient we don't have to manually add to the list.
+Sub task:
++ Sucessfully read the ingredient csv file with Apache commons library.
++ Successfully parse the data into the Ingredient object
++ Created recycleview and view holder in layout
++ Created ViewAdapter and View holder for Categories
++ Implement simple room database: DAO, entity & database core has been implemented. From now on this model can be used with other type of data
++ create Ingredient entity class
++ try to insert to database using information in the csv file.
++ Logic check if there's data existed in the DB, if not, insert. Next time the app loads, it will first check if there's data already in DB before inserting ingredient.
++ Load unique categories into the recycleview.
+
+
+Monday 25 March - Trong
++ Further display each ingredient in each category (dynamically)
++ Create recyleview, view holder and database query methods for displaying in
++ Create new layout and new activity
++ Passing category between intents.
+
+Mon 25 March - Steve Crossin
++ Fix issue with layout on dietary needs
++ create initial layout for login scene
+
+Tuesday 26 March - Steve
++ Login UI created and back end code started to be written
+
+Thursday 28 March - Steve
++ continued work on login class code, resolved more UI layout issues
+
+Sunday 31 March - Trong
++  load intolerance from csv
++  insert Intolerance to DB - not fully function
++  get Intolerance from DB - not fully implemented
++  DAO, Entity for Intolerance are created...
+
+Sunday 31 March - Steve
++ Completed more of the login code
++ Discussed path forward with project partner in sit-down meeting
++ Recipes CSV clean completed - (70 recipes selected for proof of concept)
+
+Week 4 End - Henry notes
++ Good progress so far, but the last week has been strangely quiet.
++ This file needs more dates, so I can match dates with attendance.php entries and ensure fair grades at end of trimester.
+
+Monday 01/04 - Trong
++ successfully load intolerance into DB
++ successfully get intolerance from DB
++ exclude ingredient when toggle button - still experience unknown bugs
++ modify raw csv files to make it easier to work with
+
+Tuesday 02/04 - Trong
++ Successfully exclude/include ingredient if user toggle the intolerance switch
++ Saving state of switch is not implemented
++ Next step: import recipe :D
+
+Wednesday 03/04 - Trong
++ Create Dao for recipe & Setup all app repo function
++ Modify Ingredient Entity such that it has property "isSelected"
++ Modify category picker layout, add 1 button to move to the "Recipes Available scene"
++ Next step: import recipe :D
+
+Wednesday 3 April - Steve
++ changelog updated with progress thus far
++ login code to be completed by end of week, start to write recipe functions
++ create reciperesults layout, recipe row xml, and flesh out ingredientspicker and ingredientsdetails.xml files
+
+Week 5, Wednesday 3/April
+- Excellent commenting, including comments/pseudocode of functions before they're written.
+- Do include, in the function comment before the function name, any arguments / return type / how to call the function.
+
+Thursday 04/04
++ Implementation of select/deselect ingredient when a check box is checked/unchecked
+Subtask:
+ - Add more function in Dao regarding to SQL Update
+ - Add event listener for ViewHolder checkbox
+ - Testing
+
+Thursday 04/04
+ + Successfully displaying checked ingredient in "My ingredient pages"
+ Sub task:
+  - Create Recycle view and View adapter, view holder
+  - Add more function into Dao of ingredient to select only checked ingredient
+
+Thursday 04/04 [Big step]
+ + Successfully read recipes from csvs file and import to the Room DB
+ + Sucessfully read recipes from Room DB and display it to recyle view
+ Sub task:
+  - Create Modify Dao, Create View Adapter, View holder
+  - Create layout and create activity
+  - Create button and add intent changing
+ + What's next? Displaying recipe based on what the user's having.
+
+-Friday 5 Apr - Steve
++ Update readme.md
++ Update changelog with changes made to date
++ Correction to layout issues
+
+Saturday 6 Apr - Steve
++ Login code 30% complete, textwatchers added to fields
++ Offline, wrote some functions to experiment with recipe search results
++ Almost all of clearing ingredients method is implemented, some bugs.
+
+Sunday 6 Apr - Steve
++ Clearing ingredients method fully implemented and working
+
+Monday 8 April - Steve
++ Login activity fully coded, roomDB for users is tested and all functionality working correctly
++ Tested and confirmed dietary preferences being added, but not removed, but is not user specific, working on implementation at present
+
+Monday 8 April - Henry
++ Your dates above are slightly wrong (I'm pretty sure Monday is the 8/April), unless the Gregorian calendar system isn't working for you :-P (Fixed! --Steve)
++ Good to see progress. However: function comments. I made a big fuss about this in one of last week's news posts :) (Noted, and will be resolved this week --Steve)
+
+Tuesday 9 April - Steve
++ Implemented changes to intolerances code - preferences now save correctly in DB and are visible in the UI, deletion of preferences now functions correctly but is not user specific
+Next: Make intolerances user specific by storing state in user DB, work on recipe search functions
+
+Thursday 11 April - Henry
++ Good. I am just reviewing some older entries in this changelog, and they didn't have a person assigned. Fix that up when you can, so I know who to attribute to that work. Cheers.
+
+Thursday 11 April - Steve
++ Implement changes to login code, userDB, intolerances java files, main activity to fully support intolerances being saved and loaded across different users
+
+Friday 12 April - Saturday 13 April - Trong
++ Core function for recipes search is implemented. The backbone of the app is now created.
++ However, exact match for recipes is not implemented. Everytime user clicked on a rowed, missing recipes will be shown.
++ Subtasks/changes included:
+ - Add more methods in RecipeDao
+ - Modify recipe result layout
+ - Testing SQL queries using DB Browser
+
+What's next?
++ Enable exact match recipe search
++ Implement recipe detail scene
+
+Sunday 14 April - Trong
++ Recipe has been displayed in a separate scene (name, ingredients, steps, image - just a container)
+   - This is done by passing the recipe user clicked to another scene
++ Showing users how many ingredients they are missing
+
+What's next?
++ Enable exact match recipe search
+
+Sunday 14 April - Steve
++ Fix some string values, and some code that could cause exceptions. Adjusted recipe results layout to stretch content, added textview to enable searching for ingredients
+rather than manual selection, updated CSV files to clean display, adjust other layouts. Intolerances UI issues fixed.
+Next: Enable images to display in category_viewholder, comment code
+
+Monday 15 April - Trong
++ BRAVO!!! Milestone 3 reached!!! Recipe search has been fully implemented with missing ingredients mode and exact match mode!!!!
++ Switching between 2 modes by turning on/off the switch in recipe result
++ This function is carefully tested, both with SQL queries and in-app using.
++ I need holiday XD
+
+What's next?
++ A few displaying bugs in layout that needs to be fixed.
++ Images! 
++ Improve example data.
+
+Henry Feedback: 
++ Good to see Milestone 3 reached (and you aimed and stayed on target for milestones).
++ I need a holiday too.
+
+Tuesday 16 April - Steve
++ Images implemented and display correctly in categories and for recipes
++ Layout fixed in recipes to allow separating of ingredients by colon separator, some bugs experienced in recipe steps, still in progress
++ I also badly need a holiday
+
+Next steps
++ Fix layout issue with recipe steps displaying correctly
++ Allow different images to be displayed based on CSV or whatever is in storage for that category/recipe
++ Code autocomplete textbox to allow easy search of ingredients.
++ Comment code (Yes, I haven't forgotten! :-))
+
+Sunday 21st April - Monday 22 April
++ Additional features for recipe search is implemted - Ingredient suggestion (section 3.2.9)
+   - After the user performs a search for recipes, the results will be displayed as normal. Additionally, the application will in the background be aware of recipes that the user is missing ingredients for, and display a list of suggested ingredients, which if selected, will update the list of recipes to the user.
+   - Already well-tested manually. The feature can be seen more obvious with better test data.
+   - How it is implemented: user is suggested 3 missing ingredient for one top most recipe that they are possible to cook.
+   - Once they clicked the ingredient, the recipe table will be updated. suggestion panel will also be updated with new ingredient
+   - If they are missing less than 3 ingredients for the top most possibly used recipe, suggestion panel only show those ingredients (either 1 or 2). 
+     Side effects: If they don't like the top most available recipe, the suggestion box still suggest ingredients for that recipe until they've clicked all. 
+
++ Happy Easter every one
+
+What's next:
+- Save recipe
+- Share recipe
+
+Saturday - Sunday 27/28 April - Steve
++ Images load from CSV and reference files in drawable for categories.
++ Early alpha testing was done on core functionality of the application, both on AVD and an actual phone. Bugs found mostly on layout issues and will be flagged for remediation.
++ Licenses.txt file create for app images.
++ Recipe images working! \o/
++ Recipe results - dynamic autosizing of text to fit
++ Bug fixes to buttons to suggest ingredients - there were layout problems
++ Recipe images also appearing in recipe results and not just detailed view - however may remove this later, depending on user feedback
++ Remove redundant, and old/unused code. Strip out unnecessary pseudocode.
++ AppDB updated to include pantry DAO, getter/setter methods written and basic pantry code.
+
+What's next for Steve (this week (whatever week that is!)
++ Pantry implementation - simplex function where they are given a text box that autocompletes and they type in what they have
++ Also ability to add ingredients by text search
++ Commenting code blitz (WAY OVERDUE FOR ME, yes I know!)
++ Fix layout issues with app
++ Test logging to log scene
++ Write the app about screen.
++ Try to source some better recipe data - what we have works as proof of concept, but its honestly garbage for actual release (I don't even know what vegetable shortening is...)
+
+Milestone 3 is well and truly complete, with Milestone 4 mostly complete from code perspective, features implemented:
+o	Missing ingredient function implemented and working within app
+o	Ingredient suggestion implemented and working within app
+
+Missing features:
+o	Save recipe function implemented and working within app
+o	Share function implemented and working within app
+o	Banner ads function implemented and working within app
+o	Google Single SignIn implemented and working within app
+o	Custom recipe database implemented and working within app
+
+Monday 29 April - Steve
+* Changelog updated, task list and bugs to fix written
+
+Monday 29th April - Trong
++ Save recipe function is implemented (See section 3.2.1)
+  - In the recipe search page, every recipe row will have a "Save" button similar to a floppy disk
+  - When they clicked the icon, it will become a green "Checked" icon - that's when the recipe has been saved
+  - They can access their saved recipes in the "Saved Recipe"
++ Share recipe function is implemented (See section 3.2.2)
+  - In the recipe detail page, there will be a "share" icon/button
+  - When they clicked the icon, it will pop up a new intent, asking user which media they want to share via
+  - Sharing recipe model is only TEXT-BASED, no image: recipe name, then new line, then recipe ingredients, then new line, then recipe steps.
++ Google ad function is implemented (See section 3.2.3)
+  - Basically there is a little banner ad in almost every scene of the app. Except for log in and app splash scene.
+  - I use the test/sample adUnitId from https://developers.google.com/admob/android/banner
+  - We will have our own adUnitId in the future.
++ Custom recipe has been implemented. 
+   - From the Saved Recipes window, users will have an option to add their own recipe, and from there can enter in their own recipes for future reference through text input.
+   - The custom recipe, however, is still saved in the same db as the imported one. The only difference is that custom recipe has the field is_customed set to true.
++ Bugs in recipe search where no ingredients selected was fixed. Was caused by a log line for debugging purpose.
+
+What's next?
++ Bug fixes
++ Comment code
++ Improve "Saved recipe" page by adding an edit function and a delete function.
+
+Monday/Tues 29 April - Steve
++ Updated changelog to format better
++ Reviewed implemented code
++ Worked on pantry in private branch, and autocomplete
++ Nix ad banner from categories and ingredients picker, makes layout too small
++ Sort ingredients CSV alphabetically
++ Add some common ingredients to CSV that were missing (SALT AND OIL IS NOW THERE)
++ Made some updates to CSV files, still in progress
+
+What's next
+
+* Finalise pantry and autocomplete text box
+* Write about page for app
+* Ensure logs are posted to log scene
+* Write user stories (as a user, I want to be able to do XYZ) and begin alpha testing
+* Add fructose intolerance, change "Choose a cuisine" to more suitable title (Had a friend do some testing and give feedback)
+* Vlookup ingredients and recipes to better match and ensure all ingredients in recipes exist in ingredients DB - data is crap
+* Debugging
+* Commenting code
+* Publish app for beta testing once all above complete, send out links to people to test
+
+Notes: Milestone 4 is nearly complete and will be completed on schedule or earlier. Most of the time after this will be dedicated to testing and bugfixes, trying to break the app every way possible to ensure everything functions correctly.
+
+Tuesday/Wed 30 April - 1 May - Steve
+* Tons of data matching work on recipes/ingredients
+* Private branch almost complete to implement pantry, still undergoing final testing and will be merged today.
+
+What's next
+* Autocomplete search for ingredients
+* Google Sign in
+* Commenting
+* Bugfixes etc
+
+Thursday/Friday 2-3 May - Steve
+* Pantry feature implemented and tested
+* Autocomplete search of ingredients in ingredient search implemented and tested
+* Ability to delete ingredients selected rather than only clear ingredients implemented and tested
+* Constraints in pantry and recipe results fixed, bugs have been noted in bug fix to remediate
+* Squashing bugs
+
+Progress on Milestones:
+
+Milestone 4 is complete except Google Sign In, which is a nice to have feature at this stage. Testing as part of Milestone 5 is also underway, and has been done on the app but will continue.
+
+What's next
+* Tidy code - it's a mess, but it works
+* Comment all code, remove redundant junk
+* Write about page and licenses
+* Implement logs
+* Continue work on CSV data to clean.
+* Google Sign In by this weekend
+* I am tired
+
+Saturday 4th May - Trong
++ Fixed bug: Ingredients are excluded based on dietary requirements, but recipes are not in standard search (Tested: Selected "lacto-veg (excludes meat, fish and eggs but not dairy), and results that needed eggs still appears
++ Fixed bug: Ingredient suggestion suggests ingredients that are supposed to be excluded
+
+What's next?
++ Bug fixes
++ Comment code
++ Improve "Saved recipe" page by adding an edit function and a delete function.
+
+Sat 4 May - Steve
+* Tested bugfixes for recipe exclusion. Bug still existed - caused by databases not being loaded at initialisation.
+
++ Relocated code - major change. All data is loaded from CSV and into DB at runtime. Researched online best way to do this, and found RxJava to be a more efficient way to do this, so wrote a class
+"DbPopulatorUtil" that contains the loading of all files into CSV and into DB. Also modified the splash screen code, so this will be executed
+at loading of the application as an async task with multiple cases for file loading, with the LoginActivity starting once load is complete.
++ Discovered a flaw in recipe data - recipe steps dont match recipe. Already found source of problem, easy fix, re-parsing "recipe steps" from raw data - will be resolved by COB Saturday
+
+To do:
++ Alter recipe viewholder to display missing ingredients to end user, rather than just on the recipe details page, similar to original UI design
++ Alter missingingredients layout to have missing suggestions as just clickable text rather than buttons, similar to UI design.
++ Take a look at raw recipe data, identified how raw data is separated, try process to parse so more recipes can exist in the app
++ Try Google Single Sign In
++ Comment code
++ Other tasks as per todo list.
+
+
+With this update, most major bugs detected have been squashed.
+
+Monday/Tuesday 6/7 May - Steve
+* Updates to CSV files to better match data and remediate recipe problems
+
+Wednesday 8/May - Henry
+ - Looks great.
+ - I haven't checked every point, but just make sure you go over everything in the Grading Criteria super carefully, to ensure you meet each point. You deserve top marks, just don't want anything to slip by :)
+
+Wednesday/Thursday 8/9 May - Steve
++ Ingredients and recipes fix
++ Splash screen fixed, now loads correctly as an image in portrait or landscape
++ Log scene activity created, intent to nav from about to logs
++ App icon designed
++ Function to read contents of "about.txt" and store in textview written
++ Rename java files to more appropriate and meaningful files
++ BUGFIX - INGREDIENTS.CSV not formatted correct UGH!
+
+Next:
+-Change Async tasks to Rxjava
+-Have logs sent to developer via intent
+-More testing
+-Commenting remaining code
+-Publish beta release, then final release before end of submission deadline
+-Add more recipes from master list
+-Fix intolerances data matching
+
+Friday 10 May - Steve
++ Style changes, implemented correct colour scheme across app
++ App icon implemented and tested
++ Constraints fixed in some layouts that were set with fixed
++ Fixed issues with intolerances not matching and having updated ingredients added
++ Published updated closed beta to Google Play store
++ About page displays contents of about.txt, text is written
+
+Whats next
++ Add more recipes data
++ Comment methods and functions
++ Delete custom recipes
++ Post logs to log scene
++ Bug fixes and more testing
+
+Nice to have
++ Logs sent to dev via email - if its quick and can implement easily
++ Change remaining async to rxjava - time consuming, but nice to have if i can
+
+Saturday 11 May - Steve
++ Squashed bug - pantry allowed adding of same ingredient twice which caused SQLExcpetion - has been handled and toast added to alert user
++ Logging implemented, now logged to log scene
++ All possible exceptions log to log scene
+
+Next:
++ Comment methods and functions
++ Ability to delete custom recipes
++ Bug fixes and more testing
+
+Sunday 12 May - Steve
++ Bug fixes, removed log.d calls as per android studio requirements, implement Mobile Ads with actual adIDs. The app now serves up real banner ads (and hopefully that will one day translate to $$$ *fingers crossed*)
++ Uploaded update to Play Store - done, is now production version - https://play.google.com/store/apps/details?id=com.stevecrossin.whatcanicook
++ Convert intolerance view from switches to recycler to tidy up app code, and allow constraining on landscape - done
++ Refined code as per Android suggestions
+
+In progress
++ Comment methods and functions
++ Ability to delete custom recipes - Trong is working on this
++ More testing
++ Trong to allow more suggestions to be given for ingredients at reciperesults activity
+
+
+With this update, Milestone 5 is complete. Milestone 6 is essentially complete, with app published, application all milestones are completed. All bugs have been tested for and are fixed, app is published. Last feature to add is completely optional.
+Certain functions need to be commented, and recipes will be added later but enough exists for proof of concept.
+
+
+Monday 13 May - Trong
++ Bug fixes: Allow more suggestions to be given for ingredients at reciperesults activity
+	- Suggestion pane now can keep getting new ingredients without running out. 
+
+In progress
++ Comment methods and functions
++ Ability to delete custom recipes
+
+Monday 13 May - Trong
++ Improvement: User now can unsave recipes and delete custom recipes
+
+In progress
++ Comment methods and functions
+
+Tuesday 14 May - Trong
++ Improvement: missing ingredients are shown in recipe search page instead of detail page.
+
+In progress
++ Comment methods and functions
+
+Tuesday 14 May - Steve
++ Fix layouts so missing ingredients showed correctly in recipe viewholder
++ Adjust constraints in recipe details to align to each element better
++ Remove redundant and unneeded code
++ Correct some last errors with recipes.csv - all recipes now tested and 100% working
+without flaws
++ Found a few more style bugs on recipe results - fixed, and adjusted text sizing for readability
+
+Whats left
++ Comment code
++ Any last bugs (but all have really been found)
++ Add toasts to remaining error messages
++ IF I HAVE TIME ONLY - add toasts advising recipes were deleted when X is clicked (Or snackbar asking for confirmation of deletion)
++ Record video
+
+Milestone - all milestones are now completed. Some functions need to be commented, but all bugs have been thoroughly tested for, caught and are logged. App published to app store.
+
+Wednesday 15 May - Steve
++ Snackbar added to confirm deletion
++ Started to comment code
++ Recipe recyclerview elements given stable IDs to prevent weird refresh each time element is clicked, now recycler elements rearrange themselves.
++ Missingingredients code adjusted to hide the view when it is empty, and also not cut off text. Sizes changed
++ Bugfixes
+
+To do
++ Comment code - like, a lot
++ Record video
++ Submit
+
+Thursday 16 May - Steve
+* Final bug fixes - as noted in bugs.txt
+* Comment code - 50% complete
+* Alter login code to enable TextWatcher to only say "Sign In" if it determines full email address entered AND exists in DB.
+* Add toasts to any caught exceptions that didn't have toasts
+* Review Google Play ANR/Crash report, verified that past crashes/ANRs have been caught or remedied completely with code and no longer exist
+* Remedied problems with how ads are displayed - identified issue is on Google's end and is coded correctly. Adjusted layout to hide ad elements when not being served
+
+* Finish commenting code
+* Publish video
+* Verify all HD criteria has been met for assignment
+* Submit assignment
+* Celebrate!
+
+Friday/Saturday 17-18 May - Steve
+* Comment all remaining code, reformat all code for readability, remove
+* Reformat all code
+* Add intro text to login page
+* Update some icons that were actually under CC-NC licenses!
+* Fully write readme.md as per marking specifications
+* Update about page to give proper credit as required under the license of icons
+* Update licenses.txt file as per requirements noted
+* Cobble together basic website for application
+* Final tests of application complete to ensure no crashes, bugs, or UI issues
+* Check grading criteria to ensure each element of code and features meets HD requirements.
+
+What's left?
+Record video and submit

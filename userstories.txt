@@ -1,0 +1,11 @@
+User stories - things user needs to be able to do, confirmed working
+
+* I want to be able to use the app on all screens, in portrait and landscape mode
+* I want to be able to login
+* I want to be able to navigate to all screens
+* I want to select dietary preferences and ensure they are adhered to
+* I want to select from the ingredients I have
+* I want to be able to add ingredients to my pantry and delete them
+* I want to be able to add my own custom recipes, save recipes, and share them with others
+* I want to be able to delete dietary preferences
+* I want to be able to view info about the app

@@ -1,0 +1,25 @@
+Todo list
+
+DONE
+* Finalise pantry with autocomplete textbox - done
+* Clean recipes CSV file - done
+* About screen - done
+* Log screen - content posting there - done, including clear
+* Check layouts constrain and scale to various different screen sizes - done
+* Bug fixes - most done
+* Fix ingredient suggestion feature (done)
+* Implement custom recipe feature (done)
+* Update login screen
+* Add graphics to splash screen - DONE
+* Implement Google Ads for monetization - done fully
+* App published as production app - meets all requirements, no crashes as per google console
+* Implement ability to delete saved recipes (and unsave recipes that are in the DB but not custom. Create toasts for confirming deletion of saved recipes. RecipeViewHolder when it is viewed in Saved Recipes
+should not have a tick mark.
+* Trong to allow more suggestions to be given for ingredients at reciperesults activity - done
+
+NICE TO HAVE
+* Add more recipes
+
+Mandatory
+* Comment ALL methods and functions
++ Record video and submit
