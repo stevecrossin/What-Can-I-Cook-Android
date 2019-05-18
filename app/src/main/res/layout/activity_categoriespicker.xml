@@ -37,6 +37,7 @@
     <AutoCompleteTextView
         android:id="@+id/recipe_name"
         android:layout_width="0dp"
+        android:imeOptions="flagNoExtractUi"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
