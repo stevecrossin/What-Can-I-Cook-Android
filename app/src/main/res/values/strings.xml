@@ -80,4 +80,5 @@
     <string name="btnFindRecipesLabel">Find Recipes</string>
     <string name="sign_in_text">Sign In</string>
     <string name="go_to_home_page">Go to Home Page</string>
+    <string name="loginIntroText">If you have not used this application before, please create an account which will let you save recipes and any dietary needs you may have.</string>
 </resources>

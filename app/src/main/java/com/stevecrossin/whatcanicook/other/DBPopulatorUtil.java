@@ -23,9 +23,6 @@ import java.util.ArrayList;
 
 public class DBPopulatorUtil {
 
-
-    private static final String TAG = "DBPopulatorUtil";
-
     /**
      * Perform an async task in the background to load intolerances into the DB
      * It will first construct an array list of Intolerance from the csv files

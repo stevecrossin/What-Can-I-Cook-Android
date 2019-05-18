@@ -9,27 +9,28 @@
     android:layout_marginTop="8dp"
     android:layout_marginEnd="8dp"
     android:elevation="10dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    tools:targetApi="lollipop">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/linearLayoutCompat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/listview_item">
-        
+
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/recipe_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:textSize="14sp"
             android:gravity="center_vertical"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/recipe_missing_ingredients"
             app:layout_constraintEnd_toStartOf="@id/recipe_save_button"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toTopOf="@id/recipe_missing_ingredients"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:targetApi="o" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -38,8 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:textSize="12sp"
             android:gravity="center_vertical"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/recipe_save_button"
             app:layout_constraintStart_toStartOf="parent"

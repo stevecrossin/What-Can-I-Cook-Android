@@ -164,7 +164,7 @@ public class Recipes extends AppCompatActivity {
      * 3. Set up onClick listener for recycleview on row clicked
      * <p>
      * Every time a row is clicked, user will be navigated to the RecipesDetails page
-     * Extra data is also passed, including the recipe object.
+     * Recipe data is packaged together and passed to RecipesDetails via an intent in a bundle called "RECIPE" via an Async task
      * <p>
      * 4. Set adapter for the RecyclerView
      * 5. Call loadRecipes() method to populate data into recycler

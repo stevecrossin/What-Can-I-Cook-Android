@@ -1,4 +1,4 @@
-# What Can I Cook - Android Application
+# What Can I Cook - Android Application #
 
 This is a working directory for an Android application that will form the substance for our assignment
 a Deakin University subject - SIT305. The application is coded in Java.
@@ -9,23 +9,39 @@ The purpose of the application will be to provide the end user with recipes that
 from a list of ingredients that they already have at home in their pantry. It will cater to a variety of different
 cuisines and dietary requirements.
 
-At the present time, the following features are currently functional in the application
+All features have been fully implemented and an overview of the progress it took to get the application from start to completion can be found in the changelog.txt file.
 
-* The application loads, a splash screen is presented and exits to the main menu which presents dish types to cook.
-* Selecting a dish will navigate to an ingredients page, which loads both categories and ingredients that are loaded from CSV files. Awareness of cuisine type is also present based on user input.
-* Core user interface has been built and views tested for different devices. Log activity, intolerance activity has been created. CSV files for recipes, ingredients and intolerances
-is loaded into the database. Recipe results back end coding is partially complete.
-* All database tables have been coded and most core functionality is written. saved recipes activity exists but no functionality exists
-* Clearing of ingredients selected implementing and working
-* Login activity is working, all database functions for login are functioning too
+The github link for the project can be found at: https://github.com/stevecrossin/What-Can-I-Cook
+The application has also been published to the Google Play Store: https://play.google.com/store/apps/details?id=com.stevecrossin.whatcanicook
+A basic website has also been created for the application here: https://what-can-i-cook.flycricket.io
 
-Milestone 2 is complete, with Milestone 3 almost complete. Code is being written to save intolerances to a users settings, and algorithms are being written to match ingredients selected with recipes to provide appropriate matches.
+As this is an Android application, it can be run two different ways.
 
-Login screen working, saving and loading of dietary preferences for individual users working correctly. Speed a little slow and needs optimising.
+The GitHub repo can be cloned or downloaded in a ZIP format from GitHub and compiled in Android Studio and then run on an emulator, or a physical device.
+Alternatively, the application can be run directly from the app-release.apk onto a device, which is found in the /app/release folder.
 
-The changelog.txt file has more information on daily progress on this project.
 
-Unless permission is otherwise provided, this code is NOT free to be reused or modified for any purpose. Please contact me
-at stevecrossin@gmail.com if you wish to use or otherwise modify this code.
+## Directory structure ##
+The root of the github project contains:
+
+app folder - contains all source files for the app. Broken down further, inside app/main contains:
+
+Java files (java/com/stevecrossin/whatcanicook): contains all source code for the application. Further broken down into:
+* adapter: contains the code for all the elements that make adapters and viewholders that are contained in the applicaton function
+* entities: contains the information for each database table in the application, and the SQL operations for each database
+* other: contains java files not elsewhere classified, which includes the splash screen, the utlility to populate databases on app load, and code relating to the login state of the app and the function to hash the password
+* screens: contains the files that dictates how each activity in the application functions and the operations of those activites
+
+res folder - contains all layout XML files for the app, colours, strings, styles and drawable objects. Also contains a raw directory which holds all read only CSV and text files.
+
+Additionally, the root of the github project contains:
+* bugs.txt - a list of all bugs that were encountered while developing the application. All were fixed, and method to fix in most cases were noted for future reference.
+* changelog.txt - list of all changes made in the application
+* todo.txt - a list of all changes that needed to be made as the app progressed
+* userstories.txt - definition of some desired behaviour that the end user should be able to perform
+
+## Permission ##
+Unless permission is otherwise provided by myself, this code is NOT free to be reused or modified for any purpose. Please contact me
+at stevecrossin@gmail.com if you wish to re-use or otherwise modify this code.
 
 

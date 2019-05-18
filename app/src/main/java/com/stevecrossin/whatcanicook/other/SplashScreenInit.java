@@ -3,8 +3,10 @@ package com.stevecrossin.whatcanicook.other;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.stevecrossin.whatcanicook.R;
+import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 import com.stevecrossin.whatcanicook.screens.Login;
 
 import io.reactivex.Observable;
@@ -19,13 +21,15 @@ public class SplashScreenInit extends AppCompatActivity {
     /**
      * On creation of the activity, the toolbar will be removed, the splash screen will be displayed as full screen and the current view will be set to the contents of
      * activity_splash screen XML layout. It will then create an instance of the splash screen and start it.
-     *
+     * <p>
      * Code has been rewritten - using RXjava to perform tasks, the application will setup the application databases - by loading all files from CSV into their relevant databases
      * by creating an instance of DBPopulatorUtil which has all this data migrated into one place, and then executing the relevant functions in that
-     * file.
-     *
+     * file in separate cases and then breaking, first loading intolerances, then ingredients, and then recipes.
+     * <p>
+     * No further processing is needed for these files, hence why the onSubscribe, onNext have no information as they will never be called. OnError has an error to output to the end user,
+     * but given the task reads from and loads from static values this will never occur, and only has a function to insert an error for formatting purposes.
+     * <p>
      * Once the application has performed all these operations, the Splash Screen Activity will end, and the Login Activity will start.
-     *
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +64,7 @@ public class SplashScreenInit extends AppCompatActivity {
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Integer>() {
-                   public void onSubscribe(Disposable d) {
-
+                    public void onSubscribe(Disposable d) {
                     }
 
                     @Override
@@ -69,8 +72,10 @@ public class SplashScreenInit extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onError(Throwable e) {//Log message goes here
-
+                    public void onError(Throwable e) {
+                        AppDataRepo repo = new AppDataRepo(SplashScreenInit.this);
+                        repo.insertLogs("Error occured with DB operation");
+                        Toast.makeText(SplashScreenInit.this, "Error occurred with task to load files to DB", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

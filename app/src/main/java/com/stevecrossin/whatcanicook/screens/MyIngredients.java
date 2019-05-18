@@ -40,12 +40,13 @@ public class MyIngredients extends AppCompatActivity {
         repository = new AppDataRepo(this);
         initRecyclerItems();
     }
+
     /**
      * Performs the setup for the recyclerView. The method will:
      * 1. Find the recyclerView in the layout, with the ID being my_ingredients_list
      * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order
      * 3. Set up onClick listener for recycleview on click which will call the rowClickListener in the adapter
-     *
+     * <p>
      * 4. Set adapter for the RecyclerView
      * 5. Call loadIngredients() method to populate data into recycler
      */

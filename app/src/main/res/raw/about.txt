@@ -1,7 +1,8 @@
 "What Can I Cook?” is designed to help you minimise food waste, and unnecessary trips to the supermarket. Simply put in any dietary preferences you have, and enter
 the ingredients you already have at home, and we will present you with a variety of recipes. You can save these for later, share them with friends, and even save your own custom recipes.
 
-Icons used in this application were provided by Icons8 under the Creative Commons Attribution-NoDerivs 3.0 Unported license. All other images are provided under free licenses.
+Icons used in this application were provided by Icons8 under the Creative Commons Attribution-NoDerivs 3.0 Unported license as per https://icons8.com/license.
+All other images are provided under free licenses.
 
 Recipe data is purchased under license by Oddity Software (http://www.odditysoftware.com).
 

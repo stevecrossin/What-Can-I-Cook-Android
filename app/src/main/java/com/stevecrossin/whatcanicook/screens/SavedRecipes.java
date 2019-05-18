@@ -157,6 +157,7 @@ public class SavedRecipes extends AppCompatActivity {
             snackBar.show();
         }
     }
+
     /**
      * Hides the snackbar
      */

@@ -41,7 +41,6 @@ public class Recipe implements Serializable {
      * Some setter methods are not utilised as the fields are never called to be changed (e.g. id, category) as they are fixed values.
      */
 
-
     public String getRecipeName() {
         return recipeName;
     }
@@ -54,7 +53,7 @@ public class Recipe implements Serializable {
         return recipeSteps;
     }
 
-    public void setRecipeId(int recipeId) {
+    void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
     }
 
@@ -86,7 +85,7 @@ public class Recipe implements Serializable {
         isSaved = saved;
     }
 
-    public boolean isCustomed() {
+    boolean isCustomed() {
         return isCustomed;
     }
 
@@ -94,11 +93,11 @@ public class Recipe implements Serializable {
         isCustomed = customed;
     }
 
-    public int getRecipeExcluded() {
+    int getRecipeExcluded() {
         return recipeExcluded;
     }
 
-    public void setRecipeExcluded(int recipeExcluded) {
+    void setRecipeExcluded(int recipeExcluded) {
         this.recipeExcluded = recipeExcluded;
     }
 

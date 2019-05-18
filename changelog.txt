@@ -485,7 +485,7 @@ To do
 Thursday 16 May - Steve
 * Final bug fixes - as noted in bugs.txt
 * Comment code - 50% complete
-* Alter login code to enable
+* Alter login code to enable TextWatcher to only say "Sign In" if it determines full email address entered AND exists in DB.
 * Add toasts to any caught exceptions that didn't have toasts
 * Review Google Play ANR/Crash report, verified that past crashes/ANRs have been caught or remedied completely with code and no longer exist
 * Remedied problems with how ads are displayed - identified issue is on Google's end and is coded correctly. Adjusted layout to hide ad elements when not being served
@@ -495,3 +495,18 @@ Thursday 16 May - Steve
 * Verify all HD criteria has been met for assignment
 * Submit assignment
 * Celebrate!
+
+Friday/Saturday 17-18 May - Steve
+* Comment all remaining code, reformat all code for readability, remove
+* Reformat all code
+* Add intro text to login page
+* Update some icons that were actually under CC-NC licenses!
+* Fully write readme.md as per marking specifications
+* Update about page to give proper credit as required under the license of icons
+* Update licenses.txt file as per requirements noted
+* Cobble together basic website for application
+* Final tests of application complete to ensure no crashes, bugs, or UI issues
+* Check grading criteria to ensure each element of code and features meets HD requirements.
+
+What's left?
+Record video and submit

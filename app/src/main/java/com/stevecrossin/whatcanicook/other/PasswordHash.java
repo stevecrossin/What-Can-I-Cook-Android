@@ -15,8 +15,7 @@ public class PasswordHash {
         return convertToHex(md.digest());
     }
 
-    private static String convertToHex(byte [] bytes)
-    {
+    private static String convertToHex(byte[] bytes) {
         StringBuilder result = new StringBuilder();
         for (byte b : bytes)
             result.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
