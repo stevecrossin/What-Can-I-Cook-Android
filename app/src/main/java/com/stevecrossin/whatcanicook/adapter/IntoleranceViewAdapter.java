@@ -12,6 +12,9 @@ import com.stevecrossin.whatcanicook.entities.Intolerance;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * IntoleranceView Adapter, which holds an ArrayList of the contents of the intolerances database
+ */
 public class IntoleranceViewAdapter extends RecyclerView.Adapter<IntoleranceViewHolder> {
     private List<Intolerance> intoleranceList;
 

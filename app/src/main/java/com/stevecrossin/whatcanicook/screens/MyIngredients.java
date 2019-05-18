@@ -18,6 +18,10 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * MyIngredients is the class which is run when the user clicks on "Check My Ingredients" in either the CategoryPicker or IngredientPicker classes. It will show the user the ingredients they
+ * have selected, allow them to remove ingredients, and then perform a search for recipes.
+ */
 public class MyIngredients extends AppCompatActivity {
     private AppDataRepo repository;
     MyIngredientViewAdapter myIngredientViewAdapter;

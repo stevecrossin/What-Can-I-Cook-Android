@@ -16,6 +16,9 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * ViewHolder, which dictates and sets the contents of the view
+ */
 class RecipeViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView recipeName;
     private AppCompatTextView recipeMissingIngredients;

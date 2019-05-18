@@ -13,6 +13,10 @@ import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.User;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
+/**
+ * The main class for the activity and the main entry point after login. This is mainly a landing page for the app where all other activities are navigated from, and has very little
+ * actual functionality apart from navigation and logging out of the application.
+ */
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -132,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }.execute();
     }
-
 
     /**
      * This is an OnClick method that is called when the "About" icon is clicked in the activity. It will handle changing the view from the current view, to the About class, and then start that activity.

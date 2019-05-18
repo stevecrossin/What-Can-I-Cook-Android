@@ -15,6 +15,9 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * MyIngredientsView Adapter, which holds an ArrayList of the contents of the database
+ */
 public class MyIngredientViewAdapter extends RecyclerView.Adapter<MyIngredientViewHolder> {
     private ArrayList<Ingredient> ingredients;
     private MyIngredientViewAdapter.rowClickedListener rowClickedListener;

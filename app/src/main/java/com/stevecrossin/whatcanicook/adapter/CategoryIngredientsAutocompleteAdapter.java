@@ -17,6 +17,9 @@ import com.stevecrossin.whatcanicook.entities.Ingredient;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * AutoComplete Adapter for the Category Ingredients autocomplete, which controls the population and function of the autocomplete textview.
+ */
 public class CategoryIngredientsAutocompleteAdapter extends ArrayAdapter<Ingredient> {
 
     private List<Ingredient> ingredients;

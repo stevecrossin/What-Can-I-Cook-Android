@@ -11,6 +11,9 @@ import android.view.View;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 
+/**
+ * ViewHolder, which dictates and sets the contents of the view
+ */
 public class MyRecipesViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView recipeName;
     private AppCompatImageView recipeImage;

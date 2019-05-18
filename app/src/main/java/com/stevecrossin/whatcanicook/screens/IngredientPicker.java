@@ -17,6 +17,9 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * IngredientPicker is the class which is run when the user clicks on a category in CategoryPicker, which allows the user to select ingredients they have to cook with.
+ */
 public class IngredientPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private String category;

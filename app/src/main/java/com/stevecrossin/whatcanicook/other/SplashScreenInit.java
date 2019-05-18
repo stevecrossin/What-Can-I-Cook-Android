@@ -16,6 +16,9 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * Class which covers the splash screen of the application and its initialisation
+ */
 public class SplashScreenInit extends AppCompatActivity {
 
     /**

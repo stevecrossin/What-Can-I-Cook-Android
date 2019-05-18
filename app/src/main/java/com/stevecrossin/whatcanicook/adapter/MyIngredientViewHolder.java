@@ -9,6 +9,9 @@ import android.view.View;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 
+/**
+ * ViewHolder, which dictates and sets the contents of the view
+ */
 class MyIngredientViewHolder extends RecyclerView.ViewHolder {
 
     private AppCompatTextView myIngredientName;

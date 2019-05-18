@@ -28,6 +28,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Data repository for application. The below contains all the data entry objects (dao) for the room databases of the app.
+ */
 public class AppDataRepo {
     private IngredientDao ingredientDao;
     private IntoleranceDao intoleranceDao;

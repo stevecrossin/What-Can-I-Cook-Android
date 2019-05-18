@@ -21,6 +21,10 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * CategoryPicker is the class which is run when the user clicks on a dish type. It handles the selection of ingredient categories and navigation to "my ingredients"
+ * as well as navigation to the ingredients picker class to select ingredients
+ */
 public class CategoryPicker extends AppCompatActivity {
     private AppDataRepo repository;
     private CategoryViewAdapter categoryViewAdapter;

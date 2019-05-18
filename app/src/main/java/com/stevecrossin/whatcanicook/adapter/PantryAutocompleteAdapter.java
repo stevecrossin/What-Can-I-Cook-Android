@@ -17,6 +17,9 @@ import com.stevecrossin.whatcanicook.entities.Ingredient;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * AutoComplete Adapter for the Pantry autocomplete., which controls the population and function of the autocomplete textview.
+ */
 public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
 
     private List<Ingredient> ingredients;

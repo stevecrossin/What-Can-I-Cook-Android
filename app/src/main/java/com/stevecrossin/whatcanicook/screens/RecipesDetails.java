@@ -13,6 +13,10 @@ import com.google.android.gms.ads.AdView;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 
+/**
+ * RecipesDetails is the class which is run when the user clicks on a recipe in the Recipes, or SavedRecipes view. It will show the user the details of the recipe, such as the full list of ingredients needed,
+ * and the steps to cook the recipe, and allow the user to share the recipe if desired.
+ */
 public class RecipesDetails extends AppCompatActivity {
     Recipe recipe;
     ImageButton shareButton;

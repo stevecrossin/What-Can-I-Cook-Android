@@ -15,7 +15,10 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
-public class MyRecipesViewAdapter extends RecyclerView.Adapter<MyRecipesViewHolder>{
+/**
+ * MyRecipes View Adapter, which holds an ArrayList of the contents of the database with saved recipes
+ */
+public class MyRecipesViewAdapter extends RecyclerView.Adapter<MyRecipesViewHolder> {
     private ArrayList<Recipe> recipes;
     private MyRecipesViewAdapter.rowClickedListener rowClickedListener;
     private MyRecipesViewAdapter.removeClickedListener removeClickedListener;

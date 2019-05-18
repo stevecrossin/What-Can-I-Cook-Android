@@ -12,8 +12,9 @@ import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Recipe;
 import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
-//
-
+/**
+ * CustomRecipe is the class which is run when the user clicks on "Add a Recipe" in the saved recipes view, which allows the user to enter their own recipe
+ */
 public class CustomRecipe extends AppCompatActivity {
     private AppDataRepo repository;
     AutoCompleteTextView recipeName, recipeIngredients, recipeSteps;

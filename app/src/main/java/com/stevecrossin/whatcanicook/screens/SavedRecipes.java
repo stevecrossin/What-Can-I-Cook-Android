@@ -26,6 +26,10 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * SavedRecipes is the class which is run when the user clicks on the SavedRecipes button in MainActivity. It will allow the user to see all the recipes they've saved,
+ * remove saved recipes, and through navigation to CustomRecipe class, add their own recipes which will also be displayed in this view.
+ */
 public class SavedRecipes extends AppCompatActivity {
 
     MyRecipesViewAdapter recipeViewAdapter;

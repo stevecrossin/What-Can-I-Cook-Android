@@ -24,6 +24,11 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * Recipes is the class which is run when the user clicks on the FindRecipes button from MyIngredients class. It will show the user recipe results for the ingredients they have selected,
+ * allow them to select additional ingredients that they are missing based on suggestions they have been presented by the app, save recipes for future use and through clicking on the recipe, navigate to RecipeDetails
+ * to see the details of the recipe
+ */
 public class Recipes extends AppCompatActivity {
     private AppDataRepo repository;
     RecipeViewAdapter recipeViewAdapter;

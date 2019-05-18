@@ -1,0 +1,22 @@
+Title: 
+What Can I Cook?
+
+Short Description:
+Cook with the ingredients you already have at home!
+
+Full Description:
+"What Can I Cook?” is designed to help you minimise food waste, and unnecessary trips to the supermarket. Fully offline, so no internet access is needed - use it anywhere!
+
+Simply put in any dietary preferences you have, and enter the ingredients you have, and you will be presented with a variety of recipes that you can cook with these ingredients. 
+
+The app also has the ability to show recipes with ONLY the ingredients you have - but please note at present the app only has approximately 75 recipes so the exact match feature may not work at present. We are progressively adding more recipes so results will improve over time. 
+
+The application will also suggest missing ingredients you may have to show you additional recipes, and show you what ingredients you are missing to cook any suggested recipes.
+
+You can save these recipes for later, share them with friends, and even save your own custom recipes.
+
+Also features a pantry to add ingredients you have at home, so you'll never forget what you already have at the shops again!
+
+Please feel free to send any feedback through - it will be promptly replied to and addressed.
+
+Icons in this application were sourced freely from Icons8 - https://icons8.com/license

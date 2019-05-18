@@ -10,6 +10,9 @@ import com.stevecrossin.whatcanicook.entities.LogRecords;
 
 import java.util.ArrayList;
 
+/**
+ * Logs Adapter, which holds an ArrayList of the contents of the logs database
+ */
 public class LogsAdapter extends RecyclerView.Adapter<LogsViewHolder> {
     private ArrayList<LogRecords> logDatabases;
 

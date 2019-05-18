@@ -15,6 +15,9 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.List;
 
+/**
+ * ViewAdapter, which dictates and sets the contents of the view adapter
+ */
 public class PantryRecycleViewAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     private List<Ingredient> categories;
     private Context context;

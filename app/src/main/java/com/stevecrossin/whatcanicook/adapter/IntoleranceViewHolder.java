@@ -15,6 +15,9 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * ViewHolder, which dictates and sets the contents of the view
+ */
 class IntoleranceViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView intoleranceName;
     private AppCompatCheckBox intoleranceCheckBox;

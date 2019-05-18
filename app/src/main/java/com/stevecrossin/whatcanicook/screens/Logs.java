@@ -17,6 +17,9 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 
 import java.util.ArrayList;
 
+/**
+ * Log class, which controls the log view and displaying of entries that exist in the log database.
+ */
 public class Logs extends AppCompatActivity {
     private LogsAdapter logsAdapter;
     AppDataRepo logsRepo;

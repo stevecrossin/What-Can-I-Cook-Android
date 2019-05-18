@@ -12,6 +12,9 @@ import com.stevecrossin.whatcanicook.entities.Ingredient;
 
 import java.util.List;
 
+/**
+ * CategoryView Adapter, which holds an List of the contents of the categories database
+ */
 public class CategoryViewAdapter extends RecyclerView.Adapter<CategoryViewHolder> {
     private List<Ingredient> categories;
     private rowClickedListener rowClickedListener;

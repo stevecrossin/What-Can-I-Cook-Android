@@ -12,6 +12,9 @@ import com.stevecrossin.whatcanicook.entities.Recipe;
 
 import java.util.ArrayList;
 
+/**
+ * Recipes View Adapter, which holds an ArrayList of the contents of the recipes database
+ */
 public class RecipeViewAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     private ArrayList<Recipe> recipes;
     private RecipeViewAdapter.rowClickedListener rowClickedListener;

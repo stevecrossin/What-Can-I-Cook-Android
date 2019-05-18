@@ -16,6 +16,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * An About screen that contains information about the application. It loads from a text file into the view, and allows navigation to the log scene
+ */
 public class About extends AppCompatActivity {
 
     /**

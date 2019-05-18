@@ -21,6 +21,9 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 
+/**
+ * Database populator class. It handles the population of application databases on load of the application.
+ */
 public class DBPopulatorUtil {
 
     /**

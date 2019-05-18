@@ -26,6 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Pantry is the class which is run when the user clicks on "My Pantry" from the MainActivity. It will show the user the ingredients they
+ * have saved as being in their pantry, allow them to add, and remove additional ingredients to their pantry. It is mainly designed to act like a shopping list
+ * so the user knows what they have at home when they are shopping.
+ */
 public class Pantry extends AppCompatActivity {
 
     private AutoCompleteTextView autoCompleteTextView;

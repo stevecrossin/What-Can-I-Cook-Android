@@ -41,6 +41,9 @@ import static com.stevecrossin.whatcanicook.other.CurrentLoginState.HASH_ERROR;
 import static com.stevecrossin.whatcanicook.other.CurrentLoginState.INVALID_PASSWORD;
 import static com.stevecrossin.whatcanicook.other.CurrentLoginState.NEW_USER;
 
+/**
+ * A login screen that offers login via email/password. Performs various checks to ensure input is valid, and loads saved user data into the relevant databases once login is successful.
+ */
 public class Login extends AppCompatActivity {
 
     /**

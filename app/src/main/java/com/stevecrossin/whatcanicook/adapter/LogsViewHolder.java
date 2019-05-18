@@ -8,6 +8,9 @@ import android.view.View;
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.LogRecords;
 
+/**
+ * ViewHolder, which dictates and sets the contents of the view
+ */
 class LogsViewHolder extends RecyclerView.ViewHolder {
     private AppCompatTextView log;
 

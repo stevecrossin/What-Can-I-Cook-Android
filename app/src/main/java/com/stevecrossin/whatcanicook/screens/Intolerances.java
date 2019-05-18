@@ -17,6 +17,10 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Intolerances is the class which is run when the user clicks on the "Dietary Requriements" from MainActivity. It allows the user to select dietary requirements they have which in turn excludes
+ * recipes and ingredients that they cannot eat
+ */
 public class Intolerances extends AppCompatActivity {
     private AppDataRepo repository;
     private IntoleranceViewAdapter intoleranceViewAdapter;
@@ -24,7 +28,7 @@ public class Intolerances extends AppCompatActivity {
     /**
      * On creation of the activity, perform these functions.
      * Set the current view as the activity_dietaryneeds XML and load the UI elements in that XML file into that view.
-     *
+     * <p>
      * Initialise an instance of the AppDataRepo
      * Call the initRecyclerItems method
      * Load Google Ads for the activity and send an adRequest to load an ad.

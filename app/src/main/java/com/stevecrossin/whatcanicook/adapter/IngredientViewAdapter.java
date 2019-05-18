@@ -12,6 +12,9 @@ import com.stevecrossin.whatcanicook.entities.Ingredient;
 
 import java.util.ArrayList;
 
+/**
+ * IngredientView Adapter, which holds an ArrayList of the contents of the ingredients database
+ */
 public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHolder> {
     private ArrayList<Ingredient> ingredients;
 
