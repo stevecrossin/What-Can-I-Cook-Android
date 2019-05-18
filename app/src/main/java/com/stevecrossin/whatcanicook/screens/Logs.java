@@ -18,10 +18,16 @@ import com.stevecrossin.whatcanicook.roomdatabase.AppDataRepo;
 import java.util.ArrayList;
 
 public class Logs extends AppCompatActivity {
-
     private LogsAdapter logsAdapter;
     AppDataRepo logsRepo;
 
+    /**
+     * On creation of the activity, perform these functions.
+     * Set the current view as the activity_log XML and load the UI elements in that XML file into that view.
+     * <p>
+     * Initialise an instance of the AppDataRepo, and call the initRecyclerItems method
+     * Set an onClickListener to the clearLogs button which when clicked will call the AppRepo function clearLog, and refresh the content
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +45,13 @@ public class Logs extends AppCompatActivity {
         });
     }
 
+    /**
+     * Performs the setup for the recyclerView. The method will:
+     * 1. Find the recyclerView in the layout, with the ID being logs_list.
+     * 2. Set the layout manager as a LinerarLayout manager with elements in vertical order, without a fixed size.
+     * 3. Set up the adapter for the recycler view as logsAdapter
+     * 4. Call the refreshContent method
+     */
     private void initialiseRecyclerItems() {
         RecyclerView logsList = findViewById(R.id.logView);
         logsList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -46,15 +59,14 @@ public class Logs extends AppCompatActivity {
         logsAdapter = new LogsAdapter(new ArrayList<LogRecords>());
         logsList.setAdapter(logsAdapter);
         refreshContent();
-
     }
 
     /**
-     * Handles refresh of the recyclerview. Performs a database query in the background, adds all the logs from log database
+     * Handles refresh of the recyclerview. Performs a database query in the background, adds all the logs from log database with the getLogs method.
      * and updates the recyclerview with the content.
-     * Performed in the background as if this is performed on the UI thread, an exception will occur.
+     * <p>
+     * After this is complete, the logs adapter will be updated with the updateLogs db operation.
      */
-
     @SuppressLint("StaticFieldLeak")
     private void refreshContent() {
 
@@ -64,9 +76,6 @@ public class Logs extends AppCompatActivity {
                 return new ArrayList<>(logsRepo.getLogs());
             }
 
-            /**
-             *  Update LogsAdapter with result of getLogs that occurred in the background
-             */
             @Override
             protected void onPostExecute(ArrayList<LogRecords> logs) {
                 super.onPostExecute(logs);
@@ -75,18 +84,18 @@ public class Logs extends AppCompatActivity {
         }.execute();
     }
 
-
     /**
-     * Refreshes content when activity is resumed
+     * This method will refresh the content of the view when the activity is resumed.
      */
-
     @Override
     protected void onResume() {
         super.onResume();
         refreshContent();
     }
 
-    //Navigate to Main Activity
+    /**
+     * This is an OnClick method that is called when the "Home" icon is clicked in the activity. It will load the MainActivity.class, and then start that activity.
+     */
     public void navigateHome(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
