@@ -66,6 +66,7 @@ public class IngredientPicker extends AppCompatActivity {
     /**
      * Core function to load ingredients and update recycleview adapter.
      * This function performs an async task in the background to get a list of ingredient from the database (getByCategory)
+     * An example of a returned ingredient would be "chicken"
      * It will then store those ingredients in an ArrayList and return the list.
      */
     @SuppressLint("StaticFieldLeak")

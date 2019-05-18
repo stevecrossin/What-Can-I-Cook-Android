@@ -99,7 +99,8 @@ public class Recipes extends AppCompatActivity {
      * If some recipes exist for their selected ingredients:
      * (a) it will try to pick the top most recipe - the recipe with the most ingredients that the user has, then return in a descending order.
      * (b) Using the top most similar recipe, we again make a call to DB with getMissingIngredientsByName() that returns a list of 3 top most missing ingredients for that recipe.
-     * If there existed some missing ingredients, return them
+     *
+     * If there are some missing ingredients, return them. An example of a returned missing ingredient would be "chicken"
      * (c) If there is no missing ingredients, we will move on to pick the second top most similar recipe.
      * (d) We can achieve this by incrementing the offset value by one and call the DB method getAllRecipesByCheckedIngredientsWithOffset() with offset as parameter.
      * The above (a), (b), (c) and (d) step is then done again in a while loop.
@@ -130,12 +131,13 @@ public class Recipes extends AppCompatActivity {
 
             /**
              * Method to load the missing ingredients into the viewholder.
-             * If missingIngredients are not empty and size is greater than zero, each missing will be displayed
+             * If missingIngredients are not empty and size is greater than zero, each missing ingredient will be displayed
              * in the viewholder (addingList), parameters such as size, length, padding, and onclick listeners are defined.
              * <p>
              * Also defined as single line only, with an ellipis to exist at the end of any ingredient to prevent cutoff.
              * Each missing ingredient will be set an onclick listener
              * The list will have its visibility set to true if missing ingredients exist, otherwise it well be set back to "false"
+             *
              */
             @Override
             protected void onPostExecute(ArrayList<String> missingIngredients) {

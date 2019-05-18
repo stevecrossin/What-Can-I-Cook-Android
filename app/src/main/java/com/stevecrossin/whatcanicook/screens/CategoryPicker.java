@@ -92,7 +92,7 @@ public class CategoryPicker extends AppCompatActivity {
 
     /**
      * Get all ingredients from the AppRepo database via an async task and create a new instance of the AutoComplete adapter,
-     * and populate the adapter with the contents
+     * and populate the adapter with the contents of the database
      */
     @SuppressLint("StaticFieldLeak")
     public void getAllIngredients() {

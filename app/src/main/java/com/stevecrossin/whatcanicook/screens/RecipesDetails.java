@@ -27,6 +27,7 @@ public class RecipesDetails extends AppCompatActivity {
      * Get the data passed through an intent ("RECIPE") from the Recipes activity, and then set the relevent fields in the UI for each field passed to the contents passed.
      * For example, Recipes will pass a recipeName, recipeIngredients, recipeSteps, and the recipeImage, if it exists. This onCreate method will replace the contents of each
      * UI element in RecipeDetails to the contents of the information passed, whether it is with the setText or setImageResource method.
+     * An example would look like ("Chicken Salad", "1/2 cup cooked chicken:200 grams lettuce", "Combine chicken and lettuce into a bowl then serve","chickensalad.png")
      * <p>
      * 2. Set an onClick listener for the share button. When clicked, the contents of the recipeName, recipeIngredients, RecipeSteps will be gathered into plain text and then
      * a dialog will open prompting the user on how they wish to share the recipe, via the ACTION_SEND intent built into Android.
