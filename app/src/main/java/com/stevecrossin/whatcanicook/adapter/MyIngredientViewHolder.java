@@ -28,7 +28,7 @@ class MyIngredientViewHolder extends RecyclerView.ViewHolder {
     }
 
     /**
-     * Binds each row in the view holder to a record in the ingredients database abn sets text in row to that respective database record
+     * Binds each row in the view holder to a record in the ingredients database and sets text in row to that respective database record
      * Also sets up an onClick listener for the closeImage element on each row.
      */
     void bindRow(Ingredient ingredient) {

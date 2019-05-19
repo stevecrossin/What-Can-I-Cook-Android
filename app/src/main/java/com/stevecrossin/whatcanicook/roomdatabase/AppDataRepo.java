@@ -527,7 +527,7 @@ public class AppDataRepo {
     }
 
     /**
-     * Wrapper method. Perform dao operation to remove all a ingredients from the pantry in the db.
+     * Wrapper method. Perform dao operation to remove all ingredients from the pantry in the db.
      */
     public void deleteIngredientsPantry() {
         pantryDao.deleteAll();

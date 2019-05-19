@@ -19,7 +19,7 @@ public class IngredientViewAdapter extends RecyclerView.Adapter<IngredientViewHo
     private ArrayList<Ingredient> ingredients;
 
     /**
-     * Creates a new instance of IngredientView Adapter, which contains the ingredients to be displayed in the adapter and the rowclicklistener
+     * Creates a new instance of IngredientView Adapter, which contains the ingredients to be displayed in the adapter
      */
     public IngredientViewAdapter(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;

@@ -55,6 +55,7 @@ public class Pantry extends AppCompatActivity {
         loadPantry();
     }
 
+
     /**
      * This is method is responsible for setting the OnClick listener for the Pantry autocompleteTextView.
      * The OnClick listener has multiple elements, to handle clearing users ingredients from the pantry and deleting individual user ingredients,

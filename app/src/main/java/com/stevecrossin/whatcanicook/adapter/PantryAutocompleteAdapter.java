@@ -93,7 +93,6 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         tempList = new ArrayList<>(ingredients);
     }
 
-
     /**
      * Layout inflater
      * Inflates the layout and reuse the view if it has already been inflated then

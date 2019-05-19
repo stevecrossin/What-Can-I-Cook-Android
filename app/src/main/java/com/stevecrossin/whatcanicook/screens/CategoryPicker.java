@@ -101,7 +101,7 @@ public class CategoryPicker extends AppCompatActivity {
             @Override
             protected List<Ingredient> doInBackground(Void... voids) {
                 AppDataRepo repo = new AppDataRepo(CategoryPicker.this);
-                return repo.getAllIngredients();
+                return repo.getAllTolerantIngredients();
             }
 
             @Override

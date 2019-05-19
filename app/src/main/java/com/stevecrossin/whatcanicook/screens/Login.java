@@ -68,6 +68,17 @@ public class Login extends AppCompatActivity {
     }
 
     /**
+     * Rule to check if username and password valid, being an email must comply with the xxx@yy.zz structure with only certain values allowed, and password must be at least 6 characters
+     **/
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
+
+    private boolean checkPasswordValid(String password) {
+        return password.length() > 6;
+    }
+
+    /**
      * This method executes upon creation of the activity, which sets the current views as activity_login.xml, and sets the elements to display based on the user ID.
      * Initialises MobileAds for the application.
      * Sets an Action listener for the password view.
@@ -200,16 +211,19 @@ public class Login extends AppCompatActivity {
     /**
      * This handles the attempt to login, after the login/sign in button is clicked. It will only call the async task if it's not running.
      * <p>
+     * By default, no UI errors are displayed and once the UI error has been displayed, if any, when the user interface is clicked, any errors will be hidden/removed
+     * <p>
      * Once the user has entered all their input, and the login button has been clicked, it will convert the text in the username and password fields to a string.
      * It will then determine perform password and username validation and depending on the rules, e.g. if it was empty or the format doesn't match the rules, errors will be thrown and
      * the request to login will be cancelled and an error message will be displayed.
-     * <p>
-     * Finally, once the UI error has been displayed, if any, when the user interface is clicked, any errors will be hidden/removed
      ***/
     private void tryLogin() {
         if (authenticationTask != null) {
             return;
         }
+
+        usernameView.setError(null);
+        passwordView.setError(null);
 
         String username = usernameView.getText().toString();
         String password = passwordView.getText().toString();
@@ -240,19 +254,6 @@ public class Login extends AppCompatActivity {
             authenticationTask.execute((Void) null);
         }
 
-        usernameView.setError(null);
-        passwordView.setError(null);
-    }
-
-    /**
-     * Rule to check if username and password valid, being an email must comply with the xxx@yy.zz structure with only certain values allowed, and password must be at least 6 characters
-     **/
-    public static boolean isValidEmail(CharSequence target) {
-        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
-    }
-
-    private boolean checkPasswordValid(String password) {
-        return password.length() > 6;
     }
 
     /**
