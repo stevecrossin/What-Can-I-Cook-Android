@@ -515,3 +515,5 @@ Sunday 19 May - Steve
 * Upload updated APK to GitHub
 * Some more tests, fixed minor issue with how layout appears on devices with a screen "notch" e.g. Pixel 3.
 * Comment the actual classes - realised that all methods were commented (HD level) but classes were not.
+* Fixed one last bug with CategoriesAutoComplete adapter
+* Recorded and edited demo video for app, and submitted assignment.
