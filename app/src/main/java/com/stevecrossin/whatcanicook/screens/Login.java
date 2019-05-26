@@ -79,7 +79,7 @@ public class Login extends AppCompatActivity {
         progressView = findViewById(R.id.login_progress);
         usernameView = findViewById(R.id.userNameEntry);
         passwordView = findViewById(R.id.passwordEntry);
-        loginButton = findViewById(R.id.loginButton);
+        loginButton = findViewById(R.id.sign_in_button);
         passwordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
             @Override
