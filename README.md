@@ -1,6 +1,6 @@
 # What Can I Cook - Android Application #
 
-This is a working directory for an Android application, coded in Java. Project by Steve Crossin: SID217109001 and Trong Hieu Lam: SID218738651
+This is a working directory for an Android application, coded in Java. 
 
 The purpose of the application is to provide the end user with recipes that they can cook, by selecting
 from a list of ingredients that they already have at home in their pantry. It will cater to a variety of different
