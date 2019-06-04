@@ -76,9 +76,6 @@ public class SplashScreenInit extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        AppDataRepo repo = new AppDataRepo(SplashScreenInit.this);
-                        repo.insertLogs("Error occured with DB operation");
-                        Toast.makeText(SplashScreenInit.this, "Error occurred with task to load files to DB", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

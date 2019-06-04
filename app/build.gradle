@@ -6,7 +6,7 @@ android {
         applicationId "com.stevecrossin.whatcanicook"
         minSdkVersion 20
         targetSdkVersion 28
-        versionCode 26
+        versionCode 27
         versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
@@ -34,7 +34,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'org.apache.commons:commons-csv:1.5'
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.google.android.gms:play-services-ads:17.2.0'
+    implementation 'com.google.android.gms:play-services-ads:17.2.1'
     implementation 'com.google.android.gms:play-services-plus:16.0.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
