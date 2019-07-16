@@ -10,3 +10,5 @@ Bugs to fix:
 * Login box text displays "Sign In" even to email addresses that may not exist on DB (FIXED) - added additonal if else and changed email validation from custom
 regex to android inbuilt validation
 * Ads not always populating from AdMob - not a bug - just flaw due to app being new. Have changed parameters to "wrap_content" for elements to hide when no ad is served
+
+*Capitalisation of ingredients makes autocomplete fail
