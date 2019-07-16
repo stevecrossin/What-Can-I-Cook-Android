@@ -39,7 +39,7 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
 
         @Override
         public CharSequence convertResultToString(Object resultValue) {
-            return ((Ingredient) resultValue).getIngredientName();
+            return ((Ingredient) resultValue).getIngredientName().toLowerCase();
         }
 
         /**
@@ -70,7 +70,7 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
             if (constraint != null) {
                 filteredList.clear();
                 for (Ingredient ingredient : tempList) {
-                    if (ingredient.getIngredientName().contains(constraint)) {
+                    if (ingredient.getIngredientName().contains(constraint.toString().toLowerCase())) {
                         filteredList.add(ingredient);
                     }
                 }
