@@ -11,4 +11,4 @@ Bugs to fix:
 regex to android inbuilt validation
 * Ads not always populating from AdMob - not a bug - just flaw due to app being new. Have changed parameters to "wrap_content" for elements to hide when no ad is served
 
-*Capitalisation of ingredients makes autocomplete fail
+*Capitalisation of ingredients makes autocomplete fail.
