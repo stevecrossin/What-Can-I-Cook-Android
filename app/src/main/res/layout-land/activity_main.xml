@@ -73,7 +73,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="0dp"
         android:contentDescription="@string/savedrecipebuttonContentDesc"
         android:onClick="savedRecipes"
         app:layout_constraintBottom_toTopOf="@+id/myPantry"
@@ -89,7 +89,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="0dp"
         android:contentDescription="@string/pantrybuttonContentDesc"
         android:onClick="userPantry"
         app:layout_constraintBottom_toTopOf="@+id/dietneeds"
@@ -126,5 +126,4 @@
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/dietneeds" />
-
 </android.support.constraint.ConstraintLayout>

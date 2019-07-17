@@ -33,8 +33,6 @@ public class CategoryPicker extends AppCompatActivity {
     /**
      * On creation of the activity, perform these functions.
      * Set the current view as the activity_categoriespicker XML and load the UI elements in that XML file into that view.
-     * Get the string passed from the previous activity (MainActivity) as an intent, and then set the dishchosentext textview to the contents of that string
-     * <p>
      * Initialise an instance of the AppDataRepo
      * Call the loadIngredients, initRecyclerItems and setupAutoComplete methods
      */
@@ -42,13 +40,6 @@ public class CategoryPicker extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoriespicker);
-
-        Intent intent = getIntent();
-
-        String dishtype = intent.getStringExtra("DISH_TYPE");
-        TextView textView = findViewById(R.id.dishchosentext);
-        textView.setText(dishtype);
-
         repository = new AppDataRepo(this);
 
         loadIngredients();

@@ -33,55 +33,11 @@ public class MainActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
     }
 
-    /**
-     * This is an OnClick method that is called when the "Breakfast" button is clicked in the activity. It will load the CategoryPicker.class,
-     * and pass via intent the dish type (breakfast), and then start that activity.
+     /**
+     * This is an OnClick method that is called when the "Pick Ingredients" button is clicked in the activity. It will load the CategoryPicker.class/
      */
-    public void breakfastIngredients(View view) {
-        findViewById(R.id.breakfastbutton);
-        String breakfast = ("What's for Breakfast");
-
+    public void pickIngredients(View view) {
         Intent intent = new Intent(this, CategoryPicker.class);
-        intent.putExtra("DISH_TYPE", breakfast);
-        startActivity(intent);
-    }
-
-    /**
-     * This is an OnClick method that is called when the "Lunch" button is clicked in the activity. It will load the CategoryPicker.class,
-     * and pass via intent the dish type (lunch), and then start that activity.
-     */
-    public void lunchIngredients(View view) {
-        findViewById(R.id.lunch);
-        String lunch = ("What's for Lunch?");
-
-        Intent intent = new Intent(this, CategoryPicker.class);
-        intent.putExtra("DISH_TYPE", lunch);
-        startActivity(intent);
-    }
-
-    /**
-     * This is an OnClick method that is called when the "Dinner" button is clicked in the activity. It will load the CategoryPicker.class,
-     * and pass via intent the dish type (dinner), and then start that activity.
-     */
-    public void dinnerIngredients(View view) {
-        findViewById(R.id.dinner);
-        String dessert = ("What's for Dinner?");
-
-        Intent intent = new Intent(this, CategoryPicker.class);
-        intent.putExtra("DISH_TYPE", dessert);
-        startActivity(intent);
-    }
-
-    /**
-     * This is an OnClick method that is called when the "Dessert" button is clicked in the activity. It will load the CategoryPicker.class,
-     * and pass via intent the dish type (dessert), and then start that activity.
-     */
-    public void dessertIngredients(View view) {
-        findViewById(R.id.dessert);
-        String dessert = ("What's for Dessert?");
-
-        Intent intent = new Intent(this, CategoryPicker.class);
-        intent.putExtra("DISH_TYPE", dessert);
         startActivity(intent);
     }
 
@@ -104,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This is an OnClick method that is called when the "Dietary Preferences" button is clicked in the activity. It will load the Intolerances.class, and then start that activity.
      */
-    public void dietaryPreferences(View view) {
+    public void dietNeeds(View view) {
         Intent intent = new Intent(this, Intolerances.class);
         startActivity(intent);
     }

@@ -17,7 +17,7 @@ Dinner.png, License type: Pexels License (free to use), Author: Public Domain Pi
 
 Dessert.png, License type: Pexels License (free to use), Author: Plush Design Studios, Url: https://www.pexels.com/photo/closeup-photo-of-cupcake-913135/
 
-SavedRecipes.png, License type: Pexels License (free to use), Author: Mike Bird, Url: https://https://www.pexels.com/photo/books-on-bookshelves-1166657/
+SavedRecipes.png, License type: Pexels License (free to use), Author: Mike Bird, Url: https://www.pexels.com/photo/books-on-bookshelves-1166657/
 
 Pantry.png, License type: Pexels License (free to use), Author: Mali Maeder, Url: https://www.pexels.com/photo/egg-avocado-cooking-tomato-106877/
 

@@ -14,7 +14,7 @@
     <string name="pantrybuttonContentDesc">My Pantry</string>
     <string name="lunchButtonContentDesc">Pick Lunch</string>
     <string name="savedRecipesTitle">These are saved recipes</string>
-    <string name="pantryTitle">In my pantry currently:</string>
+    <string name="pantryTitle">In my pantry currently</string>
     <string name="aboutAppDesc">About the App</string>
     <string name="dietaryRequirementsTitle">Dietary Requirements</string>
     <string name="switchGlutenLabel">Gluten Free</string>
@@ -49,7 +49,7 @@
     <string name="recipe_steps">Recipe Steps:</string>
     <string name="missing_ingredients_warning">Missing ingredients warning</string>
     <string name="log_messages_button">Log Messages</string>
-    <string name="placeholder_ingredientstitle">Placeholder</string>
+    <string name="placeholder_ingredientstitle">Pick your ingredients</string>
     <string name="add_ingredients">Add Ingredients</string>
     <string name="btnCheckIngredient">Check My Ingredients</string>
     <string name="signup">Sign Up</string>
@@ -81,4 +81,5 @@
     <string name="sign_in_text">Sign In</string>
     <string name="go_to_home_page">Go to Home Page</string>
     <string name="loginIntroText">If you have not used this application before, please create an account which will let you save pantry ingredients and any dietary needs you may have.</string>
+    <string name="settings">Settings</string>
 </resources>
