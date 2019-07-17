@@ -6,7 +6,7 @@ android {
         applicationId "com.stevecrossin.whatcanicook"
         minSdkVersion 20
         targetSdkVersion 28
-        versionCode 27
+        versionCode 28
         versionName "2.01"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         android.defaultConfig.vectorDrawables.useSupportLibrary = true
@@ -38,4 +38,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-plus:16.0.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+
 }
