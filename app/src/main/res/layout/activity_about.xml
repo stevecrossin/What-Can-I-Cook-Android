@@ -59,7 +59,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-6486258628588307/2186009282"
+        ads:adUnitId="ca-app-pub-6486258628588307/2324860028"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent" />

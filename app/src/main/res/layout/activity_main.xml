@@ -108,13 +108,12 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/pantrybuttonContentDesc"
         android:onClick="dietNeeds"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myPantry"
         app:srcCompat="@drawable/dietaryneeds"/>
 
-    <!--
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
@@ -122,10 +121,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="SMART_BANNER"
-        ads:adUnitId="ca-app-pub-6486258628588307/4053269509"
+        ads:adUnitId="ca-app-pub-6486258628588307/1203350041"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/dietneeds" />
--->
 </android.support.constraint.ConstraintLayout>
