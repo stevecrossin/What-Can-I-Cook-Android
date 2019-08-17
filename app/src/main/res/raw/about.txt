@@ -1,24 +1,14 @@
 "What Can I Cook?” is designed to help you minimise food waste, and unnecessary trips to the supermarket. Simply put in any dietary preferences you have, and enter
 the ingredients you already have at home, and be presented with tasty recipes you can cook.
 
+This app is developed by myself personally and is supported by ads.
+
+If you find the app useful, any donations towards its further development is most appreciated - https://paypal.me/whatcanicook
+
 Icons used in this application were provided by Icons8 under the Creative Commons Attribution-NoDerivs 3.0 Unported license as per https://icons8.com/license.
-Individual files used and their links are:
 
-Home.png: https://icons8.com/icon/83761/home-page
-Save_icon.png: https://icons8.com/icon/83208/save
-Tick icon: https://icons8.com/icon/11849/checkmark
-Share.png: https://icons8.com/icon/82873/share
-Wine.png: https://icons8.com/icon/12885/wine-glass
-Bread.png: https://icons8.com/icon/12855/bread
-Milk.png: https://icons8.com/icon/51217/milk
-Oil.png: https://icons8.com/icon/20872/olive-oil
-Fruit.png: https://icons8.com/icon/12865/carrot
-Meat.png: https://icons8.com/icon/70448/beef
-Nuts.png: https://icons8.com/icon/31719/peanuts
-Spices.png: https://icons8.com/icon/12887/spice
-Candy.png https://icons8.com/icon/13316/ice-cream-sundae.
+All other images are provided under the Pexels license and explicitly do not require attribution. Recipe data is purchased under license.
 
-All other images are provided under the Pexels license and explicitly do not require attribution. Recipe data is purchased under license by Oddity Software: http://www.odditysoftware.com.
+Recipes used in this application are only for your own private, non-commercial use, any other use is prohibited without written consent. Our privacy policy is located at https://what-can-i-cook.flycricket.io/privacy.html.
 
-Recipes used in this application are only for your own private, non-commercial use. Our privacy policy is located at https://what-can-i-cook.flycricket.io/privacy.html
 
