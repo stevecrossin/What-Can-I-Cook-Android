@@ -411,165 +411,162 @@
 410,Nuts & Legumes,nuts,Nuts,flax,\N,TRUE,FALSE
 411,Nuts & Legumes,nuts,altproteins,french beans,\N,TRUE,FALSE
 412,Nuts & Legumes,nuts,altproteins,garbanzo beans,\N,TRUE,FALSE
-413,Nuts & Legumes,nuts,altproteins,green beans,\N,TRUE,FALSE
-414,Nuts & Legumes,nuts,Nuts,hazelnut,\N,TRUE,FALSE
-415,Nuts & Legumes,nuts,altproteins,hummus,\N,TRUE,FALSE
-416,Nuts & Legumes,nuts,altproteins,kidney beans,\N,TRUE,FALSE
-417,Nuts & Legumes,nuts,altproteins,lentil,\N,TRUE,FALSE
-418,Nuts & Legumes,nuts,altproteins,lima beans,\N,TRUE,FALSE
-419,Nuts & Legumes,nuts,Nuts,macadamia,\N,TRUE,FALSE
-420,Nuts & Legumes,nuts,Nuts,macaroon,\N,TRUE,FALSE
-421,Nuts & Legumes,nuts,altproteins,navy beans,\N,TRUE,FALSE
-422,Nuts & Legumes,nuts,Nuts,nuts,\N,TRUE,FALSE
-423,Nuts & Legumes,nuts,Nuts,peanut,\N,TRUE,FALSE
-424,Nuts & Legumes,nuts,Nuts,pecan,\N,TRUE,FALSE
-425,Nuts & Legumes,nuts,Nuts,pine nut,\N,TRUE,FALSE
-426,Nuts & Legumes,nuts,altproteins,pinto beans,\N,TRUE,FALSE
-427,Nuts & Legumes,nuts,Nuts,pistachio,\N,TRUE,FALSE
-428,Nuts & Legumes,nuts,Nuts,praline,\N,TRUE,FALSE
-429,Nuts & Legumes,nuts,Nuts,raw peanuts,\N,TRUE,FALSE
-430,Nuts & Legumes,nuts,altproteins,soy beans,\N,TRUE,FALSE
-431,Nuts & Legumes,nuts,Nuts,tree nuts,\N,TRUE,FALSE
-432,Nuts & Legumes,nuts,Nuts,walnuts,\N,TRUE,FALSE
-433,Spices & Condiments,spices,sauces,alfredo sauce,\N,TRUE,FALSE
-434,Spices & Condiments,spices,spices,allspice,\N,TRUE,FALSE
-435,Spices & Condiments,spices,spices,aniseed,\N,TRUE,FALSE
-436,Spices & Condiments,spices,spices,apple cider,\N,TRUE,FALSE
-437,Spices & Condiments,spices,condiments,apple cider vinegar,\N,TRUE,FALSE
-438,Spices & Condiments,spices,spices,balsamic glaze,\N,TRUE,FALSE
-439,Spices & Condiments,spices,sauces,barbecue sauce,\N,TRUE,FALSE
-440,Spices & Condiments,spices,condiments,balsamic vinegar,\N,TRUE,FALSE
-441,Spices & Condiments,spices,spices,bay leaf,\N,TRUE,FALSE
-442,Spices & Condiments,spices,sauces,beef gravy,\N,TRUE,FALSE
-443,Spices & Condiments,spices,soupstock,beef stock,\N,TRUE,FALSE
-444,Spices & Condiments,spices,spices,black pepper,\N,TRUE,FALSE
-445,Spices & Condiments,spices,condiments,blue cheese dressing,\N,TRUE,FALSE
-446,Spices & Condiments,spices,spices,bouillon,\N,TRUE,FALSE
-447,Spices & Condiments,spices,spices,cacao,\N,TRUE,FALSE
-448,Spices & Condiments,spices,spices,cajun seasoning,\N,TRUE,FALSE
-449,Spices & Condiments,spices,spices,caraway,\N,TRUE,FALSE
-450,Spices & Condiments,spices,spices,cardamom,\N,TRUE,FALSE
-451,Spices & Condiments,spices,spices,cayenne,\N,TRUE,FALSE
-452,Spices & Condiments,spices,spices,celery salt,\N,TRUE,FALSE
-453,Spices & Condiments,spices,spices,celery seed,\N,TRUE,FALSE
-454,Spices & Condiments,spices,soupstock,celery soup,\N,TRUE,FALSE
-455,Spices & Condiments,spices,soupstock,champagne vinegar,\N,TRUE,FALSE
-456,Spices & Condiments,spices,sauces,chicken gravy,\N,TRUE,FALSE
-457,Spices & Condiments,spices,spices,chicken seasoning,\N,TRUE,FALSE
-458,Spices & Condiments,spices,soupstock,chicken soup,\N,TRUE,FALSE
-459,Spices & Condiments,spices,soupstock,chicken stock,\N,TRUE,FALSE
-460,Spices & Condiments,spices,spices,chili powder,\N,TRUE,FALSE
-461,Spices & Condiments,spices,spices,chili sauce,\N,TRUE,FALSE
-462,Spices & Condiments,spices,spices,chilli powder,\N,TRUE,FALSE
-463,Spices & Condiments,spices,spices,chinese five spice,\N,TRUE,FALSE
-464,Spices & Condiments,spices,spices,chives,\N,TRUE,FALSE
-465,Spices & Condiments,spices,condiments,cider vinegar,\N,TRUE,FALSE
-466,Spices & Condiments,spices,spices,cinnamon,\N,TRUE,FALSE
-467,Spices & Condiments,spices,spices,cloves,\N,TRUE,FALSE
-468,Spices & Condiments,spices,spices,coriander,\N,TRUE,FALSE
-469,Spices & Condiments,spices,spices,cream of tartar,\N,TRUE,FALSE
-470,Spices & Condiments,spices,spices,cumin,\N,TRUE,FALSE
-471,Spices & Condiments,spices,sauces,curry paste,\N,TRUE,FALSE
-472,Spices & Condiments,spices,spices,curry powder,\N,TRUE,FALSE
-473,Spices & Condiments,spices,soupstock,dashi,\N,TRUE,FALSE
-474,Spices & Condiments,spices,spices,dill seed,\N,TRUE,FALSE
-475,Spices & Condiments,spices,spices,dry mustard,\N,TRUE,FALSE
-476,Spices & Condiments,spices,spices,food colouring,\N,TRUE,FALSE
-477,Spices & Condiments,spices,sauces,french dressing,\N,TRUE,FALSE
-478,Spices & Condiments,spices,spices,garam masala,\N,TRUE,FALSE
-479,Spices & Condiments,spices,spices,garlic powder,\N,TRUE,FALSE
-480,Spices & Condiments,spices,spices,garlic salt,\N,TRUE,FALSE
-481,Spices & Condiments,spices,spices,ground coriander,\N,TRUE,FALSE
-482,Spices & Condiments,spices,spices,ground ginger,\N,TRUE,FALSE
-483,Spices & Condiments,spices,spices,ground nutmeg,\N,TRUE,FALSE
-484,Spices & Condiments,spices,spices,herbes de provence,\N,TRUE,FALSE
-485,Spices & Condiments,spices,spices,herbs,\N,TRUE,FALSE
-486,Spices & Condiments,spices,spices,hoisin sauce,\N,TRUE,FALSE
-487,Spices & Condiments,spices,spices,italian herbs,\N,TRUE,FALSE
-488,Spices & Condiments,spices,spices,italian seasoning,\N,TRUE,FALSE
-489,Spices & Condiments,spices,spices,italian spice,\N,TRUE,FALSE
-490,Spices & Condiments,spices,condiments,ketchup,\N,TRUE,FALSE
-491,Spices & Condiments,spices,condiments,ketchup,\N,TRUE,FALSE
-492,Spices & Condiments,spices,condiments,lemon juice,\N,TRUE,FALSE
-493,Spices & Condiments,spices,spices,liquid smoke,\N,TRUE,FALSE
-494,Spices & Condiments,spices,condiments,lime juice,\N,TRUE,FALSE
-495,Spices & Condiments,spices,sauces,ketchup,\N,TRUE,FALSE
-496,Spices & Condiments,spices,spices,marjoram,\N,TRUE,FALSE
-497,Spices & Condiments,spices,condiments,mayonnaise,\N,TRUE,FALSE
-498,Spices & Condiments,spices,condiments,meat sauce,\N,TRUE,FALSE
-499,Spices & Condiments,spices,soupstock,meat stock,\N,TRUE,FALSE
-500,Spices & Condiments,spices,condiments,mirin,\N,TRUE,FALSE
-501,Spices & Condiments,spices,soupstock,mushroom soup,\N,TRUE,FALSE
-502,Spices & Condiments,spices,condiments,mustard,\N,TRUE,FALSE
-503,Spices & Condiments,spices,spices,mustard seed,\N,TRUE,FALSE
-504,Spices & Condiments,spices,spices,nutmeg,\N,TRUE,FALSE
-505,Spices & Condiments,spices,spices,onion powder,\N,TRUE,FALSE
-506,Spices & Condiments,spices,soupstock,onion soup,\N,TRUE,FALSE
-507,Spices & Condiments,spices,spices,oregano,\N,TRUE,FALSE
-508,Spices & Condiments,spices,spices,paprika,\N,TRUE,FALSE
-509,Spices & Condiments,spices,spices,pepper,\N,TRUE,FALSE
-510,Spices & Condiments,spices,spices,peppercorn,\N,TRUE,FALSE
-511,Spices & Condiments,spices,sauces,pepper sauce,\N,TRUE,FALSE
-512,Spices & Condiments,spices,sauces,pesto,\N,TRUE,FALSE
-513,Spices & Condiments,spices,condiments,pickle relish,\N,TRUE,FALSE
-514,Spices & Condiments,spices,spices,poultry seasoning,\N,TRUE,FALSE
-515,Spices & Condiments,spices,spices,red pepper flake,\N,TRUE,FALSE
-516,Spices & Condiments,spices,condiments,red wine vinegar,\N,TRUE,FALSE
-517,Spices & Condiments,spices,condiments,rice vinegar,\N,TRUE,FALSE
-518,Spices & Condiments,spices,spices,rice wine,\N,TRUE,FALSE
-519,Spices & Condiments,spices,spices,rose water,\N,TRUE,FALSE
-520,Spices & Condiments,spices,spices,saffron,\N,TRUE,FALSE
-521,Spices & Condiments,spices,spices,sage,\N,TRUE,FALSE
-522,Spices & Condiments,spices,spices,salt,\N,TRUE,FALSE
-523,Spices & Condiments,spices,spices,seasoned salt,\N,TRUE,FALSE
-524,Spices & Condiments,spices,spices,sesame seed,\N,TRUE,FALSE
-525,Spices & Condiments,spices,spices,soy sauce,\N,TRUE,FALSE
-526,Spices & Condiments,spices,sauces,spaghetti sauce,\N,TRUE,FALSE
-527,Spices & Condiments,spices,sauces,sriracha,\N,TRUE,FALSE
-528,Spices & Condiments,spices,spices,star anise,\N,TRUE,FALSE
-529,Spices & Condiments,spices,spices,steak seasoning,\N,TRUE,FALSE
-530,Spices & Condiments,spices,spices,taco seasoning,\N,TRUE,FALSE
-531,Spices & Condiments,spices,spices,tamarind,\N,TRUE,FALSE
-532,Spices & Condiments,spices,spices,tarragon,\N,TRUE,FALSE
-533,Spices & Condiments,spices,sauces,teriyaki sauce,\N,TRUE,FALSE
-534,Spices & Condiments,spices,spices,thyme,\N,TRUE,FALSE
-535,Spices & Condiments,spices,sauces,tomato paste,\N,TRUE,FALSE
-536,Spices & Condiments,spices,sauces,tomato sauce,\N,TRUE,FALSE
-537,Spices & Condiments,spices,soupstock,tomato soup,\N,TRUE,FALSE
-538,Spices & Condiments,spices,spices,turmeric,\N,TRUE,FALSE
-539,Spices & Condiments,spices,spices,vanilla,\N,TRUE,FALSE
-540,Spices & Condiments,spices,spices,vanilla essence,\N,TRUE,FALSE
-541,Spices & Condiments,spices,spices,vegetable bouillon,\N,TRUE,FALSE
-542,Spices & Condiments,spices,soupstock,vegetable soup,\N,TRUE,FALSE
-543,Spices & Condiments,spices,soupstock,vegetable stock,\N,TRUE,FALSE
-544,Spices & Condiments,spices,condiments,vinegar,\N,TRUE,FALSE
-545,Spices & Condiments,spices,spices,white pepper,\N,TRUE,FALSE
-546,Spices & Condiments,spices,condiments,white wine vinegar,\N,TRUE,FALSE
-547,Spices & Condiments,spices,sauces,worcestershire sauce,\N,TRUE,FALSE
-548,Sugars & Sweets,candy,sweets,apple juice,\N,TRUE,FALSE
-549,Sugars & Sweets,candy,sweets,apple sauce,\N,TRUE,FALSE
-550,Sugars & Sweets,candy,sweets,baking chocolate,\N,TRUE,FALSE
-551,Sugars & Sweets,candy,sweets,brown sugar,\N,TRUE,FALSE
-552,Sugars & Sweets,candy,sweets,chocolate,\N,TRUE,FALSE
-553,Sugars & Sweets,candy,sweets,chocolate chips,\N,TRUE,FALSE
-554,Sugars & Sweets,candy,sweets,chocolate frosting,\N,TRUE,FALSE
-555,Sugars & Sweets,candy,sweets,chocolate morsels,\N,TRUE,FALSE
-556,Sugars & Sweets,candy,sweets,chocolate syrup,\N,TRUE,FALSE
-557,Sugars & Sweets,candy,sweets,cocoa,\N,TRUE,FALSE
-558,Sugars & Sweets,candy,sweets,castor sugar,\N,TRUE,FALSE
-559,Sugars & Sweets,candy,sweets,cookie dough,\N,TRUE,FALSE
-560,Sugars & Sweets,candy,sweets,graham crackers,\N,TRUE,FALSE
-561,Sugars & Sweets,candy,sweets,honey,\N,TRUE,FALSE
-562,Sugars & Sweets,candy,sweets,maple extract,\N,TRUE,FALSE
-563,Sugars & Sweets,candy,sweets,maple syrup,\N,TRUE,FALSE
-564,Sugars & Sweets,candy,sweets,marshmallow,\N,TRUE,FALSE
-565,Sugars & Sweets,candy,sweets,nutella,\N,TRUE,FALSE
-566,Sugars & Sweets,candy,sweets,potato chips,\N,TRUE,FALSE
-567,Sugars & Sweets,candy,sweets,pudding mix,\N,TRUE,FALSE
-568,Sugars & Sweets,candy,sweets,sugar,\N,TRUE,FALSE
-569,Sugars & Sweets,candy,sweets,syrup,\N,TRUE,FALSE
-570,Sugars & Sweets,candy,sweets,toffee,\N,TRUE,FALSE
-571,Sugars & Sweets,candy,sweets,unsweetened chocolate,\N,TRUE,FALSE
-572,Sugars & Sweets,candy,sweets,vanilla pudding,\N,TRUE,FALSE
-573,Sugars & Sweets,candy,sweets,wafers,\N,TRUE,FALSE
-574,Sugars & Sweets,candy,sweets,white chocolate chips,\N,TRUE,FALSE
+413,Nuts & Legumes,nuts,Nuts,hazelnut,\N,TRUE,FALSE
+414,Nuts & Legumes,nuts,altproteins,hummus,\N,TRUE,FALSE
+415,Nuts & Legumes,nuts,altproteins,kidney beans,\N,TRUE,FALSE
+416,Nuts & Legumes,nuts,altproteins,lentil,\N,TRUE,FALSE
+417,Nuts & Legumes,nuts,altproteins,lima beans,\N,TRUE,FALSE
+418,Nuts & Legumes,nuts,Nuts,macadamia,\N,TRUE,FALSE
+419,Nuts & Legumes,nuts,Nuts,macaroon,\N,TRUE,FALSE
+420,Nuts & Legumes,nuts,altproteins,navy beans,\N,TRUE,FALSE
+421,Nuts & Legumes,nuts,Nuts,nuts,\N,TRUE,FALSE
+422,Nuts & Legumes,nuts,Nuts,peanut,\N,TRUE,FALSE
+423,Nuts & Legumes,nuts,Nuts,pecan,\N,TRUE,FALSE
+424,Nuts & Legumes,nuts,Nuts,pine nut,\N,TRUE,FALSE
+425,Nuts & Legumes,nuts,altproteins,pinto beans,\N,TRUE,FALSE
+426,Nuts & Legumes,nuts,Nuts,pistachio,\N,TRUE,FALSE
+427,Nuts & Legumes,nuts,Nuts,praline,\N,TRUE,FALSE
+428,Nuts & Legumes,nuts,Nuts,raw peanuts,\N,TRUE,FALSE
+429,Nuts & Legumes,nuts,altproteins,soy beans,\N,TRUE,FALSE
+430,Nuts & Legumes,nuts,Nuts,tree nuts,\N,TRUE,FALSE
+431,Nuts & Legumes,nuts,Nuts,walnuts,\N,TRUE,FALSE
+432,Spices & Condiments,spices,sauces,alfredo sauce,\N,TRUE,FALSE
+433,Spices & Condiments,spices,spices,allspice,\N,TRUE,FALSE
+434,Spices & Condiments,spices,spices,aniseed,\N,TRUE,FALSE
+435,Spices & Condiments,spices,spices,apple cider,\N,TRUE,FALSE
+436,Spices & Condiments,spices,condiments,apple cider vinegar,\N,TRUE,FALSE
+437,Spices & Condiments,spices,spices,balsamic glaze,\N,TRUE,FALSE
+438,Spices & Condiments,spices,sauces,barbecue sauce,\N,TRUE,FALSE
+439,Spices & Condiments,spices,condiments,balsamic vinegar,\N,TRUE,FALSE
+440,Spices & Condiments,spices,spices,bay leaf,\N,TRUE,FALSE
+441,Spices & Condiments,spices,sauces,beef gravy,\N,TRUE,FALSE
+442,Spices & Condiments,spices,soupstock,beef stock,\N,TRUE,FALSE
+443,Spices & Condiments,spices,spices,black pepper,\N,TRUE,FALSE
+444,Spices & Condiments,spices,condiments,blue cheese dressing,\N,TRUE,FALSE
+445,Spices & Condiments,spices,spices,bouillon,\N,TRUE,FALSE
+446,Spices & Condiments,spices,spices,cacao,\N,TRUE,FALSE
+447,Spices & Condiments,spices,spices,cajun seasoning,\N,TRUE,FALSE
+448,Spices & Condiments,spices,spices,caraway,\N,TRUE,FALSE
+449,Spices & Condiments,spices,spices,cardamom,\N,TRUE,FALSE
+450,Spices & Condiments,spices,spices,cayenne,\N,TRUE,FALSE
+451,Spices & Condiments,spices,spices,celery salt,\N,TRUE,FALSE
+452,Spices & Condiments,spices,spices,celery seed,\N,TRUE,FALSE
+453,Spices & Condiments,spices,soupstock,celery soup,\N,TRUE,FALSE
+454,Spices & Condiments,spices,soupstock,champagne vinegar,\N,TRUE,FALSE
+455,Spices & Condiments,spices,sauces,chicken gravy,\N,TRUE,FALSE
+456,Spices & Condiments,spices,spices,chicken seasoning,\N,TRUE,FALSE
+457,Spices & Condiments,spices,soupstock,chicken soup,\N,TRUE,FALSE
+458,Spices & Condiments,spices,soupstock,chicken stock,\N,TRUE,FALSE
+459,Spices & Condiments,spices,spices,chili powder,\N,TRUE,FALSE
+460,Spices & Condiments,spices,spices,chili sauce,\N,TRUE,FALSE
+461,Spices & Condiments,spices,spices,chilli powder,\N,TRUE,FALSE
+462,Spices & Condiments,spices,spices,chinese five spice,\N,TRUE,FALSE
+463,Spices & Condiments,spices,spices,chives,\N,TRUE,FALSE
+464,Spices & Condiments,spices,condiments,cider vinegar,\N,TRUE,FALSE
+465,Spices & Condiments,spices,spices,cinnamon,\N,TRUE,FALSE
+466,Spices & Condiments,spices,spices,cloves,\N,TRUE,FALSE
+467,Spices & Condiments,spices,spices,coriander,\N,TRUE,FALSE
+468,Spices & Condiments,spices,spices,cream of tartar,\N,TRUE,FALSE
+469,Spices & Condiments,spices,spices,cumin,\N,TRUE,FALSE
+470,Spices & Condiments,spices,sauces,curry paste,\N,TRUE,FALSE
+471,Spices & Condiments,spices,spices,curry powder,\N,TRUE,FALSE
+472,Spices & Condiments,spices,soupstock,dashi,\N,TRUE,FALSE
+473,Spices & Condiments,spices,spices,dill seed,\N,TRUE,FALSE
+474,Spices & Condiments,spices,spices,dry mustard,\N,TRUE,FALSE
+475,Spices & Condiments,spices,spices,food colouring,\N,TRUE,FALSE
+476,Spices & Condiments,spices,sauces,french dressing,\N,TRUE,FALSE
+477,Spices & Condiments,spices,spices,garam masala,\N,TRUE,FALSE
+478,Spices & Condiments,spices,spices,garlic powder,\N,TRUE,FALSE
+479,Spices & Condiments,spices,spices,garlic salt,\N,TRUE,FALSE
+480,Spices & Condiments,spices,spices,ground coriander,\N,TRUE,FALSE
+481,Spices & Condiments,spices,spices,ground ginger,\N,TRUE,FALSE
+482,Spices & Condiments,spices,spices,ground nutmeg,\N,TRUE,FALSE
+483,Spices & Condiments,spices,spices,herbes de provence,\N,TRUE,FALSE
+484,Spices & Condiments,spices,spices,herbs,\N,TRUE,FALSE
+485,Spices & Condiments,spices,spices,hoisin sauce,\N,TRUE,FALSE
+486,Spices & Condiments,spices,spices,italian herbs,\N,TRUE,FALSE
+487,Spices & Condiments,spices,spices,italian seasoning,\N,TRUE,FALSE
+488,Spices & Condiments,spices,spices,italian spice,\N,TRUE,FALSE
+489,Spices & Condiments,spices,condiments,ketchup,\N,TRUE,FALSE
+490,Spices & Condiments,spices,condiments,lemon juice,\N,TRUE,FALSE
+491,Spices & Condiments,spices,spices,liquid smoke,\N,TRUE,FALSE
+492,Spices & Condiments,spices,condiments,lime juice,\N,TRUE,FALSE
+493,Spices & Condiments,spices,spices,marjoram,\N,TRUE,FALSE
+494,Spices & Condiments,spices,condiments,mayonnaise,\N,TRUE,FALSE
+495,Spices & Condiments,spices,condiments,meat sauce,\N,TRUE,FALSE
+496,Spices & Condiments,spices,soupstock,meat stock,\N,TRUE,FALSE
+497,Spices & Condiments,spices,condiments,mirin,\N,TRUE,FALSE
+498,Spices & Condiments,spices,soupstock,mushroom soup,\N,TRUE,FALSE
+499,Spices & Condiments,spices,condiments,mustard,\N,TRUE,FALSE
+500,Spices & Condiments,spices,spices,mustard seed,\N,TRUE,FALSE
+501,Spices & Condiments,spices,spices,nutmeg,\N,TRUE,FALSE
+502,Spices & Condiments,spices,spices,onion powder,\N,TRUE,FALSE
+503,Spices & Condiments,spices,soupstock,onion soup,\N,TRUE,FALSE
+504,Spices & Condiments,spices,spices,oregano,\N,TRUE,FALSE
+505,Spices & Condiments,spices,spices,paprika,\N,TRUE,FALSE
+506,Spices & Condiments,spices,spices,pepper,\N,TRUE,FALSE
+507,Spices & Condiments,spices,spices,peppercorn,\N,TRUE,FALSE
+508,Spices & Condiments,spices,sauces,pepper sauce,\N,TRUE,FALSE
+509,Spices & Condiments,spices,sauces,pesto,\N,TRUE,FALSE
+510,Spices & Condiments,spices,condiments,pickle relish,\N,TRUE,FALSE
+511,Spices & Condiments,spices,spices,poultry seasoning,\N,TRUE,FALSE
+512,Spices & Condiments,spices,spices,red pepper flake,\N,TRUE,FALSE
+513,Spices & Condiments,spices,condiments,red wine vinegar,\N,TRUE,FALSE
+514,Spices & Condiments,spices,condiments,rice vinegar,\N,TRUE,FALSE
+515,Spices & Condiments,spices,spices,rice wine,\N,TRUE,FALSE
+516,Spices & Condiments,spices,spices,rose water,\N,TRUE,FALSE
+517,Spices & Condiments,spices,spices,saffron,\N,TRUE,FALSE
+518,Spices & Condiments,spices,spices,sage,\N,TRUE,FALSE
+519,Spices & Condiments,spices,spices,salt,\N,TRUE,FALSE
+520,Spices & Condiments,spices,spices,seasoned salt,\N,TRUE,FALSE
+521,Spices & Condiments,spices,spices,sesame seed,\N,TRUE,FALSE
+522,Spices & Condiments,spices,spices,soy sauce,\N,TRUE,FALSE
+523,Spices & Condiments,spices,sauces,spaghetti sauce,\N,TRUE,FALSE
+524,Spices & Condiments,spices,sauces,sriracha,\N,TRUE,FALSE
+525,Spices & Condiments,spices,spices,star anise,\N,TRUE,FALSE
+526,Spices & Condiments,spices,spices,steak seasoning,\N,TRUE,FALSE
+527,Spices & Condiments,spices,spices,taco seasoning,\N,TRUE,FALSE
+528,Spices & Condiments,spices,spices,tamarind,\N,TRUE,FALSE
+529,Spices & Condiments,spices,spices,tarragon,\N,TRUE,FALSE
+530,Spices & Condiments,spices,sauces,teriyaki sauce,\N,TRUE,FALSE
+531,Spices & Condiments,spices,spices,thyme,\N,TRUE,FALSE
+532,Spices & Condiments,spices,sauces,tomato paste,\N,TRUE,FALSE
+533,Spices & Condiments,spices,sauces,tomato sauce,\N,TRUE,FALSE
+534,Spices & Condiments,spices,soupstock,tomato soup,\N,TRUE,FALSE
+535,Spices & Condiments,spices,spices,turmeric,\N,TRUE,FALSE
+536,Spices & Condiments,spices,spices,vanilla,\N,TRUE,FALSE
+537,Spices & Condiments,spices,spices,vanilla essence,\N,TRUE,FALSE
+538,Spices & Condiments,spices,spices,vegetable bouillon,\N,TRUE,FALSE
+539,Spices & Condiments,spices,soupstock,vegetable soup,\N,TRUE,FALSE
+540,Spices & Condiments,spices,soupstock,vegetable stock,\N,TRUE,FALSE
+541,Spices & Condiments,spices,condiments,vinegar,\N,TRUE,FALSE
+542,Spices & Condiments,spices,spices,white pepper,\N,TRUE,FALSE
+543,Spices & Condiments,spices,condiments,white wine vinegar,\N,TRUE,FALSE
+544,Spices & Condiments,spices,sauces,worcestershire sauce,\N,TRUE,FALSE
+545,Sugars & Sweets,candy,sweets,apple juice,\N,TRUE,FALSE
+546,Sugars & Sweets,candy,sweets,apple sauce,\N,TRUE,FALSE
+547,Sugars & Sweets,candy,sweets,baking chocolate,\N,TRUE,FALSE
+548,Sugars & Sweets,candy,sweets,brown sugar,\N,TRUE,FALSE
+549,Sugars & Sweets,candy,sweets,chocolate,\N,TRUE,FALSE
+550,Sugars & Sweets,candy,sweets,chocolate chips,\N,TRUE,FALSE
+551,Sugars & Sweets,candy,sweets,chocolate frosting,\N,TRUE,FALSE
+552,Sugars & Sweets,candy,sweets,chocolate morsels,\N,TRUE,FALSE
+553,Sugars & Sweets,candy,sweets,chocolate syrup,\N,TRUE,FALSE
+554,Sugars & Sweets,candy,sweets,cocoa,\N,TRUE,FALSE
+555,Sugars & Sweets,candy,sweets,castor sugar,\N,TRUE,FALSE
+556,Sugars & Sweets,candy,sweets,cookie dough,\N,TRUE,FALSE
+557,Sugars & Sweets,candy,sweets,graham crackers,\N,TRUE,FALSE
+558,Sugars & Sweets,candy,sweets,honey,\N,TRUE,FALSE
+559,Sugars & Sweets,candy,sweets,maple extract,\N,TRUE,FALSE
+560,Sugars & Sweets,candy,sweets,maple syrup,\N,TRUE,FALSE
+561,Sugars & Sweets,candy,sweets,marshmallow,\N,TRUE,FALSE
+562,Sugars & Sweets,candy,sweets,nutella,\N,TRUE,FALSE
+563,Sugars & Sweets,candy,sweets,potato chips,\N,TRUE,FALSE
+564,Sugars & Sweets,candy,sweets,pudding mix,\N,TRUE,FALSE
+565,Sugars & Sweets,candy,sweets,sugar,\N,TRUE,FALSE
+566,Sugars & Sweets,candy,sweets,syrup,\N,TRUE,FALSE
+567,Sugars & Sweets,candy,sweets,toffee,\N,TRUE,FALSE
+568,Sugars & Sweets,candy,sweets,unsweetened chocolate,\N,TRUE,FALSE
+569,Sugars & Sweets,candy,sweets,vanilla pudding,\N,TRUE,FALSE
+570,Sugars & Sweets,candy,sweets,wafers,\N,TRUE,FALSE
+571,Sugars & Sweets,candy,sweets,white chocolate chips,\N,TRUE,FALSE
