@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "683280621113",
+    "firebase_url": "https://what-can-i-cook-66955.firebaseio.com",
+    "project_id": "what-can-i-cook-66955",
+    "storage_bucket": "what-can-i-cook-66955.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683280621113:android:8c449eb1579892c9",
+        "android_client_info": {
+          "package_name": "com.stevecrossin.whatcanicook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683280621113-marb9df08j3aofbv5coip6jpdgand453.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stevecrossin.whatcanicook",
+            "certificate_hash": "4d6e53bd4b45810643b03d76556f2a31ec32af02"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkmV9KfipNWJFIDkmJgibmBRQXytywNcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
