@@ -57,8 +57,8 @@ public class SplashScreenInit extends AppCompatActivity {
 
                         //Access preference manager to see if we need to update the db
                         PrefManager prefManager = new PrefManager(getApplicationContext());
-                        Log.d("APP_DEBUG", "VERSION CODE IN PREF: " + prefManager.getLastUpdateVersion());
-                        Log.d("APP_DEBUG", "VERSION CODE IN CODE: " + Update.LAST_UPDATE_VERSION);
+                        //Log.d("APP_DEBUG", "VERSION CODE IN PREF: " + prefManager.getLastUpdateVersion());
+                        //Log.d("APP_DEBUG", "VERSION CODE IN CODE: " + Update.LAST_UPDATE_VERSION);
 
 
                         //clear the tables if the update code is fresh
@@ -67,14 +67,16 @@ public class SplashScreenInit extends AppCompatActivity {
                             AppDataRepo repo = new AppDataRepo(SplashScreenInit.this);
                             Log.d("APP_DEBUG", "RESETTING THE DATABASE");
                             repo.refreshTable();
-                            repo.logSize();
+                            //repo.logSize();
 
                             util.loadIntolerancesToDb(SplashScreenInit.this);
                             util.loadIngredientsTODb(SplashScreenInit.this);
                             util.loadRecipesFromCsvToDB(SplashScreenInit.this);
+
+                            // update the preference manager LAST_UPDATE_VERSION to make sure that we don't reset the table all the time
                             prefManager.setLastUpdateVersion(Update.LAST_UPDATE_VERSION);
 
-                            repo.logSize();
+                            //repo.logSize();
 
 
                         } else {

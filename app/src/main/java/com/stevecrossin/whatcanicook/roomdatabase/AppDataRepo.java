@@ -581,9 +581,12 @@ public class AppDataRepo {
         recipeDao.deleteAll();
     }
 
+    /*
     public void logSize() {
         Log.d("APP_DEBUG", "ingredientDao TABLE SIZE : " + ingredientDao.getAllIngredients().size());
         Log.d("APP_DEBUG", "recipeDao TABLE SIZE : " + recipeDao.getAllDefaultRecipes().size());
         Log.d("APP_DEBUG", "intoleranceDao TABLE SIZE : " + intoleranceDao.getAllIntolerances().size());
     }
+    */
+
 }
