@@ -219,4 +219,11 @@ public interface RecipeDao {
     void deleteRecipe(int recipeId);
 
 
+    /**
+     * Delete all intolerances from the database
+     */
+    @Query("DELETE FROM recipe;")
+    void deleteAll();
+
+
 }

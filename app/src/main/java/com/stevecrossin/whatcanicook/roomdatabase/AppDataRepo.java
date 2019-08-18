@@ -3,6 +3,7 @@ package com.stevecrossin.whatcanicook.roomdatabase;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -573,4 +574,16 @@ public class AppDataRepo {
         pantryDao.addIngredients(pantry);
     }
 
+
+    public void refreshTable() {
+        ingredientDao.deleteAll();
+        intoleranceDao.deleteAll();
+        recipeDao.deleteAll();
+    }
+
+    public void logSize() {
+        Log.d("APP_DEBUG", "ingredientDao TABLE SIZE : " + ingredientDao.getAllIngredients().size());
+        Log.d("APP_DEBUG", "recipeDao TABLE SIZE : " + recipeDao.getAllDefaultRecipes().size());
+        Log.d("APP_DEBUG", "intoleranceDao TABLE SIZE : " + intoleranceDao.getAllIntolerances().size());
+    }
 }
