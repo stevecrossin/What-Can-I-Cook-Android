@@ -2,9 +2,10 @@ package com.stevecrossin.whatcanicook.other;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.IngredientDao;
