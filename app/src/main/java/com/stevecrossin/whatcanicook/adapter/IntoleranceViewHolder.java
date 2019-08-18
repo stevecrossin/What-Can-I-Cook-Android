@@ -2,12 +2,14 @@ package com.stevecrossin.whatcanicook.adapter;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.CompoundButton;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatCheckBox;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Intolerance;

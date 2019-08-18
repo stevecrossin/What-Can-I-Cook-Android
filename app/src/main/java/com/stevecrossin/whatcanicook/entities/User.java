@@ -1,9 +1,10 @@
 package com.stevecrossin.whatcanicook.entities;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.Index;
-import android.arch.persistence.room.PrimaryKey;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
 
 /**
  * User database - definition of data model as it will be saved and handled in the database schema. Also a requirement that username is unique

@@ -4,9 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Recipe;
