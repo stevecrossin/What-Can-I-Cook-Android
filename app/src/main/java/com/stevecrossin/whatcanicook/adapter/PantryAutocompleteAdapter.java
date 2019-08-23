@@ -2,7 +2,7 @@ package com.stevecrossin.whatcanicook.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +26,6 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
 
     private List<Ingredient> ingredients;
     private Context context;
-    private int resourceId;
     private List<Ingredient> filteredList, tempList;
 
     /**
@@ -50,12 +49,10 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
          */
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            List<Ingredient> filteredList = (List<Ingredient>) results.values;
+            List<Ingredient> filteredList = new ArrayList<Ingredient>((List) results.values);
             if (results.count > 0) {
                 clear();
-                for (Ingredient ingredient : filteredList) {
-                    add(ingredient);
-                }
+                addAll(filteredList);
                 notifyDataSetChanged();
             }
         }
@@ -69,7 +66,7 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults filterResults = new FilterResults();
-            if (constraint != null) {
+            if (!TextUtils.isEmpty(constraint)) {
                 filteredList.clear();
                 for (Ingredient ingredient : tempList) {
                     if (ingredient.getIngredientName().contains(constraint.toString().toLowerCase())) {
@@ -88,9 +85,8 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
      */
     public PantryAutocompleteAdapter(@NonNull Context context, @NonNull List<Ingredient> ingredients) {
         super(context, R.layout.pantry_autocomplete_item, ingredients);
-        this.ingredients = ingredients;
+        this.ingredients = new ArrayList<>(ingredients);
         this.context = context;
-        this.resourceId = R.layout.pantry_autocomplete_item;
         filteredList = new ArrayList<>();
         tempList = new ArrayList<>(ingredients);
     }
@@ -106,7 +102,7 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
 
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         if (convertView == null) {
-            convertView = inflater.inflate(resourceId, parent, false);
+            convertView = inflater.inflate(R.layout.pantry_autocomplete_item, parent, false);
         }
         ((TextView) convertView).setText(ingredients.get(position).getIngredientName());
 
@@ -137,7 +133,6 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
     @NonNull
     @Override
     public Filter getFilter() {
-
         return nameFilter;
     }
 
