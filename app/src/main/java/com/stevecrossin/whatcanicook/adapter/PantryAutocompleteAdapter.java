@@ -6,8 +6,9 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,17 +18,17 @@ import com.stevecrossin.whatcanicook.R;
 import com.stevecrossin.whatcanicook.entities.Ingredient;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
  * AutoComplete Adapter for the Pantry autocomplete., which controls the population and function of the autocomplete textview.
  */
-public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
+public class PantryAutocompleteAdapter extends BaseAdapter implements Filterable {
 
     private List<Ingredient> ingredients;
     private Context context;
-    private List<Ingredient> filteredList, tempList;
-
+    private List<Ingredient> tempList;
     /**
      * Method that defines how to filter the ingredients list, based on the user input. Creates a new instance of filter, then
      * takes their character inputs and then converts that to a string, and then will get all the ingredient names
@@ -49,10 +50,9 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
          */
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            List<Ingredient> filteredList = new ArrayList<Ingredient>((List) results.values);
             if (results.count > 0) {
-                clear();
-                addAll(filteredList);
+                ingredients.clear();
+                ingredients.addAll((List<Ingredient>) results.values);
                 notifyDataSetChanged();
             }
         }
@@ -67,7 +67,7 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults filterResults = new FilterResults();
             if (!TextUtils.isEmpty(constraint)) {
-                filteredList.clear();
+                List<Ingredient> filteredList = new ArrayList<>();
                 for (Ingredient ingredient : tempList) {
                     if (ingredient.getIngredientName().contains(constraint.toString().toLowerCase())) {
                         filteredList.add(ingredient);
@@ -84,10 +84,8 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
      * Creates the instance of the AutoComplete adapter, and declares the variables and UI elements to the adapter
      */
     public PantryAutocompleteAdapter(@NonNull Context context, @NonNull List<Ingredient> ingredients) {
-        super(context, R.layout.pantry_autocomplete_item, ingredients);
-        this.ingredients = new ArrayList<>(ingredients);
         this.context = context;
-        filteredList = new ArrayList<>();
+        this.ingredients = new ArrayList<>(ingredients);
         tempList = new ArrayList<>(ingredients);
     }
 
@@ -127,6 +125,11 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         return ingredients.get(position);
     }
 
+    @Override
+    public long getItemId(int i) {
+        return ingredients.get(i).getIngredientID();
+    }
+
     /**
      * Gets an instance of the ingredient filter
      */
@@ -135,6 +138,4 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
     public Filter getFilter() {
         return nameFilter;
     }
-
-
 }
