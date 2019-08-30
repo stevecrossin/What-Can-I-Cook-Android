@@ -46,6 +46,7 @@ public class AppDataRepo {
      * Constructor of AppDataRepo
      */
     public AppDataRepo(Context context) {
+        //this line causing crashes - if(context == null ) return ;
         ingredientDao = AppDb.getDatabase(context).ingredientDao();
         intoleranceDao = AppDb.getDatabase(context).intoleranceDao();
         userDao = AppDb.getDatabase(context).userDao();

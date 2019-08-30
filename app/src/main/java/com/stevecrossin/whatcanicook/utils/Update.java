@@ -8,6 +8,6 @@ public class Update {
     * When I publish an app update that changes CSV files and needs DB update, increment this by one. Currently it is at 2
     *
     *  */
-    public static int LAST_UPDATE_VERSION = 2;
+    public static int LAST_UPDATE_VERSION = 3;
 
 }

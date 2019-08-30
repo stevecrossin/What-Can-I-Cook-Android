@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 29
@@ -6,12 +7,11 @@ android {
         applicationId "com.stevecrossin.whatcanicook"
         minSdkVersion 20
         targetSdkVersion 29
-        versionCode 35
-        versionName "2.14"
+        versionCode 38
+        versionName "2.16"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        android.defaultConfig.vectorDrawables.useSupportLibrary = true
+        vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
-
     }
     buildTypes {
         release {
@@ -41,6 +41,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-plus:17.0.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+
+    implementation 'com.google.firebase:firebase-core:17.1.0'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
 
 }
 apply plugin: 'com.google.gms.google-services'

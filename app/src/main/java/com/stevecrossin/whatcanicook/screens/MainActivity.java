@@ -81,15 +81,20 @@ public class MainActivity extends AppCompatActivity {
             protected Void doInBackground(Void... voids) {
                 AppDataRepo repo = new AppDataRepo(MainActivity.this);
                 User user = repo.getSignedUser();
-                repo.updateLoginStatus(user.getUserID(), false);
+
+                if (user != null && repo !=null) {
+                    repo.updateLoginStatus(user.getUserID(), false);
+                }
                 return null;
             }
+
 
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 finish();
                 startActivity(new Intent(MainActivity.this, Login.class));
+
             }
         }.execute();
     }

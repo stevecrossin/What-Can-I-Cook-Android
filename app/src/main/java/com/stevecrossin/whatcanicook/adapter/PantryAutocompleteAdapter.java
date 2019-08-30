@@ -2,12 +2,13 @@ package com.stevecrossin.whatcanicook.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,13 +23,11 @@ import java.util.List;
 /**
  * AutoComplete Adapter for the Pantry autocomplete., which controls the population and function of the autocomplete textview.
  */
-public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
+public class PantryAutocompleteAdapter extends BaseAdapter implements Filterable {
 
     private List<Ingredient> ingredients;
     private Context context;
-    private int resourceId;
-    private List<Ingredient> filteredList, tempList;
-
+    private List<Ingredient> tempList;
     /**
      * Method that defines how to filter the ingredients list, based on the user input. Creates a new instance of filter, then
      * takes their character inputs and then converts that to a string, and then will get all the ingredient names
@@ -50,12 +49,9 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
          */
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            List<Ingredient> filteredList = (List<Ingredient>) results.values;
             if (results.count > 0) {
-                clear();
-                for (Ingredient ingredient : filteredList) {
-                    add(ingredient);
-                }
+                ingredients.clear();
+                ingredients.addAll((List<Ingredient>) results.values);
                 notifyDataSetChanged();
             }
         }
@@ -69,8 +65,8 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults filterResults = new FilterResults();
-            if (constraint != null) {
-                filteredList.clear();
+            if (!TextUtils.isEmpty(constraint)) {
+                List<Ingredient> filteredList = new ArrayList<>();
                 for (Ingredient ingredient : tempList) {
                     if (ingredient.getIngredientName().contains(constraint.toString().toLowerCase())) {
                         filteredList.add(ingredient);
@@ -87,11 +83,8 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
      * Creates the instance of the AutoComplete adapter, and declares the variables and UI elements to the adapter
      */
     public PantryAutocompleteAdapter(@NonNull Context context, @NonNull List<Ingredient> ingredients) {
-        super(context, R.layout.pantry_autocomplete_item, ingredients);
-        this.ingredients = ingredients;
         this.context = context;
-        this.resourceId = R.layout.pantry_autocomplete_item;
-        filteredList = new ArrayList<>();
+        this.ingredients = new ArrayList<>(ingredients);
         tempList = new ArrayList<>(ingredients);
     }
 
@@ -106,7 +99,7 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
 
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         if (convertView == null) {
-            convertView = inflater.inflate(resourceId, parent, false);
+            convertView = inflater.inflate(R.layout.pantry_autocomplete_item, parent, false);
         }
         ((TextView) convertView).setText(ingredients.get(position).getIngredientName());
 
@@ -131,15 +124,17 @@ public class PantryAutocompleteAdapter extends ArrayAdapter<Ingredient> {
         return ingredients.get(position);
     }
 
+    @Override
+    public long getItemId(int i) {
+        return ingredients.get(i).getIngredientID();
+    }
+
     /**
      * Gets an instance of the ingredient filter
      */
     @NonNull
     @Override
     public Filter getFilter() {
-
         return nameFilter;
     }
-
-
 }

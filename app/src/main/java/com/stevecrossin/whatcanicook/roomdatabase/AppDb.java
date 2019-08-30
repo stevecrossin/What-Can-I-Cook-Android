@@ -28,7 +28,7 @@ import com.stevecrossin.whatcanicook.entities.UserDao;
  * Declaration of entities that that exist in the Room Database, and the version number of the database. This version number needs to be updated every time the underlying code for database entities is modified, or the application
  * may crash
  */
-@Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class, RecipeIngredientsTotal.class, LogRecords.class, Pantry.class}, version = 9, exportSchema = false)
+@Database(entities = {Ingredient.class, Intolerance.class, User.class, Recipe.class, RecipeIngredients.class, RecipeIngredientsTotal.class, LogRecords.class, Pantry.class}, version = 10, exportSchema = false)
 public abstract class AppDb extends RoomDatabase {
 
     public abstract IngredientDao ingredientDao();
