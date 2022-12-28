@@ -29,7 +29,6 @@
         android:layout_marginBottom="24dp"
         android:textSize="12sp"
         android:gravity="top"
-        android:textAlignment="center"
         android:autoLink="web"
         android:textColorLink="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toTopOf="@+id/aboutLogButton"

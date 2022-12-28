@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -89,22 +91,20 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        MobileAds.initialize(this, "ca-app-pub-6486258628588307~4051321968");
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-6486258628588307~4051321968");
         loginUIView = findViewById(R.id.login_form);
         progressView = findViewById(R.id.login_progress);
         usernameView = findViewById(R.id.userNameEntry);
         passwordView = findViewById(R.id.passwordEntry);
         loginButton = findViewById(R.id.loginButton);
-        passwordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    tryLogin();
-                    return true;
-                }
-                return false;
+        passwordView.setOnEditorActionListener((textView, id, keyEvent) -> {
+            if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
+                tryLogin();
+                return true;
             }
+            return false;
         });
 
         usernameView.addTextChangedListener(new TextWatcher() {
@@ -190,12 +190,7 @@ public class Login extends AppCompatActivity {
                 if (user != null) {
                     goToNextScreen();
                 } else {
-                    loginButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            tryLogin();
-                        }
-                    });
+                    loginButton.setOnClickListener(view -> tryLogin());
                 }
             }
         }.execute();
@@ -260,7 +255,6 @@ public class Login extends AppCompatActivity {
     /**
      * Shows the progress UI and hides the login form.
      */
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgressUI(final boolean show) {
         int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 

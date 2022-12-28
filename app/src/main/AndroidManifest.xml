@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.stevecrossin.whatcanicook">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- List of permissions that the app will have access to. On first initialisation, the application will ask the user to confirm permission to access these. -->
 
@@ -26,8 +25,9 @@
 
         <!--Notes splash screen is the launcher screen-->
         <activity
-            android:name=".other.SplashScreenInit"
-            android:theme="@style/AppTheme.SplashTheme">
+            android:name="com.stevecrossin.whatcanicook.other.SplashScreenInit"
+            android:theme="@style/AppTheme.SplashTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,50 +35,50 @@
         </activity>
 
         <activity
-            android:name=".screens.MainActivity"
+            android:name="com.stevecrossin.whatcanicook.screens.MainActivity"
             android:label="@string/main_menu_name"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".screens.CategoryPicker"
+            android:name="com.stevecrossin.whatcanicook.screens.CategoryPicker"
             android:label="Choose Categories"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".screens.Intolerances"
+            android:name="com.stevecrossin.whatcanicook.screens.Intolerances"
             android:label="@string/dietary_needs"
-            android:parentActivityName=".screens.MainActivity"
+            android:parentActivityName="com.stevecrossin.whatcanicook.screens.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".screens.About"
+            android:name="com.stevecrossin.whatcanicook.screens.About"
             android:label="@string/about"
-            android:parentActivityName=".screens.MainActivity"
+            android:parentActivityName="com.stevecrossin.whatcanicook.screens.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".screens.Logs"
+            android:name="com.stevecrossin.whatcanicook.screens.Logs"
             android:label="Currently in Pantry"
-            android:parentActivityName=".screens.About"
+            android:parentActivityName="com.stevecrossin.whatcanicook.screens.About"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".screens.Pantry"
+            android:name="com.stevecrossin.whatcanicook.screens.Pantry"
             android:label="Currently in Pantry"
-            android:parentActivityName=".screens.MainActivity"
+            android:parentActivityName="com.stevecrossin.whatcanicook.screens.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".screens.SavedRecipes"
+            android:name="com.stevecrossin.whatcanicook.screens.SavedRecipes"
             android:label="Saved Recipes"
-            android:parentActivityName=".screens.MainActivity"
+            android:parentActivityName="com.stevecrossin.whatcanicook.screens.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".screens.IngredientPicker" />
-        <activity android:name=".screens.MyIngredients" />
-        <activity android:name=".screens.Recipes" />
-        <activity android:name=".screens.Login" />
-        <activity android:name=".screens.RecipesDetails" />
-        <activity android:name=".screens.CustomRecipe" />
+        <activity android:name="com.stevecrossin.whatcanicook.screens.IngredientPicker" />
+        <activity android:name="com.stevecrossin.whatcanicook.screens.MyIngredients" />
+        <activity android:name="com.stevecrossin.whatcanicook.screens.Recipes" />
+        <activity android:name="com.stevecrossin.whatcanicook.screens.Login" />
+        <activity android:name="com.stevecrossin.whatcanicook.screens.RecipesDetails" />
+        <activity android:name="com.stevecrossin.whatcanicook.screens.CustomRecipe" />
 
     </application>
 
